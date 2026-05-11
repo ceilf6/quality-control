@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>抽样检验与二项分布示意图</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #cbd5e1;
+      --blue-bg: #e0f2fe;
+      --blue: #0c4a6e;
+      --amber-bg: #fef3c7;
+      --amber: #92400e;
+      --green-bg: #ecfccb;
+      --green: #365314;
+      --good: #16a34a;
+      --bad: #dc2626;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef5fb 100%);
+      color: var(--ink);
+    }
+
+    .wrap {
+      width: min(1280px, calc(100vw - 32px));
+      margin: 24px auto;
+      padding: 28px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(203,213,225,0.95);
+      border-radius: 24px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 3vw, 42px);
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      min-height: 640px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel h2 {
+      margin: 0 0 18px;
+      font-size: 26px;
+      line-height: 1.35;
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 22px 18px;
+      margin-top: 28px;
+    }
+
+    .sample {
+      text-align: center;
+    }
+
+    .box {
+      height: 92px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: inset 0 -10px 18px rgba(0,0,0,0.08);
+    }
+
+    .good { background: var(--good); }
+    .bad { background: var(--bad); }
+
+    .sample-label {
+      margin-top: 10px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 26px 0 12px;
+      font-size: 56px;
+      color: #2563eb;
+      line-height: 1;
+    }
+
+    .result {
+      text-align: center;
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .result strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 34px;
+      color: #1d4ed8;
+    }
+
+    .card {
+      border-radius: 18px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+      border: 1px solid transparent;
+    }
+
+    .blue { background: var(--blue-bg); border-color: #7dd3fc; }
+    .amber { background: var(--amber-bg); border-color: #fbbf24; }
+    .green { background: var(--green-bg); border-color: #a3e635; }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    .blue h3 { color: var(--blue); }
+    .amber h3 { color: var(--amber); }
+    .green h3 { color: var(--green); }
+
+    .card ul {
+      margin: 0;
+      padding-left: 24px;
+      color: #1f2937;
+      line-height: 1.85;
+      font-size: 18px;
+    }
+
+    .formula {
+      font-size: clamp(26px, 2vw, 34px);
+      font-weight: 700;
+      color: #78350f;
+      margin: 10px 0 8px;
+      word-break: break-word;
+    }
+
+    .note {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #334155;
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--line);
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+      .panel { min-height: auto; }
+      .sample-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100vw - 16px, 100%); padding: 18px; }
+      .sample-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .box { height: 84px; font-size: 18px; }
+      .arrow { margin: 18px 0 6px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>抽样检验里，样本不合格数 X 为什么常近似服从二项分布？</h1>
+    <div class="subtitle">
+      直观想法是：每抽一件，都在做一次“这件是不合格吗”的判断。只要这种判断满足固定次数、两种结果、概率近似不变，样本中的不合格数就常写成二项分布。
+    </div>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>把每次抽取看成一次“是否不合格”的试验</h2>
+        <div class="sample-grid">
+          <div class="sample"><div class="box bad">不合格</div><div class="sample-label">第1件</div></div>
+          <div class="sample"><div class="box good">合格</div><div class="sample-label">第2件</div></div>
+          <div class="sample"><div class="box good">合格</div><div class="sample-label">第3件</div></div>
+          <div class="sample"><div class="box good">合格</div><div class="sample-label">第4件</div></div>
+          <div class="sample"><div class="box bad">不合格</div><div class="sample-label">第5件</div></div>
+          <div class="sample"><div class="box good">合格</div><div class="sample-label">第6件</div></div>
+          <div class="sample"><div class="box good">合格</div><div class="sample-label">第7件</div></div>
+          <div class="sample"><div class="box bad">不合格</div><div class="sample-label">第8件</div></div>
+          <div class="sample"><div class="box good">合格</div><div class="sample-label">第9件</div></div>
+          <div class="sample"><div class="box good">合格</div><div class="sample-label">第10件</div></div>
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="result">
+          统计这 10 次里“不合格”出现了多少次
+          <strong>X = 样本中的不合格数 = 3</strong>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="card blue">
+          <h3>什么时候可用二项分布？</h3>
+          <ul>
+            <li>每次抽取只有两种结果：合格 / 不合格</li>
+            <li>总共抽样 n 次，样本量固定</li>
+            <li>每次“不合格”的概率近似相同，记作 p</li>
+            <li>总体足够大时，不放回抽样也常近似看成相互独立</li>
+          </ul>
+        </div>
+
+        <div class="card amber">
+          <h3>于是就写成</h3>
+          <div class="formula">X ~ B(n, p)</div>
+          <div class="formula">P(X = x) = C(n, x) p<sup>x</sup>(1-p)<sup>n-x</sup></div>
+          <div class="note">意思是在 n 件样品里，恰好有 x 件不合格的概率。</div>
+        </div>
+
+        <div class="card green">
+          <h3>考试里容易混的补充</h3>
+          <div class="note">
+            如果总体不大，而且是不放回抽样，严格说更适合用超几何分布。<br />
+            但很多题默认总体足够大，所以会写“样本不合格数 X 通常服从二项分布”。
+          </div>
+        </div>
+
+        <div class="footer">
+          一句话记忆：<strong>每件样品都像一次“是否不合格”的伯努利试验，n 次累加起来，不合格数 X 就常按二项分布处理。</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
