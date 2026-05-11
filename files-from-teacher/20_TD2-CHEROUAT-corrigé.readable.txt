@@ -1,0 +1,802 @@
+        FQ01 TD 2
+
+Apprentissage
+ Learning-based approach to quality management
+                                                     RAPPEL
+                                                                                         Context:
+Contexte :                                                                               1. Competitive and evolving
+1.    Environnement compétitif et évolutif                                                  environment
+2.    Exigence accrue des clients                                                        2. Increased customer demands
+3.    Nécessité d’amélioration continue                                                  3. Need for continuous improvement
+                                                                                         4. Shift from a control-driven approach
+4.    Passage d’une logique de contrôle → logique d’apprentissage
+                                                                                             to a learning-driven approach
+
+
+     Question : COMMENT transformer les erreurs, les expériences et les données en
+                connaissances utiles afin d’améliorer en continu la qualité ?
+        Question: How can we transform errors, experiences, and data into useful knowledge to continuously improve quality?
+
+
+Mécanisme de l’apprentissage
+1. Observation : détection des défauts
+2. Analyse : recherche des causes des défauts
+3. Capitalisation : stockage des connaissances des défauts
+4. Amélioration : mise en place d’actions pour éliminer les défauts
+5. Diffusion : partage des connaissances des défauts dans l’organisation
+                                                            RAPPEL
+ Idée : On ne cherche pas seulement à corriger les erreurs, mais à :
+ 1. Comprendre pourquoi elles apparaissent
+ 2. Eviter qu’elles se reproduisent
+
+Approche par apprentissage : Objectif améliorer durablement la qualité (organisation apprenante
+Peter Senge)
+1. Apprendre de ses erreurs
+2. Intégration des retours d’information
+3. Capitalisation des connaissances
+4. Amélioration en permanence
+
+Idea: We are not just trying to correct mistakes, but to:
+1. Understand why they occur
+2. Prevent them from happening again
+
+Learning-based approach: Objective: Sustainable quality improvement
+1. Learning from mistakes
+2. Integrating feedback
+3. Capitalizing on knowledge                                                                 3
+4. Continuous improvement
+                                                     Les 5 disciplines de Senge
+
+
+
+1- Maîtrise personnelle (Personal Mastery):
+Développement individuel                                   •Formation continue
+1. amélioration de soi et le développement continu         •Responsabilisation des opérateurs
+2. améliorer ses compétences                              Continuing education and Empowering operators
+
+
+
+2- Modèles mentaux (Mental Models):
+Remettre en question ses idées                              •Éviter les routines inefficaces
+1. penser de manière objective et critique                  •Questionner les “on a toujours fait comme ça”
+2. changer sa façon de penser                               Avoid ineffective routines and Question the "we've always done
+                                                            it this way" approach.
+
+
+3- Vision partagée (Shared Vision):
+                                                           •Culture qualité partagée
+Objectif commun
+                                                           •Engagement collectif (pas seulement le service qualité)
+1. aligner tous les acteurs
+2. motiver les équipes                                  Shared culture of quality and Collective commitment (not
+                                                        just quality service
+                                               Les 5 disciplines de Senge
+
+
+
+
+4 - Apprentissage en équipe (Team Learning):
+                                                           •Groupes de résolution de problèmes
+Travailler ensemble pour apprendre
+                                                           •Cercles de qualité
+1. partage des connaissances
+                                                           •Retours d’expérience
+2. collaboration
+                                                     Problem-solving groups -Quality circles -Lessons learned
+
+
+
+
+5 - Pensée systémique (Systems Thinking) :
+                                                          •Analyse des causes racines (type Ishikawa)
+Voir l’entreprise comme un système global
+                                                          •Vision processus (chaîne de valeur)
+1. comprendre les interactions
+                                                          •Éviter les solutions locales inefficaces
+2. éviter les solutions locales inefficaces
+                                                        Root cause analysis (Ishikawa)
+                                                        Process view (value chain)
+                                                        Avoid ineffective local solutions
+QUIZ
+
+L’approche par apprentissage consiste à :
+A. Contrôler les produits finis                      Réponse B
+B. Apprendre des erreurs et améliorer les succès
+C. Réduire les coûts uniquement
+D. Supprimer les contrôles
+
+
+Quel est l’objectif principal de l’apprentissage ?
+A. Augmenter la production                           Réponse B
+B. Améliorer durablement la qualité
+C. Réduire le personnel
+D. Accélérer la production
+
+
+
+Le cycle PDCA signifie :
+A. Plan – Do – Control – Act                         Réponse B
+B. Plan – Do – Check – Act
+C. Process – Develop – Control – Analyze
+D. Plan – Design – Check – Apply
+QUIZ
+
+Une non-conformité répétitive indique :
+A. Un problème isolé
+B. Un manque d’apprentissage                         Réponse B
+C. Une bonne performance
+D. Une erreur humaine unique
+
+
+Quelle est une condition essentielle de réussite ?
+A. Contrôle strict
+B. Culture d’apprentissage                           Réponse B
+C. Réduction du personnel
+D. Automatisation totale
+
+
+
+
+L’apprentissage organisationnel permet :
+A. D’augmenter les erreurs
+B. D’améliorer la performance globale                Réponse B
+C. De ralentir l’entreprise
+D. De supprimer les processus
+QUIZ
+
+La discipline la plus importante est :             Les modèles mentaux correspondent à :
+A. Vision partagée                                 A. Machines
+B. Maîtrise personnelle                            B. Procédures
+C. Pensée systémique                   Réponse C   C. Croyances et façons de penser           Réponse C
+D. Apprentissage individuel                        D. Données
+
+La pensée systémique consiste à :
+A. Travailler seul                                 Une organisation qui répète les erreurs est :
+B. Voir l’entreprise globalement  Réponse B        A. Apprenante
+C. Réduire les coûts                               B. Performante
+D. Accélérer la production                         C. Non apprenante                             Réponse C
+                                                   D. Optimisée
+
+
+
+L’apprentissage en équipe permet :                 L’objectif de la vision de Senge est :
+A. Travailler isolément                            A. Produire plus
+B. Éviter les erreurs                              B. Réduire les coûts                       Réponse C
+                                   Réponse C       C. Améliorer durablement la performance
+C. Partager les connaissances
+D. Réduire le temps uniquement                     D. Automatiser
+QUIZ
+
+L’objectif principal de l’approche de Peter Senge est :   Dans The Fifth Discipline, une organisation performante :
+A. Développer une organisation apprenante                 A. Évite les erreurs
+B. Contrôler les erreurs                                  B. Apprend de ses erreurs
+C. Optimiser les coûts                       Réponse A    C. Punit les erreurs                          Réponse B
+D. Augmenter la productivité                              D. Ignore les erreurs
+
+
+La “pensée systémique” consiste à :
+A. Simplifier les problèmes                               Un problème récurrent indique souvent :
+B. Analyser les relations entre les éléments              A. Un manque de contrôle
+C. Se concentrer sur une seule cause                      B. Une faute humaine
+D. Accélérer les décisions                   Réponse B    C. Un manque de temps                        Réponse D
+                                                          D. Un problème systémique
+
+
+
+Quelle action correspond à une approche classique ?
+A. Réunion interservices
+B. Analyse globale
+C. Augmentation des contrôles              Réponse C
+D. Apprentissage collectif
+QUIZ
+
+Dans une organisation industrielle, une amélioration locale entraîne une dégradation globale des performances.
+Quelles explications sont cohérentes avec la pensée systémique ?
+
+A. Les indicateurs locaux sont mal définis
+B. Il existe des boucles de rétroaction non identifiées
+C. Les opérateurs ne sont pas assez formés
+                                                                               Réponses : B, D
+D. L’optimisation locale peut nuire au système global
+E. Le problème vient uniquement d’une mauvaise exécution
+
+
+
+Une entreprise augmente la production pour réduire les délais, mais observe une hausse des défauts, ce qui ralentit
+encore plus les livraisons. Ce phénomène illustre :
+
+A. Une boucle de rétroaction positive (amplificatrice)
+B. Une boucle de rétroaction négative (régulatrice)
+C. Un effet retard (delay)
+                                                                               Réponses : A, C
+D. Une optimisation parfaite du système
+E. Une causalité linéaire
+Dans une démarche qualité, les managers affirment : “Les problèmes viennent toujours des opérateurs terrain.”
+Selon Peter Senge, cela correspond à :
+
+A. Une analyse rationnelle
+B. Un modèle mental limitant                                                    Réponses : B, D
+C. Une pensée systémique
+D. Une simplification excessive de la réalité
+E. Une approche scientifique valide
+
+
+
+
+Quelles caractéristiques définissent une organisation apprenante ?
+
+A. Forte spécialisation des services sans interaction
+B. Capacité à remettre en cause ses pratiques
+C. Apprentissage collectif
+D. Contrôle strict des erreurs                                                  Réponses : B, C, E
+E. Vision partagée
+Dans une logique inspirée de The Fifth Discipline, la qualité repose principalement sur :
+
+A. La conformité aux normes
+B. La réduction des coûts
+C. La capacité d’apprentissage du système                                                      Réponses : C, E
+D. L’élimination des opérateurs défaillants
+E. L’amélioration continue basée sur la compréhension
+
+
+
+
+Pourquoi les décisions prises dans une organisation produisent-elles souvent des effets inattendus ?
+
+A. À cause des délais entre action et effet
+B. À cause des interactions complexes
+C. Parce que les données sont toujours fausses                                                Réponses : A, B, D
+D. À cause des boucles de rétroaction
+E. Parce que les managers sont inefficaces
+Quelles pratiques relèvent d’une approche classique de la qualité ?
+
+A. Analyse systémique des processus
+B. Contrôle renforcé en fin de chaîne
+C. Recherche de responsables                                                                 Réponses : B, C, E
+D. Apprentissage en équipe
+E. Correction immédiate des erreurs visibles
+
+
+
+Une entreprise met en place une IA pour optimiser la production. Les performances locales augmentent, mais la
+satisfaction client diminue. Quelle interprétation est la plus pertinente ?
+
+A. L’IA est inefficace
+B. Le système global n’est pas pris en compte
+C. L’optimisation locale crée des effets pervers                                               Réponses : B, C
+D. Il faut supprimer l’IA
+E. Le problème est purement technique
+Pourquoi l’apprentissage en équipe est-il critique ?
+
+A. Il permet une meilleure communication
+B. Il réduit la complexité du système
+C. Il favorise une compréhension partagée
+D. Il remplace les décisions managériales              Réponses : A, C, E
+E. Il améliore la résolution de problèmes complexes
+
+Quelles sont des limites réelles de cette approche ?
+
+A. Difficulté de mise en œuvre
+B. Résultats immédiats garantis
+C. Nécessite un changement culturel
+D. Complexité d’analyse                                Réponses : A, C, D
+E. Inutile dans l’industrie
+
+
+Quelle hypothèse est la PLUS pertinente ?
+
+A. Les améliorations sont mal exécutées
+B. Les actions sont locales et non systémiques
+C. Les employés résistent au changement
+D. Le système possède des boucles compensatrices         Réponses : B, D
+E. Il faut augmenter les contrôles
+Exercice 1 : Une entreprise industrielle spécialisée dans la fabrication
+les pièces composites constate :
+1. Augmentation des défauts de fabrication
+2. Retards de livraison
+3. Turnover élevé des opérateurs
+4. Problèmes récurrents malgré actions correctives
+Actions mises en place (approche actuelle)
+ La direction a décidé :
+1. Renforcer les contrôles qualité en fin de ligne
+2. Augmenter les cadences de production
+3. Sanctionner les opérateurs responsables d’erreurs
+4. Mettre en place des primes basées sur la productivité
+
+ Résultat :
+1. Amélioration temporaire
+2. Puis aggravation des problèmes
+
+
+
+An industrial company specializing in composite          Actions implemented (current approach) Management decided to:
+parts has observed:                                      1. Strengthen quality controls at the end of the line
+1. Increased manufacturing defects                       2. Increase production rates
+2. Delivery delays                                       3. Penalize operators responsible for errors
+3. High operator turnover                                4. Implement bonuses based on productivity
+4. Recurring problems despite corrective actions          Result: Temporary improvement and problems worsen
+Q1- Montrez que l’approche actuelle correspond à une            Q1- Show that the current approach corresponds to a
+logique classique de gestion de la qualité.                     classic quality management logic.
+a)    Identifier les caractéristiques de l’approche classique   • Identify the characteristics of the classic approach.
+                                                                • Justify with the case study.
+b) Justifier avec le cas
+
+Q2- En mobilisant la pensée systémique de Peter Senge :         Q2- Using Peter Senge's systemic thinking:
+a)   Identifier au moins 4 causes profondes possibles           • Identify at least 4 possible root causes
+b) Mettre en évidence les interactions entre ces causes         • Highlight the interactions between these causes
+
+
+Q3 - Expliquez l’aggravation des problèmes.                     Q3 - Explain how the problems worsened.
+a) production                                                   a) Production
+b) défauts                                                      b) Defects
+c) pression                                                     c) Pressure
+d) fatigue                                                      d) Fatigue
+
+Q4 - Proposer un plan d’amélioration basé sur les               Q4 - Propose an improvement plan based on the
+principes de The Fifth Discipline :                             principles of The Fifth Discipline:
+a) minimum 4 actions                                            a) minimum 4 actions systemic
+                                                                b) justification
+b) justification systémique
+
+                                                                Q5 - Discuss the limitations of Singe's approach in this
+Q5 - Discuter les limites de l’approche de Senge dans ce        industrial case.
+cas industriel.
+ 1. Renforcer les contrôles qualité en fin de ligne
+ 2. Augmenter les cadences de production
+ 3. Sanctionner les opérateurs responsables d’erreurs
+ 4. Mettre en place des primes basées sur la productivité
+  Résultat :
+ 1. Amélioration temporaire
+ 2. Puis aggravation des problèmes
+
+Q1- Montrez que l’approche actuelle correspond à une logique classique de gestion de la qualité.
+   a)   Identifier les caractéristiques de l’approche classique
+   b)   Justifier avec le cas
+
+
+ Q1 — Approche classique: L’entreprise adopte une approche classique car :
+ 1. Focalisation sur le contrôle (inspection finale)
+ 2. Recherche de responsables individuels
+ 3. Solutions rapides et locales
+ 4. Absence de vision globale
+
+ Justifications :
+ 1. sanctions → logique punitive
+ 2. augmentation cadence → solution court terme
+Q2- En mobilisant la pensée systémique de Peter Senge :
+a) Identifier au moins 4 causes profondes possibles
+b) Mettre en évidence les interactions entre ces causes
+
+
+
+
+Causes profondes possibles :
+1. Surcharge de travail
+2. Formation insuffisante
+3. Objectifs contradictoires (qualité vs productivité)
+4. Mauvaise communication interservices
+5. Conditions de travail dégradées
+
+
+
+
+Les interactions entre ces causes :
+1. Augmentation cadence → fatigue → erreurs → défauts
+2. Défauts → retards → pression → encore plus d’erreurs
+3. Pression → turnover → perte de compétence → défauts
+Q3 - Expliquez l’aggravation des problèmes.
+a) production
+b) défauts
+c) pression
+d) fatigue
+
+
+
+
+Boucle causale
+Augmentation production
+→ fatigue opérateurs
+→ augmentation défauts
+→ retards
+→ pression managériale
+→ encore augmentation production
+
+
+ Boucle de dégradation
+Q4 - Proposer un plan d’amélioration basé sur les principes de The Fifth Discipline :
+a) minimum 4 actions
+b) justification systémique
+
+Plan d’amélioration (approche Senge)
+1. Réduction des conflits d’objectifs: Aligner qualité et productivité      4. Mise en place de groupes transverses
+Vision partagée                                                             Apprentissage en équipe
+
+2. Analyse des causes racines : Approche processus global
+ Pensée systémique                                                         5. Amélioration des conditions de travail
+                                                                             Réduction des boucles négatives
+3. Formation & montée en compétence
+ Maîtrise personnelle
+
+
+
+Q5 - Discuter les limites de l’approche de Senge dans ce cas industriel.
+
+1. Temps de mise en œuvre long
+2. Difficulté à mobiliser toute l’organisation
+3. Complexité d’analyse
+4. Résistance au changement
+Exercice 2 : Dans une entreprise industrielle, on observe une augmentation des défauts produits. Les managers
+décident :
+1. augmenter les contrôles qualité
+2. sanctionner les opérateurs responsables
+3. accélérer la production pour compenser les pertes
+
+Q1. Identifier l’approche utilisée. Cette approche est-elle :
+a) Approche Senge
+b) Approche classique
+
+Q2. Donner les limites de cette approche
+
+Q3. Reformuler le problème de l’entreprise selon une vision systémique
+
+
+Q4. Proposer des actions selon l’approche de The Fifth Discipline
+
+
+Exercise 2: In an industrial company, an increase in product defects is observed. Managers decide to: increase quality controls
+discipline the responsible operators accelerate production to compensate for losses
+Q1. Identify the approach used. Is this approach: Senge approach Classical approach
+Q2. State the limitations of this approach
+Q3. Reformulate the company's problem from a systemic perspective
+Q4. Propose actions based on The Fifth Discipline approach
+Q1. Approche classique
+1. focalisation sur le contrôle
+2. réaction rapide
+3. recherche de responsables
+
+Q2. Les limites de l’approche
+1. Traite les symptômes, pas les causes profondes
+2. Risque de démotivation des employés
+3. Peut augmenter les erreurs (stress, pression)
+4. Pas de vision globale
+Q3. Vision systémique : Les défauts peuvent venir de :
+1. formation insuffisante
+2. machines mal réglées
+3. mauvaise communication
+4. surcharge de travail
+5. qualité des matières premières
+ On cherche des interactions, pas une cause unique
+Q4. Actions (approche de Senge)
+1. Mettre en place des groupes de résolution de problèmes
+2. Analyser les causes racines (processus complet)
+3. Améliorer la formation
+4. Ajuster la charge de travail
+5. Favoriser le retour d’expérience
+Exercice 3 : Une entreprise industrielle produit des pièces mécaniques. Malgré des contrôles qualité, le taux de
+défauts augmente sur 6 mois.
+
+Mois         Taux de défaut (%)      Heures formation / employé            Incidents machines         Suggestions employés
+Jan                  5.2                           2                                 8                         1
+Fév                  5.8                          1.5                               10                         1
+Mar                  6.5                           1                                12                         0
+Avr                  7.1                          0.5                               15                         0
+Mai                  7.8                          0.5                               18                         0
+Juin                 8.3                          0.2                               20                         0
+Q1 - Analyse classique qualité
+                                                    Exercise 3: An industrial company produces mechanical parts. Despite
+1.Décrire l’évolution du taux de défauts
+                                                    quality controls, the defect rate increases over 6 months.
+2.Identifier les variables corrélées
+3.Proposer 2 causes possibles                          Q1 - Classical Quality Analysis
+                                                       1. Describe the evolution of the defect rate
+                                                       2. Identify the correlated variables
+Q2. Analyse selon Senge (les 5 disciplines)            3. Propose 2 possible causes
+Q3. Apport de l’IA pour                                Q2. Analysis according to Senge (the 5 disciplines)
+a) Prédiction des défauts (ML)                         Q3. Contribution of AI for:
+b) Détection automatique des anomalies                     a) Defect prediction (ML)
+c) Analyse des causes racines                              b) Automatic anomaly detection
+                                                           c) Root cause analysis
+Exercice 4 : L’entreprise MecaForm spécialisée dans la mécano-soudure et la
+chaudronnerie industrielle pour l’industrie automobile.
+Depuis 6 mois, elle observe une dégradation de la qualité, malgré des contrôles
+renforcés. La direction souhaite comprendre :
+1. Pourquoi les défauts augmentent
+2. Comment intégrer une logique d’organisation apprenante
+3. Quel rôle peut jouer l’Intelligence Artificielle
+
+
+                                                                                      Suggestions           Temps de contrôle
+Mois      Défauts (%) Formation (h/employé)              Incidents machines
+                                                                                       employés                (min/pièce)
+Jan            5.0                    2.0                           7                        2                         5
+Fév            5.6                    1.5                           9                        1                         6
+Mar            6.4                    1.0                          12                        1                         7
+Avr            7.2                    0.7                          14                        0                         8
+Mai            7.9                    0.5                          17                        0                         9
+Juin           8.5                    0.3                          21                        0                        10
+Exercise 4: MecaForm, a company specializing in metal fabrication and industrial boiler making for the automotive industry, has
+observed a decline in quality over the past six months, despite reinforced quality controls. Management wants to understand:
+1. Why are the defects increasing?
+2. How to integrate a learning organization approach?
+3. What role can Artificial Intelligence play?
+                  2,5                                                                      25
+
+
+
+                                                                                           20
+Formation h/per
+
+                   2
+
+
+
+
+                                                                              Pb machine
+                                                                                           15
+                  1,5
+
+                                                                                           10
+
+                   1
+
+                                                                                           5
+
+
+                  0,5
+                                                                                           0
+                                                                                                0         0,5          1           1,5         2         2,5
+
+                   0
+                        5   5,5   6   6,5     7     7,5   8   8,5   9                                               Formation h/per
+                                            Défaut (%)
+                                                                                           25
+
+
+           a) ↓ formation → ↑ défauts                                                      20
+           b) ↑ incidents machines → ↑ défauts
+
+
+
+
+                                                                        Pb machine
+           c) ↓ formation → ↑ incidents machines                                           15
+
+
+
+                                                                                           10
+
+           CONCLUSION:
+           1. Augmentation régulière                                                        5
+
+           2. Absence de stabilisation
+           3. Pas d’amélioration visible                                                    0
+                                                                                                5   5,5         6    6,5       7     7,5   8       8,5    9
+                                                                                                                           Défaut (%)
+                                                                                 DEFAUT/FORMATION
+                                                     2,5
+
+Formation vs défauts
+Formation : 2,0 → 0,3 h                               2
+
+Défauts : 5,0 → 8,5 %
+                                                     1,5
+
+ Corrélation négative forte
+Moins les employés sont formés, plus les défauts      1
+
+
+augmentent.
+                                                     0,5
+
+
+
+                                                      0
+                                                               5       5,5   6     6,5    7      7,5          8    8,5       9
+
+
+Incidents vs défauts
+                                                                             DEFAUTS/Incidents machines
+•Incidents : 7 → 21                                   25
+•Défauts : augmentation continue
+Corrélation positive                                 20
+
+Les problèmes techniques contribuent directement à
+la non-qualité.                                       15
+
+
+
+                                                      10
+
+CONCLUSION:
+Les défauts sont causés par :                              5
+
+•Un manque de formation
+                                                           0
+•Une dégradation des machines                                      5   5,5   6     6,5    7     7,5       8       8,5    9
+Mois         Défauts (%)            Formation (h/employé)         Incidents machines   Suggestions employés   Temps de contrôle (min/pièce)
+Jan                5.0                       2.0                          7                     2                          5
+Fév                5.6                       1.5                          9                     1                          6
+Mar                6.4                       1.0                         12                     1                          7
+Avr                7.2                       0.7                         14                     0                          8
+Mai                7.9                       0.5                         17                     0                          9
+Juin               8.5                       0.3                         21                     0                          10
+
+
+
+
+ Taux de défaut (%):
+ Janvier : 5,0 %
+ Juin : 8,5 %
+
+ Évolution (%) = (Valeur finale − Valeur initiale) / Valeur initiale × 100 = (8,5 − 5) / 5 × 100 = 70 %
+
+ Le taux de défauts a augmenté de 70 % en 6 mois
+ Une augmentation est très importante et indique une dégradation continue et structurelle de la qualité.
+
+
+                         Variable                             Tendance                              Interprétation
+       Défauts                                     Augmentation                        Qualité en baisse
+       Formation                                   Forte diminution                    Perte de compétences
+       Incidents                                   Forte augmentation                  Dégradation technique
+Analyse selon Senge (les 5 disciplines)
+1. Maîtrise personnelle formation en baisse
+Les employés développent-ils leurs compétences ?
+: évolution des heures de formation
+
+
+
+2. Modèles mentaux focus sur contrôle final
+Existe-t-il des croyances limitantes ?
+ “la qualité = contrôle final uniquement”
+
+
+3. Vision partagée absence d’implication (suggestions = 0)
+Les employés sont-ils impliqués dans la qualité ?
+ Indice : nombre de suggestions
+
+
+4. Apprentissage en équipe faible collaboration
+Y a-t-il une collaboration pour résoudre les problèmes ?
+ Lien possible avec incidents machines
+
+5. Pensée systémique
+Identifier une boucle de causalité :
+Moins de formation → plus d’erreurs → plus de défauts → pression → encore moins de formation
+ Q3. (IA)
+
+Objectif prédire : le taux de défauts futur
+                                                           On peut approximer la relation par :
+Variables d’entrée (features)
+                                                           Défauts = f(formation, incidents)
+1. Formation
+2. Incidents machines
+                                                           Interprétation issue des données :
+                                                           1. Si formation ↓ → défauts ↑
+Variable à prédire :
+                                                           2. Si incidents ↑ → défauts ↑
+Taux de défauts
+
+
+Apport sur défaut:                                         Juin :
+1. Anticiper les mois à risque                                  • Incidents = 21 (très élevé)
+2. Ajuster la formation à l’avance                              • Formation = 0,3 (très faible)
+3. Planifier la maintenance                                 Situation critique détectée automatiquement
+Alerte si la formation tombe sous 0,5 h → alerte qualité
+
+
+Apport sur incidents
+1. Détection rapide des dérives
+2. Alerte en temps réel
+3. Réduction du délai de réaction
+Alerte si incidents > 15
+Exercice 5 : L’entreprise TechProd fabrique des cartes électroniques.
+Elle constate une augmentation des retours clients sur 5 semaines malgré des
+investissements récents.
+
+
+                                                               Charge                                  Pannes
+Semaine     Taux de retour (%)    Tests automatiques (%)                       Temps formation (h)
+                                                            opérateurs (%)                            machines
+S1                  3.2                     60                    70                   3                  2
+S2                  3.8                     65                    75                   2                  3
+S3                  4.5                     70                    85                   1                  5
+S4                  5.4                     80                    95                   0.5                7
+S5                  6.1                     90                    98                   0.2                9
+
+
+
+Exercise 5: The company TechProd manufactures electronic boards. It has noticed an increase in customer returns
+over 5 weeks despite recent investments.
+QUESTIONS :
+
+PARTIE A – Analyse des données                              PART A – Data Analysis
+                                                            1. Describe the trend in the return rate.
+1.Décrire la tendance du taux de retour.
+                                                            2. Identify an apparent paradox in the data.
+2.Identifier un paradoxe apparent dans les données.         3. Which variable seems to exacerbate the problem
+3.Quelle variable semble aggraver le problème malgré une       despite an apparent improvement?
+amélioration apparente ?
+
+
+PARTIE B – Analyse systémique (Senge)                       PART B – Systems Analysis (Senge)
+1.Identifier une solution contre-productive mise en place   1. Identify a counterproductive solution implemented by
+par l’entreprise.                                              the company.
+2.Construire une boucle de causalité simple.                2. Construct a simple causal loop.
+
+PARTIE C – IA et décision
+1.Quelles données seraient utiles pour entraîner un         PART C – AI and Decision-Making
+modèle prédictif ?                                          1. What data would be useful for training a predictive
+2.Proposer un cas d’usage de Machine Learning.                 model? Propose a use case for machine learning.
+
+PARTIE D – Amélioration
+Proposer :                                                  PART D – Improvement
+a) 2 actions immédiates                                     1. Propose 2 immediate actions
+b) 2 actions à long terme (organisation apprenante)         2. 2 long-term actions (learning organization)
+PARTIE A – Analyse des données
+1.Décrire la tendance du taux de retour.
+2.Identifier un paradoxe apparent dans les données.
+3.Quelle variable semble aggraver le problème malgré une amélioration apparente ?
+
+
+Partie A
+•Taux de retour : forte augmentation (3.2% → 6.1%)
+
+
+•Paradoxe :
+    • Tests automatiques ↑ (60 → 90%)
+    • MAIS qualité ↓
+ Plus de contrôle ≠ meilleure qualité
+
+
+•Variable critique :
+Charge opérateurs (70% → 98%)
+ surcharge → erreurs
+PARTIE B – Analyse systémique (Senge)
+1.Identifier une solution contre-productive mise en place
+par l’entreprise.
+2.Construire une boucle de causalité simple.
+
+Partie B
+•Solution contre-productive :
+Augmenter les tests automatiques sans traiter la cause
+
+Boucle :
+•Défauts → + tests → + charge → fatigue → + erreurs → + défauts
+Cercle vicieux classique
+PARTIE C – IA et décision
+1.Quelles données seraient utiles pour entraîner un
+modèle prédictif ?
+2.Proposer un cas d’usage de Machine Learning.
+
+
+Partie C                                              Taux de retour        Tests
+                                                                                           Charge
+                                                                                                          Temps         Pannes
+Données :                                     S                                           opérateurs
+                                                           (%)         automatiques (%)                formation (h)   machines
+                                                                                             (%)
+    • Historique défauts
+                                              S1           3.2               60              70             3             2
+    • Données machines
+    • Charge opérateur                        S2           3.8               65              75             2             3
+                                              S3           4.5               70              85             1             5
+Cas ML :                                      S4           5.4               80              95            0.5            7
+Modèle de prédiction des retours clients      S5           6.1               90              98            0.2            9
+PARTIE D – Amélioration
+Proposer :
+a) 2 actions immédiates
+b) 2 actions à long terme (organisation apprenante)
+
+
+
+
+Partie D
+
+Court terme :
+•Réduire la charge opérateur
+•Maintenance machines
+
+Long terme :
+•Formation continue
+•Culture d’apprentissage collectif
+

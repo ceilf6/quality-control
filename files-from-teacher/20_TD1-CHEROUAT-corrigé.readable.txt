@@ -1,0 +1,584 @@
+   FQ01 TD 1
+
+
+
+La NON-QUALITÉ
+                                              RAPPEL
+
+La non-qualité : ensemble des défauts, erreurs ou gaspillage, ou défaillances qui surviennent au cours du
+processus de production et qui affectent la qualité du produit final.
+
+Ces défauts peuvent engendrer des coûts additionnels, des retards de production, ainsi qu’une
+insatisfaction des clients.
+
+La gestion de la non-qualité est essentielle pour optimiser les processus et réduire les coûts associés.
+
+
+
+
+Objectif de la Non-Qualité
+1. Identifier les sources de non-qualité
+2. Évaluer les coûts (rebuts, retouches, retards)
+3. Mettre en place des actions correctives et préventives
+4. Transformer les défauts en opportunités d’amélioration ou d’apprentissage
+ - formation concernant    - contrôle qualité      - rebuts, retouches en cours de   - rejet du produit par le client.
+la qualité, les tâches à   - inspection            fabrication                       - traitement des réclamations
+effectuer.                 - essais                - absentéisme                     - gestion de la garantie
+- réalisation d’enquêtes   - évaluation de la      - dépannages et réparations.      - stocks pièces détachées
+sur les fournisseurs         production réalisée   - coûts d’existence de stocks     pour réparation
+                           - vérification du       supplémentaires                   - réparation produit
+                             processus             - nouvelles inspections           défectueux
+                                                   - nouveaux tests                  - rappel de produit
+Le Coût d’Obtention de la Qualité (COQ) =
+                                                                                RAPPEL
+• coûts de prévention (investissements réalisés pour prévenir ou éviter les défauts) +
+• coûts d'expertise ou détection (dépenses engagées pour détecter les défaits et évaluer la qualité
+    du produit) +
+• coûts de défaillance internes (résultant de défauts découverts avant d'atteindre le client) +
+• coûts de défaillance externes (résultant de défauts découverts par les clients).
+
+
+               CoQtotal = Cprev + Cdetec + Cint + Cext
+
+
+            Taux de qualité (TQ)                         Taux de Non-Qualité (TNQ)
+                                             RAPPEL
+Taux de Rendement Global (TRG) : un indicateur clé utilisé
+                                                                 Le TRG idéal est proche de 100%, mais en
+en gestion de production pour mesurer l'efficacité réelle d'un   réalité, la plupart des entreprises ont un TRG
+équipement ou d'un processus.                                    entre 60% et 85%.
+                                                                 Pour l'améliorer réduire les temps d’arrêt,
+Il prend en compte trois facteurs :                              optimiser la cadence de production et
+1. Disponibilité                                                 minimiser les défauts.
+2. Performance
+3. Qualité
+                             TRG = Td x Tp x Tq
+
+
+     Taux de Disponibilité                Taux de Performance                   Taux de Qualité
+1. Qu’est-ce que la non-qualité ?
+a) Une production conforme aux exigences du client
+b) Un produit ou service qui ne respecte pas les normes de qualité requises               QUIZ
+c) Une amélioration continue du processus
+d) Un contrôle final des produits
+
+2. La non-qualité correspond à :
+a) Les coûts de formation
+b) Les coûts liés aux défauts
+c) Les coûts de maintenance
+d) Les coûts de production
+
+3. Quels sont les principaux coûts liés à la non-qualité ?
+a) Coûts de prévention, coûts d’évaluation, coûts des défaillances internes et externes
+b) Coûts de production uniquement
+c) Coûts des matières premières et de la main-d'œuvre
+d) Coûts liés uniquement aux réclamations clients
+
+4. Quelle est la formule du Taux de Rendement Global (TRG) ?
+a) TRG = Disponibilité × Performance × Qualité
+b) TRG = (Nombre de produits conformes / Nombre total de produits) × 100
+c) TRG = Temps de fonctionnement / Temps total disponible
+d) TRG = (Production réelle / Production théorique) × 100
+5. Lequel est un coût de non-qualité externe ?
+a) Inspection finale
+b) Audit interne                                     QUIZ
+c) Réclamation client
+d) Formation qualité
+
+6. Une retouche en atelier est :
+a) Prévention
+b) Évaluation
+c) Défaillance externe
+d) Défaillance interne
+7. Le coût de non-qualité augmente lorsque :
+a) Les défauts augmentent
+b) La formation augmente
+c) Le contrôle augmente
+d) Les défauts diminuent
+
+8. Une entreprise observe :
+•Rebuts : 5 000 €
+•Retouches : 3 000 €
+•SAV : 4 000 €
+•Formation : 2 000 €
+Calculer le coût de non-qualité = 5 + 3 + 4 = 12k€
+9. Un TRG de 100 % est-il réaliste ?
+a) Oui, c’est l’objectif de toute entreprise
+b) Oui, si l’entreprise est bien optimisé
+                                                                                 QUIZ
+c) Non, car la non-qualité est inévitable
+d) Non, il y aura toujours des pertes en disponibilité, performance ou qualité
+
+
+
+
+10. Quel facteur peut influencer négativement le TRG ?
+a) Une meilleure organisation du travail
+b) Des pannes fréquentes des machines
+c) L’amélioration continue
+d) La formation des employés
+
+
+11. Comment réduire la non-qualité ?
+a) En mettant en place des contrôles de qualité stricts
+b) En améliorant les processus de production
+c) En formant le personnel
+d) Toutes les réponses sont correctes
+12. Calcul TRG
+• Disponibilité = 90%
+• Performance = 80%                                                                            QUIZ
+• Qualité = 95%
+Le TRG est environ :
+A) 68%
+B) 72%
+C) 76%
+D) 85%
+
+13. Une ligne de production a :
+• Disponibilité = 92%
+• TRG = 74,4%
+• Qualité = 96%
+Calculer la performance (%) : TRG/(Qualité x Disponibilité)
+
+14. Une usine améliore uniquement la qualité (90% → 98%), mais le TRG global reste inchangé.
+Que peut-on conclure sur les autres facteurs ?
+
+a) Performance a augmenté
+b) Disponibilité ou performance a baissé
+c) Les trois ont augmenté
+d) Impossible à déterminer
+                                                                                                 QUIZ
+15. Une amélioration réduit les arrêts machines de 20%, mais augmente légèrement la vitesse de production
+hors standard → plus de défauts. Le TRG :
+a) Augmente forcément
+b) Diminue forcément
+c) Peut augmenter ou diminuer
+d) Reste constant
+
+
+
+
+16. Deux machines :
+•Machine A :
+Disponibilité 85%, Performance 90%, Qualité 99%
+
+•Machine B :
+Disponibilité 95%, Performance 80%, Qualité 95%
+
+Quelle machine a le meilleur TRG ? A
+17. Calcul du TRG
+Une machine fonctionne 16 heures par jour. Elle subit 2 heures d’arrêts (pannes et réglages), fonctionne à 85 % de
+sa vitesse nominale et produit 3 % de pièces défectueuses. Quel est le TRG ?
+a) 65 %
+                                                                              16  2 
+b) 70 %
+                                                    TRG     Td *T   p *Tq            
+                                                                                         * 0.85  *  100%     
+                                                                                                                3
+c) 75 %
+d) 80 %
+                                                                              16 
+                                                  TRG  0.875*0.85*0.97  72%
+18. Taux de Non-Qualité
+Une entreprise produit 50 000 pièces par jour avec un taux de rebut de 2 % et un taux de retouche de 3 %.
+Quel est le taux de non-qualité global ?
+a) 3 %
+b) 4 %
+c) 5 %                  TNQ Taux de non-qualité = Taux de rebut + Taux de retouche = 0.02 + 0.03 = 5%
+d) 6 %
+
+19. Nombre de pièces conformes
+Une ligne de production fabrique 120 000 pièces par semaine, avec un taux de non-conformité de 1,5 %.
+Combien de pièces conformes sont produites ?
+a) 117 000                                            TQ  100%  TNQ  100  1.5  98.5%
+b) 118 200
+                                                             conforme
+c) 118 800                                            TQ                conforme  12.104 *98.5  118200
+d) 119 400                                                     Pièces
+                                                                                                        QUIZ
+20. Impact des arrêts sur le TRG
+Une machine est censée fonctionner 20 heures par jour, mais elle subit 3 heures d’arrêts imprévus et 1 heure de
+réglages. Quel est son taux de disponibilité ?
+a) 75 %
+b) 80 %
+                                        Non disp        4
+c) 85 %
+d) 90 %                       T     
+                                 Non d                   20%
+                                      fonctionnalite 20
+                              Td  100%  TNon d  80%
+
+
+21. Temps productif réel
+Une machine est censée fonctionner 10 heures par jour, mais elle subit 1 heure d’arrêts pour maintenance et 30
+minutes de micro-arrêts.
+Combien de temps productif réel reste-t-il ?
+a) 8,5 heures
+b) 9 heures                 Le temps total des arrêts est donc : 1+0,5=1,5 heures
+c) 9,5 heures               Le temps productif réel restant est alors : 10−1,5=8,5 heures
+d) 10 heures
+                                                                                          Exercices
+Une entreprise subit des coûts liés aux non-conformités :
+   Coût de retouches : 8 000 €
+   Coût des rebuts : 12 000 €
+   Coût des retours clients : 5 000 €
+   Coût de prévention : 10 000 €
+   Coût d'inspection : 7 000 €
+
+
+Questions :
+1. Calculer le coût total de la non-qualité
+2. Calculez le coût total de la qualité
+3. Quelle proportion (%) du coût total de la qualité est attribuable à la non-qualité ?
+1. Coût total de la non-qualité CNQ
+    Coût de la non-qualité CNQ = Coût retouches + Coût rebuts + Coût retours clients
+
+                8 000 + 12 000 + 5 000 = 25 000 €                          Le coût total de la non-qualité CNQ = 25 000 €.
+
+
+
+2. Coût total de la qualité COQ
+COQ = Coût de la non-qualité CNQ + CQ (Coût de prévention + Coût d'inspection)
+
+                 25 000 + 10 000 + 7 000 = 42 000 €                            Le coût total de la qualité COQ = 42 000 €
+
+
+
+3. Quelle proportion (%) du coût total de la qualité est attribuable à la non-qualité ?
+
+                   CNQ                    25 000
+% non-qualité = ------------- x 100 = --------------- = 59,52 %
+                   COQ                    42 000                  59,52 % du coût total de la qualité est dû à la non-qualité
+
+Conclusion
+  Entreprise doit réduire les défauts pour minimiser ses coûts.
+     Investir dans la prévention et l’inspection peut réduire les pertes dues aux rebuts et retouches.
+                                                                                     Exercices
+
+Une entreprise subit des coûts de non-qualité importants et envisage d’investir dans un programme
+d’amélioration.
+Données :
+   Coût annuel actuel de la non-qualité : 120 000 €
+   Investissement prévu pour l’amélioration : 30 000 €
+   Réduction estimée des coûts de non-qualité après amélioration : 50 %
+
+
+Questions :
+1. Quel sera le nouveau coût de la non-qualité après amélioration ?
+2. Quel sera le gain financier annuel suite à cette amélioration ?
+3. Calculez le Retour sur Investissement en pourcentage.
+1. Nouveau coût de la non-qualité après amélioration
+
+                  Nouveau Coût Non Qualité = Coût actuel Non Qualité x (1 – Réduction)
+
+                                       12 000 (1 – 0,5) = 60 000 €
+
+2. Gain financier annuel
+             Gain annuel = Coût annuel actuel Non Qualité – Nouveau Coût Non Qualité après amélioration
+
+                                                        12 000 - 60 000 = 60 000 €   60 000 € économisés par an
+
+3. Retour sur Investissement ROI
+          Gain annuel                               60 000
+ROI = ---------------------------------- x 100 = ------------------- = 200 %
+       Investissement annuel                         30 000
+
+Conclusions
+1. Un ROI de 200 %  1€ investi  rapporte 2 € d’économie.
+2. Amélioration est très rentable et réduit significativement les pertes.
+3. L’entreprise devrait mettre en place ce programme d’amélioration au plus vite.
+                                                                                                 Exercices
+Exercice 1 : Une entreprise veut évaluer l’efficacité de sa ligne de production en utilisant le Taux de Rendement
+Global (TRG)
+    Données :
+     Temps total prévu de production :      8 heures
+     Temps d’arrêt machine :                80 minutes
+     Vitesse théorique de production :      100 pièces/heure
+     Nombre réel de pièces produites :      700
+     Nombre de pièces conformes :           650
+Questions :
+1. Calculez le taux de disponibilité.
+2. Calculez le taux de performance.
+3. Calculez le taux de qualité.
+4. Déduisez le Taux de Rendement Global (TRG). Commentaires
+1. Taux de Disponibilité
+La disponibilité = temps de production réel par rapport au temps prévu.
+Temps total de production 8h=480min                        Temps d’arrêt machine =80 min
+Temps réel de production = Temps total - Temps d’arrêt = 480-80 = 400 min
+
+
+
+
+2. Calcul du Taux de Performance
+La performance compare la production réelle à la capacité théorique.
+
+
+Vitesse théorique de production = 100 pièces/h
+Temps de production réel = 400min
+
+Nombre théorique de pièces produites =
+
+
+
+Nombre théorique de pièces produites= 667 pièces
+Nombre réel de pièces produites = 700 pièces
+
+                                                                            104,95 % > 100  Surperformance
+3. Taux de Qualité
+La qualité = pourcentage de pièces conformes.
+
+
+                                                                      92,86% de pièces produites sont conformes.
+
+
+
+4. Taux de Rendement Global
+
+TRG = Td x Tp x Tq
+
+                                                                                                  TRG = 81,12 %.
+
+
+Interprétation
+1.   TRG > 80 %  bon.
+2.   Performance élevée = 104,95 % la ligne produit plus rapidement que prévu
+3.   Taux de qualité TQ = 92,86 %  7,14 % des pièces sont défectueuses  il y a une marge d’amélioration.
+4.   Principal point faible = Disponibilité (83,33 %)  des pertes de temps dues aux arrêts machine.
+                                                                                      80 min sur 480 min de production
+                                                                     Exercices
+Exercice 2 : Calcul du CNQ pour un retard important
+Une entreprise ferroviaire a enregistré un retard important sur un
+train à grande vitesse reliant Paris à Lyon.
+Ce retard de 45 minutes a affecté 3 000 passagers, entraînant
+des compensations et divers coûts pour la compagnie.
+
+
+
+
+Calculer
+
+(1) Coût des indemnisations aux passagers
+(2) Coût des remboursements de billets
+(3) Perte économique due au retard des passagers
+(4) Coût total opérationnel
+(5) Coût total de la non-qualité
+1) Total indemnisations = Nombre de passagers × Indemnisation par passager                  3000×2000=6 000 000€
+
+
+2) Total remboursements = (Nombre de passagers × Pourcentage de remboursements) × Prix moyen du billet
+                                                                                  (3000×8%)×80 =240×80=19 200€
+
+
+3) Total perte productivité = Nombre de passagers × Coût horaire moyen × Temps de retard
+                                                                                            3000×35×0.75 =78 750€
+
+4) Cout total opérationnel = Coût Maintenance + Pénalité gouvernementale + Coût Marketing
+                                                                                  50000+300000+100000=450 000€
+
+
+5) CNQ = Total indemnisations + Total remboursements + Total perte productivité + Cout total opérationnel
+
+                             6000000 + 19200 + 78750 + 450000 = 6 547 950€
+
+
+Le coût de la non-qualité peut être extrêmement élevé pour une entreprise ferroviaire.
+Un seul retard coûte plus de 6,5 millions d’euros  investir dans la maintenance préventive et l’optimisation de la
+gestion des incidents pour réduire ces coûts.
+                                     Exercices
+
+Exercice 3 : Calcul du Coût de la
+Non-Qualité dans l’Industrie
+Automobile
+
+Un constructeur automobile a
+détecté un défaut de fabrication
+sur un modèle de voiture
+récemment commercialisé.
+
+Ce défaut concerne un problème
+de freinage, nécessitant un rappel
+de 50 000 véhicules pour une
+réparation gratuite.
+
+Evaluer le coût total de la non-
+qualité causé par ce défaut.
+1. Calcul des Coûts Directs
+                                                          Exercices
+A) Coût des réparations des véhicules rappelés
+Total réparations = Nombre de véhicules rappelés ×
+Cout moyen de réparation = 50 000×250 = 1 2500 000€
+
+(B) Coût logistique du rappel
+Total logistique = Nombre de véhicules rappelés ×
+Cout logistique par véhicule = 50 000×50 = 2 500 000€
+
+(C) Pénalité gouvernementale
+Cout des pénalités = 5 000 000 €
+
+(D) Perte de clients et ventes annulées
+Total pertes clients = Nombre de clients perdus ×
+Perte moyenne par client = 10 000×30 000 = 300 000 000€
+
+(E) Coût d’image et campagne marketing
+Total marketing = 2 000 000€
+2. Calcul des Coûts Indirects
+Impact sur les ventes futures
+Baisse des ventes = Chiffre d’affaires annuel × Pourcentage de baisse des vente
+                                    2 000 000 000×5% = 2 000 000 = 100 000 000€
+
+
+3. Calcul du Coût Total de la Non-Qualité
+CNQ = Total réparations + Total logistique+ Cout des pénalités + Total pertes clients + Total marketing +
+Baisse des ventes
+
+           12 500 000 + 2 500 000 + 5 000 000 + 300 000 000 + 2 000 000 + 100 000 000 = 422 000 000€
+
+
+4. Analyse
+Principaux postes de coûts
+1. Pertes clients et ventes annulées (300 M€)  71 % du total
+2. Baisse des ventes futures (100 M€)  24 % du total
+3. Réparations et logistique (15 M€)  3,5 % du total
+
+Actions pour réduire ces coûts
+1. Renforcer les contrôles qualité en usine pour détecter plus tôt les défauts
+2. Mettre en place des tests supplémentaires sur les freins avant commercialisation
+3. Améliorer la communication de crise pour limiter la perte de clients
+4. Développer un programme de fidélisation pour compenser les impacts négatifs
+                                                           Exercices
+
+Exercice 4 : Coût de la Non-Qualité et Six Sigma
+Une entreprise de production de smartphones
+applique la méthodologie Six Sigma pour réduire
+les défauts dans son processus de fabrication.
+
+Actuellement, le taux de défauts est de 2 %, ce qui
+entraîne des coûts élevés de retouches et de
+retours clients.
+
+L’objectif est d’évaluer le coût de la non-qualité et
+d’estimer l’économie potentielle si l’entreprise atteint
+un niveau Six Sigma
+                                                            Exercices
+1. Calcul du Coût de la Non-Qualité Actuel
+
+
+(A) Nombre total de smartphones défectueux
+Défauts totaux=Nombre total produits ×Taux de défauts =1
+000 000×2% = 20 000 unités
+
+(B) Coût des retouches
+Cout total retouches=(Défauts totaux ×70%) ×
+Cout de retouche = 14000×20 € = 280 000€
+
+(C) Coût des retours clients
+Cout total retours=(Défauts totaux×30%)×Cout de retour=
+6000×50 € = 300 000€
+
+
+
+
+(D) Coût total de la non-qualité actuel
+CNQ=Cout total retouches + Cout total retours = 280 000 €
++ 300 000 € = 580 000€
+2. Calcul du Coût avec un Processus Six Sigma                                               Exercices
+ Taux de défauts en Six Sigma = 3,4 défauts par million
+Nombre de smartphones défectueux en Six Sigma
+
+                             1 000 000 * 3,4 /1 000 000 = 3.4 unités
+
+
+
+Coût estimé avec Six Sigma
+
+  CNQ Six Sigma = (3.4 unités ×70%) × 20€ + (3.4 unités ×30%) × 50€ = (2.38×20) + (1.02×50) = 98.6€ ≈ 100€
+                      retouches                    retournes
+
+
+
+3. Économie Réalisée grâce à Six Sigma
+              Economie = CNQ Actuel − CNQ Six Sigma = 580 000€ − 100€ = 579 900€ ≈ 580 000€
+
+
+
+      Passer à un niveau Six Sigma 3,4 permettrait d’économiser presque 100 % des coûts liés aux défauts 
+                                               580 000 € par an.
+                                                           Exercices
+Exercice 5 : Coût de la Non-Qualité dans un Hôpital
+
+Un hôpital souhaite appliquer la méthodologie Six
+Sigma pour améliorer la qualité des soins et réduire le
+nombre d’erreurs médicales, notamment les erreurs de
+dosage des médicaments.
+
+ Actuellement, 1,5 % des prescriptions médicales
+contiennent une erreur de dosage, ce qui entraîne des
+réactions indésirables chez les patients, une
+prolongation des hospitalisations et des coûts
+supplémentaires.
+
+L’objectif est d’évaluer le coût de la non-qualité et
+d’estimer l’économie potentielle si l’hôpital atteint un
+niveau Six Sigma
+                                                            Exercices
+1. Calcul du Coût de la Non-Qualité Actuel
+(A) Nombre total d’erreurs de dosage
+       Erreurs totales = Nombre total d’ordonnances ×
+     Taux d’erreurs = 500 000 ×1,5% = 7500 erreurs /an
+
+(B) Coût total des erreurs de dosage
+   CNQ actuel = Erreurs totales × Coût moyen par erreur =
+            7500 × 5000 € = 37 500 000€ par an
+
+
+2. Calcul du Coût avec un Processus Six Sigma
+Nombre d’erreurs de dosage en Six Sigma
+= 500 000 x 3.4​/1 000 000 = 1.7 € erreurs/an
+
+
+Coût estimé avec Six Sigma
+CNQ Six Sigma = 1.7×5000 € = 8500€
+                                                                                              Exercices
+3. Économie Réalisée grâce à Six Sigma
+Economie = CNQ Actuel − CNQ Six Sigma = 37 500 000€ − 8 500€ ≈ 37 491 500€
+Atteindre Six Sigma permettrait d’économiser près de 37,5 millions d’euros par an.
+
+
+
+4. Analyse et Actions d’Amélioration
+Pourquoi ces erreurs existent-elles ?
+1. Mauvaise écriture des prescriptions (illisibilité des médecins)
+2. Confusion entre médicaments de noms similaire
+3. Dosage mal calculé selon le poids du patient
+4. Erreur humaine lors de l’administration du médicament
+
+Comment améliorer le processus ?
+1. Mise en place de prescriptions électroniques pour éviter les erreurs de lecture
+2. Double vérification par un second médecin ou pharmacien avant administration
+3. Utilisation d’un logiciel de dosage intelligent basé sur les caractéristiques du patient
+4. Formation du personnel médical à la gestion des risques médicamenteux
+Exercice 6 : Une ligne de production fonctionne sur une journée de 8 heures.
+
+Temps
+•Temps planifié : 8h
+•Arrêts planifiés : 1h
+•Arrêts non planifiés : 2h
+Production                                     Coûts qualité
+•Cadence nominale : 100 pièces/h               •Coût de fabrication par pièce : 40 €
+•Production totale : 550 pièces                •Coût de retouche : 15 € / pièce
+•Pièces conformes : 520 pièces                 •Coût de rebut : 40 € / pièce
+                                               Répartition :
+                                               •30 pièces retouchées
+                                               •20 pièces rebutées
+
+Coûts additionnels liés à la non-qualité
+•Arrêts dus aux défauts : 2 000 €
+•Contrôles supplémentaires : 1 000 €
+
+
+
+ Questions :
+ 1.Calculer le TRG
+ 2.Calculer le CNQ
+ 3. Interpréter les résultats
+
