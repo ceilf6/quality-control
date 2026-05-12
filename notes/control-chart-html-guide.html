@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>控制图题型：HTML可视化做题法</title>
+  <style>
+    :root {
+      --ink: #18212f;
+      --muted: #657080;
+      --paper: #f8f5ee;
+      --panel: #fffdf8;
+      --line: #d9cfc0;
+      --blue: #1f66b1;
+      --red: #c7433f;
+      --green: #2f7d57;
+      --gold: #b6811d;
+      --shadow: 0 18px 42px rgba(24, 33, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(24, 33, 47, 0.05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(24, 33, 47, 0.04) 1px, transparent 1px),
+        var(--paper);
+      background-size: 32px 32px;
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 44px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .hero,
+    .source-box,
+    .panel,
+    .step,
+    .formula,
+    .legend-item,
+    .callout {
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.88);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 28px;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 760px;
+      margin-top: 12px;
+    }
+
+    .source-box {
+      padding: 20px;
+    }
+
+    .source-box ul {
+      padding-left: 18px;
+      margin: 8px 0 0;
+    }
+
+    .source-box li {
+      margin: 7px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      color: #24354b;
+      background: #efe7da;
+      border: 1px solid #dfd1bd;
+      padding: 1px 5px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .two {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    }
+
+    .panel {
+      padding: 22px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .step {
+      min-height: 130px;
+      padding: 16px;
+      position: relative;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .num {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #e8ddcf;
+      padding: 10px 8px;
+      text-align: left;
+    }
+
+    th {
+      color: #24354b;
+      background: #f0e7d8;
+      font-weight: 700;
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    .formula {
+      margin-top: 12px;
+      padding: 14px;
+      background: #f7efe1;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 14px;
+    }
+
+    .chart-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      min-width: 520px;
+      height: auto;
+      background: #fffdf8;
+      border: 1px solid #e2d6c7;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      box-shadow: none;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .swatch {
+      width: 18px;
+      height: 3px;
+      display: inline-block;
+      background: var(--blue);
+    }
+
+    .swatch.red {
+      background: var(--red);
+    }
+
+    .swatch.green {
+      background: var(--green);
+    }
+
+    .callout {
+      padding: 16px;
+      border-left: 5px solid var(--red);
+      color: #4c5969;
+      box-shadow: none;
+      margin-top: 14px;
+    }
+
+    .answer {
+      border-left-color: var(--green);
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      border: 1px solid #e2d6c7;
+      background: #fffdf8;
+      padding: 14px;
+    }
+
+    .mini b {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .mini p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      header,
+      .two,
+      .compare {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Graph question method</p>
+          <h1>控制图题型怎么做</h1>
+          <p>遇到均值图、极差图、控制限这类题，先别急着画图。考试核心是：把数据变成统计量，再用控制限判断过程是否稳定。</p>
+        </div>
+      </section>
+
+      <aside class="source-box">
+        <h2>具体来源文件</h2>
+        <ul>
+          <li><code>files-from-teacher/08_TD3_2_中文翻译.md</code>：Luxor 荧光灯涂层重量，要求画极差图和均值图。</li>
+          <li><code>files-from-teacher/07_Cours_FQ01_UTSEUS_AGHELI_S2_A26_2_中文翻译.md</code>：控制图、控制限、公差限、X-bar 与 R 图原理。</li>
+          <li><code>files-from-teacher/03_Table_FQ01_2025_中文翻译.md</code>：控制图系数表。</li>
+        </ul>
+      </aside>
+    </header>
+
+    <section class="steps" aria-label="做题步骤">
+      <article class="step">
+        <span class="num">1</span>
+        <strong>读题</strong>
+        <p>找样本数、每组容量、公差范围、题目要求画哪类图。</p>
+      </article>
+      <article class="step">
+        <span class="num">2</span>
+        <strong>建表</strong>
+        <p>每组计算 <code>x-bar</code> 和 <code>R = max - min</code>。</p>
+      </article>
+      <article class="step">
+        <span class="num">3</span>
+        <strong>先画 R 图</strong>
+        <p>先判断离散程度是否稳定，R 图不稳时均值图解释要谨慎。</p>
+      </article>
+      <article class="step">
+        <span class="num">4</span>
+        <strong>再画 X-bar 图</strong>
+        <p>用样本均值判断过程中心是否漂移。</p>
+      </article>
+      <article class="step">
+        <span class="num">5</span>
+        <strong>下结论</strong>
+        <p>点超控制限或出现异常模式，就说过程不稳定。</p>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="panel">
+        <h2>题目数据要整理成这样</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>样本</th>
+              <th>10 个测量值</th>
+              <th><code>x-bar</code></th>
+              <th><code>R</code></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>4.6, 4.7, ...</td>
+              <td>平均值</td>
+              <td>最大值 - 最小值</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>4.4, 4.2, ...</td>
+              <td>平均值</td>
+              <td>最大值 - 最小值</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="formula">
+R = valeur maximale - valeur minimale
+x-double-bar = moyenne des x-bar
+R-bar = moyenne des R
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>先判断 R 图</h2>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 720 300" role="img" aria-label="R control chart example">
+            <line x1="70" y1="245" x2="680" y2="245" stroke="#9d9286" stroke-width="1.5"/>
+            <line x1="70" y1="35" x2="70" y2="245" stroke="#9d9286" stroke-width="1.5"/>
+            <line x1="70" y1="72" x2="680" y2="72" stroke="#c7433f" stroke-width="2" stroke-dasharray="8 6"/>
+            <line x1="70" y1="156" x2="680" y2="156" stroke="#2f7d57" stroke-width="2"/>
+            <line x1="70" y1="225" x2="680" y2="225" stroke="#c7433f" stroke-width="2" stroke-dasharray="8 6"/>
+            <polyline points="92,162 126,130 160,150 194,118 228,170 262,164 296,140 330,176 364,138 398,64 432,160 466,146 500,172 534,152 568,166 602,155 636,169 670,158" fill="none" stroke="#1f66b1" stroke-width="3"/>
+            <circle cx="398" cy="64" r="7" fill="#c7433f"/>
+            <text x="22" y="77" fill="#c7433f" font-size="14">UCL</text>
+            <text x="22" y="160" fill="#2f7d57" font-size="14">CL</text>
+            <text x="22" y="230" fill="#c7433f" font-size="14">LCL</text>
+            <text x="316" y="42" fill="#c7433f" font-size="14">点超出控制限</text>
+            <text x="310" y="280" fill="#657080" font-size="14">样本序号</text>
+          </svg>
+        </div>
+        <div class="legend">
+          <span class="legend-item"><span class="swatch"></span> 样本 R 值</span>
+          <span class="legend-item"><span class="swatch red"></span> 控制限</span>
+          <span class="legend-item"><span class="swatch green"></span> 中心线</span>
+        </div>
+        <div class="callout">
+          如果 R 图有点超出控制限，说明波动不稳定。考试结论要先写：<code>la dispersion n'est pas maîtrisée</code>。
+        </div>
+      </article>
+    </section>
+
+    <section class="grid two" style="margin-top:18px;">
+      <article class="panel">
+        <h2>再判断 X-bar 图</h2>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 720 300" role="img" aria-label="X-bar control chart example">
+            <line x1="70" y1="245" x2="680" y2="245" stroke="#9d9286" stroke-width="1.5"/>
+            <line x1="70" y1="35" x2="70" y2="245" stroke="#9d9286" stroke-width="1.5"/>
+            <line x1="70" y1="70" x2="680" y2="70" stroke="#c7433f" stroke-width="2" stroke-dasharray="8 6"/>
+            <line x1="70" y1="150" x2="680" y2="150" stroke="#2f7d57" stroke-width="2"/>
+            <line x1="70" y1="226" x2="680" y2="226" stroke="#c7433f" stroke-width="2" stroke-dasharray="8 6"/>
+            <path d="M92 151 L126 146 L160 148 L194 153 L228 150 L262 154 L296 148 L330 152 L364 151 L398 154 L432 149 L466 147 L500 146 L534 142 L568 136 L602 130 L636 124 L670 118" fill="none" stroke="#1f66b1" stroke-width="3"/>
+            <circle cx="568" cy="136" r="6" fill="#b6811d"/>
+            <circle cx="602" cy="130" r="6" fill="#b6811d"/>
+            <circle cx="636" cy="124" r="6" fill="#b6811d"/>
+            <circle cx="670" cy="118" r="6" fill="#b6811d"/>
+            <text x="22" y="75" fill="#c7433f" font-size="14">UCL</text>
+            <text x="22" y="154" fill="#2f7d57" font-size="14">CL</text>
+            <text x="22" y="231" fill="#c7433f" font-size="14">LCL</text>
+            <text x="460" y="102" fill="#b6811d" font-size="14">趋势上升</text>
+            <text x="310" y="280" fill="#657080" font-size="14">样本序号</text>
+          </svg>
+        </div>
+        <div class="callout">
+          即使没有超限，连续上升、连续在中心线同侧，也可能说明过程有异常趋势。
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>最后用这句话收尾</h2>
+        <div class="compare">
+          <div class="mini">
+            <b>图正常</b>
+            <p>所有点在控制限内，且没有明显趋势或异常模式。</p>
+          </div>
+          <div class="mini">
+            <b>图异常</b>
+            <p>有点超出控制限，或出现连续偏移、趋势、离散突变。</p>
+          </div>
+        </div>
+        <div class="callout answer">
+          <strong>法语模板：</strong><br>
+          La carte de contrôle permet de vérifier la stabilité du processus. Si les points restent entre les limites de contrôle et ne présentent pas de tendance anormale, le processus est maîtrisé. Sinon, il faut rechercher une cause spéciale.
+        </div>
+        <div class="formula">
+R 图回答波动是否稳定
+X-bar 图回答平均水平是否稳定
+公差限回答产品是否合格
+控制限回答过程是否稳定
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
