@@ -265,6 +265,20 @@
       border-left-color: var(--green);
     }
 
+    .source-strip {
+      border: 2px solid #b6811d;
+      background: #fff7e4;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      color: #4c3b17;
+      font-size: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    .source-strip b {
+      margin-right: 8px;
+    }
+
     .compare {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -307,6 +321,13 @@
 </head>
 <body>
   <main>
+    <section class="source-strip">
+      <b>题型来源：</b>
+      <code>files-from-teacher/08_TD3_2_中文翻译.md</code> 的 Luxor 控制图练习；原理来自
+      <code>files-from-teacher/07_Cours_FQ01_UTSEUS_AGHELI_S2_A26_2_中文翻译.md</code>；系数表来自
+      <code>files-from-teacher/03_Table_FQ01_2025_中文翻译.md</code>。
+    </section>
+
     <header>
       <section class="hero">
         <div>
@@ -352,6 +373,114 @@
         <strong>下结论</strong>
         <p>点超控制限或出现异常模式，就说过程不稳定。</p>
       </article>
+    </section>
+
+    <section class="panel" style="margin-bottom:18px;">
+      <h2>先认识图上的符号</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>符号</th>
+            <th>法语/英文含义</th>
+            <th>白话解释</th>
+            <th>考试里看它做什么</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>UCL</code></td>
+            <td>Upper Control Limit / limite supérieure de contrôle</td>
+            <td>上控制限：过程正常波动的上边界</td>
+            <td>点超过它，说明过程可能失控</td>
+          </tr>
+          <tr>
+            <td><code>CL</code></td>
+            <td>Center Line / ligne centrale</td>
+            <td>中心线：过程的平均水平</td>
+            <td>看点是否长期偏在一侧</td>
+          </tr>
+          <tr>
+            <td><code>LCL</code></td>
+            <td>Lower Control Limit / limite inférieure de contrôle</td>
+            <td>下控制限：过程正常波动的下边界</td>
+            <td>点低于它，说明过程可能失控</td>
+          </tr>
+          <tr>
+            <td><code>R</code></td>
+            <td>Étendue</td>
+            <td>极差：一组数据中最大值减最小值</td>
+            <td>判断波动大小是否稳定</td>
+          </tr>
+          <tr>
+            <td><code>X-bar</code></td>
+            <td>Moyenne d'échantillon</td>
+            <td>样本均值：一组数据的平均值</td>
+            <td>判断过程中心是否漂移</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout answer">
+        先记一句：<code>UCL/CL/LCL</code> 是判断“过程是否稳定”的线，不是客户给的公差线。公差线判断产品合不合格，控制线判断过程稳不稳定。
+      </div>
+    </section>
+
+    <section class="panel" style="margin-bottom:18px;">
+      <h2>老师文件中的具体题目</h2>
+      <p style="color:var(--muted);">
+        来源：<code>files-from-teacher/08_TD3_2_中文翻译.md</code> 练习 1。Luxor 公司生产荧光灯，
+        每两小时抽取 10 根灯丝测量磷光涂层重量，公差范围为 <code>3.4 - 5.2 mg</code>。
+        题目 2.a 要求：根据前 10 个样本，确定临时 <code>R</code> 极差控制图和 <code>X-bar</code> 均值控制图，并评价结果。
+      </p>
+      <div class="callout answer">
+        做这题不是先看公差，而是先用前 10 组数据计算控制图。公差用于判断产品是否合格；控制图用于判断过程是否稳定。
+      </div>
+    </section>
+
+    <section class="panel" style="margin-bottom:18px;">
+      <h2>这道题前 10 个样本怎么算</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>样本</th>
+            <th><code>X-bar</code> 样本均值</th>
+            <th><code>R</code> 极差</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>4.510</td><td>0.600</td></tr>
+          <tr><td>2</td><td>4.490</td><td>1.200</td></tr>
+          <tr><td>3</td><td>4.330</td><td>0.700</td></tr>
+          <tr><td>4</td><td>4.410</td><td>1.000</td></tr>
+          <tr><td>5</td><td>4.420</td><td>0.600</td></tr>
+          <tr><td>6</td><td>4.230</td><td>0.500</td></tr>
+          <tr><td>7</td><td>4.490</td><td>0.800</td></tr>
+          <tr><td>8</td><td>4.270</td><td>0.800</td></tr>
+          <tr><td>9</td><td>4.420</td><td>0.800</td></tr>
+          <tr><td>10</td><td>3.950</td><td>0.900</td></tr>
+        </tbody>
+      </table>
+      <div class="formula">
+X-double-bar = 4.352
+R-bar = 0.790
+
+老师表 n = 10：
+A''c = 0.317
+D'ci = 0.35
+D'cs = 1.94
+
+X-bar 图：
+UCL = 4.352 + 0.317 × 0.790 = 4.602
+CL  = 4.352
+LCL = 4.352 - 0.317 × 0.790 = 4.102
+
+R 图：
+UCL = 1.94 × 0.790 = 1.533
+CL  = 0.790
+LCL = 0.35 × 0.790 = 0.277
+      </div>
+      <div class="callout">
+        结论：R 图中所有 R 值都在控制限内，所以波动稳定；X-bar 图中第 10 个样本均值 3.950 低于 LCL 4.102，所以过程中心不稳定。
+      </div>
     </section>
 
     <section class="grid two">
