@@ -1,0 +1,153 @@
+                     FQ01 TD 3
+
+                   Approche par                AI
+
+Et si la qualité n’était plus seulement contrôlée… mais prédite ?
+                                            RAPPEL
+On passe d’une :
+• Qualité Réactive à une Qualité Prédictive.
+• Approche traditionnelle basée sur le contrôle à une Approche prédictive et intelligente.
+
+
+Intelligence Artificielle : ensemble de Techniques permettant à une machine de :
+1. Apprendre à partir des données
+2. Prendre des décisions
+3. Reconnaître des patterns
+4. Prédire des non-conformités
+5. Détecter les défauts
+6. Optimiser les processus qualité
+
+
+Objectifs de l’IA en qualité :
+1. Réduire les défauts
+2. Améliorer la prise de décision
+3. Automatiser les contrôles
+4. Anticiper les problèmes
+                                                          RAPPEL
+                                                                                                                        1.Collecter
+                                                                                                                        2.Nettoyer
+Le Machine Learning suit un processus logique :
+                                                                                                                        3.Comprendre
+                                                                                                                        4.Modéliser
+                                                                                                                        5.Tester
+                                                                                                                        6.Améliorer
+                                                                                                                        7.Utiliser
+                                                              5. Entraînement du modèle
+      1. Collecte des données                                 Apprendre à partir des données
+     2. Préparation des données                              6. Évaluation du modèle
+         Nettoyer et organiser les données                   Mesurer la performance
+
+
+
+                     Données → Modèle → Prédiction → Amélioration
+
+                                        3. Analyse exploratoire                                7. Amélioration (itération)
+                                        Comprendre les relations dans les données              Optimiser le modèle
+                                         4. Choix du modèle                                    8. Déploiement
+                                         Choisir l’algorithme adapté                           Utiliser le modèle en situation réelle
+                                            Matrice de confusion
+permet de comparer : la réalité et la prédiction du modèle
+Exemple : prédiction de défaut
+0 = pas de défaut
+1 = défaut
+                                                    Prédit 0                    Prédit 1
+     Réel 0                                    Vrai Négatif (VN)            Faux Positif (FP)
+     Réel 1                                    Faux Négatif (FN)            Vrai Positif (VP)
+
+
+  Vrai Positif (VP)                                                Vrai Négatif (VN)
+  Le modèle prédit défaut                                          Le modèle prédit pas de défaut
+  ET il y a vraiment un défaut                                     ET effectivement il n’y a pas de défaut
+  bonne prédiction                                                 bonne prédiction
+
+  Faux Positif (FP)                                                Faux Négatif (FN)
+  Le modèle prédit défaut                                          Le modèle prédit pas de défaut
+  MAIS il n’y a pas de défaut                                      MAIS il y a un défaut
+  fausse alarme                                                    erreur grave
+EXERCICE 1
+Une entreprise industrielle automobile Toyota souhaite améliorer la qualité de sa
+production. Elle observe :
+1. défauts sur certaines pièces
+2. taux de non-qualité élevé
+3. paramètres de production variables
+
+Données des machines :
+                       Variable                                          Description
+ temperature                                          Température de production (°C)
+ pressure                                             Pression (bar)
+ speed                                                Vitesse machine (rpm)
+ defect                                               Défaut (0 = conforme, 1 = défaut)
+
+Question : Construire un modèle de Machine Learning (Régression logistique ) pour prédire les défauts et améliorer la
+qualité
+Livrables attendus
+• code Python                        • température > 200°C → risque ↑               • faible risque → proche de 0
+• graphiques                         • pression > 5 bar → risque ↑                  • zone critique → transition rapide
+• interprétation des résultats       • vitesse élevée > 1500 rmp → risque ↑         • fort risque → proche de 1
+1. Import et création des données
+ pandas → manipulation des données (tableaux)         sklearn.linear_model  régression logistique
+ numpy → calcul numérique                             matplotlib.pyplot
+
+2. Génération des données (random) n = 1500 : X = Température, Pression et Vitesse
+• moyenne = 200°C            • moyenne = 5 bar                                 • moyenne = 1500 rmp
+• variation = ±10            • variation = ±1                                  • variation = ±200
+ y = 0 = pas de défaut ou 1 = défaut
+
+3. Fonction logistique : transforme une valeur en probabilité entre 0 et 1
+                                                                     Modèle logistique (réaliste)
+                                                                                            1
+                                                          P              2 0.05(T  200) 0.4(P 5) 0.002(V 1500) 
+                                                                 1 e
+
+4. Séparation des données                 5. Prédiction du modèle              6. Visualisation
+• X = variables dépendantes               • défaut ou non                      • X = température, pression, vitesse
+• y = variable indépendante cible         • 80% → apprentissage                • y = défaut
+                                          • 20% → test
+EXERCICE 2              Prédiction du temps d’attente à l’hôpital
+
+Un hôpital souhaite améliorer la qualité de ses services, notamment
+en réduisant le temps d’attente des patients.
+Des données ont été collectées sur :
+1. le nombre de patients par jour
+2. le nombre de médecins disponibles
+3. le temps moyen de consultation
+
+Construire un modèle de régression linéaire pour prédire le temps d’attente des patients
+Livrables attendus :                   Modèle réaliste (avec bruit)
+1. Code Python
+2. Graphiques                                        a) patients ↑ → attente ↑
+3. Interprétation des résultats                      b) médecins ↑ → attente ↓
+                                                     c) consultation ↑ → attente ↑
+Attendu avec random                    Attente = 0.5 ⋅ Patients − 2 ⋅ Medecins + 1.2 ⋅ Consultation + ε
+•1000 lignes                           le bruit ε : valeurs aléatoires suivant une loi normale (gaussienne)
+•variables réalistes :                 n valeurs aléatoires centrées sur 0 avec une variabilité de 1
+     • patients (50–200)
+     • médecins (5–20)
+     • consultation (~20 min)
+EXERCICE 3
+Dans un procédé de soudage, les défauts dépendent de :
+1. température de soudage T (°C)
+2. vitesse de soudage V (mm/s)
+3. humidité H (%)
+
+Construire un modèle de Machine Learning pour prédire la probabilité de défaut
+
+1 - Générer un dataset avec (random) n = 1000:
+                                                                          < 180°C Mauvaise fusion entre passes
+a) Température (180 à 250°C)                                              > 250°C Altération des propriétés mécaniques
+b) Vitesse (20 à 60)                                                      < 20 mm/s → lent → risque défaut ↑
+                                                                          > 60 mm/s → rapide → risque défaut ↓
+c) Humidité (30 à 80%)
+                                                                          < 30% Risque accru d’humidité dans les consommables (électrodes, flux)
+                                                                          > 80% Augmentation de l’hydrogène diffusible → fissuration à froid
+
+2 - Utiliser la formule de probabilité pour générer les défauts entre 0 et 1
+
+3 - Séparer les données (train 80% /test 20%)
+4 - Entraîner un modèle de régression logistique
+5 - Faire des prédictions
+6 - Calculer la précision
+7 - Afficher la matrice de confusion
+8 - Identifier les variables les plus importantes
+9 - Proposer 2 actions qualité
+
