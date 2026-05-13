@@ -1,0 +1,56 @@
+                   Exercices contrôle statistique de la qualité
+
+Exercice 1 (A réaliser avec calculatrice)
+
+L’entreprise NatBeauty réceptionne un lot de 1000 pièces de la compagnie TopCosmo
+spécialisée en produits de beauté. Le fournisseur TopCosmo a habituellement une proportion
+fixe de 4% de pièces défectueuses dans ses lots.
+NatBeauty fait confiance à son fournisseur et suppose que la qualité du dernier lot reçu est la
+même. NatBeauty réalise alors un contrôle de qualité et décide d’accepter le lot dans le cas où
+un prélèvement d’échantillon représentant 5% du lot reçu ne contiendrait pas plus de 4 pièces
+défectueuses.
+   1. Quelle est alors la probabilité que NatBeauty refuse un lot de qualité inférieur à 4% ?
+
+
+
+
+Exercice 2 (A réaliser avec calculatrice)
+
+L’entreprise VISAVIS produit des vis. Le diamètre des vis est soumis à une tolérance 10 ± 0.1
+mm. Cette entreprise vend des vis à ETAGEMAG à raison de 10 000 vis par mois. Les deux
+entreprises ont négocié l’accord partenarial suivant : il peut y avoir jusqu’à 2.5% de vis
+défectueuses (dont le diamètre est en dehors de la zone de tolérance), et la société VISAVIS a
+un risque de 1% de prendre une mauvaise décision. D’un autre point de vue, la société
+ETAGEMAG accepte des lots d’une qualité de 7% avec une probabilité de 5 % d’accepter un
+lot défectueux. Enfin, les entreprises se mettent d’accord sur un contrôle simple normal.
+   1. A quoi correspondent 1%, 2.5%, 7% et 5% ?
+   2. Déterminer les paramètres du plan de contrôle.
+
+
+
+Exercice 3 (A réaliser avec calculatrice)
+
+La compagnie TopCosmo fabrique des produits de cosmétiques et de soins pour la peau. Les
+comprimés sont livrés par lots de 10 000 tubes à l’entreprise NatBeauty spécialisée dans la
+beauté. La compagnie TopCosmo effectue toujours un contrôle final avant la livraison de ces
+lots. Celle-ci effectue un contrôle à 100 %. Ce premier contrôle étant très cher, le responsable
+de la compagnie TopCosmo décide de rencontrer le chef de l’entreprise NatBeauty afin de se
+mettre d’accord sur d’autres plans de contrôle.
+•    Un premier contrôle porte sur le nombre de tubes contenant des comprimés.
+1. Si on fixe le niveau de qualité acceptable (NQA) à 1.5%, quelles seront les
+   caractéristiques du plan à mettre en place en contrôle simple normal (selon les normes)
+   ?
+
+
+
+•    Un deuxième contrôle porte sur la quantité de principe actif contenu dans les
+     comprimés.
+     L’accord a été passé avec l’entreprise NatBeauty pour que le contrôle assure un risque
+     maximal de 3% pour TopCosmo de se voir rejeter un lot contenant 2.5% ou moins de
+     comprimés non conformes, et un risque maximal pour NatBeauty de 1% de devoir
+     accepter un lot contenant 7% ou plus de comprimés non conformes.
+1. Quelles sont les caractéristiques de ce plan de contrôle ?
+2. On suppose que le prélèvement d’échantillon représentant 5% du lot reçu ne contient
+   pas plus de 20 comprimés non conformes. Calculer la probabilité de refuser le lot.
+3.   Dessiner la courbe d'efficacité correspondante.
+
