@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toyota TD3 风险区域图解</title>
+  <style>
+    :root {
+      --ink: #17202d;
+      --muted: #637184;
+      --paper: #f3f4ef;
+      --panel: #fffdf7;
+      --line: #d6d0c4;
+      --steel: #2f5d7c;
+      --red: #c7433f;
+      --amber: #b7791f;
+      --green: #2f7d57;
+      --blue: #1f66b1;
+      --shadow: 0 18px 42px rgba(23, 32, 45, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(23, 32, 45, 0.045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(23, 32, 45, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 30px 30px;
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 30px 0 44px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+    h2 { font-size: 20px; margin-bottom: 12px; }
+    h3 { font-size: 15px; margin-bottom: 8px; }
+    p { color: var(--muted); }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      background: #ede6d8;
+      border: 1px solid #ddd2bf;
+      padding: 1px 5px;
+      color: #27384d;
+    }
+
+    .source, .panel, .card, .formula, .answer {
+      background: rgba(255, 253, 247, 0.92);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .source {
+      border: 2px solid var(--amber);
+      background: #fff6df;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      color: #493916;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .panel { padding: 22px; }
+
+    .badge {
+      display: inline-block;
+      color: #fff;
+      background: var(--steel);
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid #e5dac9;
+      padding: 10px 8px;
+      vertical-align: top;
+    }
+
+    th {
+      color: #25364b;
+      background: #eee4d4;
+    }
+
+    td { color: var(--muted); }
+
+    .charts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 16px;
+      min-width: 0;
+    }
+
+    svg {
+      width: 100%;
+      min-width: 260px;
+      height: auto;
+      display: block;
+      background: #fffdf7;
+      border: 1px solid #e2d6c7;
+      margin-top: 10px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 5px;
+      background: var(--blue);
+    }
+    .dot.green { background: var(--green); }
+    .dot.amber { background: var(--amber); }
+    .dot.red { background: var(--red); }
+
+    .formula {
+      padding: 14px;
+      margin-top: 12px;
+      background: #f7ecd9;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      white-space: pre-wrap;
+      color: #24354b;
+      font-size: 14px;
+    }
+
+    .interactive {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .control {
+      display: grid;
+      grid-template-columns: 130px 1fr 74px;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--steel);
+    }
+
+    .meter {
+      height: 18px;
+      border: 1px solid #cabda8;
+      background: linear-gradient(90deg, var(--green), var(--amber), var(--red));
+      position: relative;
+      margin-top: 12px;
+    }
+
+    .needle {
+      position: absolute;
+      top: -7px;
+      width: 3px;
+      height: 30px;
+      background: #17202d;
+      left: 0;
+      transition: left 0.15s ease;
+    }
+
+    .probability {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 46px;
+      line-height: 1;
+      color: var(--red);
+      margin-top: 6px;
+    }
+
+    .answer {
+      border-left: 5px solid var(--green);
+      box-shadow: none;
+      padding: 15px;
+      margin-top: 14px;
+      color: #40554a;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 940px) {
+      .hero, .charts, .interactive, .grid-two {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="source">
+      <strong>题型来源：</strong>
+      <code>files-from-teacher/期中范围_TD/CHEROUAT_TD3_AI_ML_期中截止/21-期中截止_TD3-CHEROUAT.pdf</code>
+      Exercice 1 Toyota。原题明确要求 <code>code Python</code>、<code>graphiques</code> 和
+      <code>interprétation des résultats</code>。
+    </section>
+
+    <section class="hero">
+      <article class="panel">
+        <span class="badge">TD3 Toyota</span>
+        <h1>如何结合图形判断风险区域</h1>
+        <p style="margin-top:12px;">
+          这类图不是控制图。横轴是机器参数，纵轴是缺陷概率。你要看概率是否从接近 0 进入接近 1，并用题目给出的阈值说明风险为什么上升。
+        </p>
+      </article>
+      <article class="panel">
+        <h2>TD 给出的风险阈值</h2>
+        <table>
+          <tr><th>变量</th><th>阈值</th><th>解释</th></tr>
+          <tr><td><code>temperature</code></td><td><code>&gt; 200°C</code></td><td>缺陷风险上升</td></tr>
+          <tr><td><code>pressure</code></td><td><code>&gt; 5 bar</code></td><td>缺陷风险上升</td></tr>
+          <tr><td><code>speed</code></td><td><code>&gt; 1500 rpm</code></td><td>缺陷风险上升</td></tr>
+        </table>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>图上怎么看</h2>
+      <table>
+        <tr><th>图形位置</th><th>中文判断</th><th>Réponse française</th></tr>
+        <tr>
+          <td>概率接近 <code>0</code></td>
+          <td>低风险区域</td>
+          <td>Zone de faible risque.</td>
+        </tr>
+        <tr>
+          <td>曲线快速上升</td>
+          <td>临界区域/过渡区域</td>
+          <td>Zone critique : transition rapide.</td>
+        </tr>
+        <tr>
+          <td>概率接近 <code>1</code></td>
+          <td>高风险区域</td>
+          <td>Zone de fort risque.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="charts">
+      <article class="card">
+        <h3>Température → risque</h3>
+        <p>超过 200°C 后，缺陷概率开始明显上升。</p>
+        <svg viewBox="0 0 340 230" role="img" aria-label="temperature risk curve">
+          <rect x="52" y="30" width="86" height="150" fill="rgba(47,125,87,0.10)"/>
+          <rect x="138" y="30" width="64" height="150" fill="rgba(183,121,31,0.14)"/>
+          <rect x="202" y="30" width="88" height="150" fill="rgba(199,67,63,0.11)"/>
+          <line x1="52" y1="180" x2="300" y2="180" stroke="#8d8174"/>
+          <line x1="52" y1="30" x2="52" y2="180" stroke="#8d8174"/>
+          <line x1="176" y1="30" x2="176" y2="180" stroke="#c7433f" stroke-dasharray="6 5" stroke-width="2"/>
+          <path d="M55 168 C88 168, 112 164, 136 148 C158 132, 169 105, 182 82 C202 48, 238 42, 292 42" fill="none" stroke="#1f66b1" stroke-width="4"/>
+          <text x="64" y="204" font-size="12" fill="#637184">180</text>
+          <text x="164" y="204" font-size="12" fill="#c7433f">200°C</text>
+          <text x="270" y="204" font-size="12" fill="#637184">220</text>
+          <text x="18" y="38" font-size="12" fill="#637184">1</text>
+          <text x="18" y="184" font-size="12" fill="#637184">0</text>
+          <text x="205" y="70" font-size="12" fill="#c7433f">fort risque</text>
+        </svg>
+      </article>
+
+      <article class="card">
+        <h3>Pression → risque</h3>
+        <p>超过 5 bar 后，缺陷概率上升。</p>
+        <svg viewBox="0 0 340 230" role="img" aria-label="pressure risk curve">
+          <rect x="52" y="30" width="86" height="150" fill="rgba(47,125,87,0.10)"/>
+          <rect x="138" y="30" width="64" height="150" fill="rgba(183,121,31,0.14)"/>
+          <rect x="202" y="30" width="88" height="150" fill="rgba(199,67,63,0.11)"/>
+          <line x1="52" y1="180" x2="300" y2="180" stroke="#8d8174"/>
+          <line x1="52" y1="30" x2="52" y2="180" stroke="#8d8174"/>
+          <line x1="176" y1="30" x2="176" y2="180" stroke="#c7433f" stroke-dasharray="6 5" stroke-width="2"/>
+          <path d="M55 166 C92 166, 118 160, 145 142 C163 130, 176 103, 190 80 C210 50, 245 42, 292 42" fill="none" stroke="#1f66b1" stroke-width="4"/>
+          <text x="68" y="204" font-size="12" fill="#637184">3</text>
+          <text x="168" y="204" font-size="12" fill="#c7433f">5 bar</text>
+          <text x="278" y="204" font-size="12" fill="#637184">7</text>
+          <text x="18" y="38" font-size="12" fill="#637184">1</text>
+          <text x="18" y="184" font-size="12" fill="#637184">0</text>
+          <text x="205" y="70" font-size="12" fill="#c7433f">fort risque</text>
+        </svg>
+      </article>
+
+      <article class="card">
+        <h3>Vitesse → risque</h3>
+        <p>超过 1500 rpm 后，缺陷概率上升。</p>
+        <svg viewBox="0 0 340 230" role="img" aria-label="speed risk curve">
+          <rect x="52" y="30" width="86" height="150" fill="rgba(47,125,87,0.10)"/>
+          <rect x="138" y="30" width="64" height="150" fill="rgba(183,121,31,0.14)"/>
+          <rect x="202" y="30" width="88" height="150" fill="rgba(199,67,63,0.11)"/>
+          <line x1="52" y1="180" x2="300" y2="180" stroke="#8d8174"/>
+          <line x1="52" y1="30" x2="52" y2="180" stroke="#8d8174"/>
+          <line x1="176" y1="30" x2="176" y2="180" stroke="#c7433f" stroke-dasharray="6 5" stroke-width="2"/>
+          <path d="M55 168 C86 168, 116 162, 143 145 C164 132, 176 105, 190 80 C210 50, 246 42, 292 42" fill="none" stroke="#1f66b1" stroke-width="4"/>
+          <text x="55" y="204" font-size="12" fill="#637184">1100</text>
+          <text x="153" y="204" font-size="12" fill="#c7433f">1500 rpm</text>
+          <text x="265" y="204" font-size="12" fill="#637184">1900</text>
+          <text x="18" y="38" font-size="12" fill="#637184">1</text>
+          <text x="18" y="184" font-size="12" fill="#637184">0</text>
+          <text x="205" y="70" font-size="12" fill="#c7433f">fort risque</text>
+        </svg>
+      </article>
+    </section>
+
+    <section class="interactive">
+      <article class="panel">
+        <h2>自己拖动参数看风险</h2>
+        <p>这里用 TD 的阈值做教学演示：参数越超过阈值，概率越靠近 1。</p>
+        <div class="control">
+          <label for="temp">Température</label>
+          <input id="temp" type="range" min="180" max="230" value="205">
+          <output id="tempOut">205°C</output>
+        </div>
+        <div class="control">
+          <label for="pressure">Pression</label>
+          <input id="pressure" type="range" min="3" max="7" step="0.1" value="5.2">
+          <output id="pressureOut">5.2 bar</output>
+        </div>
+        <div class="control">
+          <label for="speed">Vitesse</label>
+          <input id="speed" type="range" min="1100" max="1900" step="10" value="1560">
+          <output id="speedOut">1560 rpm</output>
+        </div>
+        <div class="formula">score = 0.05(T - 200) + 0.4(P - 5) + 0.002(V - 1500)
+probabilité = 1 / (1 + e^(-score))</div>
+      </article>
+
+      <article class="panel">
+        <h2>Probabilité de défaut</h2>
+        <p id="riskLabel">Zone critique</p>
+        <div class="probability" id="probability">0.61</div>
+        <div class="meter" aria-label="risk meter"><div class="needle" id="needle"></div></div>
+        <div class="legend">
+          <span><span class="dot green"></span>faible risque</span>
+          <span><span class="dot amber"></span>zone critique</span>
+          <span><span class="dot red"></span>fort risque</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid-two">
+      <article class="panel">
+        <h2>考试怎么写</h2>
+        <div class="answer">
+          <strong>中文：</strong>根据图形，温度、压力和速度超过阈值后，缺陷概率上升。概率接近 0 是低风险，快速上升区是临界区域，概率接近 1 是高风险区域。
+        </div>
+        <div class="answer">
+          <strong>Français :</strong> D’après les graphiques, lorsque la température, la pression ou la vitesse dépassent les seuils, la probabilité de défaut augmente. Une probabilité proche de 0 indique un faible risque, la transition rapide correspond à la zone critique, et une probabilité proche de 1 indique un fort risque.
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>不要这样写</h2>
+        <table>
+          <tr><th>错误写法</th><th>为什么不够</th></tr>
+          <tr><td>Le modèle prédit les défauts.</td><td>太空泛，没有结合图形和变量。</td></tr>
+          <tr><td>La zone à risque est dangereuse.</td><td>没有说明是哪一段参数范围。</td></tr>
+          <tr><td>La température est importante.</td><td>缺少阈值和概率变化。</td></tr>
+        </table>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const temp = document.getElementById("temp");
+    const pressure = document.getElementById("pressure");
+    const speed = document.getElementById("speed");
+    const tempOut = document.getElementById("tempOut");
+    const pressureOut = document.getElementById("pressureOut");
+    const speedOut = document.getElementById("speedOut");
+    const probability = document.getElementById("probability");
+    const needle = document.getElementById("needle");
+    const riskLabel = document.getElementById("riskLabel");
+
+    function sigmoid(x) {
+      return 1 / (1 + Math.exp(-x));
+    }
+
+    function update() {
+      const t = Number(temp.value);
+      const p = Number(pressure.value);
+      const v = Number(speed.value);
+      const score = 0.05 * (t - 200) + 0.4 * (p - 5) + 0.002 * (v - 1500);
+      const prob = sigmoid(score);
+
+      tempOut.textContent = `${t}°C`;
+      pressureOut.textContent = `${p.toFixed(1)} bar`;
+      speedOut.textContent = `${v} rpm`;
+      probability.textContent = prob.toFixed(2);
+      needle.style.left = `calc(${Math.round(prob * 100)}% - 1px)`;
+
+      if (prob < 0.35) {
+        riskLabel.textContent = "Faible risque / 低风险";
+        probability.style.color = "var(--green)";
+      } else if (prob < 0.65) {
+        riskLabel.textContent = "Zone critique / 临界区域";
+        probability.style.color = "var(--amber)";
+      } else {
+        riskLabel.textContent = "Fort risque / 高风险";
+        probability.style.color = "var(--red)";
+      }
+    }
+
+    [temp, pressure, speed].forEach((input) => input.addEventListener("input", update));
+    update();
+  </script>
+</body>
+</html>
