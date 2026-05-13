@@ -1,0 +1,254 @@
+   FQ01 TD 1
+
+
+
+La NON-QUALITÉ
+1. Qu’est-ce que la non-qualité ?
+a) Une production conforme aux exigences du client
+b) Un produit ou service qui ne respecte pas les normes de qualité requises
+                                                                                          QUIZ
+c) Une amélioration continue du processus
+d) Un contrôle final des produits
+
+2. La non-qualité correspond à :
+a) Les coûts de formation
+b) Les coûts liés aux défauts
+c) Les coûts de maintenance
+d) Les coûts de production
+
+3. Quels sont les principaux coûts liés à la non-qualité ?
+a) Coûts de prévention, coûts d’évaluation, coûts des défaillances internes et externes
+b) Coûts de production uniquement
+c) Coûts des matières premières et de la main-d'œuvre
+d) Coûts liés uniquement aux réclamations clients
+
+4. Quelle est la formule du Taux de Rendement Global (TRG) ?
+a) TRG = Disponibilité × Performance × Qualité
+b) TRG = (Nombre de produits conformes / Nombre total de produits) × 100
+c) TRG = Temps de fonctionnement / Temps total disponible
+d) TRG = (Production réelle / Production théorique) × 100
+5. Lequel est un coût de non-qualité externe ?
+a) Inspection finale
+b) Audit interne                                 QUIZ
+c) Réclamation client
+d) Formation qualité
+
+6. Une retouche en atelier est :
+a) Prévention
+b) Évaluation
+c) Défaillance externe
+d) Défaillance interne
+7. Le coût de non-qualité augmente lorsque :
+a) Les défauts augmentent
+b) La formation augmente
+c) Le contrôle augmente
+d) Les défauts diminuent
+
+8. Une entreprise observe :
+•Rebuts : 5 000 €
+•Retouches : 3 000 €
+•SAV : 4 000 €
+•Formation : 2 000 €
+Calculer le coût de non-qualité
+                                                                         QUIZ
+9. Un TRG de 100 % est-il réaliste ?
+a) Oui, c’est l’objectif de toute entreprise
+b) Oui, si l’entreprise est bien optimisé
+c) Non, car la non-qualité est inévitable
+d) Non, il y aura toujours des pertes en disponibilité, performance ou
+    qualité
+
+10. Quel facteur peut influencer négativement le TRG ?
+a) Une meilleure organisation du travail
+b) Des pannes fréquentes des machines
+c) L’amélioration continue
+d) La formation des employés
+
+11. Comment réduire la non-qualité ?
+a) En mettant en place des contrôles de qualité stricts
+b) En améliorant les processus de production
+c) En formant le personnel
+d) Toutes les réponses sont correctes
+12. Calcul TRG
+• Disponibilité = 90%
+• Performance = 80%                                                                            QUIZ
+• Qualité = 95%
+Le TRG est environ :
+A) 68%
+B) 72%
+C) 76%
+D) 85%
+
+13. Une ligne de production a :
+• Disponibilité = 92%
+• TRG = 74,4%
+• Qualité = 96%
+Calculer la performance (%)
+
+14. Une usine améliore uniquement la qualité (90% → 98%), mais le TRG global reste inchangé.
+Que peut-on conclure sur les autres facteurs ?
+
+a) Performance a augmenté
+b) Disponibilité ou performance a baissé
+c) Les trois ont augmenté
+d) Impossible à déterminer
+                                                                                                 QUIZ
+15. Une amélioration réduit les arrêts machines de 20%, mais augmente légèrement la vitesse de production
+hors standard → plus de défauts. Le TRG :
+a) Augmente forcément
+b) Diminue forcément
+c) Peut augmenter ou diminuer
+d) Reste constant
+
+
+16. Deux machines :
+•Machine A :
+Disponibilité 85%, Performance 90%, Qualité 99%
+
+•Machine B :
+Disponibilité 95%, Performance 80%, Qualité 95%
+
+Quelle machine a le meilleur TRG ?
+17. Calcul du TRG
+Une machine fonctionne 16 heures par jour. Elle subit 2 heures d’arrêts (pannes et réglages), fonctionne à 85 % de
+sa vitesse nominale et produit 3 % de pièces défectueuses. Quel est le TRG ?
+a) 65 %
+b) 70 %
+c) 75 %
+d) 80 %
+
+18. Taux de Non-Qualité
+Une entreprise produit 50 000 pièces par jour avec un taux de rebut de 2 % et un taux de retouche de 3 %.
+Quel est le taux de non-qualité global ?
+a) 3 %
+b) 4 %
+c) 5 %
+d) 6 %
+
+19. Nombre de pièces conformes
+Une ligne de production fabrique 120 000 pièces par semaine, avec un taux de non-conformité de 1,5 %.
+Combien de pièces conformes sont produites ?
+a) 117 000
+b) 118 200
+c) 118 800
+d) 119 400
+                                                                                                        QUIZ
+20. Impact des arrêts sur le TRG
+Une machine est censée fonctionner 20 heures par jour, mais elle subit 3 heures d’arrêts imprévus et 1 heure de
+réglages. Quel est son taux de disponibilité ?
+a) 75 %
+b) 80 %
+c) 85 %
+d) 90 %
+
+21. Temps productif réel
+Une machine est censée fonctionner 10 heures par jour, mais elle subit 1 heure d’arrêts pour maintenance et 30
+minutes de micro-arrêts.
+Combien de temps productif réel reste-t-il ?
+a) 8,5 heures
+b) 9 heures
+c) 9,5 heures
+d) 10 heures
+                                                                                                 Exercices
+Exercice 1 : Une entreprise veut évaluer l’efficacité de sa ligne de production en utilisant le Taux de Rendement
+Global (TRG)
+    Données :
+     Temps total prévu de production :      8 heures
+     Temps d’arrêt machine :                80 minutes
+     Vitesse théorique de production :      100 pièces/heure
+     Nombre réel de pièces produites :      700
+     Nombre de pièces conformes :           650
+Questions :
+1. Calculez le taux de disponibilité.
+2. Calculez le taux de performance.
+3. Calculez le taux de qualité.
+4. Déduisez le Taux de Rendement Global (TRG). Commentaires
+                                                                     Exercices
+Exercice 2 : Calcul du CNQ pour un retard important
+Une entreprise ferroviaire a enregistré un retard important sur un
+train à grande vitesse reliant Paris à Lyon.
+Ce retard de 45 minutes a affecté 3 000 passagers, entraînant
+des compensations et divers coûts pour la compagnie.
+
+
+
+
+Calculer
+
+(1) Coût des indemnisations aux passagers
+(2) Coût des remboursements de billets
+(3) Perte économique due au retard des passagers
+(4) Coût total opérationnel
+(5) Coût total de la non-qualité
+                                            Exercices
+
+Exercice 3 : Calcul du Coût de la Non-
+Qualité dans l’Industrie Automobile
+
+Un constructeur automobile a détecté un
+défaut de fabrication sur un modèle de
+voiture récemment commercialisé.
+
+Ce défaut concerne un problème de
+freinage, nécessitant un rappel de 50
+000 véhicules pour une réparation
+gratuite.
+
+L’objectif est d’évaluer le coût total de
+la non-qualité causé par ce défaut.
+                                                           Exercices
+
+Exercice 4 : Coût de la Non-Qualité et Six Sigma
+Une entreprise de production de smartphones
+applique la méthodologie Six Sigma pour réduire
+les défauts dans son processus de fabrication.
+
+Actuellement, le taux de défauts est de 2 %, ce qui
+entraîne des coûts élevés de retouches et de
+retours clients.
+
+L’objectif est d’évaluer le coût de la non-qualité et
+d’estimer l’économie potentielle si l’entreprise atteint
+un niveau Six Sigma
+                                                           Exercices
+Exercice 5 : Coût de la Non-Qualité dans un Hôpital
+
+Un hôpital souhaite appliquer la méthodologie Six
+Sigma pour améliorer la qualité des soins et réduire le
+nombre d’erreurs médicales, notamment les erreurs de
+dosage des médicaments.
+
+Actuellement, 1,5 % des prescriptions médicales
+contiennent une erreur de dosage, ce qui entraîne
+des réactions indésirables chez les patients, une
+prolongation des hospitalisations et des coûts
+supplémentaires.
+
+L’objectif est d’évaluer le coût de la non-qualité et
+d’estimer l’économie potentielle si l’hôpital atteint un
+niveau Six Sigma
+Exercice 6 : Une ligne de production fonctionne sur une journée de 8 heures.
+
+Temps
+•Temps planifié : 8 h
+•Arrêts planifiés : 1 h
+•Arrêts non planifiés : 2 h
+Production                                     Coûts qualité
+•Cadence nominale : 100 pièces/h               •Coût de fabrication par pièce : 40 €
+•Production totale : 550 pièces                •Coût de retouche : 15 € / pièce
+•Pièces conformes : 520 pièces                 •Coût de rebut : 40 € / pièce
+                                               Répartition :
+                                               •30 pièces retouchées
+                                               •20 pièces rebutées
+
+Coûts additionnels liés à la non-qualité
+•Arrêts dus aux défauts : 2 000 €
+•Contrôles supplémentaires : 1 000 €
+
+
+
+ Questions :
+ 1.Calculer le TRG
+ 2.Calculer le CNQ
+ 3. Interpréter les résultats
+
