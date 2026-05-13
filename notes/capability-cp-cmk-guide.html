@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cp / Cmk 题型可视化</title>
+  <style>
+    :root {
+      --ink: #18212f;
+      --muted: #647184;
+      --paper: #f7f3ea;
+      --panel: #fffdf8;
+      --line: #d8cebf;
+      --blue: #1f66b1;
+      --red: #c7433f;
+      --green: #2f7d57;
+      --gold: #a66f16;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 30px 0 44px;
+    }
+
+    h1, h2, p { margin: 0; }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-size: 34px; line-height: 1.15; }
+    h2 { font-size: 20px; margin-bottom: 12px; }
+    p { color: var(--muted); }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      background: #efe6d7;
+      border: 1px solid #ded0bc;
+      padding: 1px 5px;
+    }
+
+    .panel, .source, .case, .formula {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 36px rgba(24, 33, 47, 0.10);
+    }
+
+    .source {
+      border: 2px solid var(--gold);
+      background: #fff6df;
+      color: #493916;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .panel { padding: 22px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #e5dacb;
+      text-align: left;
+    }
+
+    th { background: #efe6d7; color: #24354b; }
+    td { color: var(--muted); }
+
+    .formula {
+      padding: 14px;
+      margin-top: 12px;
+      background: #f7ecd9;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      white-space: pre-wrap;
+      color: #24354b;
+      font-size: 14px;
+    }
+
+    .cases {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .case { padding: 16px; }
+    .case h2 { font-size: 17px; margin-bottom: 8px; }
+
+    svg {
+      width: 100%;
+      min-width: 260px;
+      height: auto;
+      display: block;
+      background: #fffdf8;
+      border: 1px solid #e3d7c7;
+      margin-top: 12px;
+    }
+
+    .callout {
+      margin-top: 14px;
+      padding: 14px;
+      border-left: 5px solid var(--green);
+      background: #f4fbf6;
+      color: #40554a;
+    }
+
+    @media (max-width: 880px) {
+      .hero, .cases { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="source">
+      <strong>考试定位：</strong>
+      我在已转写的 TD 题干中没有看到明确要求计算 <code>Cp/Cmk</code> 的题。
+      这个知识点来源于 <code>files-from-teacher/07_Cours_FQ01_UTSEUS_AGHELI_S2_A26_2_中文翻译.md</code>
+      “制造控制：过程能力 / Cm 与 Cmk / Cp 判定图”。TD 中更明确的图题是
+      <code>files-from-teacher/08_TD3_2_中文翻译.md</code> 的 X-bar/R 控制图。
+    </section>
+
+    <section class="hero">
+      <article class="panel">
+        <h1>Cp / Cmk 怎么看</h1>
+        <p style="margin-top:12px;">这类题通常不是画控制图，而是根据公差范围、平均值和标准差，判断过程有没有能力、是否居中。</p>
+      </article>
+      <article class="panel">
+        <h2>核心对比</h2>
+        <table>
+          <tr><th>指标</th><th>看什么</th></tr>
+          <tr><td><code>Cp / Cm</code></td><td>波动宽不宽，只看离散程度</td></tr>
+          <tr><td><code>Cpk / Cmk</code></td><td>既看波动，也看是否居中</td></tr>
+        </table>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>如果考试要算，按这个步骤</h2>
+      <table>
+        <tr><th>步骤</th><th>要做什么</th></tr>
+        <tr><td>1</td><td>从题干的“tolérance / 公差范围”直接读下限 <code>Ti</code> 和上限 <code>Ts</code>。例如 <code>3.4 - 5.2 mg</code>，所以 <code>Ti = 3.4</code>，<code>Ts = 5.2</code>。</td></tr>
+        <tr><td>2</td><td>如果题目给了很多组数据，先逐组算平均值，再把这些平均值再平均，得到 <code>X-bar</code>。控制图题中这就是 <code>X-double-bar</code>。</td></tr>
+        <tr><td>3</td><td>如果题目没直接给标准差，就用极差估计：先算每组 <code>R = 最大值 - 最小值</code>，再算 <code>R-bar</code>，然后查 <code>dn</code> 表，<code>sigma* = R-bar / dn</code>。</td></tr>
+        <tr><td>4</td><td>算 <code>Cm = (Ts - Ti) / (6 sigma*)</code></td></tr>
+        <tr><td>5</td><td>算 <code>Cmk = min((Ts - X-bar)/(3 sigma*), (X-bar - Ti)/(3 sigma*))</code></td></tr>
+        <tr><td>6</td><td>和 <code>1.33</code> 比较，判断是否有能力、是否居中</td></tr>
+      </table>
+      <div class="formula">Cm > 1.33 且 Cmk > 1.33：机器有能力且居中
+Cm > 1.33 但 Cmk < 1.33：波动可以，但中心偏了
+Cm < 1.33：波动太大，机器能力不足</div>
+    </section>
+
+    <section class="panel" style="margin-top:18px;">
+      <h2>参数到底怎么从老师题里拿</h2>
+      <table>
+        <tr><th>公式参数</th><th>在题目/表格中怎么得到</th><th>Luxor 题示例</th></tr>
+        <tr>
+          <td><code>Ti</code></td>
+          <td>读公差范围左边的数。法语题常写 <code>tolérances sont a - b</code>，左边就是下限。</td>
+          <td><code>Ti = 3.4 mg</code></td>
+        </tr>
+        <tr>
+          <td><code>Ts</code></td>
+          <td>读公差范围右边的数。右边就是上限。</td>
+          <td><code>Ts = 5.2 mg</code></td>
+        </tr>
+        <tr>
+          <td><code>X-bar</code></td>
+          <td>先算每一行样本的平均值，再把这些平均值相加除以样本组数。</td>
+          <td>前 10 组：<code>X-bar = 4.352</code></td>
+        </tr>
+        <tr>
+          <td><code>R-bar</code></td>
+          <td>每一行先算 <code>R = 最大值 - 最小值</code>，再把所有 R 求平均。</td>
+          <td>前 10 组：<code>R-bar = 0.790</code></td>
+        </tr>
+        <tr>
+          <td><code>dn</code></td>
+          <td>看每组样本容量。Luxor 每组有 10 个测量值，所以去老师表 <code>Table des estimateurs de s : dn et bn</code> 的 <code>n = 10</code> 行读。</td>
+          <td><code>dn = 3.078</code></td>
+        </tr>
+        <tr>
+          <td><code>sigma*</code></td>
+          <td>用前面得到的 <code>R-bar</code> 和 <code>dn</code> 算：<code>sigma* = R-bar / dn</code>。</td>
+          <td><code>0.790 / 3.078 = 0.257</code></td>
+        </tr>
+      </table>
+      <div class="formula">Luxor 前 10 组示范：
+Ti = 3.4
+Ts = 5.2
+X-bar = 4.352
+R-bar = 0.790
+dn(n=10) = 3.078
+sigma* = 0.790 / 3.078 = 0.257
+
+Cm = (5.2 - 3.4) / (6 × 0.257) = 1.17
+Cmk = min((5.2 - 4.352)/(3 × 0.257), (4.352 - 3.4)/(3 × 0.257))
+    = min(1.10, 1.24)
+    = 1.10</div>
+      <div class="callout">
+        注意：Luxor 前 10 组的 X-bar 控制图已经显示过程不稳定，所以正式答题要先说过程未受控；上面的 Cm/Cmk 只是演示参数怎么取和公式怎么代入。
+      </div>
+    </section>
+
+    <section class="cases">
+      <article class="case">
+        <h2>1. 波动太大</h2>
+        <p><code>Cm</code> 低，分布太宽，容易超出公差。</p>
+        <svg viewBox="0 0 320 190" role="img" aria-label="dispersion too large">
+          <line x1="52" y1="150" x2="268" y2="150" stroke="#8d8174"/>
+          <line x1="82" y1="35" x2="82" y2="154" stroke="#c7433f" stroke-width="3"/>
+          <line x1="238" y1="35" x2="238" y2="154" stroke="#c7433f" stroke-width="3"/>
+          <text x="68" y="174" fill="#c7433f" font-size="13">Ti</text>
+          <text x="224" y="174" fill="#c7433f" font-size="13">Ts</text>
+          <path d="M45 150 C78 148, 78 70, 115 58 C140 50, 180 50, 205 58 C242 70, 242 148, 275 150" fill="rgba(31,102,177,0.15)" stroke="#1f66b1" stroke-width="3"/>
+        </svg>
+      </article>
+
+      <article class="case">
+        <h2>2. 波动够小但偏心</h2>
+        <p><code>Cm</code> 可能好，但 <code>Cmk</code> 低，中心靠近一侧公差。</p>
+        <svg viewBox="0 0 320 190" role="img" aria-label="off centered process">
+          <line x1="52" y1="150" x2="268" y2="150" stroke="#8d8174"/>
+          <line x1="82" y1="35" x2="82" y2="154" stroke="#c7433f" stroke-width="3"/>
+          <line x1="238" y1="35" x2="238" y2="154" stroke="#c7433f" stroke-width="3"/>
+          <line x1="160" y1="42" x2="160" y2="150" stroke="#2f7d57" stroke-dasharray="6 5"/>
+          <text x="145" y="34" fill="#2f7d57" font-size="13">cible</text>
+          <path d="M142 150 C166 146, 176 78, 207 65 C235 54, 250 146, 280 150" fill="rgba(166,111,22,0.18)" stroke="#a66f16" stroke-width="3"/>
+        </svg>
+      </article>
+
+      <article class="case">
+        <h2>3. 波动小且居中</h2>
+        <p><code>Cm</code> 和 <code>Cmk</code> 都高，过程能力较好。</p>
+        <svg viewBox="0 0 320 190" role="img" aria-label="capable centered process">
+          <line x1="52" y1="150" x2="268" y2="150" stroke="#8d8174"/>
+          <line x1="82" y1="35" x2="82" y2="154" stroke="#c7433f" stroke-width="3"/>
+          <line x1="238" y1="35" x2="238" y2="154" stroke="#c7433f" stroke-width="3"/>
+          <line x1="160" y1="42" x2="160" y2="150" stroke="#2f7d57" stroke-dasharray="6 5"/>
+          <path d="M95 150 C122 148, 130 82, 160 56 C190 82, 198 148, 225 150" fill="rgba(47,125,87,0.16)" stroke="#2f7d57" stroke-width="3"/>
+        </svg>
+      </article>
+    </section>
+
+    <section class="panel" style="margin-top:18px;">
+      <h2>法语答题模板</h2>
+      <div class="callout">
+        Cm mesure la dispersion du processus par rapport aux tolérances. Cmk mesure à la fois la dispersion et le centrage. Si Cm et Cmk sont supérieurs à 1,33, le processus est capable et bien centré.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
