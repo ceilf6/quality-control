@@ -6,7 +6,7 @@
 
 聚焦 `./files-from-teacher/` 下面
 
-1. 目前为期中考试，截止到 `files-from-teacher/21-期中截止_TD3-CHEROUAT.pdf`
+1. 目前为期中考试，截止到 `files-from-teacher/期中范围_TD/CHEROUAT_TD3_AI_ML_期中截止/21-期中截止_TD3-CHEROUAT.pdf`
 2. `TD` 文件优先级最高，用于判断考试题型、重点范围、常见问法。
 3. 其他课程文件用于补充知识点定义、原理、例子和解释。
 4. 如果 `TD` 与其他文件内容冲突，以 `TD` 的考试要求为准，并向用户说明冲突来源。
