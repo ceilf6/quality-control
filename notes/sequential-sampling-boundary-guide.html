@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan progressif - limites An et Bn</title>
+  <style>
+    :root {
+      --paper: #f6f3ec;
+      --ink: #17211b;
+      --muted: #627067;
+      --grid: #d9dfd8;
+      --accept: #0f766e;
+      --reject: #b4532a;
+      --trace: #263238;
+      --panel: #fffdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", Georgia, serif;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 36px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .source {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--grid);
+      border-radius: 8px;
+      box-shadow: 0 12px 24px rgba(23, 33, 27, 0.06);
+      padding: 18px;
+    }
+
+    .chart-wrap {
+      width: 100%;
+      aspect-ratio: 1.55;
+      min-height: 420px;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      border-left: 4px solid var(--accept);
+      padding-left: 12px;
+    }
+
+    .step.reject {
+      border-left-color: var(--reject);
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    code {
+      background: #eef2ef;
+      border: 1px solid #d9e2dc;
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .chart-wrap {
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Plan progressif : lire An, Bn et la decision</h1>
+    <p class="source">Source : P26_TD2, Exercice 3. Exemple montre le cas d'un lot sans defaut.</p>
+
+    <section class="layout">
+      <div class="panel">
+        <div class="chart-wrap">
+          <canvas id="chart" aria-label="Limites An Bn pour plan progressif"></canvas>
+        </div>
+      </div>
+
+      <aside class="panel steps">
+        <div class="step">
+          <strong>Regle de lecture</strong>
+          <p>Apres chaque piece controlee, on compare le cumul des defauts <code>x_n</code> avec deux lignes.</p>
+        </div>
+        <div class="step">
+          <strong>Acceptation</strong>
+          <p>Si <code>x_n <= An</code>, on accepte le lot.</p>
+        </div>
+        <div class="step reject">
+          <strong>Rejet</strong>
+          <p>Si <code>x_n >= Bn</code>, on refuse le lot.</p>
+        </div>
+        <div class="step">
+          <strong>Sinon</strong>
+          <p>Si <code>An &lt; x_n &lt; Bn</code>, on continue le prelevement.</p>
+        </div>
+        <div class="step">
+          <strong>Cas sans defaut</strong>
+          <p>Le cumul reste <code>x_n = 0</code>. On accepte des que <code>0 <= -3,49 + 0,07n</code>, donc a <code>n = 50</code>.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const canvas = document.getElementById("chart");
+    const ctx = canvas.getContext("2d");
+
+    function draw() {
+      const rect = canvas.getBoundingClientRect();
+      const scale = window.devicePixelRatio || 1;
+      canvas.width = Math.round(rect.width * scale);
+      canvas.height = Math.round(rect.height * scale);
+      ctx.setTransform(scale, 0, 0, scale, 0, 0);
+
+      const w = rect.width;
+      const h = rect.height;
+      const pad = { left: 62, right: 26, top: 28, bottom: 52 };
+      const plotW = w - pad.left - pad.right;
+      const plotH = h - pad.top - pad.bottom;
+      const maxN = 110;
+      const maxY = 13;
+
+      const x = n => pad.left + (n / maxN) * plotW;
+      const y = v => pad.top + (1 - v / maxY) * plotH;
+      const An = n => -3.49 + 0.07 * n;
+      const Bn = n => 3.91 + 0.07 * n;
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "#fffdf8";
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.strokeStyle = "#d9dfd8";
+      ctx.lineWidth = 1;
+      ctx.fillStyle = "#627067";
+      ctx.font = "13px Georgia, serif";
+
+      ctx.textAlign = "right";
+      ctx.textBaseline = "middle";
+      for (let v = 0; v <= 12; v += 2) {
+        const yy = y(v);
+        ctx.beginPath();
+        ctx.moveTo(pad.left, yy);
+        ctx.lineTo(w - pad.right, yy);
+        ctx.stroke();
+        ctx.fillText(v, pad.left - 10, yy);
+      }
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      for (let n = 0; n <= maxN; n += 10) {
+        const xx = x(n);
+        ctx.beginPath();
+        ctx.moveTo(xx, pad.top);
+        ctx.lineTo(xx, h - pad.bottom);
+        ctx.stroke();
+        ctx.fillText(n, xx, h - pad.bottom + 12);
+      }
+
+      ctx.strokeStyle = "#17211b";
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(pad.left, pad.top);
+      ctx.lineTo(pad.left, h - pad.bottom);
+      ctx.lineTo(w - pad.right, h - pad.bottom);
+      ctx.stroke();
+
+      function drawLine(fn, color, label, labelN) {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        for (let n = 0; n <= maxN; n += 1) {
+          const xx = x(n);
+          const yy = y(Math.max(0, fn(n)));
+          if (n === 0) ctx.moveTo(xx, yy);
+          else ctx.lineTo(xx, yy);
+        }
+        ctx.stroke();
+        ctx.fillStyle = color;
+        ctx.font = "15px Georgia, serif";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.fillText(label, x(labelN) + 8, y(fn(labelN)));
+      }
+
+      drawLine(An, "#0f766e", "An = -3,49 + 0,07n", 68);
+      drawLine(Bn, "#b4532a", "Bn = 3,91 + 0,07n", 72);
+
+      ctx.strokeStyle = "#263238";
+      ctx.lineWidth = 2.5;
+      ctx.setLineDash([7, 5]);
+      ctx.beginPath();
+      ctx.moveTo(x(0), y(0));
+      ctx.lineTo(x(50), y(0));
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = "#263238";
+      ctx.beginPath();
+      ctx.arc(x(50), y(0), 5, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "#263238";
+      ctx.font = "14px Georgia, serif";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "bottom";
+      ctx.fillText("x_n = 0, acceptation a n = 50", x(50) + 8, y(0) - 8);
+
+      ctx.fillStyle = "#17211b";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "bottom";
+      ctx.font = "15px Georgia, serif";
+      ctx.fillText("n - nombre de pieces prelevees", pad.left + plotW / 2, h - 8);
+
+      ctx.save();
+      ctx.translate(18, pad.top + plotH / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("x_n - cumul des defauts", 0, 0);
+      ctx.restore();
+    }
+
+    draw();
+    window.addEventListener("resize", draw);
+  </script>
+</body>
+</html>
