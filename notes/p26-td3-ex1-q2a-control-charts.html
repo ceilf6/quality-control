@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P26 TD3 Ex1 Q2a - Cartes de controle provisoires</title>
+  <style>
+    :root {
+      --paper: #f6f3ec;
+      --panel: #fffdf8;
+      --ink: #17211b;
+      --muted: #647067;
+      --grid: #d9dfd8;
+      --mean: #0f766e;
+      --range: #1f4e79;
+      --control: #b4532a;
+      --warning: #d08a1d;
+      --bad: #b91c1c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", Georgia, serif;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 20px 36px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .source {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--grid);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 12px 24px rgba(23, 33, 27, 0.06);
+    }
+
+    .chart {
+      width: 100%;
+      aspect-ratio: 1.45;
+      min-height: 360px;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .notes {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .note {
+      border-left: 4px solid var(--mean);
+      padding-left: 12px;
+      color: var(--muted);
+      background: rgba(255, 253, 248, 0.7);
+    }
+
+    .note strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    code {
+      background: #eef2ef;
+      border: 1px solid #d9e2dc;
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 900px) {
+      .grid, .notes { grid-template-columns: 1fr; }
+      .chart { min-height: 330px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Cartes de controle provisoires - 10 premiers echantillons</h1>
+    <p class="source">Source : P26_TD3, Exercice 1, question 2a.</p>
+
+    <section class="grid">
+      <div class="panel">
+        <canvas class="chart" id="meanChart" aria-label="Carte de la moyenne"></canvas>
+      </div>
+      <div class="panel">
+        <canvas class="chart" id="rangeChart" aria-label="Carte de l'etendue"></canvas>
+      </div>
+    </section>
+
+    <section class="notes">
+      <div class="note">
+        <strong>CL / LC</strong>
+        <span>ligne centrale : moyenne des moyennes ou moyenne des etendues.</span>
+      </div>
+      <div class="note">
+        <strong>UCL / LCS et LCL / LCI</strong>
+        <span>limites de controle superieure et inferieure. Un point dehors signifie non maitrise.</span>
+      </div>
+      <div class="note">
+        <strong>Resultat</strong>
+        <span>La carte R est correcte, mais la moyenne du lot 10 est sous la limite inferieure.</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const means = [4.510, 4.490, 4.330, 4.410, 4.420, 4.230, 4.490, 4.270, 4.420, 3.950];
+    const ranges = [0.600, 1.200, 0.700, 1.000, 0.600, 0.500, 0.800, 0.800, 0.800, 0.900];
+
+    const meanLines = {
+      title: "Carte de la moyenne X-bar",
+      yLabel: "moyenne",
+      color: "#0f766e",
+      center: 4.352,
+      lcl: 4.101,
+      ucl: 4.603,
+      lsl: 4.192,
+      usl: 4.511,
+      min: 3.85,
+      max: 4.68
+    };
+
+    const rangeLines = {
+      title: "Carte de l'etendue R",
+      yLabel: "etendue",
+      color: "#1f4e79",
+      center: 0.790,
+      lcl: 0.277,
+      ucl: 1.533,
+      lsl: 0.427,
+      usl: 1.232,
+      min: 0,
+      max: 1.7
+    };
+
+    function drawChart(canvas, points, cfg) {
+      const ctx = canvas.getContext("2d");
+      const rect = canvas.getBoundingClientRect();
+      const scale = window.devicePixelRatio || 1;
+      canvas.width = Math.round(rect.width * scale);
+      canvas.height = Math.round(rect.height * scale);
+      ctx.setTransform(scale, 0, 0, scale, 0, 0);
+
+      const w = rect.width;
+      const h = rect.height;
+      const pad = { left: 58, right: 26, top: 52, bottom: 46 };
+      const plotW = w - pad.left - pad.right;
+      const plotH = h - pad.top - pad.bottom;
+
+      const x = i => pad.left + (i / (points.length - 1)) * plotW;
+      const y = v => pad.top + (1 - (v - cfg.min) / (cfg.max - cfg.min)) * plotH;
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "#fffdf8";
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.fillStyle = "#17211b";
+      ctx.font = "18px Georgia, serif";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "top";
+      ctx.fillText(cfg.title, pad.left, 18);
+
+      ctx.strokeStyle = "#d9dfd8";
+      ctx.lineWidth = 1;
+      ctx.fillStyle = "#647067";
+      ctx.font = "12px Georgia, serif";
+      ctx.textAlign = "right";
+      ctx.textBaseline = "middle";
+      for (let j = 0; j <= 5; j += 1) {
+        const val = cfg.min + ((cfg.max - cfg.min) * j) / 5;
+        const yy = y(val);
+        ctx.beginPath();
+        ctx.moveTo(pad.left, yy);
+        ctx.lineTo(w - pad.right, yy);
+        ctx.stroke();
+        ctx.fillText(val.toFixed(2), pad.left - 8, yy);
+      }
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      for (let i = 0; i < points.length; i += 1) {
+        const xx = x(i);
+        ctx.beginPath();
+        ctx.moveTo(xx, pad.top);
+        ctx.lineTo(xx, h - pad.bottom);
+        ctx.stroke();
+        ctx.fillText(String(i + 1), xx, h - pad.bottom + 10);
+      }
+
+      function hline(value, color, label, dash) {
+        const yy = y(value);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.setLineDash(dash ? [6, 5] : []);
+        ctx.beginPath();
+        ctx.moveTo(pad.left, yy);
+        ctx.lineTo(w - pad.right, yy);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = color;
+        ctx.font = "12px Georgia, serif";
+        ctx.textAlign = "right";
+        ctx.textBaseline = "bottom";
+        ctx.fillText(label, w - pad.right, yy - 4);
+      }
+
+      hline(cfg.ucl, "#b4532a", "LCS / UCL", false);
+      hline(cfg.lcl, "#b4532a", "LCI / LCL", false);
+      hline(cfg.usl, "#d08a1d", "LSs", true);
+      hline(cfg.lsl, "#d08a1d", "LSi", true);
+      hline(cfg.center, "#17211b", "LC / CL", false);
+
+      ctx.strokeStyle = cfg.color;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      points.forEach((point, i) => {
+        const xx = x(i);
+        const yy = y(point);
+        if (i === 0) ctx.moveTo(xx, yy);
+        else ctx.lineTo(xx, yy);
+      });
+      ctx.stroke();
+
+      points.forEach((point, i) => {
+        const out = point < cfg.lcl || point > cfg.ucl;
+        ctx.fillStyle = out ? "#b91c1c" : cfg.color;
+        ctx.beginPath();
+        ctx.arc(x(i), y(point), out ? 5.5 : 4, 0, Math.PI * 2);
+        ctx.fill();
+        if (out) {
+          ctx.fillStyle = "#b91c1c";
+          ctx.font = "13px Georgia, serif";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "bottom";
+          ctx.fillText("hors controle", x(i), y(point) - 10);
+        }
+      });
+
+      ctx.strokeStyle = "#17211b";
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(pad.left, pad.top);
+      ctx.lineTo(pad.left, h - pad.bottom);
+      ctx.lineTo(w - pad.right, h - pad.bottom);
+      ctx.stroke();
+    }
+
+    function drawAll() {
+      drawChart(document.getElementById("meanChart"), means, meanLines);
+      drawChart(document.getElementById("rangeChart"), ranges, rangeLines);
+    }
+
+    drawAll();
+    window.addEventListener("resize", drawAll);
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VU TD1 - Methode 5M</title>
+  <style>
+    :root {
+      --paper: #f6f3ec;
+      --ink: #17211b;
+      --muted: #5f6f65;
+      --line: #2f4f46;
+      --accent: #0f766e;
+      --warn: #b4532a;
+      --panel: #fffdf8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", Georgia, serif;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 36px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .source {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 15px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid #d9dfd8;
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: 0 12px 24px rgba(23, 33, 27, 0.06);
+      overflow-x: auto;
+    }
+
+    .fishbone {
+      position: relative;
+      min-width: 960px;
+      height: 560px;
+    }
+
+    .spine {
+      position: absolute;
+      left: 90px;
+      right: 210px;
+      top: 280px;
+      height: 4px;
+      background: var(--line);
+    }
+
+    .head {
+      position: absolute;
+      right: 10px;
+      top: 236px;
+      width: 230px;
+      padding: 14px 16px;
+      border: 3px solid var(--warn);
+      border-radius: 8px;
+      background: #fff7ed;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .bone {
+      position: absolute;
+      width: 260px;
+      padding: 12px 14px;
+      border: 1px solid #d4ded8;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .bone::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 3px;
+      background: var(--line);
+      transform-origin: left center;
+    }
+
+    .top::after {
+      left: 50%;
+      bottom: -20px;
+      transform: rotate(28deg);
+    }
+
+    .bottom::after {
+      left: 50%;
+      top: -20px;
+      transform: rotate(-28deg);
+    }
+
+    .bone h2 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .bone ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .bone li {
+      margin: 4px 0;
+    }
+
+    .m1 { left: 70px; top: 50px; }
+    .m2 { left: 380px; top: 50px; }
+    .m3 { left: 690px; top: 50px; }
+    .m4 { left: 220px; bottom: 50px; }
+    .m5 { left: 560px; bottom: 50px; }
+
+    .rule {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .rule div {
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      color: var(--muted);
+    }
+
+    .rule strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .rule { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Methode 5M : baisse des resultats scolaires</h1>
+    <p class="source">Source : VU_TD1, Methode 5M.</p>
+
+    <section class="panel">
+      <div class="fishbone" aria-label="Diagramme 5M">
+        <div class="spine"></div>
+        <div class="head">Probleme : baisse des resultats scolaires</div>
+
+        <article class="bone top m1">
+          <h2>Milieu</h2>
+          <ul>
+            <li>bruit en cours ou a la maison</li>
+            <li>stress universitaire</li>
+            <li>mauvais rythme de sommeil</li>
+          </ul>
+        </article>
+
+        <article class="bone top m2">
+          <h2>Methode</h2>
+          <ul>
+            <li>mauvaise organisation</li>
+            <li>revisions trop tardives</li>
+            <li>pas de methode de prise de notes</li>
+          </ul>
+        </article>
+
+        <article class="bone top m3">
+          <h2>Main-d'oeuvre</h2>
+          <ul>
+            <li>manque de concentration</li>
+            <li>fatigue</li>
+            <li>lacunes de base</li>
+          </ul>
+        </article>
+
+        <article class="bone bottom m4">
+          <h2>Materiel</h2>
+          <ul>
+            <li>ordinateur ou internet instable</li>
+            <li>supports de cours incomplets</li>
+            <li>outils de travail inadaptes</li>
+          </ul>
+        </article>
+
+        <article class="bone bottom m5">
+          <h2>Matiere</h2>
+          <ul>
+            <li>cours difficiles</li>
+            <li>notions mal comprises</li>
+            <li>charge de travail elevee</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="rule">
+      <div><strong>1. Mettre le probleme a droite</strong>La tete du diagramme contient l'effet a expliquer.</div>
+      <div><strong>2. Placer les 5M</strong>Chaque branche est une famille de causes possibles.</div>
+      <div><strong>3. Ne pas conclure trop vite</strong>Le 5M liste des hypotheses; il faut ensuite verifier les causes reelles.</div>
+    </section>
+  </main>
+</body>
+</html>

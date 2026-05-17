@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VU TD3 - Robot aspirateur pieuvre</title>
+  <style>
+    :root {
+      --paper: #f6f3ec;
+      --panel: #fffdf8;
+      --ink: #17211b;
+      --muted: #607069;
+      --grid: #d9dfd8;
+      --product: #0f766e;
+      --service: #1f4e79;
+      --constraint: #b4532a;
+      --line: #2f4f46;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", Georgia, serif;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 20px 36px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .source {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--grid);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 12px 24px rgba(23, 33, 27, 0.06);
+    }
+
+    .diagram {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(47,79,70,0.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(47,79,70,0.06) 1px, transparent 1px),
+        #fffaf1;
+      background-size: 34px 34px;
+      border: 1px solid #e2d9ca;
+      border-radius: 8px;
+    }
+
+    svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .node {
+      position: absolute;
+      width: 160px;
+      min-height: 72px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10px;
+      background: #ffffff;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .product {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 230px;
+      min-height: 110px;
+      border-width: 5px;
+      border-color: var(--product);
+      color: var(--product);
+      font-size: 20px;
+    }
+
+    .utilisateur { left: 48px; top: 46px; }
+    .sol { left: 360px; top: 32px; }
+    .base { right: 58px; top: 62px; }
+    .energie { right: 54px; top: 270px; }
+    .obstacle { right: 74px; bottom: 84px; }
+    .materiaux { left: 360px; bottom: 54px; }
+    .poussiere { left: 58px; bottom: 82px; }
+
+    .tag {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      min-width: 48px;
+      min-height: 34px;
+      padding: 4px 8px;
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(23,33,27,0.15);
+    }
+
+    .fs { background: var(--service); }
+    .fc { background: var(--constraint); }
+
+    .fs1 { left: 255px; top: 155px; }
+    .fc1 { left: 235px; bottom: 190px; }
+    .fc2 { right: 250px; top: 150px; }
+    .fc3 { right: 230px; top: 285px; }
+    .fc4 { left: 198px; top: 118px; }
+    .fc5 { right: 250px; bottom: 180px; }
+    .fc6 { left: 455px; bottom: 180px; }
+
+    .legend {
+      display: grid;
+      gap: 10px;
+    }
+
+    .item {
+      border-left: 4px solid var(--constraint);
+      padding-left: 12px;
+      color: var(--muted);
+    }
+
+    .item.service {
+      border-left-color: var(--service);
+    }
+
+    .item strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    code {
+      background: #eef2ef;
+      border: 1px solid #d9e2dc;
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.95em;
+    }
+
+    .hint {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #f0f7f5;
+      color: var(--muted);
+    }
+
+    @media (max-width: 940px) {
+      .layout { grid-template-columns: 1fr; }
+      .panel:first-child { overflow-x: auto; }
+      .diagram { min-width: 840px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Diagramme pieuvre : robot aspirateur</h1>
+    <p class="source">Source : VU_TD3, Exercice 3, questions 1 et 2.</p>
+
+    <section class="layout">
+      <div class="panel">
+        <div class="diagram">
+          <svg viewBox="0 0 900 620" aria-hidden="true">
+            <line x1="450" y1="310" x2="128" y2="96" stroke="#1f4e79" stroke-width="5"/>
+            <line x1="450" y1="310" x2="440" y2="76" stroke="#1f4e79" stroke-width="5"/>
+            <line x1="450" y1="310" x2="118" y2="510" stroke="#b4532a" stroke-width="3"/>
+            <line x1="450" y1="310" x2="735" y2="106" stroke="#b4532a" stroke-width="3"/>
+            <line x1="450" y1="310" x2="746" y2="310" stroke="#b4532a" stroke-width="3"/>
+            <line x1="450" y1="310" x2="728" y2="506" stroke="#b4532a" stroke-width="3"/>
+            <line x1="450" y1="310" x2="440" y2="520" stroke="#b4532a" stroke-width="3"/>
+          </svg>
+
+          <div class="node product">Robot aspirateur</div>
+          <div class="node utilisateur">Utilisateur</div>
+          <div class="node sol">Sol</div>
+          <div class="node base">Base de recharge</div>
+          <div class="node energie">Energie</div>
+          <div class="node obstacle">Obstacle</div>
+          <div class="node materiaux">Materiaux</div>
+          <div class="node poussiere">Poussiere</div>
+
+          <div class="tag fs fs1">FS1</div>
+          <div class="tag fc fc1">FC1</div>
+          <div class="tag fc fc2">FC2</div>
+          <div class="tag fc fc3">FC3</div>
+          <div class="tag fc fc4">FC4</div>
+          <div class="tag fc fc5">FC5</div>
+          <div class="tag fc fc6">FC6</div>
+        </div>
+      </div>
+
+      <aside class="panel legend">
+        <div class="item service">
+          <strong>FS1</strong>
+          <span>Permettre a l'utilisateur de nettoyer le sol automatiquement.</span>
+        </div>
+        <div class="item">
+          <strong>FC1</strong>
+          <span>Stocker la poussiere.</span>
+        </div>
+        <div class="item">
+          <strong>FC2</strong>
+          <span>Se recharger sur sa base.</span>
+        </div>
+        <div class="item">
+          <strong>FC3</strong>
+          <span>Etre autonome en energie.</span>
+        </div>
+        <div class="item">
+          <strong>FC4</strong>
+          <span>Plaire a l'utilisateur.</span>
+        </div>
+        <div class="item">
+          <strong>FC5</strong>
+          <span>Detecter les obstacles.</span>
+        </div>
+        <div class="item">
+          <strong>FC6</strong>
+          <span>Etre fabrique avec des materiaux legers.</span>
+        </div>
+        <div class="hint">
+          <code>FS/FC</code> 写在线上；外部元素写在外圈；完整功能句写在图旁或答题区。
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
