@@ -1,32 +1,54 @@
-明白：考试范围截止到 **21-期中截止\_TD3-CHEROUAT.pdf**，所以 **22、24、25 的实验设计 DOE / Plan d’expériences 不复习**。
+# FQ01 质量管理复习框架：期末优先版
 
-按 TD 反推，当前复习重点应改成：
+当前复习阶段为期末考试。旧的“期中截止到 21，因此 22、24、25 不复习”已经失效。
 
-**A 级 必须掌握**
+期末复习必须优先看：
 
-1. 抽样检验：NQA/NQL、α/β、一次抽样、二次抽样、序贯抽样、OC 曲线。
-2. 概率分布：二项分布、正态分布、标准化、接受概率。
-3. 控制图：X-bar 图、R 图、控制限、失控判断。
-4. 过程能力：Cp、Cpk、Cm、Cmk。
-5. 非质量：非质量成本、内部/外部失效、预防/检验成本。
-6. TRG：`TRG = 可用率 × 性能率 × 质量率`。
-7. 持续改进工具：PDCA、QQOQCP、5M、5 Why、Pareto、SWOT、8D。
-8. 学习型方法：Peter Senge 五项修炼，尤其是系统思考。
-9. AI 与质量：反应式质量到预测式质量、机器学习流程、逻辑回归/线性回归基本用途。
+1. `files-from-teacher/final-exam.reviewed.md`
+2. `files-from-teacher/32_SujetExam_tytpe.readable.txt`
+3. `files-from-teacher/22_FQ01_USTEUS_TD1_Enoncé_2026.readable.txt`
+4. `files-from-teacher/24_FQ01_USTEUS_TD2.readable.txt`
+5. `files-from-teacher/26_Enonce_TD_3.readable.txt`
+6. `files-from-teacher/29_FQ01_UTSEUS_TD1_correction 2.readable.txt`
+7. `files-from-teacher/30_FQ01_USTEUS_TD2_correction.readable.txt`
+8. `files-from-teacher/28_Correction_Plan_Experiences_Robustesse.readable.md`
+9. `files-from-teacher/31_TD control charts.readable.md`
+10. `files-from-teacher/33_TD CUMSUM.readable.md`
+11. `files-from-teacher/35_TD control charts-correction.readable.md`
 
-**B 级 高概率**
+## A 级：期末必须掌握
 
-1. 功能分析：服务功能、约束功能、CdCF、章鱼图。
-2. 7 种浪费。
-3. 质量与变异性的关系。
-4. 控制限 vs 公差限。
-5. AI 案例分析：根据变量预测缺陷，并提出质量行动。
+1. Plan d'expériences：目的、步骤排序、V/F 判断。
+2. Effets des facteurs et interactions：主效应、交互作用、正负方向。
+3. ANAVAR：SCE、ddl、CME、F、Fseuil、显著性判断。
+4. Fisher 表：factor ddl、residual ddl、alpha。
+5. Configuration optimale：根据 minimiser/maximiser 选择设置。
+6. Plan factoriel complet 2^k：A、B、C、AB、AC、BC、ABC。
+7. Plan fractionnaire：confusion/alias 与信息损失。
+8. Plan croisé & robustesse：噪声因素、均值、方差、S/B、最终折中配置。
+9. Attribute control charts：p、np、c、u 图的适用条件和控制限。
+10. CUSUM：target、k、H、C+、C-、small shift detection。
 
-**C 级 会解释即可**
+## B 级：高概率补充
 
-1. 监督学习、无监督学习、强化学习区别。
-2. 混淆矩阵、准确率。
-3. 质量预测、预测性维护、工业视觉等应用场景。
+1. 旧控制图基础：控制限 vs 公差限、X-bar/R 只作为基础，公式必须回看老师表和 correction。
+2. 概率分布和统计表：只作为查表工具。
+3. 抽样检验：若期末题源提到再补。
 
-一句话版：  
-**别再看 DOE。现在主线是：抽样检验 + 控制图/CpCpk + 非质量/TRG + 改进工具 + 学习型方法 + AI 质量预测。**
+## C 级：期中旧知识，作为基础
+
+1. CNQ/COQ。
+2. TRG/OEE。
+3. PDCA、QQOQCP、5M、Pareto、SWOT、8D。
+4. 学习型方法。
+5. AI/ML 质量预测。
+
+## 输出纪律
+
+题目：法语题干，必要时附中文翻译。
+
+解析：中文讲思路、公式、查表和易错点。
+
+答案：法语完整考试版，必要时附中文翻译。
+
+一句话版：期末主线不是期中那套 CNQ/TRG/AI，而是 `Sujet type + DOE/ANAVAR/Fisher + robustesse + attribute control charts + CUSUM`。

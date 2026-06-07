@@ -1,0 +1,125 @@
+# 24_FQ01_USTEUS_TD2.pdf
+
+- Source: `24_FQ01_USTEUS_TD2.pdf`
+- Final-exam priority: P0
+- Role: TD2 DOE analysis and fractional plan.
+
+## Readable Content
+TD2 FQ01 UTSEUS – Plan d’expériences
+(Analyse)
+Exercice 1 : Plan factoriel complet 2k (Correction)
+Dans le cadre de la mise en place d’un nouveau procédé de texturation (cf. Fig1), une étude est menée
+pour garantir la qualité de texture d’un produit de type margarine.
+Source image : https://www.huilesetomega.eu/margarine/
+
+Fig1. Illustration du procédé de fabrication de la margarine
+La réponse mesurée qui qualifie la texture est « la dureté ». L’objectif recherché étant d’avoir une
+dureté minimale. Trois facteurs sont retenus pour la conduite du plan d’expériences :
+§
+§
+§
+
+La température de refroidissement
+La vitesse de refroidissement
+La vitesse de malaxage
+
+Pour des raisons de confidentialité les significations physiques des modalités -1 et +1 des facteurs
+étudiés n’ont pas été divulguées. Un plan factoriel complet 23 a été réalisé avec trois répétitions par
+essai.
+1. Quel est le nombre total d’essai N à considérer dans ce plan ?
+Le tableau Tab1 ci-dessous donne les moyennes des valeurs obtenues pour chacune des huit
+combinaisons d’essais réalisées.
+N° Essai
+1
+2
+3
+4
+5
+6
+7
+8
+
+A
+
+B
+
++
++
++
++
+
+C
+
++
++
++
++
+
+AB
+
++
++
++
++
+
+AC
+
++
++
++
++
+
+BC
+
++
++
++
++
+
+ABC
+
++
++
++
++
+
++
++
++
++
+
+Dureté
+2,93
+2,51
+2,66
+3,75
+2,01
+3,41
+2,64
+3,04
+
+Tab1. Table d’essais et résultats d’essais
+L’analyse statistique de ce plan d’expériences a abouti aux résultats donnés ci-dessous.
+Calcul des Effets, Analyse de Variance et Validation du modèle. Nous supposons que le SCE(Total)=
+9,322.
+2. Proposer un choix optimal permettant de minimiser la dureté. (2 options sont possibles)
+En réalité, pour juger la qualité du produit considéré, on doit minimiser non seulement sa dureté, mais
+aussi sa viscosité. Donc, lors de la réalisation du plan d’expériences, les deux réponses à optimiser
+(dureté et viscosité) ont été mesurées.
+Après analyse des résultats relatifs à la viscosité, le modèle suivant a été validé :
+
+! viscosité=351,35 -32,6XA + 78,6XB -18,65XC+ 38,8XAXC - 34,8XAXBXC
+𝑌
+3. Proposer un choix de combinaison permettant de minimiser la viscosité.
+
+4. Que pouvez-vous conclure de l’ensemble de l’analyse que vous avez menée ?
+
+Exercice 2 – Plan fractionnaire 2k-p
+Dans le cadre de la réalisation d’un plan fractionnaire 25-2 (soit ¼ du plan complet factoriel 25) on a :
+D=ABC et E=AB.
+1. Combien d’essais comporte le plan fractionnaire ?
+2. Quels sont les trois générateurs d’aliases ? (Il y a deux générateurs d’aliases indépendants et
+un générateur d’aliases dépendant.)
+3. Quel est le risque principal avec ce type de plan fractionnaire ? Donner la résolution du plan.
+4. Vous souhaitez désaliaser le plan pour lever la confusion entre E et AB. Quels sont les essais à
+réaliser ? Expliquez comment vous procédez pour les obtenir ?

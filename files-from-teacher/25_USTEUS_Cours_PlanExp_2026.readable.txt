@@ -1,0 +1,2086 @@
+# 25_USTEUS_Cours_PlanExp_2026.pdf
+
+- Source: `25_USTEUS_Cours_PlanExp_2026.pdf`
+- Final-exam priority: P1
+- Role: DOE course support.
+
+## Readable Content
+FQ01 - Management de la Qualité
+Introduction aux Plans d’expériences
+Pr. Faicel HNAIEN
+UTT- Troyes
+UTSEUS 2026
+
+*Cours d’Amélie DURUPT, UTC.
+1
+
+Programme
+1. Introduction générale
+2. La démarche des plans d’expériences
+3. Les plans factoriels 2k
+4. Les plans fractionnaires 2k-p
+5. Les plans croisés (analyse de robustesse)
+
+Il existe des UE ou UV dédiées aux plans d’expériences en branche ou en
+filière (UTBM : FQ78, CP59, UTC : DF03 et UTT : FQ01 et FQ03).
+Amélie PONCHET DURUPT - UTC
+
+2
+
+1. Introduction générale
+
+3
+
+Exemple : Pesée de 3 objets
+Objectif : Estimer les poids p1,p2 et p3 de 3 objets à l’aide d’une balance de
+Roberval
+Méthode classique : pesée 1 par 1
+Poids y
+
+Objet
+
+A vide décalage de zéro p0
+Pesées indépendantes
+
+"#= !%
+"#+ "%= !$
+"#+ "$= !"
+"#+ ""= !!
+
+"! = !$ ! !!
+"$ = !# ! !!
+"# = !" ! !!
+
+Amélie PONCHET DURUPT - UTC
+
+Précision de l’estimation ?
+
+!"#( ")=$!!"#( !)
+
+4
+
+Exemple : Pesée de 3 objets
+Objectif : Estimer les poids p1,p2 et p3 de 3 objets à l’aide d’une balance de
+Roberval
+Plan de pesée optimal
+Poids y3
+
+"%+ "$+ "#+ ""= !$
+"%! "$! "#+ ""= !#
+"%+ "$! "#! ""= !"
+"%! "$+ "#! ""= !!
+
+Précision de l’estimation ?
+$
+"$= [!$! !#+ !"! !!]
+!
+"#$( !)
+$
+"#= [!$! !#! !"+ !!]
+"#$( ")=
+!
+!
+""= $[!$+ !#! !"! !!]
+!
+
+Participation simultanée de tous les objets à la pesée
+Amélie PONCHET DURUPT - UTC
+
+5
+
+Qu’est-ce qu’un plan d’expériences ?
+Un plan d’expériences est une suite d’essais organisée de manière à
+déterminer avec un minimum d’essais et avec un maximum de précision
+l’influence de plusieurs paramètres (facteurs) sur une ou plusieurs
+réponses.
+
+• Qu’est-ce qu’une réponse?
+Mesure quantifiable (rendement, durée de fonctionnement, taux de
+satisfaction etc.) correspondant souvent à une grandeur physique.
+
+• Qu’est-ce qu’un facteur?
+Variable/paramètre (température, vitesse, concentration, type de
+revêtement, type de matériau etc.) continue ou discrète, quantitative ou
+qualitative.
+Amélie PONCHET DURUPT - UTC
+
+6
+
+Qu’est-ce qu’un essai ?
+Une expérience associées à une configuration spécifique des niveaux des
+facteurs aboutissant à une réponse.
+
+• Qu’est- ce qu’une modalité (ou un niveau)?
+Valeur particulière d’un facteur utilisée pour les expériences.
+
+Boîte noire = système
+ou produit
+
+Boutons = facteurs
+contrôlables
+
+Aiguille = valeur de
+la réponse
+
+Crans des boutons =
+modalités ou niveaux
+« la boîte à boutons »
+
+Amélie PONCHET DURUPT - UTC
+
+7
+
+Quand fait-on un plan d’expériences?
+Lorsque l’on souhaite :
+• Optimiser la conception d’un produit
+• Régler un moyen de production ou plus généralement un
+processus
+• Investiguer pour mieux comprendre un phénomène
+
+Amélie PONCHET DURUPT - UTC
+
+8
+
+Pourquoi un plan d’expériences?
+• Efficacité supérieure à toute autres suite d’essais de même taille non
+planifiée,
+• Pas de « un facteur à la fois »,
+• Conclusions fiables et reproductibles,
+• Quantifie et hiérarchise l’influence des facteurs et de leur interaction,
+• Estimation a priori de la durée et des coûts des essais,
+• Interprétation aisée des résultats.
+
+Amélie PONCHET DURUPT - UTC
+
+9
+
+Quelles sont les conditions nécessaires ?
+• Groupe de travail composé de plusieurs personnes
+• Le problème à traiter doit être formalisable
+• L’expérimentation est possible (les moyens et les délais impartis bien
+définis)
+• La (ou les) réponses doivent être quantifiables et mesurables avec
+précision (pour le traitement qui en sera fait)
+
+Amélie PONCHET DURUPT - UTC
+
+10
+
+Programme
+1. Introduction générale
+2. La démarche des plans d’expériences
+3. Les plans factoriels 2k
+4. Les plans fractionnaires 2k-p
+5. Les plans croisés (analyse de robustesse)
+
+Il existe des UE ou UV dédiées aux plans d’expériences en branche ou en
+filière (UTBM : FQ78, CP59, UTC : DF03 et UTT : FQ03).
+Amélie PONCHET DURUPT - UTC
+
+11
+
+2. La démarche des plans
+d’expériences
+
+12
+
+Quelle est la démarche à suivre ?
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement : outils statistiques
+a) Recherche des Facteurs significatifs
+b) Modélisation de l’influence des facteurs sur la
+réponse : linéaire, non linéaire
+c) Optimisation : choix des niveaux des facteurs
+
+5. Conclusion
+Amélie PONCHET DURUPT - UTC
+
+13
+
+1. Formalisation
+
+Formalisation
+
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Définir le problème
+• Déterminer l’objectif de l’étude
+• Recenser les contraintes et limites
+• Définir la(les) réponse(s)
+• Choisir les facteurs
+• Définir les modalités des facteurs
+• Choisir les interactions : difficile a priori
+
+Amélie PONCHET DURUPT - UTC
+
+14
+
+1. Formalisation
+
+Définir le problème
+
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Poser clairement le problème : Méthode QQCOQP
+– Quoi ? : En quoi consiste le problème ?
+– Qui ? : qui est le demandeur et qui est gêné par le problème ?
+– Combien ? : Combien ça coûte ?
+– Où ? Où cela se passe t-il ?
+– Quand ? Quand cela arrive ?
+– Pourquoi ? Pourquoi est ce un problème
+
+Amélie PONCHET DURUPT - UTC
+
+15
+
+1. Formalisation
+
+Déterminer l’objectif
+
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Formuler en une phrase précise l’objectif de l’étude
+Ex : Obtenir un niveau de performance supérieur à l’état actuel
+Ex : Trouver une solution pour diminuer le taux de rebuts
+
+• Quantifier l’objectif
+Ex : Obtenir une performance dépassant de 30% la performance actuelle
+Ex : Trouver une solution pour réduire le taux de rebuts à moins de 0,5%
+
+Amélie PONCHET DURUPT - UTC
+
+16
+
+1. Formalisation
+
+Recenser les contraintes
+et limites
+
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Pour mettre en place un plan d’expériences réalisable
+on a besoin de connaître :
+– Délai imparti à l’étude : 1 mois par exemple
+– Ressources disponibles : matériels (moyens d’essais),
+personnel, finances (budget)
+– Limites de l’étude : conditions dans lesquels seront menés
+les essais ( domaine expérimental : domaine de T°, de
+Pression, ….)
+
+Amélie PONCHET DURUPT - UTC
+
+17
+
+1. Formalisation
+
+Définir la réponse
+
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Définir la grandeur à mesurer la moins sensible aux
+fluctuations aléatoires, maîtrisable, quantifiable
+(exprimée sous forme numérique)
+– Lève vitre :
+• réponse : Nombre de décibels émis, objectif : minimiser le bruit
+émis
+
+• Définir le protocole de mesure :
+– Instrument de mesure
+– Opérateur
+– Conditions dans lesquels la mesure doit être réalisée
+
+Amélie PONCHET DURUPT - UTC
+
+18
+
+1. Formalisation
+
+Choisir les facteurs
+
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Un facteur est une cause possible de variation de la réponse
+– Facteur « Contrôle » : que l’on souhaite calibrer pour optimiser la réponse
+– Facteur « Bruit » : dont on souhaite réduire l’influence (approche de robustesse)
+
+• Recensement des facteurs : un outil, le diagramme cause-effet
+(Ishikawa)
+
+Amélie PONCHET DURUPT - UTC
+
+19
+
+1. Formalisation
+
+Définir les modalités
+des facteurs
+
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Déterminer les valeurs que les facteurs sont susceptibles de
+prendre, 2 types de facteurs :
+– Facteur Qualitatif : type de produit, type de matériau, etc.
+• Nombre de modalités : Nombre de produits testés, nombre de
+matériaux
+
+– Facteur Quantitatif : Température, Pression, etc.
+• Niveaux : choix du nombre de niveaux que peut prendre le facteur
+(parmi une graduation continue)
+
+Généralement on limite le nombre de niveaux pour réduire le nombre
+d’essais :
+• 2 niveaux le plus souvent, on prend les niveaux extrêmes.
+• 3 niveaux si risque de non linéarité de l’effet d’un facteur sur la réponse
+Amélie PONCHET DURUPT - UTC
+
+20
+
+1. Formalisation
+
+Définir les modalités
+des facteurs
+
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Comment choisir l’écart entre les modalités ?
+Réponse
+
+Niveaux éloignés : bonne précision
+de la pente avec un risque de non
+linéarité
+
+Niveaux proches : mauvaise précision
+de la pente, moins de risque de non
+linéarité
+
+modalité
+Amélie PONCHET DURUPT - UTC
+
+21
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+Choisir les interactions
+• L’interaction entre deux facteurs :
+
+Manière dont les deux facteurs interagissent sur la réponse. Une
+interaction existe si l’effet d’un facteur dépend de la modalité de
+l’autre.
+Difficile à définir a priori
+
+•
+
+Exemple :
+
+Interaction taux d’alcoolémie,
+absorption d’un médicament sur le
+temps de réaction au freinage.
+
+Temps de
+réaction
+
+nt
+e
+am
+c
+i
+éd
+m
+ec
+ent
+v
+m
+a
+A
+édic
+m
+s
+San
+
+0 verre
+
+2 verres
+
+Existence d’une interaction Alcoolémie Médicament
+Amélie PONCHET DURUPT - UTC
+
+22
+
+Quelle est la démarche à suivre ?
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement : outils statistiques
+a) Recherche des Facteurs significatifs
+b) Modélisation de l’influence des facteurs sur la
+réponse : linéaire, non linéaire
+c) Optimisation : choix des niveaux des facteurs
+
+5. Conclusion
+Amélie PONCHET DURUPT - UTC
+
+23
+
+1. Formalisation
+
+Construction du plan
+
+2. Construction du
+plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+Le domaine d’expérimentation
+Il est défini par le choix des facteurs et leur
+modalités
+
+Amélie PONCHET DURUPT - UTC
+
+24
+
+1. Formalisation
+
+Construction du plan
+
+2. Construction du
+plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+Les différentes possibilités d’expérimentation
+Approche « exhaustive »
+plan complet, plan factoriel (2k)
+
+Approche « fractionnaire »
+plan fractionnaire orthogonal (2k-p)
+
+Table pour tester 7 facteurs à deux
+modalités : 27 =128 essais
+
+Table à 8 essais pour tester jusqu’à 7
+facteurs à deux modalités
+
+Amélie PONCHET DURUPT - UTC
+
+25
+
+1. Formalisation
+
+Définition d’un plan
+orthogonal
+
+2. Construction du
+plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Plans orthogonaux
+– Tables d’essais prédéfinies en fonction du nombre de facteurs et
+interactions à analyser
+– Lg(mf) :
+• f : nombre de facteurs
+• m : nombre de modalité
+• g : nombre d’expériences
+
+Amélie PONCHET DURUPT - UTC
+
+26
+
+1. Formalisation
+
+Plans de Taguchi
+
+2. Construction du
+plan
+3. Réalisation des essais
+4. Dépouillement
+5. Conclusion
+
+• Plans fractionnaires « clés en main »
+
+Les interactions :
+
+Amélie PONCHET DURUPT - UTC
+
+27
+
+Quelle est la démarche à suivre ?
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement : outils statistiques
+a) Recherche des Facteurs significatifs
+b) Modélisation de l’influence des facteurs sur la
+réponse : linéaire, non linéaire
+c) Optimisation : choix des niveaux des facteurs
+
+5. Conclusion
+Amélie PONCHET DURUPT - UTC
+
+28
+
+Quelle est la démarche à suivre ?
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement : outils statistiques
+a) Recherche des Facteurs significatifs
+b) Modélisation de l’influence des facteurs sur la
+réponse : linéaire, non linéaire
+c) Optimisation : choix des niveaux des facteurs
+
+5. Conclusion
+Amélie PONCHET DURUPT - UTC
+
+29
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+Recherche de facteurs
+4. Dépouillement
+significatifs : cas de 2 facteurs
+5. Conclusion
+
+On considère un plan d’expériences à 2 facteurs A et B
+Avec respectivement nA et nB modalités.
+Les essais sont répétés r fois
+Facteur A
+Modalité A1 Modalité A2
+Facteur
+B
+
+Modalité
+B1
+
+y111
+
+y211
+
+y112
+
+y212
+
+Modalité
+B2
+
+y121
+
+y221
+
+y122
+
+y222
+
+Table d’essais dans le cas où nA = 2, nB =2 et r = 2
+
+Amélie PONCHET DURUPT - UTC
+
+30
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+Recherche de facteurs
+4. Dépouillement
+significatifs : cas de 2 facteurs
+5. Conclusion
+
+1ère étape : calcul des effets des facteurs et interactions
+
+Amélie PONCHET DURUPT - UTC
+
+31
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+Recherche de facteurs
+4. Dépouillement
+significatifs : cas de 2 facteurs
+5. Conclusion
+
+Exemple de visualisation des effets d’un facteur et d’une interaction
+'
+"#$
+
+&"#
+
+"#%
+
+&
+
+"#&
+
+B"#
+
+"#'
+
+)A
+
+B
+
+"
+(
+
+)B
+
+'
+
+!"#'
+
+A"#
+
+!"#&
+
+A
+
+!"#%
+
+!"#
+
+!"#$
+
+Effet du facteur B
+
+!
+(A
+
+(B
+
+(&
+
+('
+
+Effet de l’interaction AB
+
+Les facteurs ou interactions sont ils significatifs ?
+Amélie PONCHET DURUPT - UTC
+
+32
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+Recherche de facteurs
+4. Dépouillement
+significatifs : cas de 2 facteurs
+5. Conclusion
+
+2ème étape : Calcul de la somme des carrés des écarts (SCE) pour
+l’ANAVAR
+Équation de l’analyse de variance:
+
+SCE total
+
+SCE facteur A
+
+SCE facteur B
+
+SCE interaction AB
+
+SCE résiduelle
+
+Il est préconisé de déduire la SCE de la résiduelle :
+
+Amélie PONCHET DURUPT - UTC
+
+33
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+Recherche de facteurs
+4. Dépouillement
+significatifs : cas de 2 facteurs
+5. Conclusion
+
+3ème étape : Calcul des carrés moyens des écarts (CME) pour
+l’ANAVAR
+2 modalités
+1 coefficient de pente
+→ ddl = 1
+
+Q = A, B, AB et R
+
+Pour un facteur A : ddl(A) = nA -1
+Pour une interaction AB :
+ddl(AB) = (nA-1)(nB-1) = ddl(A)ddl(B)
+Pour la résiduelle R : ddl(R) = ddl(Total)-∑ddl
+Où ddl(Total) = N-1
+Avec N le nombre total d’essais (répétitions incluses)
+Amélie PONCHET DURUPT - UTC
+
+3 modalités
+2 coefficients de pente
+→ ddl = 2
+
+34
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+Recherche de facteurs
+4. Dépouillement
+significatifs : cas de 2 facteurs
+5. Conclusion
+
+4ème étape : Calcul des rapports de Fisher
+Pour Q = A, B, AB
+Détermination des facteurs significatifs (test de Fisher) :
+
+ANAVAR
+Facteur
+A
+B
+AB
+R
+Total
+
+SCE
+0.27
+7.84
+5.04
+0.43
+13.58
+
+ddl
+3
+1
+3
+8
+15
+
+Amélie PONCHET DURUPT - UTC
+
+CME
+0.09
+7.84
+1.68
+0.05
+
+F
+1.8
+156.8
+33.6
+
+Fseuil
+4.07
+5.32
+4.07
+
+Décision
+Non Significatif
+Significatif
+Significatif
+
+Exemple illustratif du tableau de l’ANAVAR
+35
+
+Quelle est la démarche à suivre ?
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement : outils statistiques
+a) Recherche des Facteurs significatifs
+b) Modélisation de l’influence des facteurs sur la
+réponse : linéaire, non linéaire
+c) Optimisation : choix des niveaux des facteurs
+
+5. Conclusion
+Amélie PONCHET DURUPT - UTC
+
+36
+
+Modélisation de la réponse
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+4. Dépouillement
+5. Conclusion
+
+• Objectifs
+– Estimation de la valeur de la réponse pour toutes
+les combinaisons possibles appartenant au
+domaine d’expérimentation
+
+• Types de modèles
+$=##+#"""+#! " !+!+#! " !
+– Linéaire :
+! #
+'=!!&" % $"
+– Polynomial :
+"=! $ =!
+– Non linéaire :
+#= " (! )
+"
+
+Amélie PONCHET DURUPT - UTC
+
+37
+
+Modélisation de la réponse
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+4. Dépouillement
+5. Conclusion
+
+• 2 facteurs significatifs, sans interaction
+
+& #" #
+& !" #
+$
+!
+A$ = A + " #" " #! " ## $ #!! + "!" "!! $ !
+! !"
+%
+$% ##!"
+
+[
+
+]
+
+[
+
+]
+
+• 2 facteurs et interaction significatifs
+& #" #
+& !" #
+A$ = A + " #" " #! " ## $$ #!!! + "!" "!! $ ! + [#" #!
+! !"
+%
+$% ##!"
+
+[
+
+]
+
+[
+
+Amélie PONCHET DURUPT - UTC
+
+]
+
+& " #"!"
+##]$$ " # ! !"
+$% " ## !"
+
+" #"! ! #
+& !" #
+" # ! ! ! !! $ !
+! !"
+%
+" # ! ! ! !"
+38
+
+Validation du modèle
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+4. Dépouillement
+5. Conclusion
+
+Erreur du modèle(EM)(Facteurs négligés) / Erreur expérimentale(Répétition) (ER)
+Réponse
+
+Erreur
+Résiduelle
+Globale(ERG)
+
+$ = $! + !" + !% = $! + !"#
+Niveau Facteurs
+
+Amélie PONCHET DURUPT - UTC
+
+39
+
+Validation du modèle
+
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+
+4. Dépouillement
+5. Conclusion
+
+Défaut d’adéquation du modèle (erreur du modèle)
+
+Test de Fisher
+
+Amélie PONCHET DURUPT - UTC
+
+40
+
+Quelle est la démarche à suivre ?
+1. Formalisation
+2. Construction du plan
+3. Réalisation des essais
+4. Dépouillement : outils statistiques
+a) Recherche des Facteurs significatifs
+b) Modélisation de l’influence des facteurs sur la
+réponse : linéaire, non linéaire
+c) Optimisation : choix des niveaux des facteurs
+
+5. Conclusion
+Amélie PONCHET DURUPT - UTC
+
+41
+
+Programme
+1. Introduction générale
+2. La démarche des plans d’expériences
+3. Les plans factoriels 2k
+4. Les plans fractionnaires 2k-p
+5. Les plans croisés (analyse de robustesse)
+
+Il existe des UE ou UV dédiées aux plans d’expériences en branche ou en
+filière (UTBM : FQ78, CP59, UTC : DF03 et UTT : FQ03).
+Amélie PONCHET DURUPT - UTC
+
+42
+
+3. Les plans factoriels 2k
+k facteurs à 2 modalités
+
+43
+
+Les plans factoriels 2k
+• Plans complets de k facteurs à 2 modalités.
+• Chaque facteur est défini par deux niveaux.
+– Représentation de Yates : Niveau (-1) et
+Niveau (+1)
+– Toutes les combinaisons entre les différents
+niveaux des facteurs sont prises en compte
+
+Plan 2²
+
+Plan 24
+Plan 23
+
+Amélie PONCHET DURUPT - UTC
+
+44
+
+Les plans factoriels 2k
+• Calcul des effets, algorithme de Yates
+%" = " %!&'!" ! $!"
+! ="!! #
+
+Q = A, B, AB
+N = nombre total d’essais
+
+#$#+"!= "$
+!
+
+Essai
+
+A
+
+B
+
+y
+
+1
+
+-1
+
+-1
+
+y1
+
+2
+
++1
+
+-1
+
+y2
+
+3
+
+-1
+
++1
+
+y3
+
+4
+
++1
+
++1
+
+y4
+
+Faire le produit de la colonne des signes du facteur par la colonne résultats
+
+Amélie PONCHET DURUPT - UTC
+
+45
+
+Les plans factoriels 2k
+Dans le cas de l’interaction AB :
+construire la colonne des signes de AB
+= le produit des signes des colonnes A et B
+
+Essai
+
+A
+
+B
+
+AB
+
+1
+
+-1
+
+-1
+
++1
+
+2
+
++1
+
+-1
+
+-1
+
+3
+
+-1
+
++1
+
+-1
+
+4
+
++1
+
++1
+
++1
+
+• Calcul de la somme des carrés des écarts
+"!
+
+C'$$!#= % !$!#" =% "$!"$+!#
+"! #=!
+Amélie PONCHET DURUPT - UTC
+
+Test de Fisher
+
+46
+
+Programme
+1. Introduction générale
+2. La démarche des plans d’expériences
+3. Les plans factoriels 2k
+4. Les plans fractionnaires 2k-p
+5. Les plans croisés (analyse de robustesse)
+
+Il existe des UE ou UV dédiées aux plans d’expériences en branche ou en
+filière (UTBM : FQ78, CP59, UTC : DF03 et UTT : FQ03).
+Amélie PONCHET DURUPT - UTC
+
+47
+
+4. Les plans Fractionnaires 2k-p
+
+48
+
+Les plans fractionnaires 2k-p
+• Dans un plan factoriel complet, le nombre d’essais
+augmente de façon exponentielle avec le nombre de
+facteurs
+4
+
+Les plans fractionnaires sont
+des plans optimaux qui se focalisent
+sur les effets les plus intéressants
+
+Amélie PONCHET DURUPT - UTC
+
+x 10
+
+3
+
+Nombre d’essais
+
+– 4 facteurs : 24=16 essais
+– 5 facteurs : 25=32 essais
+– 7 facteurs : 27=128 essais
+
+3.5
+
+2.5
+
+2
+
+1.5
+
+1
+
+0.5
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+Nombre de facteurs
+
+49
+
+16
+
+Les plans fractionnaires 2k-p
+• Hypothèse :
+– Interactions d’ordre supérieur à 2 sont souvent
+négligeables : ABC, ABCD, ABCDE…
+
+• Ex: 5 facteurs A,B,C,D,E à 32 essais
+– Les informations utiles :
+• A,B,C,D,E : 5
+• Interaction d’ordre 1 : 10
+
+– Une table avec 16 essais (25-1) suffirait…
+Lorsque le nombre de facteurs augmente , le rapport du
+nombre d’informations utiles au nombre total d’essais diminue
+de façon alarmante ! à Réduction de la taille des plans
+Amélie PONCHET DURUPT - UTC
+
+50
+
+Les plans fractionnaires 2k-p
+Comment choisir une table d’essais?
+• Faire le bilan sur :
+
+– le nombre de facteurs (+ nombre de modalités)
+– Le nombre d’interactions
+– Le nombre de degrés de liberté (ddl) au total : donne le nombre d’essais
+minimal nécessaire.
+• ddl(total) = somme des ddl des facteurs
+• ddl(Facteur) = nombre de modalités du facteur moins 1
+
+• Choisir la table en adéquation avec le nombre d’essais minimum
+• Affecter les facteurs aux colonnes
+
+– Le choix de colonnes se fait selon des contraintes de coût sur la fréquence
+de variation des niveaux des facteurs d’un essai à l’autre
+→ Tables de Taguchi
+
+Amélie PONCHET DURUPT - UTC
+
+51
+
+Les plans fractionnaires 2k-p
+
+L8(23)
+3 facteurs
+A,B,C
++ 3 interactions
+Sans confusion
+
+C
+
+A
+
+B
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+-1
+
+-1
+
++1
+
+-1
+
++1
+
++1
+
+-1
+
+-1
+
+-1
+
++1
+
++1
+
+-1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
+-1
+
+-1
+
+-1
+
++1
+
++1
+
++1
+
+-1
+
+-1
+
++1
+
++1
+
+-1
+
+-1
+
++1
+
++1
+
++1
+
+-1
+
+-1
+
+_1
+
+-1
+
++1
+
++1
+
++1
+
++1
+
++1
+
++1
+
++1
+
+1x4
+
+2x4
+
+1x2x4
+
+1x2
+
+Amélie PONCHET DURUPT - UTC
+
+52
+
+Les plans fractionnaires 2k-p
+
+L8(23)
+4 facteurs
+A,B,C, D
++ 3 interactions
+Avec confusion
+D est affecté à la
+colonne ABC
+→ D et ABC sont aliasés
+
+C
+
+D
+
+A
+
+B
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+-1
+
+-1
+
++1
+
+-1
+
++1
+
++1
+
+-1
+
+-1
+
+-1
+
++1
+
++1
+
+-1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
++1
+
+-1
+
+-1
+
+-1
+
+-1
+
++1
+
++1
+
++1
+
+-1
+
+-1
+
++1
+
++1
+
+-1
+
+-1
+
++1
+
++1
+
++1
+
+-1
+
+-1
+
+_1
+
+-1
+
++1
+
++1
+
++1
+
++1
+
++1
+
++1
+
++1
+
+1x4
+2x7
+
+2x4
+1x7
+
+1x2x4
+
+Amélie PONCHET DURUPT - UTC
+
+1x2
+4x7
+
+53
+
+Les plans fractionnaires 2k-p
+Propriétés
+
+• Commutativité : AB=BA
+• Associativité : A(BC)=(AB)C=ABC
+• Élément Neutre I (colonne de (+)): I.A=A.I=A
+• A.A=I quel que soit A
+Conséquences
+
+• L’égalité D=ABC peut s’écrire I=D.D=DABC=ABCD
+• I=ABCD à appelé GENERATEUR D’ALIAS
+• Détermination de tous les alias :
+– I.A=ABCD.A=BCD à A=BCD
+– I.B=ABCD.B=ACDà B=ACD
+Amélie PONCHET DURUPT - UTC
+
+54
+
+Les plans fractionnaires 2k-p
+Comment calculer les effets des facteurs et interactions à
+partir des colonnes aliasées?
+→ On parle de contrastes
+Si le contraste est faible alors les effets des facteurs et
+interactions qui sont confondus sont négligeables.
+Si ce n’est pas le cas : le problème qui se pose toujours est
+de savoir si un contraste contient ou non une interaction
+non négligeable.
+Amélie PONCHET DURUPT - UTC
+
+55
+
+Les plans fractionnaires 2k-p
+Hypothèses d’interprétation :
+1. Les interactions entre 3 facteurs ou plus sont considérées
+comme négligeables.
+On élimine ainsi un grand nombre d'inconnues. Mais attention cette
+hypothèse peut parfois être mise en défaut.
+
+2. Si un contraste est nul ou faible les interactions aliasés
+sont nulles ou faibles.
+3. Si un contraste est fort, il est probable que l’interaction
+aliasé comportant un facteur significatif soit l’interaction
+significative.
+Amélie PONCHET DURUPT - UTC
+
+56
+
+Les plans fractionnaires 2k-p
+Ces hypothèses sont très souvent vérifiées mais, il arrive
+parfois qu'elles soient mises en défaut.
+Il est toujours possible d'en adopter d'autres en fonction du
+problème traité, des risques encourus, de l’expertise métier
+etc.
+En dernier recours, il peut être nécessaire de faire des
+essais complémentaires pour désaliaser certains
+effets/interactions (ôter les confusions possibles).
+
+Amélie PONCHET DURUPT - UTC
+
+57
+
+Les plans fractionnaires 2k-p
+Technique de désaliasage :
+Si h1 = EAB + ECD et aucun moyen de savoir qui de
+l’interaction AB ou CD est significative.
+Alors il faut faire les essais qui permettent d’avoir :
+h1bis = EAB - ECD
+Ainsi il sera ainsi possible de définir EAB = (h1 + h1bis)/2
+
+Amélie PONCHET DURUPT - UTC
+
+58
+
+Les plans fractionnaires 2k-p
+Comment définir ces essais supplémentaires ?
+Il faut repartir du générateur d’aliases I = ABCD
+Pour avoir h1bis = EAB - ECD
+Il faut prendre comme générateur I = -ABCD → AB = -CD
+Il faut sélectionner les essais, dans le plan complet L16(24),
+dont le produit des colonnes A, B, C et D font -1.
+Amélie PONCHET DURUPT - UTC
+
+59
+
+Les plans fractionnaires 2k-p
+• La résolution des plans fractionnaires
+
+Source : Minitab
+
+Amélie PONCHET DURUPT - UTC
+
+Programme
+1. Introduction générale
+2. La démarche des plans d’expériences
+3. Les plans factoriels 2k
+4. Les plans fractionnaires 2k-p
+5. Les plans croisés (analyse de robustesse)
+
+Il existe des UE ou UV dédiées aux plans d’expériences en branche ou en
+filière (UTBM : FQ78, CP59, UTC : DF03 et UTT : FQ03).
+Amélie PONCHET DURUPT - UTC
+
+61
+
+5. Les plans croisés
+Analyse de robustesse
+
+62
+
+Les plans croisés
+• Qu’est-ce que la robustesse?
+Capacité d’un système à maintenir ses
+performances, malgré des changements dans
+les conditions d’utilisation ou la présence
+d’incertitudes liées à ses paramètres ou à ses
+composants
+(la 1ère définition a été donnée par Taguchi)
+Amélie PONCHET DURUPT - UTC
+
+63
+
+Les plans croisés
+Facteurs de Bruit
+(FB)
+Facteurs de
+Contrôle (FC)
+
+Système
+
+Réponses
+
+Construction du plan d’expériences : FC+FB = Plan croisé
+• On fait de « fausses » répétitions des combinaisons du
+plan principal.
+• Les répétitions sont planifiées en fonction des différents
+niveaux des facteurs bruits.
+Amélie PONCHET DURUPT - UTC
+
+64
+
+Les plans croisés
+Exemple de plan L8 avec répétitions
+Facteurs de contrôle
+Essai
+
+A
+
+B
+
+C
+
+1
+
+-1
+
+-1
+
+-1
+
+2
+
++1
+
+-1
+
+-1
+
+3
+
+-1
+
++1
+
+-1
+
+4
+
++1
+
++1
+
+-1
+
+5
+
+-1
+
+-1
+
++1
+
+6
+
++1
+
+-1
+
++1
+
+7
+
+-1
+
++1
+
++1
+
+8
+
++1
+
++1
+
++1
+
+réponses
+2
+
+17
+
+15
+
+3
+
+Il y a autre
+chose que les
+facteurs
+contrôles qui a
+bougé !
+
+Si on ne garde que la moyenne, on perd la notion de dispersion !
+Amélie PONCHET DURUPT - UTC
+
+65
+
+Les plans croisés
+Exemple de plan croisé L8xL4
+Facteurs de contrôle
+Essai
+
+A
+
+B
+
+C
+
+1
+
+-1
+
+-1
+
+-1
+
+2
+
++1
+
+-1
+
+-1
+
+3
+
+-1
+
++1
+
+-1
+
+4
+
++1
+
++1
+
+-1
+
+5
+
+-1
+
+-1
+
++1
+
+6
+
++1
+
+-1
+
++1
+
+7
+
+-1
+
++1
+
++1
+
+8
+
++1
+
++1
+
++1
+
+Amélie PONCHET DURUPT - UTC
+
+E
+
+-1
+
+-1
+
++1
+
++1
+
+F
+
+-1
+
++1
+
+-1
+
++1
+
+réponses
+
+Facteurs
+Bruit
+
+66
+
+Les plans croisés
+• Le but de l’expérimentation Facteurs Contrôle +
+Facteurs Bruit est :
+– Identifier les FC permettant de réduire la variabilité
+causée par les FB
+– Identifier les FC pouvant être utilisés pour ajuster la
+réponse moyenne sur la valeur cible
+– Découvrir les FC ayant une faible influence sur la réponse,
+ce qui permet d’élargir les tolérances
+
+Amélie PONCHET DURUPT - UTC
+
+67
+
+Les plans croisés
+• Deux types d’analyses possibles :
+1. Analyse classique
+– Recherche d’une combinaison optimale
+
+2. Analyse robuste
+– Recherche d’une combinaison robuste :
+combinaison des facteurs contrôle la moins
+sensible aux facteurs bruits
+Indicateur de robustesse : le ratio S/B
+
+Confrontation des deux analyses et synthèse
+Amélie PONCHET DURUPT - UTC
+
+68
+
+Les plans croisés
+• Le ratio S/B est conçu pour isoler les effets du bruit (sur la
+réponse) de la valeur moyenne de la réponse
+
+• Calculer le Ratio S/B pour chaque combinaison d’essai du
+plan principal
+– On obtient la colonne des valeurs de S/B (à traiter exactement comme la
+colonne réponse habituelle)
+
+• L’objectif sera toujours de rechercher la combinaison
+optimale des facteurs de contrôle permettant de maximiser
+le rapport S/B
+Amélie PONCHET DURUPT - UTC
+
+69
+
+Les plans croisés
+• Le nominal est le mieux (NLM)
+& "! #
+#A%C' = $ ! !
+$% ! !"
+
+• Le plus petit est le mieux (PPLM)
+
+(
+
+!
+" # !
+A%CE) = ! !' = " ! + !
+# ' ="
+
+)
+
+• Le plus grand est le mieux (PGLM)
+
+! ! !
+C'E#A = ! "
+! " =! %"
+Amélie PONCHET DURUPT - UTC
+
+70
+
+Les plans croisés
+Exemple de plan croisé L8xL4
+Facteurs de contrôle
+Essai
+
+A
+
+B
+
+C
+
+1
+
+-1
+
+-1
+
+-1
+
+2
+
++1
+
+-1
+
+-1
+
+3
+
+-1
+
++1
+
+-1
+
+4
+
++1
+
++1
+
+-1
+
+5
+
+-1
+
+-1
+
++1
+
+6
+
++1
+
+-1
+
++1
+
+7
+
+-1
+
++1
+
++1
+
+8
+
++1
+
++1
+
++1
+
+Amélie PONCHET DURUPT - UTC
+
+Facteurs Bruit
+
+E
+
+-1
+
+-1
+
++1
+
++1
+
+F
+
+-1
+
++1
+
+-1
+
++1
+
+réponses
+
+S/B
+
+71
+
+Les plans croisés
+Procédure d’analyse de la robustesse :
+1) Analyse des effets moyens des FC sur S/B (voir ANAVAR)
+2) Représentation graphique des effets moyens sur S/B
+3) Choix d’une combinaison robuste des facteurs contrôle maximisant S/B
+4) Validation de l’expérimentation : sert à l’assurer que la combinaison robuste
+issue de l’expérimentation est valide (essai de confirmation)
+5) Validation du modèle : ANAVAR de validation sur l’erreur du modèle
+6) Conclusion
+
+Amélie PONCHET DURUPT - UTC
+
+72
+
+FQ01 - Management de la Qualité
+
+Introduction aux Plans d’expériences
+
+Amélie DURUPT
+UTSEUS - Printemps 2022
+
+73

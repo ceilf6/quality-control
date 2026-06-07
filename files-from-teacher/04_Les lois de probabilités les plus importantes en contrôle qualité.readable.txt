@@ -1,0 +1,48 @@
+# 04_Les lois de probabilités les plus importantes en contrôle qualité.pdf
+
+- Source: `04_Les lois de probabilités les plus importantes en contrôle qualité.pdf`
+- Final-exam priority: P2
+- Role: Probability-law support.
+
+## Readable Content
+Ø Les lois de probabilités les plus importantes en contrôle qualité :
+Loi Binomiale
+Densité de
+probabilité
+
+𝑃(𝑋 = 𝑘) = 𝐶!" 𝑝" (1 − 𝑝)!#"
+𝑛!
+=
+𝑝" (1 − 𝑝)!#"
+𝑘! (𝑛 − 𝑘)!
+
+Loi Normale (ou Gaussienne)
+
+𝑓(𝑥) =
+
+Moyenne
+
+𝐸(𝑋) = 𝑛. 𝑝
+
+𝐸(𝑋) = 𝑚
+
+Variance
+
+𝑉(𝑋) = 𝑛𝑝(1 − 𝑝)
+
+𝑉(𝑋) = 𝜎 (
+
+1
+𝜎√2𝜋
+
+𝑒
+
+#
+
+(%#&)!
+() !
+
+Ø Loi normale centrée réduite :
+Toute loi Normale 𝑁(𝑚, 𝜎) se ramène à une loi normale réduite avec un changement de
+!"#
+variable : 𝑢 = $

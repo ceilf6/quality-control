@@ -1,0 +1,581 @@
+# 29_FQ01_UTSEUS_TD1_correction 2.pdf
+
+- Source: `29_FQ01_UTSEUS_TD1_correction 2.pdf`
+- Final-exam priority: P0
+- Role: TD1 correction.
+
+## Readable Content
+TD1 FQ01 UTSEUS – Plan d’expériences
+(Calculs)
+Exercice 1 – Plan complet à 2 facteurs plusieurs modalité avec
+répétitions (correction)
+Pour minimiser le taux de solvant résiduel dans la mise en œuvre d’un vernis industriel il a été réalisé
+le plan complet suivant :
+Facteurs :
+§
+§
+
+A : température du four (4 modalités) : 110°C, 120°C, 130°C, 140°C
+B : temps d’émaillage (2 modalités) : 30s, 60s
+
+Réponse :
+§
+
+Y = % de solvant résiduel
+
+Table d’essai :
+
+1. Faire l’analyse de ce plan
+1.1. Calcul des effets de facteurs
+
+%
+
+&''$()/$0)',?($@-0
+
+&
+
+!
+"
+
+!"#$%%$
+&''$()*"#$%
+?,--.)/$0)$''$(0
+
+!
+123
+128
+12:
+12:
+
+"
+124
+525
+123
+126
+
+#
+523
+621
+1
+;2:
+
+128
+<;21:
+;2;5:9
+
+124
+<;2;:
+;2;;63
+
+123
+;2;9
+;2;;19
+
+$
+!"#$%%$ &''$()*"#$% +,--.)/$0)$''$(0
+627
+527:57
+;28
+;293
+629
+;27
+121:57
+<;28
+;293
+;24
+52;7
+124:57
+;213 !"#$%%$)=.%.-,>$
+;2;675
+
+A
+
+Effet des
+interactions
+1
+1
+-0,6
+B
+2
+0,6
+Carré des effets des
+interactions
+1
+B
+2
+
+2
+-0,5
+0,5
+
+3
+0,4
+-0,4
+
+1
+0,4
+0,4
+
+4
+0,7
+-0,7
+A
+2
+0,3
+0,3
+
+3
+0,2
+0,2
+
+4
+0,5
+0,5
+
+!
+'"((
+')9"8(
+%'"#(
+
+!#
+)"*!$
+9"%#
+)"!$
+
+./#01023
++,-./01*232*4562575-,.57
++,-./01*4562575-,.57
++,-./01*4562575-,.57
+
+1.2. Réalisation de l’ANAVAR
+
+!"#$%F'
+4
+5
+45
+6/10+F%,,%
+72$",
+
+()*
+!"#$
+$"8)
+9"!)
+!")%
+'%"98
+
+++,
+%
+'
+%
+8
+'9
+
+)-*
+!"!F
+$"8)
+'"(8
+!"!9
+
+2. Représenter graphiquement les effets significatifs
+
+Effet moyen du facteur
+B
+
+Effet moyen de
+l'interaction AB
+
+1
+
+1,0
+
+0,5
+
+0,5
+0,0
+
+0
+-0,5
+
+1
+
+2
+
+-0,5
+
+1
+
+2
+
+3
+
+B=1
+
+B=2
+
+-1,0
+
+-1
+
+3. Quel réglage choisiriez-vous ?
+
+4
+
+Exercice 2 – Plan factoriel complet 2k – étude de la résistance d’un
+béton autoplaçant (correction)
+On souhaite étudier l’influence de trois facteurs (A, B, C) sur la résistance d’un béton autoplaçant. Les
+facteurs étudiés sont :
+
+La réponse est un indice de résistance du béton après 28 jours mesurée en Méga Pascal.
+L’expérimentateur effectue un plan complet avec répétition (r=2) et la moyenne des résultats d’essais
+est présentée dans la Table 1.
+'()*+()
+!
+!"
+"
+!"
+"
+!"
+"
+!"
+"
+
+"
+!"
+!"
+"
+"
+!"
+!"
+"
+"
+
+#
+!"
+!"
+!"
+!"
+"
+"
+"
+"
+
+$%
+"#$%
+"($'
++%$%
+(,$%
+,)$'
++"$%
+',$)
+)&$*
+
+$&
+&&$%
+")$'
+,%$%
+*%$%
+,#$'
++'$%
+''$&
+)+$+
+
+',-(..(
+&%$'
+"*$'
++'$%
+(*$%
+,#$%
+++$%
+''$%
+)+$%
+
+Table 1 – Table d’essais et réponses
+
+&/012234205060122342
+
+1. Calculer l’ensemble des effets des facteurs et des interactions.
+
+'(
+
+!
+"
+!"
+!"
+!"
+"
+"
+!"
+!"
+!"
+"
+!"
+"
+"
+"
+!"
+!"
+"
+"
+!"
+!"
+!"
+"
+!"
+"
+"
+"
+,"$%% "&%$%% *#$%%
+
+)(*+%, '$"+ "'$%% #$))
+)(*-%, !'$"+ !"'$%% !#$))
+).(*+%,
+
+&($&* &&'$%%
+
+#
+!#
+"#
+!"
+"
+"
+!"
+!"
+"
+!"
+"
+!"
+!"
+!"
+!"
+"
+!"
+!"
+"
+"
+!"
+"
+!"
+"
+"
+"
+"
+)%$%% !"*$%% !)$%%
+
+!"#
+!"
+"
+"
+!"
+"
+!"
+!"
+"
+#$%%
+
+"%$%% !&$"+
+!"%$%% &$"+
+
+!"$%%
+"$%%
+
+"$"+
+!"$"+
+
+"$%%
+
+"$&*
+
+#*$'& "%%$%%
+
+,$'&
+
+712;<12
+7891::1
+$%
+$&
+"#$%
+&&$%
+&%$'
+"($'
+")$'
+"*$'
++%$%
+,%$%
++'$%
+(,$%
+*%$%
+(*$%
+,)$'
+,#$'
+,#$%
++"$%
++'$%
+++$%
+',$)
+''$&
+''$%
+)&$*
+)+$+
+)+$%
+-./0110234145670
+,'$%
+
+2. Estimer la réponse avec A au niveau bas, B au niveau bas et C au niveau haut. Est-ce une
+valeur cohérente avec l’essai correspondant ? Qu’est-ce qui justifie cet écart ?
+
+𝑦" = 𝑦% + 𝐸!" + 𝐸#" + 𝐸$%
+On trouve alors 𝑦" = 34,88
+La réponse obtenue expérimentalement est y = 49
+L’écart peut se justifier par la non prise en compte des interactions qui doivent être significatives.
+3. Déterminer les paramètres (facteurs et interactions) significatifs et en déduire le modèle.
+Réalisation de l'ANAVAR
+Facteurs
+A
+B
+AB
+C
+AC
+BC
+ABC
+Résiduelle
+Total
+
+SCE
+
+ddl
+420
+3600
+1560
+1600
+72
+16
+20
+83
+7372
+
+1
+1
+1
+1
+1
+1
+1
+8
+15
+
+CME
+F
+420 40,38
+3600 345,90
+1560 149,92
+1600 153,74
+72
+6,94
+16
+1,54
+20
+1,95
+10,4
+
+F0,95
+5,32
+5,32
+5,32
+5,32
+5,32
+5,32
+5,32
+
+Décision
+Facteur significatif
+Facteur significatif
+Facteur significatif
+Facteur significatif
+Facteur significatif
+Facteur non significatif
+Facteur non significatif
+
+4. Vérifier la validité du modèle.
+Facteurs non
+significatifs
+BC
+ABC
+Résiduelle
+
+SCE
+16
+20
+83
+
+ddl
+1
+1
+8
+
+CME
+
+F
+
+F0,95(2,8)
+
+Décision
+
+18
+
+1,74
+
+4,46
+
+Le modèle est valide
+
+10
+
+5. Déterminer la configuration optimale qui maximise la résistance au béton.
+Rappel : On cherche à maximiser l’indice de résistance du béton
+
+Effet moyen des facteurs et
+intéractions significatifs
+
+Choisir A au niveau +1
+3
+
+Sable = 1000kg/m
+
+20,00
+
+Choisir B au niveau +1
+
+15,00
+
+3
+
+Eau = 200kg/m
+
+10,00
+5,00
+
+Choisir C au niveau +1
+
+0,00
+
+Gravillon = 900kg/m
+
+3
+
+EQ(+1)
+
+EQ(-1)
+
+-5,00
+-10,00
+-15,00
+-20,00
+A
+
+B
+
+AB
+
+C
+
+AC

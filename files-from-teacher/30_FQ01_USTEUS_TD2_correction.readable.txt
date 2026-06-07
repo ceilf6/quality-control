@@ -1,0 +1,403 @@
+# 30_FQ01_USTEUS_TD2_correction.pdf
+
+- Source: `30_FQ01_USTEUS_TD2_correction.pdf`
+- Final-exam priority: P0
+- Role: TD2 correction.
+
+## Readable Content
+TD2 FQ01 UTSEUS – Plan d’expériences
+(Analyse)
+Exercice 1 : Plan factoriel complet 2k (Correction)
+Dans le cadre de la mise en place d’un nouveau procédé de texturation (cf. Fig1), une étude est menée
+pour garantir la qualité de texture d’un produit de type margarine.
+Source image : https://www.huilesetomega.eu/margarine/
+
+Fig1. Illustration du procédé de fabrication de la margarine
+La réponse mesurée qui qualifie la texture est « la dureté ». L’objectif recherché étant d’avoir une
+dureté minimale. Trois facteurs sont retenus pour la conduite du plan d’expériences :
+§
+§
+§
+
+La température de refroidissement
+La vitesse de refroidissement
+La vitesse de malaxage
+
+Pour des raisons de confidentialité les significations physiques des modalités -1 et +1 des facteurs
+étudiés n’ont pas été divulguées. Un plan factoriel complet 23 a été réalisé avec trois répétitions par
+essai.
+1. Quel est le nombre total d’essai N à considérer dans ce plan ?
+Il s’agit d’un plan 23 avec 3 répétitions donc le nombre total d’essais N=24 essais.
+Le tableau Tab1 ci-dessous donne les moyennes des valeurs obtenues pour chacune des huit
+combinaisons d’essais réalisées.
+N° Essai
+1
+2
+3
+4
+5
+6
+7
+8
+
+A
+
+B
+
++
++
++
++
+
+C
+
++
++
++
++
+
+AB
+
++
++
++
++
+
+AC
+
++
++
++
++
+
+BC
+
++
++
++
++
+
+ABC
+
++
++
++
++
+
++
++
++
++
+
+Dureté
+2,93
+2,51
+2,66
+3,75
+2,01
+3,41
+2,64
+3,04
+
+Tab1. Table d’essais et résultats d’essais
+L’analyse statistique de ce plan d’expériences a abouti aux résultats donnés ci-dessous.
+Calcul des Effets
+N° Essai
+A
+B
+C
+1
+-1
+-1
+-1
+2
+1
+-1
+-1
+3
+-1
+1
+-1
+4
+1
+1
+-1
+5
+-1
+-1
+1
+6
+1
+-1
+1
+7
+-1
+1
+1
+8
+1
+1
+1
+Effet Moyen
+0,3088 0,1538 -0,0937
+(niv +1)
+Effet Moyen
+(niv -1) -0,3088 -0,1538 0,0937
+
+-0,0638
+
+-0,1413
+
+0,0888
+
+0,3138
+
+0,0953
+
+0,0200
+
+0,0079
+
+0,0984
+
+Effet²
+
+Analyse de Variance
+Facteurs
+SCE
+A 2,2878
+B 0,5673
+C 0,2109
+AB 0,0975
+AC 0,4788
+BC 0,1890
+ABC 2,3625
+Résiduelle 3,1280
+TOTAL 9,3221
+
+AB
+
+AC
+1
+-1
+-1
+1
+1
+-1
+-1
+1
+
+0,0638
+
+BC
+1
+-1
+1
+-1
+-1
+1
+-1
+1
+
+1
+1
+-1
+-1
+-1
+-1
+1
+1
+
+ABC
+-1
+1
+1
+-1
+1
+-1
+-1
+1
+
+Dureté
+2,93
+2,51
+2,66
+3,75
+2,01
+3,41
+2,64
+3,04
+
+0,1413 -0,0888 -0,3138
+2,8688
+
+0,0236
+
+0,0088
+
+0,0041
+
+ddl
+
+CME
+2,2878
+0,5673
+0,2109
+0,0975
+0,4788
+0,1890
+2,3625
+0,1955
+
+F
+F0,95(1,16)
+11,7025
+4,49
+2,9020
+4,49
+1,0790
+4,49
+0,4989
+4,49
+2,4493
+4,49
+0,9669
+4,49
+12,0846
+4,49
+
+CME
+
+F
+
+F0,95(5,16)
+
+Décision
+
+0,3087
+
+1,5792
+
+2,85
+
+Modèle valide
+
+1
+1
+1
+1
+1
+1
+1
+16
+23
+
+Décision
+Facteur significatif
+Facteur non significatif
+Facteur non significatif
+Facteur non significatif
+Facteur non significatif
+Facteur non significatif
+Facteur significatif
+
+Validation du modèle
+Facteurs non
+significatifs
+
+SCE
+
+B
+C
+AB
+AC
+BC
+Résiduelle
+
+0,5673
+0,2109
+0,0975
+0,4788
+0,1890
+3,1280
+
+SCE(EM)
+SCE(ER)
+
+1,5437
+3,1280
+
+ddl
+1
+1
+1
+1
+1
+16
+
+0,1955
+
+Moyenne
+globale
+
+2. Proposer un choix optimal permettant de minimiser la dureté. (2 options sont possibles)
+Il faut choisir le Facteur A (Température de refroidissement) au niveau -1 et l’interaction ABC au niveau
++1.
+Pour ce faire deux options sont possibles :
+Option1 : Facteur A (Température de refroidissement) au niveau -1
+Facteur B (Vitesse de refroidissement) au niveau -1
+Facteur C (Vitesse de malaxage) au niveau +1
+Option2 : Facteur A (Température de refroidissement) au niveau -1
+Facteur B (Vitesse de refroidissement) au niveau +1
+Facteur CEffet
+(Vitesse
+de malaxage)
+au niveau
+niveau +1
+-1
+de l’interaction
+A au
+3. Quel modèle retenez-vous ?
+
+Effet de l’interaction ABC au niveau +1
+
+Le modèle à retenir est 𝑌"duretée = 2,8688 + 0,3088 XA - 0,3138 XAXBXC
+En réalité, pour juger la qualité du produit considéré, on doit minimiser non seulement sa dureté, mais
+aussi sa viscosité. Donc, lors de la réalisation du plan d’expériences, les deux réponses à optimiser
+(dureté et viscosité) ont été mesurées.
+Après analyse des résultats relatifs à la viscosité, le modèle suivant a été validé :
+
+! viscosité=351,35 -32,6XA + 78,6XB -18,65XC+ 38,8XAXC - 34,8XAXBXC
+𝑌
+4. Proposer un choix de combinaison permettant de minimiser la viscosité.
+Pour minimiser la viscosité, on peut identifier plusieurs réglages possibles a priori :
+A(+1), B(-1), C(-1), dans ce cas, on a : Yviscosité = 185,2
+A(-1), B(-1), C(+1), dans ce cas, on a : Yviscosité = 213,1
+Le réglage optimal est donc : A(+1), B(-1), C(-1), avec Yviscosité = 185,2
+5. Que pouvez-vous conclure de l’ensemble de l’analyse que vous avez menée ?
+Il n’est pas possible de minimiser à la fois la dureté et la viscosité, il faut faire un compromis entre les
+deux. La combinaison A(-1), B(-1), C(+1) permet de minimiser la dureté et même si ce réglage ne
+minimise pas la viscosité sa valeur reste basse. Il semblerait donc raisonnable de choisir ce réglage.
+
+Exercice 2 – Plan fractionnaire 2k-p
+Dans le cadre de la réalisation d’un plan fractionnaire 25-2 (soit ¼ du plan complet factoriel 25) on a :
+D=ABC et E=AB.
+1. Combien d’essais comporte le plan fractionnaire ?
+Le plan fractionnaire 25-2 comporte 23 essais soient 8 essais.
+2. Quels sont les trois générateurs d’aliases ? (Il y a deux générateurs d’aliases indépendants et
+un générateur d’aliases dépendant.)
+Comme D=ABC alors on a un premier générateur d’aliases indépendant : I = ABCD
+
+Comme E=AB alors on a un deuxième générateur d’aliases indépendant : I = ABE
+La 3ème générateur d’aliases est dépendant et issue du produit des deux générateurs d’aliases
+indépendant : I = CDE
+3. Quel est le risque principal avec ce type de plan fractionnaire ? Donner la résolution du plan.
+Ce plan fractionnaire est de résolution III. Avec ce type de plan de si basse résolution, le risque est de
+ne pas réussir à lever la confusion entre des facteurs et interactions d’ordre 1, par exemple : A et BE,
+B et AE, AB et E etc. sans faire d’essais supplémentaires.
+4. Vous souhaitez désaliaser le plan pour lever la confusion entre E et AB. Quels sont les essais à
+réaliser ? Expliquez comment vous procédez pour les obtenir ?
+E = AB implique le générateur d’aliases I = ABE. Pour lever la confusion entre E et AB il faut réaliser les
+essais qui nous permettent d’avoir EE = - EAB soit toutes les lignes d’essais qui correspondent à I=-ABE
+ce qui correspond à choisir les lignes pour lesquelles on a un signe -1 dans la colonne ABE à partir de
+la table d’essais du plan complet L32(25).

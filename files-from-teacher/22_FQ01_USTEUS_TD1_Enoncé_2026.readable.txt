@@ -1,0 +1,109 @@
+# 22_FQ01_USTEUS_TD1_Enoncé_2026.pdf
+
+- Source: `22_FQ01_USTEUS_TD1_Enoncé_2026.pdf`
+- Final-exam priority: P0
+- Role: TD1 DOE calculations.
+
+## Readable Content
+TD1 FQ01 UTSEUS – Plan d’expériences
+(Calculs)
+Exercice 1 – Plan complet à 2 facteurs plusieurs modalité avec
+répétitions
+Pour minimiser le taux de solvant résiduel dans la mise en œuvre d’un vernis industriel il a été réalisé
+le plan complet suivant :
+Facteurs :
+§
+§
+
+A : température du four (4 modalités) : 110°C, 120°C, 130°C, 140°C
+B : temps d’émaillage (2 modalités) : 30s, 60s
+
+Réponse :
+§
+
+Y = % de solvant résiduel
+
+Table d’essai :
+
+1. Faire l’analyse de ce plan
+1.1. Calcul des effets de facteurs
+1.2. Réalisation de l’ANAVAR
+2. Représenter graphiquement les effets significatifs
+3. Quel réglage choisiriez-vous ?
+
+Exercice 2 – Plan factoriel complet 2k – étude de la résistance d’un
+béton autoplaçant
+On souhaite étudier l’influence de trois facteurs (A, B, C) sur la résistance d’un béton autoplaçant. Les
+facteurs étudiés sont :
+
+La réponse est un indice de résistance du béton après 28 jours mesurée en Méga Pascal.
+L’expérimentateur effectue un plan complet avec répétition (r=2) et la moyenne des résultats d’essais
+est présentée dans la Table 1.
+'()*+()
+!
+!"
+"
+!"
+"
+!"
+"
+!"
+"
+
+"
+!"
+!"
+"
+"
+!"
+!"
+"
+"
+
+#
+!"
+!"
+!"
+!"
+"
+"
+"
+"
+
+$%
+"#$%
+"($'
++%$%
+(,$%
+,)$'
++"$%
+',$)
+)&$*
+
+$&
+&&$%
+")$'
+,%$%
+*%$%
+,#$'
++'$%
+''$&
+)+$+
+
+',-(..(
+&%$'
+"*$'
++'$%
+(*$%
+,#$%
+++$%
+''$%
+)+$%
+
+Table 1 – Table d’essais et réponses
+1. Calculer l’ensemble des effets des facteurs et des interactions.
+2. Estimer la réponse avec A au niveau bas, B au niveau bas et C au niveau haut. Est-ce une
+valeur cohérente avec l’essai correspondant ?
+3. Déterminer les paramètres (facteurs et interactions) significatifs et en déduire le modèle.
+4. Vérifier la validité du modèle.
+5. Déterminer la configuration optimale qui maximise la résistance au béton.

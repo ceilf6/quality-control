@@ -1,0 +1,145 @@
+# 32_SujetExam_tytpe.pdf
+
+- Source: `32_SujetExam_tytpe.pdf`
+- Final-exam priority: P0
+- Role: Sujet type: direct exam-shape source.
+
+## Readable Content
+Examen FQ01_UTSEUS – sujet 1
+I. Plan d’expériences (4 pts) – 15 min
+Questions de cours
+Q1/ Répondre par V (Vrai) ou F (Faux) aux affirmations suivantes.
+Un plan d’expériences permet de quantifier et hiérarchiser l’impact des facteurs et
+interactions sur la réponse.
+Les résultats d’un plan d’expériences ne peuvent être interprétés que par des experts.
+Un plan d’expériences est plus efficace que toute autres suites d’essais de même taille mais
+non planifiée.
+Q2/ Numéroter dans l’ordre chronologique (la première étape aura le numéro 1, la suivante le numéro 2
+etc.) les étapes nécessaires pour réaliser et analyser un plan d’expériences.
+Numéro de
+l’étape
+
+Intitulés de l’étape
+Phase de formalisation
+Calculs des effets des facteurs et interactions
+Réalisation des essais
+Construction du plan (choix de la table d’essai)
+Réalisation de l’ANAVAR et identification des facteurs et interactions significatifs
+Choix de la configuration optimale
+Modélisation de l’influence des facteurs sur la réponse et validation du modèle
+
+Q3/ D’après l’ANAVAR ci-dessous, répondre par V (Vrai) ou F (Faux) aux affirmations suivantes.
+SCE
+ddl CME
+F
+Fseuil
+A
+29872,11 2 14936,06 132,11 4,26
+B
+7927,11 2 3963,56 35,06 4,26
+AB
+2725,56 4
+681,39
+6,03 3,63
+Résiduelle 1017,50 9
+113,06
+Total
+41542,28 17
+Tous les facteurs et interaction sont significatifs.
+Le facteur A est le facteur qui influence le plus la réponse.
+Le facteur A est un facteur à 2 modalités.
+Le plan d’essais comporte 18 essais.
+Il manque le calcul de la statistique de Fisher pour la résiduelle.
+
+Exercice
+Un plan complet à 9 essais répétés a été réalisé pour assurer une résistance à la traction de 90daN/cm3 sur
+des plaques collées.
+Les deux facteurs testés sont :
+• Facteur A : L’épaisseur des joints (3 niveaux)
+• Facteur B : Le cycle de cuisson (3 niveaux)
+Les résultats des d’essais sont donnés ci-dessous dans Tab1.
+Facteur B
+1
+Facteur A
+
+𝐸!$
+
+2
+
+𝐸"#
+
+3
+
+1
+
+21
+
+17
+
+8
+
+5
+
+9
+
+8
+
+2
+
+124
+
+120
+
+93
+
+77
+
+70
+
+56
+
+3
+
+160
+
+143
+
+98
+
+72
+
+87
+
+63
+
+29,11
+
+-9,56
+
+?
+
+-57,06
+
+?
+35,44
+Moyenne générale
+𝑦" = 68,39
+
+Tab1. Résultats des essais et calcul des effets des facteurs
+Q4/ Cocher la bonne réponse.
+
+𝐸!! = ?
+
+-19,55 ;
+
+19,55 ;
+
+38,67
+
+𝐸"" = ?
+
+-21,62 ;
+
+-90,01 ;
+
+21,62

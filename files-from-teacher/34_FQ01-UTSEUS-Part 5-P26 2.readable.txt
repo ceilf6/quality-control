@@ -1,0 +1,1591 @@
+# 34_FQ01-UTSEUS-Part 5-P26 2.pdf
+
+- Source: `34_FQ01-UTSEUS-Part 5-P26 2.pdf`
+- Final-exam priority: P1
+- Role: SPC, attribute charts and CUSUM course support.
+
+## Readable Content
+Statistical Process Control
+1
+
+Introduction to Control Charts
+Uses of the control chart
+• Most processes do not operate in a state of statistical
+control
+•
+
+Consequently, an attentive use of control charts will identify
+assignable causes. If these causes can be eliminated from
+the process, variability will be reduced and the process will
+be improved
+
+•
+
+The control chart only detects assignable causes.
+Management, operator, and engineering action will be
+necessary to eliminate the assignable causes.
+
+© John Wiley & Sons, Inc. Applied Statistics and Probability for Engineers, by Montgomery and Runger
+
+Statistical Process Control
+2
+
+Introduction to Control Charts
+
+Control charts kinds
+•
+
+Variables Control Charts
+➢ The charts are applied to data that follow a continuous
+distribution
+
+•
+
+Attributes Control Charts
+➢ The charts are applied to data that follow a discrete
+distribution
+
+© John Wiley & Sons, Inc. Applied Statistics and Probability for Engineers, by Montgomery and Runger
+
+Statistical Process Control
+3
+
+Introduction to Control Charts
+
+Control charts kinds
+•
+
+Variable data
+✓ Product characteristic that can be measured:
+✓ Length, size, weight, height, time, velocity
+✓ Variable charts require smaller samples 2 to 10 parts in a
+sample
+
+•
+
+Attribute data
+✓ Product characteristic evaluated with a discrete choice
+✓ Good/bad, yes/no
+✓ Attribute charts require larger sample sizes 50 to 100
+parts in a sample
+
+Statistical Process Control
+4
+
+Attribute Control Charts
+
+• There are various types of control charts for
+attributes:
+➢The p-chart for Proportion Defective
+➢The np-chart for the number of defectives (or
+nonconforming units)
+➢The c-chart for the number of defects
+➢The u-chart for the number of defects per unit
+
+Statistical Process Control
+5
+
+p-Chart
+❑ p-chart
+
+is a process chart that is used to control the
+proportion of items in a sample that are defective.
+
+❑ Samples are not necessary identical
+❑ p-charts are effectively used to determine when there has
+
+been a shift in the proportion defective for a particular
+product or service.
+❑ Examples of applications of the p-chart: incomplete orders,
+
+late deliveries, missed calls, accounting transaction errors,
+or parts that don’t mate properly.
+
+Statistical Process Control
+6
+
+p-Chart with constant sample size
+Initial Control Limits
+
+np
+
+p=
+n
+UCLp = p + 3
+LCLp = p − 3
+
+Revised Control Limits
+p new
+
+np − np
+
+=
+n−n
+
+d
+
+d
+
+p (1 − p)
+n
+p(1 − p)
+n
+
+UCLp = p new + 3
+LCLp = p new − 3
+
+All of the points should fall between
+the upper and lower control limits
+
+p new (1 − p new )
+n
+p new (1 − p new )
+n
+
+Statistical Process Control
+7
+
+p-Chart with constant sample size
+Sample size n = 100
+Sample
+Number of Proportion
+number
+errors
+defective
+1
+6
+6,00%
+2
+5
+5,00%
+3
+0
+0,00%
+4
+1
+1,00%
+5
+4
+4,00%
+6
+2
+2,00%
+7
+5
+5,00%
+8
+3
+3,00%
+9
+3
+3,00%
+10
+2
+2,00%
+11
+6
+6,00%
+12
+1
+1,00%
+13
+8
+8,00%
+14
+7
+7,00%
+15
+5
+5,00%
+16
+4
+4,00%
+17
+11
+11,00%
+18
+3
+3,00%
+19
+0
+0,00%
+20
+4
+4,00%
+80
+4,00%
+
+σ n × pi
+80
+തp =
+=
+= 0,04
+σn
+100 × 20
+
+UCL p = pത + 3
+
+pത (1 − തp)
+= 0,099 = 9,9%
+𝑛
+
+LCL p = pത − 3
+
+pത 1 − തp
+= −0,019 = 0%
+𝑛
+
+Statistical Process Control
+8
+
+p-Chart with constant sample size
+Initial p-chart
+Sample size n = 100
+Sample
+Number of Proportion
+Number
+errors
+defective
+1
+6
+6,00%
+2
+5
+5,00%
+3
+0
+0,00%
+4
+1
+1,00%
+5
+4
+4,00%
+6
+2
+2,00%
+7
+5
+5,00%
+8
+3
+3,00%
+9
+3
+3,00%
+10
+2
+2,00%
+11
+6
+6,00%
+12
+1
+1,00%
+13
+8
+8,00%
+14
+7
+7,00%
+15
+5
+5,00%
+16
+4
+4,00%
+17
+11
+11,00%
+18
+3
+3,00%
+19
+0
+0,00%
+20
+4
+4,00%
+80
+4,00%
+
+Revised p-chart
+
+Statistical Process Control
+9
+
+p-Chart with variable sample size
+▪ When the number of items sampled varies, the p-chart can
+be easily adapted to varying sample sizes.
+
+▪ If the sample size varies
+➢ the control limits must be calculated for each different
+sample size by changing the value of n in the control limit
+formulas each time a different sample size is taken.
+➢ calculating the centerline and interpreting the chart will
+be the same
+
+Statistical Process Control
+10
+
+p-Chart with variable sample size
+▪ Calculate the centerline.
+▪ For each sample calculate a separate pair of control limits.
+▪ Let m = number of samples.
+m
+
+n p
+
+p = i =1m
+
+i
+
+i
+
+n
+i =1
+
+(one centerline for all samples)
+
+i
+
+UCLp = p + 3
+LCL p = p − 3
+
+p (1 − p )
+ni
+p (1 − p )
+ni
+
+for the i − th sample
+for the i − th sample
+
+Statistical Process Control
+11
+
+p-Chart with variable sample size
+▪ The calculation of control limits for the p chart with variable
+sample size can be simplified with the use of nave
+▪ The value nave can be used whenever the individual sample
+sizes vary no more than 25% from the calculated nave
+0,75 × 𝑛𝑎𝑣𝑒 ≤ 𝑛𝑖 ≤ 1,25 × 𝑛𝑎𝑣𝑒
+
+▪ The value nave can be found by summing up the individual
+sample sizes and dividing by the total number of samples were
+taken:
+m
+
+nave =
+
+ ni
+
+UCLp = p + 3
+
+i =1
+
+m
+where, m = number of samples
+
+LCL p = p − 3
+
+p (1 − p )
+nave
+p (1 − p )
+nave
+
+Statistical Process Control
+12
+
+p-Chart with variable sample size
+number of
+Sample i defective
+
+sample
+size ni
+
+%P
+
+1
+
+9
+
+256
+
+3,516%
+
+2
+
+5
+
+251
+
+1,992%
+
+3
+
+10
+
+248
+
+4,032%
+
+4
+
+1
+
+256
+
+0,391%
+
+5
+
+6
+
+260
+
+2,308%
+
+6
+
+9
+
+260
+
+3,462%
+
+7
+
+6
+
+250
+
+2,400%
+
+8
+
+9
+
+249
+
+3,614%
+
+9
+
+6
+
+255
+
+2,353%
+
+10
+
+8
+
+252
+
+3,175%
+
+p_bar
+
+2,720%
+
+തp = 0,0272
+
+UCL p = pത + 3
+
+തp(1 − pത )
+𝑛𝑖
+
+LCL p = max (0, തp − 3
+
+pത 1 − pത
+)
+𝑛𝑖
+
+Statistical Process Control
+13
+
+p-Chart with variable sample size
+number of
+Sample i defective
+1
+9
+2
+5
+3
+10
+4
+1
+5
+6
+6
+9
+7
+6
+8
+9
+9
+6
+10
+8
+
+sample
+size ni
+256
+251
+248
+256
+260
+260
+250
+249
+255
+252
+
+%P
+3,516%
+1,992%
+4,032%
+0,391%
+2,308%
+3,462%
+2,400%
+3,614%
+2,353%
+3,175%
+
+LCL (P)
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+CL
+2,720%
+2,720%
+2,720%
+2,720%
+2,720%
+2,720%
+2,720%
+2,720%
+2,720%
+2,720%
+
+UCL (P)
+5,77%
+5,80%
+5,82%
+5,77%
+5,75%
+5,75%
+5,81%
+5,81%
+5,78%
+5,79%
+
+Statistical Process Control
+14
+
+np-Chart
+The np-chart is a graph of the number of defectives (or
+nonconforming units) in a sample.
+▪ The np-chart requires that the sample size of each subgroup
+be the same.
+▪ When sample sizes are equal, either the p or np-chart can be
+used (they are essentially the same chart).
+▪ Some people find the np-chart easier to use because it reflects
+integer numbers rather than proportions.
+▪
+
+Statistical Process Control
+15
+
+np-Chart
+▪ The np-chart construction steps are similar to those of the
+p-chart. The trial centerline and control limits are as
+follows:
+
+np
+
+Centerline n p =
+
+m
+where, m = number of subgroups
+
+UCLnp = n p + 3 n p (1 − p )
+LCLnp = n p − 3 n p (1 − p )
+
+Statistical Process Control
+16
+
+c-chart
+Defective and defect
+▪ A defective article is the one that fails to conform to
+some specification.
+▪ Each instance of the article’s lack of conformity to
+specifications is a defect
+▪ A defective article may have one or more defects
+▪ The c-chart applies to the total number of defects in
+samples of constant size
+
+Statistical Process Control
+17
+
+c-chart
+σi ci
+cത =
+m
+
+UCL C = cത + 3 × cത
+LCL C = cത − 3 × cത
+• ci : the number of defects
+observed for the ith controlled
+unit
+• m is the number of samples
+• Sample have same size
+
+Statistical Process Control
+18
+
+c-chart
+Sample N°
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+Sum
+
+Number of
+defective
+1
+2
+4
+1
+3
+1
+0
+2
+0
+1
+7
+2
+1
+1
+0
+2
+2
+1
+0
+3
+34
+
+Statistical Process Control
+19
+
+u-chart
+▪ The u-chart considers the average number of defects
+per unit.
+▪ This is contrasted with the c-chart, which shows the
+actual number of defects per standardized unit.
+
+▪ The u chart allows for the units sampled to be different
+sizes
+
+Statistical Process Control
+20
+
+u-chart
+▪ ci : the number of defects observed for the ith controlled sample unit ni .
+C
+
+▪ The value of ui = ni
+
+σi ni ui
+തu =
+σ ni
+
+i
+
+▪ The central value: തu =
+
+σ ni ×ui
+σ ni
+
+𝑢ത
+UCL u = തu + 3 ×
+ni
+
+𝑢ത
+LCL u = തu − 3 ×
+ni
+
+Statistical Process Control
+21
+
+u-chart
+Sample N°
+
+Number of
+defective
+units:c
+
+Number of
+units sampled:
+ni
+
+ui
+
+1
+
+20
+
+100
+
+0,200
+
+2
+
+4
+
+110
+
+0,036
+
+3
+
+5
+
+120
+
+0,042
+
+4
+
+8
+
+85
+
+0,094
+
+5
+
+14
+
+80
+
+0,175
+
+6
+
+20
+
+120
+
+0,167
+
+7
+
+4
+
+70
+
+0,057
+
+8
+
+8
+
+105
+
+0,076
+
+9
+
+21
+
+140
+
+0,150
+
+10
+
+25
+
+130
+
+0,192
+
+11
+
+27
+
+130
+
+0,208
+
+12
+
+18
+
+65
+
+0,277
+
+13
+
+17
+
+115
+
+0,148
+
+14
+
+11
+
+140
+
+0,079
+
+15
+
+10
+
+110
+
+0,091
+
+16
+
+24
+
+120
+
+0,200
+
+17
+
+9
+
+125
+
+0,072
+
+18
+
+4
+
+115
+
+0,035
+
+19
+
+29
+
+90
+
+0,322
+
+20
+
+17
+
+105
+
+0,162
+
+21
+
+12
+
+130
+
+0,092
+
+22
+
+26
+
+145
+
+0,179
+
+23
+
+24
+
+120
+
+0,200
+
+24
+
+14
+
+90
+
+0,156
+
+25
+
+12
+
+110
+
+0,109
+
+26
+
+16
+
+140
+
+0,114
+
+27
+
+11
+
+95
+
+0,116
+
+28
+
+18
+
+130
+
+0,138
+
+U_bar
+
+0,139
+
+LCL (u)
+0,027047
+0,032249
+0,036786
+0,017585
+0,013854
+0,036786
+0,005225
+0,029741
+0,044355
+0,040789
+0,040789
+0,000182
+0,034592
+0,044355
+0,032249
+0,036786
+0,038848
+0,034592
+0,021001
+0,029741
+0,040789
+0,045998
+0,036786
+0,021001
+0,032249
+0,044355
+0,024143
+0,040789
+
+CL(u)
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+0,138825
+
+UCL (u)
+0,2506021
+0,24540027
+0,24086303
+0,26006433
+0,26379565
+0,24086303
+0,27242427
+0,24790827
+0,23329383
+0,23685995
+0,23685995
+0,27746753
+0,24305766
+0,23329383
+0,24540027
+0,24086303
+0,23880144
+0,24305766
+0,25664843
+0,24790827
+0,23685995
+0,23165076
+0,24086303
+0,25664843
+0,24540027
+0,23329383
+0,2535059
+0,23685995
+
+CUSUM Chart
+
+Statistical Process Control
+23
+
+CUSUM Chart
+
+
+ത
+A limitation of the traditional 𝑋-chart
+is its inability to detect a
+relatively small change in a process mean.
+
+
+
+Cumulative Sum (CUSUM) control charts and procedures are
+designed to remedy this defect.
+
+
+
+Target value is subtracted from every control analyses and
+difference added to the sum of all previous differences
+
+
+
+There are two equivalent versions of a CUSUM chart: one
+graphical and the other computational.
+
+Statistical Process Control
+24
+
+The V-Mask version
+
+
+Let 𝜇0 denote a target value or goal for the process mean and
+define cumulative sums by:
+𝑠1 = (𝑥1 − 𝜇0 )
+𝑠2 = 𝑥1 − 𝜇0 + (𝑥2 − 𝜇0 )
+…
+𝑠𝑙 = σ𝑙𝑘=1 = (𝑥𝑘 − 𝜇0 )
+
+
+
+The cumulative sums are plotted over time. At time 𝑙, we plot
+a point at height 𝑠𝑙 .
+
+Statistical Process Control
+25
+
+The V-Mask version
+
+
+A V-shaped mask is superimposed on the plot. The process is
+judged to be out of control if any of the plotted points lies
+outside the V-mask.
+Sl
+
+Choose 𝑑 and 𝜃 so that:
+▪ Very few false alarms
+occur when the
+process is under
+control
+▪ An important change
+in the process mean is
+quickly detected
+
+h
+
+d
+
+
+
+CUSUM plot
+
+l
+V-mask 0=(l,Sl)
+
+In-control
+
+Out-of-control
+
+Statistical Process Control
+26
+
+CUSUM chart: computational version
+
+
+Let 𝑥𝑖 be the ith observation on the process
+
+
+
+If the process is in control then 𝑥𝑖 → 𝑁(0, 𝜎)
+
+
+
+𝜎 is known or can be estimated.
+
+
+
+Accumulate derivations from the target 0 above the target are noted
+by 𝐶 +
+
+
+
+Accumulate derivations from the target 0 below the target are noted
+by 𝐶 −
+
+
+
+𝐶 + and 𝐶 + are one-sided upper and lower CUSUMS, respectively.
+
+Statistical Process Control
+27
+
+CUSUM chart: computational version
+The parameters are computed as follows:
+
+
+
+C = max 0, ( − k ) − x + C 
+
+Ci+ = max 0, x i − ( 0 + k ) + Ci+−1
+−
+i
+
+0
+
+i
+
+−
+i −1
+
+Initial values are C 0+ = C 0− = 0
+
+k is the reference value
+
+If either 𝐶 + or 𝐶 − exceed a decision interval H, the
+process is considered to be out of control.
+
+Often taken as a H = 5𝜎
+
+
+Statistical Process Control
+28
+
+CUSUM chart: computational version
+Selecting the reference value, 𝑘
+
+
+𝑘 is often chosen halfway between the target 0 and the out-ofcontrol value of the mean 1 that we are interested in detecting
+quickly.
+
+
+
+Shift is expressed in standard deviation units as:
+1 = 0 + 𝜎
+then
+𝑘=
+
+|1−0|
+2
+
+
+= 2𝜎
+
+Statistical Process Control
+29
+
+CUSUM chart: computational version
+How to Determine if Process Out-of-Control?
+
+
+H - decision interval
+
+If 𝐶 + or 𝐶 − exceed the decision interval (H), the process is
+considered out-of-control
+ Rule of thumb value for H
+✓ Choose H to be five times the process standard deviation, H
+= H = 5𝜎
+ Counters N+ and N– record the number of consecutive periods
+the CUSUM 𝐶 + and 𝐶 − are above zero, respectively.
+✓ The counters can be used to indicate when the shift most
+likely occurred
+
+
+Statistical Process Control
+30
+
+CUSUM chart: computational version (Example)
+
+
+Assume the process is in control then 𝑥𝑖 → 𝑁(0 = 10, 𝜎 = 1)
+with sample size n=1.
+
+
+
+Say magnitude of shift we want to detect is  = 1
+
+
+
+So, we have
+
+
+1
+k = σ = × 1=0.5 (lower limit)
+൞
+2
+2
+H = 5 × σ = 5 (upper limit)
+
+Statistical Process Control
+31
+Period k
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+
+CUSUM chart: computational version (Example)
+𝑥𝑖
+9,45
+7,99
+9,29
+11,66
+12,16
+10,18
+8,04
+11,46
+9,20
+10,34
+9,03
+11,47
+10,51
+9,40
+10,08
+9,37
+10,62
+10,31
+8,52
+10,84
+10,90
+9,33
+12,29
+11,50
+10,60
+11,08
+10,38
+11,62
+11,31
+10,52
+
+𝐶𝑖+
+0,00
+0,00
+0,00
+1,16
+2,82
+2,50
+0,04
+1,00
+0,00
+0,00
+0,00
+0,97
+0,98
+0,00
+0,00
+0,00
+0,12
+0,00
+0,00
+0,34
+0,74
+0,00
+1,79
+2,79
+2,89
+3,47
+3,35
+4,47
+5,28
+5,30
+
+𝑁𝑖+
+
+𝑁𝑖−
+
+𝐶𝑖−
+0
+0
+0
+1
+2
+3
+4
+5
+0
+0
+0
+1
+2
+0
+0
+0
+1
+0
+0
+1
+2
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+0,05
+1,56
+1,77
+0,00
+0,00
+0,00
+1,46
+0,00
+0,30
+0,00
+0,47
+0,00
+0,00
+0,10
+0,00
+0,13
+0,00
+0,00
+0,98
+0,00
+0,00
+0,17
+0,00
+0,00
+0,00
+0,00
+0,00
+0,00
+0,00
+0,00
+
+Decision
+1 ****
+2 ****
+3 ****
+0 ****
+0 ****
+0 ****
+1 ****
+0 ****
+1 ****
+0 ****
+1 ****
+0 ****
+0 ****
+1 ****
+0 ****
+1 ****
+0 ****
+0 ****
+1 ****
+0 ****
+0 ****
+1 ****
+0 ****
+0 ****
+0 ****
+0 ****
+0 ****
+0 ****
+0 Stop
+0 Stop
+
+Decision interval (H)
+
+5.0
+
+
+
+C = max 0, ( − k ) − x + C 
+
+Ci+ = max 0, x i − ( 0 + k ) + Ci+−1
+−
+i
+
+0
+
+i
+
+−
+i −1
+
+Control Chart Performance
+
+Statistical Process Control
+33
+
+Control Chart Performance
+
+
+Assume the process is in control then 𝑥𝑖 → 𝑁(0, σ0)
+
+𝜇1 = 𝜇0 + 𝑘𝜎0
+ Let consider magnitude of shift as follows : ቊ
+𝜎1 = 𝜌𝜎0
+
+
+Let p = probability that any point does not exceed the control
+limits.
+Then,
+3−𝑘 𝑛
+𝑝=F
+𝜌
+
+−𝑘 𝑛 − 3
+−F
+𝜌
+
+Statistical Process Control
+34
+
+Control Chart Performance
+Average Run Length
+The average run length (ARL) is a way of determining the
+appropriate sample size and sampling frequency.
+
+1
+ARL =
+1−𝑝
++∞
+
+PS. this formula is based on ෍ 𝑗 × 𝑥 𝑗−1 =
+𝑗=0
+
+1
+1−𝑥 2
+
+Statistical Process Control
+35
+
+Control Chart Performance
+Average Run Length
+The average run length (ARL) is a way of determining the
+appropriate sample size and sampling frequency.
+
+Magnitude of process shift
+(k= 0, 𝜌 =1)
+(k= 0.5, 𝜌 =1)
+(k= 1, 𝜌 =1)
+(k= 1.5, 𝜌 =1)
+(k= 2, 𝜌 =1)
+
+ARL
+
+ARL
+
+ARL
+
+n= 1
+370.39
+155.22
+43.89
+14.97
+6.30
+
+n=5
+370.39
+33.40
+4.49
+1.56
+1.07
+
+n=7
+370.39
+21.38
+2.76
+1.20
+1.01
