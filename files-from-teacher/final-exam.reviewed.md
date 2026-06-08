@@ -1,6 +1,6 @@
 # 质量管理期末复习人工整理入口
 
-本文件用于期末复习。期中旧计划以 `21-期中截止_TD3-CHEROUAT.pdf` 为边界；期末复习必须转向 22 之后的资料，尤其是 `32_SujetExam_tytpe.pdf` 和 DOE/control charts/CUSUM 相关 TD。
+本文件用于期末复习。期中旧计划以 `21-期中截止_TD3-CHEROUAT.pdf` 为边界；期末复习必须转向 22 之后的资料，尤其是 `32_SujetExam_tytpe.pdf`、DOE/control charts/CUSUM 相关 TD，以及新增的 SdF/FMDS 课程资料。
 
 ## 使用纪律
 
@@ -21,6 +21,11 @@
 - `28_Correction_Plan_Experiences_Robustesse.readable.md`：robustesse correction，包含均值、方差、S/B、ANAVAR、最终配置。
 - `31_TD control charts.readable.md` 与 `35_TD control charts-correction.readable.md`：属性控制图数据与 correction，重点 p-chart/u-chart。
 - `33_TD CUMSUM.readable.md`：CUSUM workbook，重点 C+、C-、k、H、ARL、失控判断。
+
+## 新增 P1 课程来源
+
+- `36_FQ01P2006.readable.txt`：SdF/FMDS 课件，覆盖 RAMS/FMDS、R(t)、M(t)、A(t)、失效率、修复率、MTTF/MTTR/MTBF、指数分布、Weibull、串并联系统和相关练习。
+- `37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`：SdF 第一讲视频法语 ASR。用于补老师口头解释，例如 FMDS 区分、条件可靠度、指数分布无记忆性、Weibull 形状参数。公式和图表必须以 `36_FQ01P2006.pdf`/`.readable.txt` 为准。
 
 ## 期末题型信号
 
@@ -166,6 +171,28 @@
 
 > La carte CUSUM cumule les écarts successifs par rapport à la cible. Elle est plus sensible aux petits décalages qu'une carte de Shewhart classique.
 
+### 10. Sûreté de fonctionnement / FMDS
+
+来源：`36_FQ01P2006.readable.txt` 与 `37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`。
+
+定位：新增课程模块。当前没有独立 TD/correction，因此优先级低于 Sujet type 和已有 TD/correction；若老师之后补 SdF TD 或 correction，应立即升级为 P0。
+
+必会：
+
+- FMDS/RAMS：fiabilité, maintenabilité, disponibilité, sécurité。
+- 区分 fiabilité 与 disponibilité：fiabilité 关注区间 `[0,t]` 内不失效，disponibilité 关注某一时刻可用。
+- 基本变量：寿命 `T`、维修时间 `S`、密度 `f_T(t)`、分布函数 `F_T(t)`、可靠度 `R(t)=P(T>t)`。
+- 失效率 `lambda(t)` 与修复率 `mu(t)` 的意义。
+- MTTF、MTTR、MUT、MDT、MTBF、渐近可用度 `A_infty`。
+- 指数分布：`R(t)=exp(-lambda t)`、`MTTF=1/lambda`、无记忆性。
+- Weibull 分布：形状参数 `beta` 控制失效率趋势；`beta<1` 递减，`beta=1` 退化为指数分布，`beta>1` 递增。
+- 串联系统：所有组件都工作才工作，可靠度通常相乘。
+- 并联系统：至少一个组件工作即可，可靠度用失效概率互补计算。
+
+法语答题模板：
+
+> La sûreté de fonctionnement regroupe la fiabilité, la maintenabilité, la disponibilité et la sécurité. La fiabilité décrit la probabilité de fonctionner sans défaillance pendant une durée donnée, tandis que la disponibilité décrit l'aptitude à être en état de fonctionner à un instant donné.
+
 ## 期末知识点优先级
 
 1. Plan d'expériences：概念、步骤、V/F。
@@ -176,7 +203,8 @@
 6. Plan croisé/robustesse：平均响应、方差、S/B、噪声因素。
 7. Attribute control charts：p、np、c、u 的适用条件和控制限。
 8. CUSUM：C+、C-、k、H、small shift detection。
-9. 期中旧内容：CNQ/TRG/学习型质量/AI 只作为补基础，除非期末题目明确出现。
+9. Sûreté de fonctionnement：FMDS/RAMS、R(t)、M(t)、A(t)、失效率、修复率、指数分布、Weibull、串并联系统。
+10. 期中旧内容：CNQ/TRG/学习型质量/AI 只作为补基础，除非期末题目明确出现。
 
 ## 复习智能体默认输出格式
 

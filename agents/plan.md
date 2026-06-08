@@ -6,7 +6,7 @@
 
 期中旧计划以 `21-期中截止_TD3-CHEROUAT.pdf` 为边界，现已不再作为复习边界。期中资料只用于补质量管理基础，不应覆盖期末题源。
 
-默认主线：Sujet type 题型 -> Plan d'expériences -> effets/interactions -> ANAVAR/Fisher -> configuration optimale -> plan fractionnaire -> plan croisé/robustesse -> cartes p/np/c/u -> CUSUM。
+默认主线：Sujet type 题型 -> Plan d'expériences -> effets/interactions -> ANAVAR/Fisher -> configuration optimale -> plan fractionnaire -> plan croisé/robustesse -> cartes p/np/c/u -> CUSUM -> sûreté de fonctionnement/FMDS。
 
 ## Source Map
 
@@ -26,6 +26,8 @@
 - `files-from-teacher/25_USTEUS_Cours_PlanExp_2026.readable.txt`：DOE 课程。
 - `files-from-teacher/23_Lecture table Fisher.readable.md`：Fisher 查表。
 - `files-from-teacher/34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`：SPC、attribute charts、CUSUM 课程。
+- `files-from-teacher/36_FQ01P2006.readable.txt`：SdF/FMDS 课程课件。
+- `files-from-teacher/37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`：SdF 第一讲视频 ASR，用于补老师口头解释。
 
 ## Knowledge Route
 
@@ -77,7 +79,11 @@
     掌握 target、k、H、C+、C-、small shift detection 和 out-of-control 判断。
     来源：`33_TD CUMSUM.readable.md`，`34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`
 
-13. **期中旧知识补基础**
+13. **Sûreté de fonctionnement / FMDS**
+    掌握 FMDS/RAMS、fiabilité/maintenabilité/disponibilité/sécurité、`R(t)`、`M(t)`、`A(t)`、失效率、修复率、MTTF/MTTR/MTBF、指数分布、Weibull、串并联系统。
+    来源：`36_FQ01P2006.readable.txt`，`37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`
+
+14. **期中旧知识补基础**
     CNQ、TRG、学习型质量管理、AI/ML 只在期末题源需要时补充。
     来源：`notes/ceilf6/_知识点.md` 和期中 TD。
 
@@ -110,12 +116,15 @@
 - Robustesse：mean response、variance、noise factor、S/B、trade-off。
 - Control charts：p/np/c/u 的选择和控制限计算。
 - CUSUM：C+、C-、k、H、失控判断。
+- SdF/FMDS：R(t)、M(t)、A(t)、失效率、指数分布、Weibull、串联系统、并联系统。
 
 ## Visual And Table Discipline
 
 遇到 ANAVAR、Fisher、控制图、CUSUM、Excel workbook、复杂表格或公式时，不要只凭 OCR/readable 文本猜。必须优先回看对应 readable workbook 的公式缓存值；如仍不清楚，打开原文件或生成 HTML 可视化解释。
 
 `TODO.md` 曾标记“控制图 X, R 的计算公式有问题”。讲控制图时不要沿用旧 X/R 公式笔记，优先使用老师表格、期末 control charts correction 和课程公式。
+
+遇到 SdF 视频 ASR 中的公式、变量名或法语术语不自然时，必须回到 `36_FQ01P2006.pdf` 或 `36_FQ01P2006.readable.txt` 核对；ASR 只作为口头解释辅助，不作为公式来源。
 
 ## Assumptions
 

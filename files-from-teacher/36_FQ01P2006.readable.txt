@@ -1,0 +1,839 @@
+# 36_FQ01P2006.pdf
+
+- Source: `36_FQ01P2006.pdf`
+- Final-exam priority: P1
+- Role: Surete de fonctionnement course support: FMDS/RAMS, reliability, maintainability, availability, mono-composant and multi-composant modelling.
+
+## Readable Content
+
+     FQ01 - Management de la Qualité
+Introduction à la Sûreté de Fonctionnement
+
+               HUYNH Khac Tuan
+
+
+
+                Printemps 2026
+
+
+
+
+                                      FQ01 - Management de la Qualité - 1/28
+                               Plan
+
+1. Introduction
+   Concepts généraux
+   Cadre de modélisation
+   Indicateurs de SdF
+
+2. Approche mono-composante
+   Cadre d’étude
+   Modèles usuels
+   Exercices
+
+3. Approche multi-composante
+   Cadre d’étude
+   Diagrammes de fiabilité
+   Exercices
+
+                                      FQ01 - Management de la Qualité - 2/28
+                               Plan
+
+1. Introduction
+   Concepts généraux
+   Cadre de modélisation
+   Indicateurs de SdF
+
+2. Approche mono-composante
+   Cadre d’étude
+   Modèles usuels
+   Exercices
+
+3. Approche multi-composante
+   Cadre d’étude
+   Diagrammes de fiabilité
+   Exercices
+
+                                      FQ01 - Management de la Qualité - 3/28
+                                      Science des Défaillances
+Définition 1 : sûreté de fonctionnement (SdF)
+Aptitude d’un système à maintenir dans le temps de la qualité du service qu’il délivre.
+
+                              si défaillance              Quatre grandeurs : FMDS (RAMS en Anglais)
+   zéro             intervention de                       Dans une condition donnée, un système est apte à
+défaillance          maintenance
+                                                            • Fiabilité (F) : accomplir les fonctions requises
+ Fiabilité          Maintenabilité               zéro
+                                               accident       pendant un intervalle de temps donné.
+                                                            • Maintenabilité (M) : être rétabli dans un état
+              Disponibité                      Sécurité
+                                                              d’accomplir les fonctions requises.
+              Sûreté de fonctionnement                      • Disponibilité (D) : être en état d’accomplir
+                                                              les fonctions requises à un instant donné.
+                                                            • Sécurité (S) : éviter de faire apparaı̂tre des
+        Conception                Exploitation
+           sûre                    optimale                   événements critiques ou catastrophiques.
+
+Rôle : conception sûre et exploitation optimale
+   • Respecter le cahier des charges en terme de disponibilité, sécurité et coûts.
+   • Améliorer les performances des systèmes en terme de disponibilité, sécurité et coûts.
+                                                                                            FQ01 - Management de la Qualité - 4/28
+                                   Roues de Voiture
+              Les roues sont conçues pour permettre au véhicule de se diriger.
+
+
+FMDS des roues
+   • Résister aux imperfections de la route, conditions
+     climatiques, etc. → Fiabilité
+   • Être remplacées en cas de crevaison en démontant
+     facilement → Maintenabilité
+   • Pas de crevaison pendant la conduite → Disponibilité
+   • Adhérer à la route pour garantir la direction voulue
+     par le conducteur → Sécurité
+
+Relations des FMDS
+   • Moins le risque de défaillance (fiabilité) est élevé et plus la réparation est facile et
+      peu coûteuse (maintenabilité), plus la disponibilité est importante.
+   • disponibilité de la roue impacte directement la sécurité du conducteur, des passagers
+     et personnes à proximité.
+
+                                                                               FQ01 - Management de la Qualité - 5/28
+                        Phase de Conception
+
+     Respecter le cahier des charges en termes de disponibilité, sécurité et coûts
+
+
+En évitant les défaillances                               En minimisant les effets
+ critiques qui surviennent                                des défaillances inévitables
+   pendant l'exploitation                                   pendant l'exploitation
+
+Objectif
+                                   En conception
+
+Solutions
+
+Amélioration de la conception:                 Recommandation de maintenance:
++ choix de solutions techniques                + plan de maintenance préventive
++ choix de solutions technologiques            + procédures détaillées
+                                               + liste des pièces à tenir en stock
+                                               + outillages spécifiques
+
+
+
+                                                                       FQ01 - Management de la Qualité - 6/28
+                          Phase de Exploitation
+
+Améliorer les performances des systèmes en termes de disponibilité, sécurité et coûts
+
+
+    En évitant la            En minimisant les                En minimisant les
+   réapparition des         effets des défaillances         effets et/ou en évitant
+ défaillances critiques           inévitables            l’apparition de défaillances
+    déjà survenues             déjà rencontrées              critiques potentielles
+
+Objectif
+
+                                  En exploitation
+
+Solutions
+
+ Amélioration technique des          Evolution de la maintenance: augmentation
+ systèmes : nouvelles solutions      de la maintenance préventive, amélioration de
+ techniques et technologiques        la logistique et l'organisation de maintenance
+
+
+
+                                                                     FQ01 - Management de la Qualité - 7/28
+                                  Notions de base
+Composant, système et environnement
+
+  • Composant : entité élémentaire non décomposable
+  • Système : ensemble de composants en interactions
+    destinés à accomplir une mission
+  • Environnement : entités extérieures susceptibles                                         frein
+
+    d’interagir avec le système étudié                                            jante
+                                                                pneu
+
+
+Défaillance
+Inaptitude ou interruption de l’aptitude à accomplir les fonctions requises dans les limites
+des critères d’acceptabilité
+
+                                                                       durée de vie: variable aléatoire T
+Grandeur de base
+  • Durée de vie : durée entre le démarrage et la défaillance
+  • Caractéristique : incertaine, imprévisible
+  • Formalisation privilégiée : variable aléatoire T , et                   ...
+    modélisation stochastique (loi de probabilité)
+                                                                                                       temps
+
+                                                                           FQ01 - Management de la Qualité - 8/28
+                            Cadre de formalisation
+                                                       durée de vie aléatoire T                   histogramme normalisé                 répartition cumulée
+Représentation empirique                                                               0.01                                  1
+
+
+                                                                                       0.008                                0.8
+  • histogramme : proportion des pannes
+    dans des intervalles de longeur Δt                                                 0.006                                0.6
+
+
+                                                                                       0.004                                0.4
+  • répartition cumulée : évolution de la
+    proportion de pannes avant t ≥ 0                         ...                       0.002                                0.2
+
+
+                                                                                            0                                 0
+                                                                             temps           50      100 150 200 250 300       50       100 150 200 250 300
+
+                                                                   densité de probabilité                                   fonction de distribution
+                                               0.01                                                           1
+Choix du modèle de représentation
+                                            0.008                                                          0.8
+  • densité de probabilité fT (t)
+                                            0.006                                                          0.6
+  • fonction de distribution FT (t)
+  • FT (t) = P (T < t) = t fT (u)du
+                         ∫                  0.004                                                          0.4
+
+                           0
+  • espérance E[T ] = ∞ tfT (u)du
+                        ∫                   0.002                                                          0.2
+
+                         0
+                                                 0                                                            0
+                                                  50        100        150       200           250      300    50     100         150       200        250    300
+
+
+
+Formules des probabilité
+  • probabilité conditionnelle : P (A | B) = P (A ∩ B)/P (B) = P (A, B)/P (B),
+  • probabilités totales : P (A) =
+                                   Í
+                                     i∈I P (A ∩ Bi ), si (Bi )i∈I est un ensemble exhaustif.
+
+                                                                                                                    FQ01 - Management de la Qualité - 9/28
+               Fiabilité, Maintenabilité et Disponibilité
+                                                                   1
+Fiabilité - Reliability : R(t)
+                                                                  0.8
+   • Aptitude à accomplir les fonctions requises dans des
+                                                                  0.6
+     conditions données pendant une durée donnée
+                                                                  0.4
+
+   • R (t) = P (système non défaillant sur [0, t])
+                                                                  0.2
+
+   • R (t) = P (T > t) = 1 − FT (t) = F̄T (t) = ∞fT (u)du
+                                               ∫
+                                                t                  0
+                                                                        0   70       140     210     280       350
+
+
+
+Maintenabilité - Maintainability : M (t)
+   • Aptitude à être remise en état d’accomplir les fonctions requises dans les conditions
+     données par une maintenance donnée
+   • M (t) = P (maintenance achevée à t) = P (S ≤ t) = FS (t) = t fS (u) du, S : date de remise
+                                                                  ∫
+                                                                   0
+
+Disponibilité - Availability : A(t)                               1
+
+
+
+   • Aptitude à accomplir les fonctions requises dans des        0.8
+
+                                                                                           système réparable
+     conditions données à un instant donné                     0.6
+
+
+                                                                             système non réparable
+   • A (t) = P (système non défaillant à t)                    0.4
+
+
+                                                                  0.2
+   • Système non réparable : A(t) = R (t), A(t) monotone
+                                                                   0
+                                                                        0   200      400     600     800       1000
+   • Système réparable : A(t) ≠ R (t), A(t) non-monotone
+                                                                                 FQ01 - Management de la Qualité - 10/28
+            Taux de Défaillance et Taux de Réparation
+                                                                                                          courbe en baignoire
+Taux de défaillance                                                                           jeunesse
+
+
+
+
+                                                                         taux de défaillance
+Limite, lorsque Δt → 0, du quotient de la probabilité
+                                                                                                                                 fin de vie
+
+conditionnelle qu’une défaillance survienne dans
+[t, t + Δt], sachant qu’aucune défaillance ne s’est                                                          vie utile
+produite avant t, par la longueur Δt de cet intervalle.
+                                                                                                                                         temps
+
+Expression et lien avec la fiabilité
+                                                                                       fT (t )
+   • 𝜆 (t) = limΔt→0 P (t ≤T ≤t+Δt
+                              Δt
+                                   |T >t )
+                                           =      1
+                                                        limΔt→0 FT (t+ΔtΔt) −FT (t ) = R(t  ) =−
+                                                                                                 d ln(R(t ) )
+                                                                                                     dt
+                                               F̄T (t )
+                 ∫t
+   • R (t) = e− 0 𝜆 (u)du
+
+Taux de réparation
+Limite, lorsque Δt → 0, du quotient de la probabilité conditionnelle que la réparation soit
+achevée dans [t, t + Δt], sachant qu’une défaillance est survenue à 0 et que la réparation
+n’est pas encore faite à t, par la longueur Δt de cet intervalle.
+
+Expression et lien avec la maintenabilité
+                                                                                     f (t )
+   • 𝜇 (t) = limΔt→0 P (t ≤S≤t+Δt
+                             Δt
+                                  |S>t )
+                                         =       1
+                                                       limΔt→0 M (t+ΔtΔt) −M (t ) = 1−FS S (t ) = − d ln(1−M
+                                                                                                          dt
+                                                                                                             (t ) )
+                                               M̄ (t )
+                      ∫t
+   • M (t) = 1 − e− 0 𝜇 (u)du
+                                                                                                            FQ01 - Management de la Qualité - 11/28
+             MTTF, MTTR, MUT, MDT, MTBF et A∞
+                 état         TTF      défaillance 1                 UT1         défaillance 2                    UT2
+      fonctionnement
+                                                                 TBF1
+                                                                                                 TBF2
+                                             DT1       test                               DT2           test
+          défaillance                                                                                                      t
+                        mise en détection                     remise en    détection                           remise en
+                        service diagnostic    TTR1             service     diagnostic       TTR2                service
+                                logistique début        fin                logistique début              fin
+
+
+Indicateurs moyens
+
+  • MTTF (mean time to failure) : durée moyenne de bon fonctionnement   ∫∞        avant la
+    première défaillance (l’état de départ est l’état neuf), E[T ] = 0 R(t)dt,
+  • MTTR (mean time to repair) : durée moyenne de réparation, E[S] = ∞ M̄ (t)dt,
+                                                                                ∫
+                                                                                 0
+  • MUT (mean up time) : durée moyenne de bon fonctionnement après la première
+    défaillance (l’état de départ est l’état après réparation),
+  • MDT (mean down time) : durée moyenne de non fonctionnement (indisponibilité),
+  • MTBF (mean time between failure) : durée moyenne entre deux défaillances
+    sucessives MTBF = MUT + MDT
+                                                            MUT
+  • A∞ (disponibilité asymptotique) : A∞ = limt→∞ A(t) = MUT+MDT
+
+                                                                                                         FQ01 - Management de la Qualité - 12/28
+                                                           Résumé
+Relations des indicateurs de SdF
+          Expressions de                  FT (t )                     fT (t )                      R (t )                        𝜆 (t )
+                                                                ∫t                                                                 ∫t
+               FT (t ) =                    −                         f (u) du
+                                                                    0 T
+                                                                                               1 − R (t )                1 − e − 0 𝜆 (u)du
+                                                                                                                                      ∫t
+                                          dFT (t)
+               fT (t ) =                    dt                           −                        − dR(t)
+                                                                                                     dt                 𝜆 (t ) e − 0 𝜆 (u) du
+                                                               ∫∞                                                                ∫t
+               R (t ) =              1 − FT (t )                t
+                                                                      fT (u) du                       −                      e − 0 𝜆 (u) du
+                                      dFT (t) /dt                      f (t)                              )
+               𝜆 (t ) =                1−FT (t)
+                                                                    ∫∞T                       − d ln(R(t)
+                                                                                                    dt                                −
+                                                                     t fT (u) du
+                               ∫∞                              ∫∞                            ∫∞                     ∫ ∞ − ∫ t 𝜆 (u)du
+               MTTF =          0
+                                     (1 − FT (t ) ) dt          0
+                                                                       tfT (t ) dt            0
+                                                                                                   R (t ) dt         0
+                                                                                                                       e 0            dt
+
+
+Modèles de durée de vie et de réparation et indicateurs de SdF
+   Modèle                 T                              fT (t )                            R (t )                      𝜆 (t )                 MTTF
+                                                                                                                                                   1
+ Exponentiel          T ∼ Exp (𝜆)                         𝜆 e −𝜆t                            e −𝜆t                           𝜆                     𝜆
+                                                                   𝛽                         𝛽
+                                                                   t                         − 𝛼t
+                                                                                                                                                        
+                                                        t  𝛽 −1 − 𝛼                                                         t  𝛽 −1
+                                                                                                                                              𝛼 Γ 1 + 𝛽1
+                                                    𝛽                                                               𝛽
+   Weibull           T ∼ W (𝛼, 𝛽 )                  𝛼   𝛼       e                        e                          𝛼        𝛼
+
+                                                            ln(t) −m 2                                                m−ln(t)
+                                                                                                                             
+                                                                                                                                                       𝜎2
+                                                                   
+                                                       −1
+                                                                                                                  𝜑
+                                                                                             m−ln(t)
+                                                  1
+                                                                                     Φ                          1
+                                                                                                                                                em+ 2
+                                                                                                                        𝜎
+                  T ∼ log- N m,𝜎 2
+                                      
+ Log-normal                                       √   e 2      𝜎
+                                                                                                               t𝜎     m−ln(t)
+                                                                                                                             
+                                                t𝜎 2𝜋                                          𝜎
+                                                                                                                    Φ   𝜎
+
+ Γ (·) : fonction Gamma, 𝜑 (·) et Φ (·) : fonctions de densité et de distribution de loi normale standard N (0, 1)
+                                                                                                                             FQ01 - Management de la Qualité - 13/28
+                               Plan
+
+1. Introduction
+   Concepts généraux
+   Cadre de modélisation
+   Indicateurs de SdF
+
+2. Approche mono-composante
+   Cadre d’étude
+   Modèles usuels
+   Exercices
+
+3. Approche multi-composante
+   Cadre d’étude
+   Diagrammes de fiabilité
+   Exercices
+
+                                      FQ01 - Management de la Qualité - 14/28
+                                   Cadre d’étude
+Approche mono-composante : entité unique
+
+  • Composants élémentaires :
+  • Systèmes multi-composants mais traités comme une boite noire
+
+                                                         entrée                       sortie
+                                                                   boîte noire
+
+
+
+
+Objectifs
+                                état          T
+                    fonctionnement
+
+
+                                                             S
+                         défaillance                                          t
+                                       mise en service            remise en service
+
+  • Modèles usuels de la durée de vie T et de la durée de réparation S,
+  • Propriétés des indicateurs de sûreté de fonctionnement associés.
+
+                                                                                      FQ01 - Management de la Qualité - 15/28
+                                  Modèle exponentiel
+Durée de vie T ∼ Exp(𝜆), avec 𝜆 > 0                              1                            0.01
+
+
+   • densité fT (t) = 𝜆e−𝜆t · 1 {t ≥0}                          0.8                          0.008
+
+
+   • fiabilité R(t) = e−𝜆t , t ≥ 0                              0.6                          0.006
+
+
+   • taux de défaillance 𝜆(t) = 𝜆 : bien pour “vie utile”       0.4                          0.004
+
+
+   •   durée de vie moyenne MTTF = E[T ] = 𝜆1                   0.2                          0.002
+
+
+   • R (t + u |u) = P (T ≥ t + u |T ≥ u) = R(t) : pas mémoire    0
+                                                                       0   1000   2000    3000
+                                                                                                 0
+                                                                                                      0    1000   2000   3000
+
+
+                                                                  1
+Durée de réparation S ∼ Exp(𝜇), avec 𝜇 > 0
+                                                                 0.8
+   • Densité fS (t) = 𝜇e−𝜇t · 1 {t ≥0}
+                                                                 0.6
+   • Maintenabilité M (t) = 1 − e−𝜇t , t ≥ 0
+                                                                 0.4
+   • Taux de remise en service 𝜇 (t) = 𝜇
+                                                                 0.2
+   • Durée moyenne de réparation MTTR = E[S] = 𝜇1
+                                                                  0
+                                                                       0            500                   1000           1500
+
+
+
+   Disponibilité : T ∼ Exp(𝜆) et S ∼ Exp(𝜇), avec 𝜆, 𝜇 > 0 et dt > 0 “suffisamment petit”
+                                                                                         MTTF
+                                                             · e− (𝜆+𝜇 )t , A∞ = 𝜆+𝜇 = MTTF+MTTR
+                                                    𝜇     𝜆                               𝜇
+A (t + dt) = (1 − 𝜆dt) A (t) + 𝜇dt Ā (t) ⇒ A(t) = 𝜆+𝜇 + 𝜆+𝜇
+                                                                                  FQ01 - Management de la Qualité - 16/28
+   Modèle de Durée de Vie de Weibull (à 2 Paramètres)
+Origine et propriété
+   • issu des travaux sur la fatigue des matériaux menés par W. Weibull (1887-1979)
+   • très utilisé en fiabilité des systèmes industriels en raison de son adaptabilité
+
+Durée de vie T ∼ W (𝛼, 𝛽), avec 𝛼 > 0 et 𝛽 > 0                      5                           1
+
+                                      t 𝛽
+  • densité fT (t) = 𝛼𝛽 𝛼t 𝛽 −1 e− ( 𝛼 ) · 1 {t ≥0}                 4                       0.8
+                           
+                                                                     3                       0.6
+                             t   𝛽
+   • fiabilité R (t) = e− ( 𝛼 ) , t ≥ 0
+                                                                     2                       0.4
+
+   • taux de défaillance 𝜆 (t) = 𝛼𝛽       t 𝛽 −1
+                                             
+                                           𝛼      → très flexible   1                       0.2
+
+
+      ★ 0 < 𝛽 < 1 : taux décroissant → fiab. logicielle             0                           0
+                                                                         0   0.5    1      1.5       0   0.5   1   1.5
+
+      ★ 𝛽 = 1 : taux constant → loi exponentielle
+                                                                     7
+      ★ 1 < 𝛽 < 2 : taux croissant et concave → usure                6
+
+      ★ 𝛽 ≥ 2 : taux croissant et convexe → usure                    5
+
+                                 ∫ 1                                 4
+   • MTTF = E[T ]= ∞tfT (t) = 𝛼 ∞s 𝛽 e−s ds = 𝛼 Γ 1+ 𝛽1
+                   ∫                                     
+                                                                     3
+                    0             0
+                                                    u 𝛽 − t+u 𝛽      2
+   • R(t + u | u) = P (T ≥ t + u | T ≥ u) = e ( )   𝛼    ( 𝛼 ) ≠
+                                                                     1
+
+     R(t) → avec mémoire                                            0
+                                                                         0           0.5                 1         1.5
+
+                                                                                   FQ01 - Management de la Qualité - 17/28
+          Modèle de Durée de Réparation Log-Normale
+Origine et propriété
+   • si X ∼ N (m,𝜎 2 ), S = eX ∼ log-N (m,𝜎 2 ) ⇔ si S ∼ log-N (m,𝜎 2 ), X = ln(S) ∼ N (m,𝜎 2 )
+   • utilisé pour modéliser la durée de réparation à l’atelier (les défaillances par fatigue)
+
+Durée de réparation S ∼ log-N (m,𝜎 2 ), avec m > 0 et 𝜎 > 0        0.6                            1
+
+                                              2                                               0.8
+                                − 1 ln(t) −m
+   • densité fS (t) =     1
+                           √   e 2     𝜎
+                                         · 1 {t ≥0}                  0.4
+                         t𝜎 2𝜋                                                                  0.6
+                                                        
+   • maintenabilité M (t) = Φ ln(t𝜎) −m = 1 − Φ m−ln(t  )                                      0.4
+                                                      𝜎              0.2
+                      ∫x      u2                      x2                                        0.2
+     avec Φ (x) = √1 −∞ e − 2 du et 𝜑 (x) = √1 e − 2
+                      2𝜋                                2𝜋            0                             0
+                                                                         0   5      10       15       0    5   10   15
+                                          m−ln(t)
+                                      𝜑
+   •   taux de réparation 𝜇 (t) = t𝜎1  m−ln(t)  → en cloche
+                                            𝜎
+                                                                     0.7
+                                      Φ             𝜎                0.6
+
+         ★ phase 1 : taux croisant → chance de terminer              0.5
+
+           la réparation augmente avec le temps écoulé            0.4
+
+                                                                     0.3
+         ★ phase 2 : taux décroisant → réparation longue           0.2
+           due à des problèmes graves (manque de pièces)          0.1
+
+                             𝜎2                                       0
+   • MTTR = E[S] = em+ 2                                                   0               5                10         15
+
+
+                                                                                   FQ01 - Management de la Qualité - 18/28
+                     Modèles de durée de vie simples
+Exercice 1 : loi de durée de vie uniforme
+L’analyse des défaillances d’un système a montré qu’elles surviennent de manière uniforme
+entre 0 et a, avec une densité fT (t) = a1 · 1 {0≤t ≤a} . Déterminer la distribution des instants de
+défaillance FT (t) du système, sa fiabilité R(t), son MTTF et son taux de défaillance 𝜆(t).
+
+
+Exercice 2 : loi de durée de vie triangulaire
+La durée de vie d’un système est décrite par la densité représentée sur la figure ci-après
+
+
+
+
+  1. Déterminer l’expression de h en a > 0 pour que fT (t) soit une densité de probabilité.
+  2. Déterminer l’expression R(t) de la fiabilité du système.
+  3. Déterminer l’expression 𝜆(t) du taux de défaillance du système.
+
+                                                                             FQ01 - Management de la Qualité - 19/28
+                  Modèles de durée de vie complexes
+Exercice 3 : Système soumis à usure et au stress
+On considère un système dont la défaillance est causée soit par usure, soit par stress. Les
+dates de défaillance dues à l’usure et au stress suivent des lois exponentielles de paramètres
+𝜆u > 0 et 𝜆s > 0 respectivement.
+  1. Montrer que la densité de l’instant de défaillance toutes causes confondues s’écrit :
+     fT (t) = p · 𝜆u e−𝜆u t + (1 − p) · 𝜆s e−𝜆s t , ∀0 ≤ p ≤ 1. Que représente p dans cette écriture ?
+  2. Déterminer l’expression du taux de défaillance 𝜆(t) et étudier son allure.
+
+
+Exercice 4 : Système soumis à deux régimes de fonctionnement
+On étudie un système soumis à deux régimes de fonctionnement. Dans la première phase
+(t ∈ [0, t1 ]), le système présente un taux de défaillance constant 𝜆 > 0. À l’enclenchement de
+la seconde phase à t1 , seuls deux scénarios exclusifs sont possibles
+  1. Aucun accident ne survient à t1 avec une probabilité p, le taux de défaillance reste 𝜆.
+  2. Un accident survient à t1 et les dates de défaillance sont, à partir de cet instant, suivent
+     une loi exponentielle de paramètre 2𝜆.
+Déterminer la fiabilité R(t) pour t ≤ t1 et t > t1 , ainsi que la durée de vie moyenne du système
+                                                                                FQ01 - Management de la Qualité - 20/28
+                               Plan
+
+1. Introduction
+   Concepts généraux
+   Cadre de modélisation
+   Indicateurs de SdF
+
+2. Approche mono-composante
+   Cadre d’étude
+   Modèles usuels
+   Exercices
+
+3. Approche multi-composante
+   Cadre d’étude
+   Diagrammes de fiabilité
+   Exercices
+
+                                      FQ01 - Management de la Qualité - 21/28
+                                      Cadre d’étude
+Approche multi-composants
+  • Ensemble des composants interagissant entre eux pour réaliser la fonction principale
+     ↩→ système de sécurité, système de production, système de transport, etc.
+  • Fonction principale est multiple et décomposable en plusieurs fonctions secondaires
+     ↩→ fonction principale d’une voiture : se déplacer en toute sécurité
+     ↩→ fonctions secondaires : démarrage, freinage, direction, signalisation, etc.
+  • Outils d’analyse : diagramme de fiabilité, arbre de défaillances, diagramme de décision
+    binaire, réseau de Petri, graphe de Markov, etc.
+
+Étude des diagrammes de fiabilité
+  • Composants binaires et indépendants entre eux
+                                                                           1           2          3
+  • Représentation graphique par un diagramme logique
+                                                                                indépendants
+        ★ fonctionnelle : fonction globale du système est
+          décomposée en sous-fonctions des composants
+        ★ statique : rend compte de l’état du système en                             2
+          fonction de l’état des composants
+                                                                  E
+                                                                       1                              .S
+                                                                                       3
+  • Diagrammes série, parallèle et complexe
+                                                                           FQ01 - Management de la Qualité - 22/28
+                                  Diagrammes de fiabilité
+Définition et propriétés
+   • Un diagramme de fiabilité est constitué d’une entrée E, d’un corps et d’une sortie S.
+   • Un flux émis en entrée E est transmis par les arcs jusqu’à la sortie S.
+   • Un composant défaillant entraı̂ne l’arrêt du flux au niveau du bloc qui lui est associé.
+   • Le système est défaillant si aucun chemin ne permet le passage du flux de E vers S.
+
+Exemple : système de sécurité d’un gazoduc
+                                  air comprimé
+
+
+                                    5
+                                                         opérateur: 9
+               salle de
+                                    6     8
+              contrôle: 4                                                           9       3
+                                                 7
+                                                                                4   6
+
+                       A
+                              1           2          3
+                                                                    B   .
+                                                                        E
+                                                                            7               1       .
+                                                                                                    S
+
+                                                                                    5
+                                                                                    8       2
+
+
+Objectifs : Indicateurs de SdF du système (R(t), 𝜆(t), MTTF)
+Expressions en fonction d’indicateurs de SdF des blocs (ri (t), 𝜆i (t), MTTFi , i = 1, 2, . . .)
+                                                                                        FQ01 - Management de la Qualité - 23/28
+                                      Diagramme série
+Définition et propriétés
+   • Un système est en série si la défaillance d’un bloc entraı̂ne la défaillance du système.
+                                        E
+                                                1       2       ...         n   .
+                                                                                S
+
+   • Date de défaillance T = min1≤i≤n {Ti }, où Ti désigne la date de défaillance du bloc i.
+
+Indicateurs SdF des systèmes séries
+   • Fiabilité : R(t) = P (T > t) = P (T1 > t, . . ., Tn > t) = ni=1 P (Ti > t) = ni=1 ri (t)
+                                                                Î                 Î
+                                     Ín
+   • Taux de défaillance : 𝜆 (t) = i=1 𝜆i (t) ≥ max1≤i≤n {𝜆i (t)} et 𝜆 (t) ↗ lorsque n ↗
+   • MTTF : pas de résultat simple en cas général
+     ↩→ cas 𝜆i constant ∀i → 𝜆 (t) = ni=1 𝜆i = const → MTTF = Ín1 𝜆i ≤ min1≤i≤n MTTFi
+                                         Í
+                                                                                            i=1
+
+                                                                                                            Ín       −𝛽 − 𝛽1
+Blocs à durée de vie de Weibull Ti ∼ W (𝛼 i , 𝛽) → T ∼ W (𝛼, 𝛽), avec 𝛼 = (                                  i=1 𝛼 i )
+  2.5                                  1                                            8
+                        bloc 1                                    bloc 1                      bloc 1
+                        bloc 2                                    bloc 2                      bloc 2
+   2                                  0.8                                                     bloc 3
+                        bloc 3                                    bloc 3            6
+                        système                                   système                     système
+
+  1.5                                 0.6
+                                                                                    4
+   1                                  0.4
+
+                                                                                    2
+  0.5                                 0.2
+
+
+   0                                   0                                            0
+        0   1   2   3   4         5         0   1   2       3     4         5           0         1        2       3      4      5
+                                                                                                      FQ01 - Management de la Qualité - 24/28
+                                Diagramme parallèle
+Définition et propriétés
+                                                                                             1
+   • Un système est parallèle lorqu’un des blocs fonctionne suffit
+                                                                                             2
+     à assurer le bon fonctionnement du système.
+                                                                                  E
+                                                                                                          .
+                                                                                                          S
+
+   • Date de défaillance T = max1≤i≤n {Ti }, où Ti désigne la date                           ...
+     de défaillance du bloc i.                                                              n
+
+
+Indicateurs SdF des systèmes parallèles
+                                                                                           În
+   • Fiabilité : R(t) = P (T > t) = 1 − P (T < t) = 1 − P (T1 < t, . . ., Tn < t) = 1 −        i=1 (1 − ri (t))
+   • Taux de défaillance et MTTF : pas de résultat simple en cas général
+
+
+2 blocs parallèles identiques à durée de vie exponentielle Ti ∼ Exp(𝜆), avec i = 1, 2
+
+   • Fiabilité : R(t) =1 − (1 − r (t)) 2 =2r (t) − r 2 (t) =2e−𝜆t − e−2𝜆t =e−𝜆t (2 − e−𝜆t ) ≥ e−𝜆t =r (t)
+                                          ′         −𝜆t     −2𝜆t          −𝜆t             −𝜆t
+   • Taux de défaillance : 𝜆 (t) = − RR(t(t)) = 2𝜆e−𝜆t −2𝜆e−𝜆t = 2𝜆 1−e−𝜆t < 2𝜆 1−e −𝜆t = 𝜆
+                                                  e    ( 2−e )       2−e         2−2e
+
+   • MTTR = ∞ R (t) dt = ∞ 2e−𝜆t − e−2𝜆t dt = − 𝜆2 e−𝜆t ∞ + 2𝜆        1 −2𝜆t ∞
+             ∫               ∫
+                                                                                 = 𝜆2 − 2𝜆
+                                                                                         1
+                                                                                           = 𝜆1 1 + 21
+                                                                                                     
+              0               0                                   0
+                                                                         e     0
+
+
+                                                                                FQ01 - Management de la Qualité - 25/28
+                          Diagrammes complexes
+Diagrammes mixtes série-parallèle                                                 9           3
+
+  • décomposer le système en sous-systèmes ayant                  4              6
+
+    un diagramme de type série ou parallèle.           .
+                                                         E
+                                                             7                                  1           .
+                                                                                                            S
+
+
+  • exprimer la fiabilité de chaque sous-système en                               5
+                                                                                    8           2
+    fonction des fiabilités de ses composants.
+  • exprimer la fiabilité du système en traitant les
+    sous-systèmes comme un “macro-composant”
+
+Diagrammes non série-parallèle
+                                                                                            1           4
+  • choisir un pivot et décomposer le système en
+    deux sous-systèmes suivant de l’état du pivot.
+                                                                     2 en panne E
+                                                                                                                    .
+                                                                                                                    S
+
+                                                                 1       4                  3           5
+  • exprimer la fiabilité du système en fonction des   E
+                                                                 2                  .
+                                                                                    S
+    fiabilités de ses sous-systèmes utilisant la loi
+                                                                 3       5                          4
+    des probabilités totales.                                                          E                       .
+                                                                                                                S
+  • Répéter jusqu’à obtenir des sous-systèmes de                 2 en marche
+                                                                                                    5
+    type simple.
+
+                                                                         FQ01 - Management de la Qualité - 26/28
+                Système à diagramme série-parrallèle
+Exercice 5 : Système à 2 composants identiques réparables en parallèle
+On considère un système constitué de 2 composants identiques, réparables, disposés en
+parallèle. Chaque composant présente un taux de défaillance constant 𝜆 > 0. En cas de
+défaillance, la réparation démarre instantanément et s’effectue à un taux constant 𝜇 > 0.
+   1. Exprimer la disponibilité a(t + 𝛿t) des composants à l’instant t + 𝛿t en fonction de
+       leur disponibilité a(t) à t. Il faut noter que 𝛿t représente une durée “suffisamment
+       petite” pour que au plus un événement survienne entre t et t + 𝛿t.
+                                                                                  𝜇     𝜆 − (𝜆+𝜇 )t
+   2. Montrer, après avoir résolu une équation différentielle, que a(t) = 𝜆+𝜇 + 𝜆+𝜇   e         .
+   3. Exprimer la disponibilité A(t) du système à t en fonction de 𝜆 et 𝜇. Comparer la
+       disponibilité asymptotique du système A∞ à celle d’un composant unique a∞ .
+   4. Exprimer la maintenabilité M (t) du système à t en fonction de 𝜇 et calculer MTTR.
+
+Exercice 6 : Amélioration la fiabilité d’un système à 3 composants en série
+On considère un système composé de 3 composants en série, dont la fiabilité est supposée
+constante sur la période d’intérêt, avec les valeurs r1 = 0.9, r2 = 0.8 et r3 = 0.5. La fiabilité
+actuelle du système étant trop faible, on souhaite l’augmenter à une valeur supérieure ou
+égale à 0.8, en ajoutant des composants identiques sur chacun des composants existants
+du système. Pour simplifier, on suppose que tous les composants ajoutés ont un coût
+identique, indépendamment de leur fiabilité. Quelle est la configuration optimale du
+système permettant d’atteindre l’objectif de fiabilité tout en minimisant le coût total ?
+                                                                              FQ01 - Management de la Qualité - 27/28
+                     Système à diagramme complexe
+Exercice 7 : Système à structure en pont
+On considère un système constitué de 5 composants dont le diagramme de fiabilité est
+donné dans la figure ci-après.
+                                           1                   4
+                                 E
+                                                     3
+                                                                          S.
+                                           2                   5
+  1. Identifier un bloc ou groupe pivot permettant de simplifier ce diagramme de fiabilité
+     en diagrammes de type série-parallèle ou parallèle-série selon les états possibles du
+     groupe pivot. Donner l’expression de la disponibilité des sous-systèmes décomposés
+     en fonction de la disponibilité a1 (t), . . ., a5 (t) de chacun des composants.
+  2. En utilisant la loi des probabilités totales, exprimer la disponibilité du système A(t)
+     en fonction de a1 (t), . . ., a5 (t).
+
+                                       HUYNH Khac Tuan, PhD, HDR
+                                 Maı̂tre de Conférences / Associate Professor
+                  Responsable de la formation Automatique et Informatique Industrielle
+                           Laboratoire Informatique et Société Numérique (LIST3N)
+            Université de technologie de Troyes, 12 rue Marie Curie - 10004 Troyes cedex, France
+                                  https://recherche.utt.fr/list3n/tuan-huynh
+                                                                                      FQ01 - Management de la Qualité - 28/28
+

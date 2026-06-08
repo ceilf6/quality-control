@@ -11,7 +11,7 @@
 期末复习必须服从应试目标，优先级如下：
 
 1. P0 最高优先级：`files-from-teacher/final-exam.reviewed.md`、`files-from-teacher/32_SujetExam_tytpe.readable.txt`、期末 TD、TD correction、Excel correction/workbook。用于判断考试题型、重点范围、常见问法、步骤顺序和答案颗粒度。
-2. P1：期末课程材料，例如 `25_USTEUS_Cours_PlanExp_2026.readable.txt`、`34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`、`23_Lecture table Fisher.readable.md`。用于补定义、公式来源、图表解释和查表方法。
+2. P1：期末课程材料，例如 `25_USTEUS_Cours_PlanExp_2026.readable.txt`、`34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`、`23_Lecture table Fisher.readable.md`、`36_FQ01P2006.readable.txt`、`37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`。用于补定义、公式来源、图表解释、查表方法和老师口头讲解。
 3. P2：概率表、统计表、旧 TP correction 和期中资料。用于补基础，不覆盖 P0 题源。
 4. 如果 TD/Sujet type 与其他文件内容冲突，以 TD/Sujet type 的考试要求为准，并向用户说明冲突来源。
 5. 如果无法判断某个文件是否属于 TD、correction 或无法确定资料优先级，必须先询问用户。
@@ -59,13 +59,14 @@
 4. 不要使用未经解释的专业术语。
 5. 如果必须使用专业术语，先用白话解释。
 6. 梳理知识点时必须注明来源文件。
-7. 遇到图、表、ANAVAR、Fisher、控制图、CUSUM、Excel 公式相关内容时，必须说明来源文件，并优先回看 readable workbook 或原文件；必要时通过 HTML 可视化说明。
+7. 遇到图、表、ANAVAR、Fisher、控制图、CUSUM、Excel 公式、SdF/FMDS 公式相关内容时，必须说明来源文件，并优先回看 readable workbook、PDF 课件或原文件；必要时通过 HTML 可视化说明。
+8. 视频 ASR 只用于补老师口头解释。若 ASR 与 PDF 课件公式、变量或术语不一致，以 PDF 课件为准。
 
 # 期末重点
 
 期末默认主线：
 
-Plan d'expériences -> effets des facteurs/interactions -> ANAVAR/Fisher -> configuration optimale -> plan fractionnaire/confusion -> plan croisé/robustesse -> cartes p/np/c/u -> CUSUM。
+Plan d'expériences -> effets des facteurs/interactions -> ANAVAR/Fisher -> configuration optimale -> plan fractionnaire/confusion -> plan croisé/robustesse -> cartes p/np/c/u -> CUSUM -> sûreté de fonctionnement/FMDS。
 
 期中旧内容，如 CNQ、TRG、学习型质量管理、AI/ML 预测质量，只作为基础补充；除非 P0 期末题源明确出现，否则不要把它们放在期末主线前面。
 

@@ -39,6 +39,7 @@ MATERIALS = [
     Material("25_USTEUS_Cours_PlanExp_2026.pdf", "P1", "DOE course support."),
     Material("23_Lecture table Fisher.pptx", "P1", "Fisher table reading aid."),
     Material("34_FQ01-UTSEUS-Part 5-P26 2.pdf", "P1", "SPC, attribute charts and CUSUM course support."),
+    Material("36_FQ01P2006.pdf", "P1", "Surete de fonctionnement course support: FMDS/RAMS, reliability, maintainability, availability, mono-composant and multi-composant modelling."),
     Material("04_Les lois de probabilités les plus importantes en contrôle qualité.pdf", "P2", "Probability-law support."),
     Material("08_Table_FQ01_2025.pdf", "P2", "Statistical tables."),
     Material("09_TP3-correction 2.xlsx", "P2", "Older control-chart correction workbook."),
@@ -264,7 +265,7 @@ def write_index(outputs: list[tuple[Material, Path]]) -> None:
         "## 优先级规则",
         "",
         "1. P0：`32_SujetExam_tytpe.pdf`、期末 TD、TD correction、Excel correction/workbook。用于判断题型、考法、步骤和答案颗粒度。",
-        "2. P1：Plan d'expériences 课程、Fisher 表说明、SPC/CUSUM 课程。用于补定义、公式来源和图表解释。",
+        "2. P1：Plan d'expériences 课程、Fisher 表说明、SPC/CUSUM 课程、SdF/FMDS 课程与视频 ASR。用于补定义、公式来源和图表解释。",
         "3. P2：概率表、统计表和旧 TP correction。用于查表和补基础，不覆盖 P0 题源。",
         "",
         "## 转换清单",
@@ -272,6 +273,12 @@ def write_index(outputs: list[tuple[Material, Path]]) -> None:
     ]
     for material, out in outputs:
         lines.append(f"- {material.priority} `{material.filename}` -> `{out.name}`：{material.note}")
+    lines.append(
+        "- P1 `37_FQ01_P26_SdF_CM_Seance1_720p.mp4` -> "
+        "`37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`："
+        "Surete de fonctionnement oral course support, ASR in French. "
+        "Use PDF slides for formulas and ASR for spoken clarifications."
+    )
     lines.append("")
     (SOURCE_DIR / "final-exam.index.md").write_text("\n".join(lines), encoding="utf-8")
 
