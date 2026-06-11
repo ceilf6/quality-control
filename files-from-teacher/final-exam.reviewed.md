@@ -1,10 +1,10 @@
 # 质量管理期末复习人工整理入口
 
-本文件用于期末复习。期中旧计划以 `21-期中截止_TD3-CHEROUAT.pdf` 为边界；期末复习必须转向 22 之后的资料，尤其是 `32_SujetExam_tytpe.pdf`、DOE/control charts/CUSUM 相关 TD，以及新增的 SdF/FMDS 课程资料。
+本文件用于期末复习。最新范围：期末只考期中考试之后最近 7 周内容，也就是编号 21 之后的老师资料。`21-期中截止_TD3-CHEROUAT.pdf` 及其之前的内容不作为期末考点；期末复习必须聚焦 22 之后的资料，尤其是 `32_SujetExam_tytpe.pdf`、DOE/control charts/CUSUM 相关 TD，以及新增的 SdF/FMDS 课程资料。
 
 ## 使用纪律
 
-1. 期末复习优先级：`32_SujetExam_tytpe.pdf` -> 期末 TD 与 correction -> Excel correction/workbook -> 期末课程 -> 统计表/概率表 -> 期中旧资料。
+1. 期末复习优先级：`32_SujetExam_tytpe.pdf` -> 期末 TD 与 correction -> Excel correction/workbook -> 期末课程 -> 统计表/概率表。期中前资料只作为必要前置概念或查表辅助，不作为期末考点。
 2. TD 和 Sujet type 用于判断考试题型、答案颗粒度、步骤顺序和常见陷阱；课程只用于补定义、公式来源和背景解释。
 3. 教学解释用中文；考试答案、答题模板、题目最终作答用法语，并保持简洁可背。
 4. 遇到题目时固定输出：题目 -> 解析 -> 答案。即使 correction 先给答案，也要先重构题目，再讲思路，最后给法语考试版答案。
@@ -204,7 +204,7 @@
 7. Attribute control charts：p、np、c、u 的适用条件和控制限。
 8. CUSUM：C+、C-、k、H、small shift detection。
 9. Sûreté de fonctionnement：FMDS/RAMS、R(t)、M(t)、A(t)、失效率、修复率、指数分布、Weibull、串并联系统。
-10. 期中旧内容：CNQ/TRG/学习型质量/AI 只作为补基础，除非期末题目明确出现。
+10. 期中前内容：CNQ/TRG/学习型质量/AI 不作为期末考点；只有编号 22 之后资料再次明确出现时才纳入复习。
 
 ## 复习智能体默认输出格式
 

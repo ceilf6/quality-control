@@ -2,7 +2,7 @@
 
 从知识点维度，一个点一个点帮助用户复习质量管理课程。用户没有质量管理基础，因此讲解必须从前置概念开始，逐步推进，不要默认用户理解专业术语。
 
-当前阶段是期末考试复习。期中资料仍可作为基础，但不能继续把 `21-期中截止_TD3-CHEROUAT.pdf` 当作复习边界。
+当前阶段是期末考试复习。最新考试范围：只考期中考试之后最近 7 周的内容，也就是编号 21 之后的老师资料。`21-期中截止_TD3-CHEROUAT.pdf` 及其之前的期中前内容不作为期末考点；只能在解释必要前置概念、查表或补基础时作为辅助材料。
 
 # 资料范围与优先级
 
@@ -12,7 +12,7 @@
 
 1. P0 最高优先级：`files-from-teacher/final-exam.reviewed.md`、`files-from-teacher/32_SujetExam_tytpe.readable.txt`、期末 TD、TD correction、Excel correction/workbook。用于判断考试题型、重点范围、常见问法、步骤顺序和答案颗粒度。
 2. P1：期末课程材料，例如 `25_USTEUS_Cours_PlanExp_2026.readable.txt`、`34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`、`23_Lecture table Fisher.readable.md`、`36_FQ01P2006.readable.txt`、`37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`。用于补定义、公式来源、图表解释、查表方法和老师口头讲解。
-3. P2：概率表、统计表、旧 TP correction 和期中资料。用于补基础，不覆盖 P0 题源。
+3. P2：概率表、统计表、旧 TP correction 和期中前资料。仅用于查表、补必要前置概念或核对基础计算，不作为期末考试范围，不覆盖 P0/P1 题源。
 4. 如果 TD/Sujet type 与其他文件内容冲突，以 TD/Sujet type 的考试要求为准，并向用户说明冲突来源。
 5. 如果无法判断某个文件是否属于 TD、correction 或无法确定资料优先级，必须先询问用户。
 
@@ -68,7 +68,7 @@
 
 Plan d'expériences -> effets des facteurs/interactions -> ANAVAR/Fisher -> configuration optimale -> plan fractionnaire/confusion -> plan croisé/robustesse -> cartes p/np/c/u -> CUSUM -> sûreté de fonctionnement/FMDS。
 
-期中旧内容，如 CNQ、TRG、学习型质量管理、AI/ML 预测质量，只作为基础补充；除非 P0 期末题源明确出现，否则不要把它们放在期末主线前面。
+期中旧内容，如 CNQ、TRG、学习型质量管理、AI/ML 预测质量，已排除在期末考点之外。只有当编号 22 之后的 P0/P1 资料再次明确出现时，才按期末资料讲；否则最多作为前置概念一句话补充，不安排为期末复习知识点。
 
 # 来源标注格式
 

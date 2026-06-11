@@ -40,9 +40,9 @@ MATERIALS = [
     Material("23_Lecture table Fisher.pptx", "P1", "Fisher table reading aid."),
     Material("34_FQ01-UTSEUS-Part 5-P26 2.pdf", "P1", "SPC, attribute charts and CUSUM course support."),
     Material("36_FQ01P2006.pdf", "P1", "Surete de fonctionnement course support: FMDS/RAMS, reliability, maintainability, availability, mono-composant and multi-composant modelling."),
-    Material("04_Les lois de probabilités les plus importantes en contrôle qualité.pdf", "P2", "Probability-law support."),
-    Material("08_Table_FQ01_2025.pdf", "P2", "Statistical tables."),
-    Material("09_TP3-correction 2.xlsx", "P2", "Older control-chart correction workbook."),
+    Material("04_Les lois de probabilités les plus importantes en contrôle qualité.pdf", "P2", "Auxiliary probability-law support; not standalone final-exam scope."),
+    Material("08_Table_FQ01_2025.pdf", "P2", "Statistical tables for lookup only."),
+    Material("09_TP3-correction 2.xlsx", "P2", "Auxiliary older control-chart correction workbook; not standalone final-exam scope."),
 ]
 
 
@@ -257,28 +257,34 @@ def convert_material(material: Material) -> Path:
 
 
 def write_index(outputs: list[tuple[Material, Path]]) -> None:
-    lines = [
-        "# 质量管理期末资料转换索引",
-        "",
-        "本索引用于期末复习。优先级按应试价值排序：Sujet type 与 TD/correction 最高，课程和表格用于补公式、表值和概念。",
-        "",
-        "## 优先级规则",
-        "",
-        "1. P0：`32_SujetExam_tytpe.pdf`、期末 TD、TD correction、Excel correction/workbook。用于判断题型、考法、步骤和答案颗粒度。",
-        "2. P1：Plan d'expériences 课程、Fisher 表说明、SPC/CUSUM 课程、SdF/FMDS 课程与视频 ASR。用于补定义、公式来源和图表解释。",
-        "3. P2：概率表、统计表和旧 TP correction。用于查表和补基础，不覆盖 P0 题源。",
-        "",
-        "## 转换清单",
-        "",
-    ]
-    for material, out in outputs:
-        lines.append(f"- {material.priority} `{material.filename}` -> `{out.name}`：{material.note}")
-    lines.append(
+    asr_line = (
         "- P1 `37_FQ01_P26_SdF_CM_Seance1_720p.mp4` -> "
         "`37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`："
         "Surete de fonctionnement oral course support, ASR in French. "
         "Use PDF slides for formulas and ASR for spoken clarifications."
     )
+    lines = [
+        "# 质量管理期末资料转换索引",
+        "",
+        "本索引用于期末复习。最新范围只覆盖期中考试之后最近 7 周，也就是编号 21 之后的老师资料。优先级按应试价值排序：Sujet type 与 TD/correction 最高，课程和表格用于补公式、表值和概念。",
+        "",
+        "## 优先级规则",
+        "",
+        "1. P0：`32_SujetExam_tytpe.pdf`、期末 TD、TD correction、Excel correction/workbook。用于判断题型、考法、步骤和答案颗粒度。",
+        "2. P1：Plan d'expériences 课程、Fisher 表说明、SPC/CUSUM 课程、SdF/FMDS 课程与视频 ASR。用于补定义、公式来源和图表解释。",
+        "3. P2：概率表、统计表和旧 TP correction。仅用于查表、补必要前置概念或核对基础计算；期中前内容不作为期末考点，不覆盖 P0/P1 题源。",
+        "",
+        "## 转换清单",
+        "",
+    ]
+    asr_written = False
+    for material, out in outputs:
+        if material.priority == "P2" and not asr_written:
+            lines.append(asr_line)
+            asr_written = True
+        lines.append(f"- {material.priority} `{material.filename}` -> `{out.name}`：{material.note}")
+    if not asr_written:
+        lines.append(asr_line)
     lines.append("")
     (SOURCE_DIR / "final-exam.index.md").write_text("\n".join(lines), encoding="utf-8")
 
