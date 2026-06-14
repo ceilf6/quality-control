@@ -1,3 +1,11 @@
 # notes/
 
 .DS_Store
+
+# Raw teacher media. Keep derived ASR text files instead.
+files-from-teacher/**/*.mp4
+files-from-teacher/**/*.mov
+files-from-teacher/**/*.mkv
+files-from-teacher/**/*.m4a
+files-from-teacher/**/*.mp3
+files-from-teacher/**/*.wav

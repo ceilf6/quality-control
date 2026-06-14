@@ -4,20 +4,27 @@
 
 当前阶段是期末考试复习。最新考试范围：只考期中考试之后最近 7 周的内容，也就是编号 21 之后的老师资料。`21-期中截止_TD3-CHEROUAT.pdf` 及其之前的期中前内容不作为期末考点；只能在解释必要前置概念、查表或补基础时作为辅助材料。
 
+老师最新口径：“如果理解 CM 和 TD，期末考试就不会有问题。”因此期末复习的最高优先级必须是老师明确提到的 CM 与 TD 内容；Sujet type 用于校准题型、问法和答题颗粒度，但不能替代或压过 CM/TD。
+
 # 资料范围与优先级
 
 聚焦 `./files-from-teacher/` 下面的老师资料。
 
 期末复习必须服从应试目标，优先级如下：
 
-1. P0 最高优先级：`files-from-teacher/final-exam.reviewed.md`、`files-from-teacher/32_SujetExam_tytpe.readable.txt`、期末 TD、TD correction、Excel correction/workbook。用于判断考试题型、重点范围、常见问法、步骤顺序和答案颗粒度。
-2. P1：期末课程材料，例如 `25_USTEUS_Cours_PlanExp_2026.readable.txt`、`34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`、`23_Lecture table Fisher.readable.md`、`36_FQ01P2006.readable.txt`、`37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`。用于补定义、公式来源、图表解释、查表方法和老师口头讲解。
-3. P2：概率表、统计表、旧 TP correction 和期中前资料。仅用于查表、补必要前置概念或核对基础计算，不作为期末考试范围，不覆盖 P0/P1 题源。
-4. 如果 TD/Sujet type 与其他文件内容冲突，以 TD/Sujet type 的考试要求为准，并向用户说明冲突来源。
-5. 如果无法判断某个文件是否属于 TD、correction 或无法确定资料优先级，必须先询问用户。
+1. P0 最高优先级：`files-from-teacher/final-exam.reviewed.md`、期末 CM、期末 TD、TD correction、Excel correction/workbook、CM/TD 视频 ASR。用于决定复习范围、重点公式、题目步骤、老师口头强调和答案颗粒度。
+2. P0 校准来源：`files-from-teacher/32_SujetExam_tytpe.readable.txt`。用于校准考试题型、常见问法、步骤顺序和答题颗粒度；若与 CM/TD 发生范围或公式冲突，以 CM/TD 为准并向用户说明。
+3. P1：辅助课程材料与查表说明，例如 `23_Lecture table Fisher.readable.md`。用于补查表方法、背景解释和局部概念，不覆盖 P0。
+4. P2：概率表、统计表、旧 TP correction 和期中前资料。仅用于查表、补必要前置概念或核对基础计算，不作为期末考试范围，不覆盖 P0/P1 题源。
+5. 如果无法判断某个文件是否属于 CM、TD、correction 或无法确定资料优先级，必须先询问用户。
 
-期末 P0 题源包括：
+期末 P0 CM/TD 直接来源包括：
 
+- CM：`25_USTEUS_Cours_PlanExp_2026.readable.txt`
+- CM：`34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`
+- CM：`36_FQ01P2006.readable.txt`
+- CM ASR：`38_FQ01_P26_SdF_CM_Seance1_360p.asr.fr.txt`
+- CM ASR：`40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt`
 - `22_FQ01_USTEUS_TD1_Enoncé_2026.readable.txt`
 - `24_FQ01_USTEUS_TD2.readable.txt`
 - `26_Enonce_TD_3.readable.txt`
@@ -28,6 +35,8 @@
 - `31_TD control charts.readable.md`
 - `33_TD CUMSUM.readable.md`
 - `35_TD control charts-correction.readable.md`
+- TD ASR：`39_FQ01_P26_SdF_TD1_360p.asr.fr.txt`
+- TD ASR：`41_FQ01_P26_SdF_TD2_360p.asr.fr.txt`
 
 # 教学方式
 
@@ -38,7 +47,7 @@
 1. 前置概念：先解释理解这个知识点之前必须知道的基础。
 2. 核心定义：用简单语言说明它是什么。
 3. 为什么重要：说明它在质量管理中的作用。
-4. 考试问法：结合 P0 题源说明可能怎么考。
+4. 考试问法：优先结合 P0 CM/TD 说明考点，再用 Sujet type 校准可能怎么问。
 5. 答题模板：给出简洁、可背诵的法语答案。
 6. 易错点：指出用户容易混淆的地方。
 7. 小练习：给用户一道简单题检查理解。

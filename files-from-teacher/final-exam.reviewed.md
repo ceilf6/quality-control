@@ -1,31 +1,34 @@
 # 质量管理期末复习人工整理入口
 
-本文件用于期末复习。最新范围：期末只考期中考试之后最近 7 周内容，也就是编号 21 之后的老师资料。`21-期中截止_TD3-CHEROUAT.pdf` 及其之前的内容不作为期末考点；期末复习必须聚焦 22 之后的资料，尤其是 `32_SujetExam_tytpe.pdf`、DOE/control charts/CUSUM 相关 TD，以及新增的 SdF/FMDS 课程资料。
+本文件用于期末复习。最新范围：期末只考期中考试之后最近 7 周内容，也就是编号 21 之后的老师资料。`21-期中截止_TD3-CHEROUAT.pdf` 及其之前的内容不作为期末考点。
+
+老师最新口径：“Bonjour, si vous comprenez le CM et TD, il n'y aura pas de problèmes pour l'examen final.” 因此复习建设必须把 CM 与 TD 提到最高优先级；`32_SujetExam_tytpe.pdf` 用于校准题型和答题颗粒度，但不替代 CM/TD。
 
 ## 使用纪律
 
-1. 期末复习优先级：`32_SujetExam_tytpe.pdf` -> 期末 TD 与 correction -> Excel correction/workbook -> 期末课程 -> 统计表/概率表。期中前资料只作为必要前置概念或查表辅助，不作为期末考点。
-2. TD 和 Sujet type 用于判断考试题型、答案颗粒度、步骤顺序和常见陷阱；课程只用于补定义、公式来源和背景解释。
+1. 期末复习优先级：CM/TD -> TD correction 与 Excel workbook -> Sujet type -> 统计表/概率表。期中前资料只作为必要前置概念或查表辅助，不作为期末考点。
+2. CM/TD 用于判断复习范围、核心公式、老师强调和解题步骤；Sujet type 用于判断题型、答案颗粒度、步骤顺序和常见陷阱。
 3. 教学解释用中文；考试答案、答题模板、题目最终作答用法语，并保持简洁可背。
 4. 遇到题目时固定输出：题目 -> 解析 -> 答案。即使 correction 先给答案，也要先重构题目，再讲思路，最后给法语考试版答案。
 5. Excel 和 PDF 的公式/表格识别可能错位；遇到 ANAVAR、Fisher、控制图、CUSUM、图形判断题时，必须回看原文件或 readable workbook 中的公式缓存值。
 
-## 最高优先级来源
+## 最高优先级来源：CM/TD
 
-- `32_SujetExam_tytpe.readable.txt`：期末题型直接来源。暴露 DOE 的 V/F、步骤排序、ANAVAR 判读和计算题。
-- `22_FQ01_USTEUS_TD1_Enoncé_2026.readable.txt`：DOE 计算题，完整因子设计、多水平因子、重复试验、效应、ANAVAR、最优设置。
-- `29_FQ01_UTSEUS_TD1_correction 2.readable.txt`：TD1 correction，用来校准计算步骤和答案颗粒度。
-- `24_FQ01_USTEUS_TD2.readable.txt`：DOE 分析题，2^k 设计、模型、显著因素、fractional plan。
-- `30_FQ01_USTEUS_TD2_correction.readable.txt`：TD2 correction，用来校准 ANAVAR、显著性、模型和混杂关系。
-- `26_Enonce_TD_3.readable.txt`：plan croisé 与 robustesse 题干。
-- `28_Correction_Plan_Experiences_Robustesse.readable.md`：robustesse correction，包含均值、方差、S/B、ANAVAR、最终配置。
-- `31_TD control charts.readable.md` 与 `35_TD control charts-correction.readable.md`：属性控制图数据与 correction，重点 p-chart/u-chart。
-- `33_TD CUMSUM.readable.md`：CUSUM workbook，重点 C+、C-、k、H、ARL、失控判断。
+- `25_USTEUS_Cours_PlanExp_2026.readable.txt`：Plan d'expériences CM，提供 DOE 步骤、效应、ANAVAR、Fisher、fractional plan 等公式来源。
+- `22_FQ01_USTEUS_TD1_Enoncé_2026.readable.txt` 与 `29_FQ01_UTSEUS_TD1_correction 2.readable.txt`：DOE TD1 与 correction，校准完整因子设计、多水平因子、重复试验、效应、ANAVAR、最优设置。
+- `24_FQ01_USTEUS_TD2.readable.txt` 与 `30_FQ01_USTEUS_TD2_correction.readable.txt`：DOE TD2 与 correction，校准 2^k、显著因素、模型、fractional plan 和 confusion/alias。
+- `26_Enonce_TD_3.readable.txt` 与 `28_Correction_Plan_Experiences_Robustesse.readable.md`：plan croisé 与 robustesse，包含均值、方差、S/B、ANAVAR、最终配置。
+- `34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`：SPC/CUSUM CM，提供 p/np/c/u 控制图与 CUSUM 公式来源。
+- `31_TD control charts.readable.md` 与 `35_TD control charts-correction.readable.md`：属性控制图 TD 与 correction，重点 p-chart/u-chart。
+- `33_TD CUMSUM.readable.md`：CUSUM TD workbook，重点 C+、C-、k、H、ARL、失控判断。
+- `36_FQ01P2006.readable.txt`：SdF/FMDS CM 课件，覆盖 RAMS/FMDS、R(t)、M(t)、A(t)、失效率、修复率、MTTF/MTTR/MTBF、指数分布、Weibull、串并联系统和相关练习。
+- `38_FQ01_P26_SdF_CM_Seance1_360p.asr.fr.txt` 与 `40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt`：SdF CM 视频 ASR，用于补老师口头解释。
+- `39_FQ01_P26_SdF_TD1_360p.asr.fr.txt` 与 `41_FQ01_P26_SdF_TD2_360p.asr.fr.txt`：SdF TD 视频 ASR，用于补老师口头讲题步骤和易错点。
 
-## 新增 P1 课程来源
+## 题型校准来源
 
-- `36_FQ01P2006.readable.txt`：SdF/FMDS 课件，覆盖 RAMS/FMDS、R(t)、M(t)、A(t)、失效率、修复率、MTTF/MTTR/MTBF、指数分布、Weibull、串并联系统和相关练习。
-- `37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`：SdF 第一讲视频法语 ASR。用于补老师口头解释，例如 FMDS 区分、条件可靠度、指数分布无记忆性、Weibull 形状参数。公式和图表必须以 `36_FQ01P2006.pdf`/`.readable.txt` 为准。
+- `32_SujetExam_tytpe.readable.txt`：期末题型校准来源。暴露 DOE 的 V/F、步骤排序、ANAVAR 判读和计算题。若与 CM/TD 的范围或公式冲突，以 CM/TD 为准。
+- `23_Lecture table Fisher.readable.md`：Fisher 查表辅助来源，用于确定 ddl 与 alpha 下的临界值。
 
 ## 期末题型信号
 
@@ -173,9 +176,9 @@
 
 ### 10. Sûreté de fonctionnement / FMDS
 
-来源：`36_FQ01P2006.readable.txt` 与 `37_FQ01_P26_SdF_CM_Seance1_720p.asr.fr.txt`。
+来源：`36_FQ01P2006.readable.txt`、`38_FQ01_P26_SdF_CM_Seance1_360p.asr.fr.txt`、`40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt`、`39_FQ01_P26_SdF_TD1_360p.asr.fr.txt`、`41_FQ01_P26_SdF_TD2_360p.asr.fr.txt`。
 
-定位：新增课程模块。当前没有独立 TD/correction，因此优先级低于 Sujet type 和已有 TD/correction；若老师之后补 SdF TD 或 correction，应立即升级为 P0。
+定位：老师明确提到 CM/TD 后，SdF 的 CM PDF、CM ASR、TD ASR 都属于 P0 复习来源。公式、变量和图表以 `36_FQ01P2006.readable.txt` 为准；ASR 用于补老师口头解释、TD 解题步骤和易错点。
 
 必会：
 
