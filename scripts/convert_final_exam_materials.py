@@ -46,6 +46,7 @@ MATERIALS = [
     Material("33_TD CUMSUM.xlsx", "P0", "CUSUM TD workbook."),
     Material("35_TD control charts-correction.xlsx", "P0", "Attribute control-chart correction workbook."),
     Material("36_FQ01P2006.pdf", "P0", "CM Surete de fonctionnement course support: FMDS/RAMS, reliability, maintainability, availability, mono-composant and multi-composant modelling."),
+    Material("43_FQ01_TD_Correction.pdf", "P0", "Official SdF TD correction: mono-composant and multi-composant exercises."),
     Material("32_SujetExam_tytpe.pdf", "P0", "Sujet type calibration source for exam shape, wording and answer granularity."),
     Material("23_Lecture table Fisher.pptx", "P1", "Fisher table reading aid."),
     Material("04_Les lois de probabilités les plus importantes en contrôle qualité.pdf", "P2", "Auxiliary probability-law support; not standalone final-exam scope."),
@@ -59,6 +60,7 @@ INDEX_ONLY_MATERIALS = [
     IndexedMaterial("P0", "40_FQ01_P26_SdF_CM_Seance2_360p.mp4", "40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt", "CM SdF seance 2 ASR from teacher video."),
     IndexedMaterial("P0", "39_FQ01_P26_SdF_TD1_360p.mp4", "39_FQ01_P26_SdF_TD1_360p.asr.fr.txt", "TD SdF TD1 ASR from teacher video."),
     IndexedMaterial("P0", "41_FQ01_P26_SdF_TD2_360p.mp4", "41_FQ01_P26_SdF_TD2_360p.asr.fr.txt", "TD SdF TD2 ASR from teacher video."),
+    IndexedMaterial("P0", "42_Notes_FQ01_P26_SdF_annoté.pdf", "42_Notes_FQ01_P26_SdF_annoté.readable.md", "Handwritten annotated SdF TD notes, manually structured for LLM review."),
 ]
 
 

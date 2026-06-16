@@ -24,6 +24,8 @@
 - `36_FQ01P2006.readable.txt`：SdF/FMDS CM 课件，覆盖 RAMS/FMDS、R(t)、M(t)、A(t)、失效率、修复率、MTTF/MTTR/MTBF、指数分布、Weibull、串并联系统和相关练习。
 - `38_FQ01_P26_SdF_CM_Seance1_360p.asr.fr.txt` 与 `40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt`：SdF CM 视频 ASR，用于补老师口头解释。
 - `39_FQ01_P26_SdF_TD1_360p.asr.fr.txt` 与 `41_FQ01_P26_SdF_TD2_360p.asr.fr.txt`：SdF TD 视频 ASR，用于补老师口头讲题步骤和易错点。
+- `42_Notes_FQ01_P26_SdF_annoté.readable.md`：SdF TD 手写批注整理，覆盖 disponibilité 推导、并联系统可用度、maintenabilité、可靠性方块图和冗余配置策略。
+- `43_FQ01_TD_Correction.readable.txt`：SdF TD 官方 correction，覆盖 6 个练习。解题步骤、最终公式和数值结论优先以此文件为准。
 
 ## 题型校准来源
 
@@ -176,9 +178,9 @@
 
 ### 10. Sûreté de fonctionnement / FMDS
 
-来源：`36_FQ01P2006.readable.txt`、`38_FQ01_P26_SdF_CM_Seance1_360p.asr.fr.txt`、`40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt`、`39_FQ01_P26_SdF_TD1_360p.asr.fr.txt`、`41_FQ01_P26_SdF_TD2_360p.asr.fr.txt`。
+来源：`36_FQ01P2006.readable.txt`、`38_FQ01_P26_SdF_CM_Seance1_360p.asr.fr.txt`、`40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt`、`39_FQ01_P26_SdF_TD1_360p.asr.fr.txt`、`41_FQ01_P26_SdF_TD2_360p.asr.fr.txt`、`42_Notes_FQ01_P26_SdF_annoté.readable.md`、`43_FQ01_TD_Correction.readable.txt`。
 
-定位：老师明确提到 CM/TD 后，SdF 的 CM PDF、CM ASR、TD ASR 都属于 P0 复习来源。公式、变量和图表以 `36_FQ01P2006.readable.txt` 为准；ASR 用于补老师口头解释、TD 解题步骤和易错点。
+定位：老师明确提到 CM/TD 后，SdF 的 CM PDF、CM ASR、TD ASR、TD notes 和 TD correction 都属于 P0 复习来源。概念和公式来源优先看 `36_FQ01P2006.readable.txt`；TD 练习的步骤、最终公式和数值结论优先看 `43_FQ01_TD_Correction.readable.txt`；`42` 与 ASR 用于补推导过程、老师口头解释和易错点。
 
 必会：
 
@@ -191,6 +193,7 @@
 - Weibull 分布：形状参数 `beta` 控制失效率趋势；`beta<1` 递减，`beta=1` 退化为指数分布，`beta>1` 递增。
 - 串联系统：所有组件都工作才工作，可靠度通常相乘。
 - 并联系统：至少一个组件工作即可，可靠度用失效概率互补计算。
+- TD correction 必会题型：均匀寿命分布、三角寿命分布、同时受 usure/stress 影响、两种运行模式、两个可修组件并联系统、三组件串联系统的冗余配置优化。
 
 法语答题模板：
 

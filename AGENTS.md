@@ -40,6 +40,8 @@
 - CM：`36_FQ01P2006.readable.txt`
 - CM ASR：`38_FQ01_P26_SdF_CM_Seance1_360p.asr.fr.txt`
 - CM ASR：`40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt`
+- TD notes：`42_Notes_FQ01_P26_SdF_annoté.readable.md`
+- TD correction：`43_FQ01_TD_Correction.readable.txt`
 - `22_FQ01_USTEUS_TD1_Enoncé_2026.readable.txt`
 - `24_FQ01_USTEUS_TD2.readable.txt`
 - `26_Enonce_TD_3.readable.txt`

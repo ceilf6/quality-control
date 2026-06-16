@@ -1,0 +1,943 @@
+# 43_FQ01_TD_Correction.pdf
+
+- Source: `43_FQ01_TD_Correction.pdf`
+- Final-exam priority: P0
+- Role: Official SdF TD correction: mono-composant and multi-composant exercises.
+
+## Readable Content
+FQ01 - Management de la Qualité
+Introduction à la Sûreté de Fonctionnement
+Corrections de TD
+HUYNH Khac Tuan
+
+1
+
+Approche mono-composant
+
+1.1
+
+Exercice 1 : loi de durée de vie uniforme
+L’analyse des défaillances d’un système a montré qu’elles surviennent de manière uniforme entre 0 et 𝑎, avec une densité
+
+𝑓𝑇 (𝑡) = 𝑎1 · 1 {0≤𝑡 ≤𝑎} . Déterminer la distribution des instants de défaillance 𝐹𝑇 (𝑡) du système, sa fiabilité 𝑅(𝑡), son MTTF et son
+taux de défaillance 𝜆(𝑡).
+Solution
+
+— La distribution des instants de défaillance du système
+∫ 𝑡
+𝐹𝑇 (𝑡) = 𝑃 (𝑇 < 𝑡) =
+0
+
+∫𝑡
+
+
+ 0 𝑎1 𝑑𝑡
+
+𝑓𝑇 (𝑡) 𝑑𝑡 = ∫ 𝑎
+
+ 0 𝑎1 𝑑𝑡
+
+
+
+
+ 𝑎𝑡
+
+=
+1
+si 𝑡 ≥ 𝑎 
+
+si 𝑡 < 𝑎
+
+si 𝑡 < 𝑎
+si 𝑡 ≥ 𝑎
+
+— La fiabilité du système
+
+
+ 1 − 𝑎𝑡
+
+𝑅 (𝑡) = 1 − 𝐹 (𝑡) =
+
+0
+
+
+si 𝑡 < 𝑎
+si 𝑡 ≥ 𝑎
+
+— La durée de vie moyenne du système
+∫ ∞
+MFFT = 𝐸 [𝑇 ] =
+
+𝑅 (𝑡) 𝑑𝑡 = Aire du triangle =
+0
+
+𝑎
+2
+
+— Le taux de défaillance du système
+ 𝑡
+
+
+𝑓𝑇 (𝑡) 
+𝜆 (𝑡) =
+= 𝑎−𝑡
+𝑅 (𝑡) 
+∞
+
+
+1.2
+
+si 𝑡 < 𝑎
+si 𝑡 ≥ 𝑎
+
+Exercice 2 : loi de durée de vie triangulaire
+La durée de vie d’un système est décrite par la densité représentée sur la figure ci-après
+1
+
+1. Déterminer l’expression de ℎ en 𝑎 > 0 pour que 𝑓𝑇 (𝑡) soit une densité de probabilité.
+2. Déterminer l’expression 𝑅(𝑡) de la fiabilité du système.
+3. Déterminer l’expression 𝜆(𝑡) du taux de défaillance du système.
+Solution
+1. Pour que 𝑓𝑇 (𝑡) soit une densité de probabilité,
+∫ ∞
+0
+
+1
+𝑓𝑇 (𝑡) 𝑑𝑡 = 1 ⇔ Aire du triangle = 1 ⇔ 𝑎ℎ = 1 ⇔ ℎ = .
+𝑎
+
+2. On calcule d’abord la distribution de la date de défaillance du système de manière suivante
+
+
+
+
+
+
+
+0
+0≤𝑡 <𝑎
+0
+0≤𝑡 <𝑎
+
+
+
+
+
+
+∫
+∫𝑡
+
+
+𝑡
+∫ 𝑡
+
+
+ 𝑓1 (𝑡) 𝑑𝑡
+
+ 𝑎 𝑓1 (𝑡) 𝑑𝑡
+
+𝑎 ≤ 𝑡 < 2𝑎
+𝑎 ≤ 𝑡 < 2𝑎
+𝐹𝑇 (𝑡) =
+𝑓𝑇 (𝑡) 𝑑𝑡 = ∫𝑎2𝑎
+=
+∫
+∫ 3𝑎
+𝑡
+
+
+0
+
+𝑓1 (𝑡) 𝑑𝑡 + 2𝑎 𝑓2 (𝑡) 𝑑𝑡 2𝑎 ≤ 𝑡 < 3𝑎 
+1 − 𝑡 𝑓2 (𝑡) 𝑑𝑡 2𝑎 ≤ 𝑡 < 3𝑎
+
+
+𝑎
+
+
+
+
+
+
+
+
+1
+1
+3𝑎 ≤ 𝑡
+3𝑎 ≤ 𝑡
+
+
+
+
+
+
+0
+
+
+0
+0≤𝑡 <𝑎
+
+
+
+
+
+
+
+
+
+
+1 1
+1
+
+
+(𝑡 − 𝑎)
+𝑡
+−
+
+
+ 21 𝑓1 (𝑡) (𝑡 − 𝑎)
+
+𝑎 ≤ 𝑡 < 2𝑎
+2 𝑎2
+ 𝑎
+
+=
+=
+
+
+
+1 − 21 𝑓2 (𝑡) (3𝑎 − 𝑡) 2𝑎 ≤ 𝑡 < 3𝑎 
+1 − 12 − 𝑎12 𝑡 + 𝑎3 (3𝑎 − 𝑡)
+
+
+
+
+
+
+
+
+
+
+1
+1
+3𝑎 ≤ 𝑡
+
+
+La fiabilité du système s’exprime alors par
+
+
+1
+
+
+
+
+
+
+
+
+ 1 − 21 𝑎12 𝑡 − 𝑎1 (𝑡 − 𝑎)
+
+
+
+𝑅 (𝑡) = 1 − 𝐹𝑇 (𝑡) =
+
+1
+
+− 𝑎12 𝑡 + 𝑎3 (3𝑎 − 𝑡)
+
+2
+
+
+
+
+0
+
+2
+
+0≤𝑡 <𝑎
+𝑎 ≤ 𝑡 < 2𝑎
+2𝑎 ≤ 𝑡 < 3𝑎
+3𝑎 ≤ 𝑡
+
+0≤𝑡 <𝑎
+𝑎 ≤ 𝑡 < 2𝑎
+2𝑎 ≤ 𝑡 < 3𝑎
+3𝑎 ≤ 𝑡
+
+3. L’expression 𝜆(𝑡) du taux de défaillance du système est donc
+
+𝜆 (𝑡) =
+
+1.3
+
+0≤𝑡 <𝑎
+
+
+
+0
+
+
+
+1
+1
+
+
+2𝑡−𝑎
+
+ 𝑎
+
+
+
+1
+1
+1
+ 1−
+
+𝑡 − (𝑡 −𝑎)
+
+
+
+0
+
+
+
+
+
+𝑎 ≤ 𝑡 < 2𝑎
+𝑡 −𝑎
+
+ 𝑎2 − 1 (𝑡 −𝑎) 2
+
+2
+=
+−𝑡 +3𝑎
+
+2𝑎 ≤ 𝑡 < 3𝑎 
+2
+1
+
+
+2 (3𝑎−𝑡 )
+
+
+
+0
+
+3𝑎 ≤ 𝑡
+
+𝑓𝑇 (𝑡)
+2 𝑎2
+𝑎
+=
+− 12 𝑡 + 𝑎3
+𝑅 (𝑡) 
+𝑎
+
+
+
+
+1
+1
+3
+
+
+2 − 𝑎 2 𝑡 + 𝑎 (3𝑎−𝑡 )
+
+
+
+
+0
+
+
+0≤𝑡 <𝑎
+𝑎 ≤ 𝑡 < 2𝑎
+2𝑎 ≤ 𝑡 < 3𝑎
+3𝑎 ≤ 𝑡
+
+Exercice 3 : Système soumis à usure et au stress
+On considère un système dont la défaillance est causée soit par usure, soit par stress. Les dates de défaillance dues à l’usure
+
+et au stress suivent des lois exponentielles de paramètres 𝜆𝑢 > 0 et 𝜆𝑠 > 0 respectivement.
+1. Montrer que la densité de l’instant de défaillance toutes causes confondues s’écrit : 𝑓𝑇 (𝑡) = 𝑝 · 𝜆𝑢 e−𝜆𝑢 𝑡 + (1 − 𝑝) · 𝜆𝑠 e−𝜆𝑠 𝑡 ,
+∀0 ≤ 𝑝 ≤ 1. Que représente 𝑝 dans cette écriture ?
+2. Déterminer l’expression du taux de défaillance 𝜆(𝑡) et étudier son allure.
+Solution
+1. D’abord, on cherche à exprimer la fonction de distribution 𝐹𝑇 (𝑡) de la date de défaillance du système à 𝑡 toutes causes
+confondues, suivant les deux causes de défaillance en utilisant la loi des probabilités totales
+𝐹𝑇 (𝑡) = 𝑃 (𝑇 < 𝑡) = 𝑃 (𝑇 < 𝑡, usure) + 𝑃 (𝑇 < 𝑡, stress) = 𝑃 (𝑇 < 𝑡 | usure) 𝑃 (usure) + 𝑃 (𝑇 < 𝑡 | stress) 𝑃 (stress)
+Comme l’usure et le stress sont deux événements exclusifs, alors 𝑃 (usure) + 𝑃 (stress) = 1. Donc, si on désigne
+𝑃 (usure) = 𝑝, alors 𝑃 (stress) = 1 − 𝑝. On arrive à exprimer 𝐹𝑇 (𝑡) sous la forme
+𝐹𝑇 (𝑡) = 𝑝𝐹𝑇𝑢 (𝑡) + (1 − 𝑝) 𝐹𝑇𝑠 (𝑡) ,
+où 𝐹𝑇𝑢 (𝑡) et 𝐹𝑇𝑠 (𝑡) sont les distributions associées à l’usure et au stress respectivement. La densité de l’instant de défaillance toutes causes confondues s’écrit donc
+𝑓𝑇 (𝑡) =
+
+𝑑𝐹𝑇 (𝑡)
+= 𝑝 𝑓𝑇𝑢 (𝑡) + (1 − 𝑝) 𝑓𝑇𝑠 (𝑡) = 𝑓𝑇 (𝑡) = 𝑝 · 𝜆𝑢 e−𝜆𝑢 𝑡 + (1 − 𝑝) · 𝜆𝑠 e−𝜆𝑠 𝑡 , ∀0 ≤ 𝑝 ≤ 1.
+𝑑𝑡
+
+2. La fiabilité 𝑅(𝑡) du système à 𝑡 s’écrit
+𝑅 (𝑡) = 1 − 𝐹𝑇 (𝑡) = 1 − 𝑝𝐹𝑇𝑢 (𝑡) − (1 − 𝑝) 𝐹𝑇𝑠 (𝑡) = 1 − 𝑝 − (1 − 𝑝) 𝐹𝑇𝑠 (𝑡) + 𝑝 − 𝑝𝐹𝑇𝑢 (𝑡)
+= 𝑝𝑅𝑇𝑢 (𝑡) + (1 − 𝑝) 𝑅𝑇𝑠 (𝑡) = 𝑝e−𝜆𝑢 𝑡 + (1 − 𝑝) e−𝜆𝑠 𝑡
+Ainsi, le taux de défaillance 𝜆(𝑡) s’exprime par
+1+
+𝑓𝑇 (𝑡) 𝑝𝜆𝑢 e−𝜆𝑢 𝑡 + (1 − 𝑝)𝜆𝑠 e−𝜆𝑠 𝑡
+=
+=
+𝜆
+𝜆 (𝑡) =
+𝑢
+𝑅 (𝑡)
+𝑝e−𝜆𝑢 𝑡 + (1 − 𝑝) e−𝜆𝑠 𝑡
+
+(1−𝑝 )𝜆𝑠 e −𝜆𝑠 𝑡
+𝑝𝜆𝑢 e −𝜆𝑢 𝑡
+
+(1−𝑝 )e −𝜆𝑠 𝑡
+1 + 𝑝e−𝜆𝑢 𝑡
+
+′
+
+=
+
+
+
+(1−𝑝 )𝜆
+𝜆𝑢 1 + 𝑝𝜆𝑢 𝑠 e (𝜆𝑢 −𝜆𝑠 )𝑡
+(1−𝑝 )
+1 + 𝑝 e (𝜆𝑢 −𝜆𝑠 )𝑡
+
+=
+
+𝑁 (𝑡)
+.
+𝐷 (𝑡)
+
+′
+
+(𝑡 )𝐷 (𝑡 )
+La dérivée de 𝜆 (𝑡) est donc 𝜆 ′ (𝑡) = 𝑁 (𝑡 )𝐷 (𝑡𝐷)2−𝑁
+= 𝐷𝐻2(𝑡(𝑡)) .
+(𝑡 )
+(1−𝑝 )𝜆𝑠 (𝜆𝑢 −𝜆𝑠 )𝑡
+e
+𝑝
+(1−𝑝 )
+(𝜆
+−𝜆
+(𝜆𝑢 − 𝜆𝑠 ) e 𝑢 𝑠 )𝑡 ,
+𝑝
+
+— 𝑁 (𝑡) = 𝜆𝑢 +
+
+⇒ 𝑁 ′ (𝑡) =
+
+(1−𝑝 )𝜆𝑠
+(𝜆𝑢 − 𝜆𝑠 ) e (𝜆𝑢 −𝜆𝑠 )𝑡 et 𝐷 (𝑡)
+𝑝
+
+3
+
+= 1+
+
+(1−𝑝 ) (𝜆𝑢 −𝜆𝑠 )𝑡
+𝑝 e
+
+⇒ 𝐷 ′ (𝑡) =
+
+
+
+
+
+(1−𝑝 )
+(1−𝑝 )
+(1−𝑝 )𝜆
+(1−𝑝 )𝜆
+— 𝐻 (𝑡) = 𝑁 ′ (𝑡) 𝐷 (𝑡)−𝑁 (𝑡) 𝐷 ′ (𝑡) = 𝑝 𝑠 (𝜆𝑢 − 𝜆𝑠 ) 1 + 𝑝 e (𝜆𝑢 −𝜆𝑠 )𝑡 e (𝜆𝑢 −𝜆𝑠 )𝑡 − 𝑝 (𝜆𝑢 − 𝜆𝑠 ) 𝜆𝑢 + 𝑝 𝑠 e (𝜆𝑢 −𝜆𝑠 )𝑡
+
+
+
+
+
+(1−𝑝 )
+(1−𝑝 )
+(𝜆
+(𝜆
+−𝜆𝑠 )𝑡 = − (1−𝑝 ) (𝜆 − 𝜆 ) 2 e (𝜆𝑢 −𝜆𝑠 )𝑡 < 0
+𝑢 
+
+𝑢 −𝜆𝑠 )𝑡 − 𝜆 − (1−𝑝 )𝜆𝑠
+
+𝐻 (𝑡) = 𝑝 (𝜆𝑢 − 𝜆𝑠 ) e (𝜆𝑢 −𝜆𝑠 )𝑡 𝜆𝑠 + 
+𝜆
+e
+e
+
+𝑢
+𝑢
+𝑠
+
+𝑝 𝑠
+𝑝
+𝑝
+
+
+
+
+Le taux de défaillance 𝜆 (𝑡) est donc décroissant. Lorsque 𝑡 = 0, 𝜆 (0) =
+
+
+𝜆𝑢
+
+𝜆 (𝑡) →
+
+𝜆𝑠
+
+
+𝜆𝑢 < 𝜆𝑠
+
+(1−𝑝 )𝜆𝑠
+𝑝
+(1−𝑝 )
+1+ 𝑝
+
+𝜆𝑢 +
+
+= 𝑝𝜆𝑢 + (1 − 𝑝) 𝜆𝑠 . Lorsque 𝑡 → ∞,
+
+= min {𝜆𝑢 , 𝜆𝑠 }.
+
+𝜆𝑢 ≥ 𝜆𝑠
+0.11
+0.1
+0.09
+0.08
+0.07
+0.06
+0.05
+0.04
+0
+
+1.4
+
+20
+
+40
+
+60
+
+80
+
+100
+
+Exercice 4 : Système soumis à deux régimes de fonctionnement
+On étudie un système soumis à deux régimes de fonctionnement. Dans la première phase (𝑡 ∈ [0, 𝑡 1 ]), le système présente
+
+un taux de défaillance constant 𝜆 > 0. À l’enclenchement de la seconde phase à 𝑡 1 , seuls deux scénarios exclusifs sont possibles
+— Aucun accident ne survient à 𝑡 1 avec une probabilité 𝑝, le taux de défaillance reste 𝜆.
+— Un accident survient à 𝑡 1 et les dates de défaillance sont, à partir de cet instant, suivent une loi exponentielle de paramètre
+2𝜆.
+Déterminer la fiabilité 𝑅(𝑡) pour 𝑡 ≤ 𝑡 1 et 𝑡 > 𝑡 1 , ainsi que la durée de vie moyenne du système.
+Solution
+— On peut résumer les régimes de fonctionnement du système par la figure suivante
+scénario 1 (probabilité p)
+
+scénario 2 (probabilité 1-p)
+
+changement
+du régime
+
+changement
+du régime
+
+— Lorsque 𝑡 ≤ 𝑡 1 , 𝜆 (𝑡) = 𝜆 quelque soit scénario, la fiabilité du système est donc 𝑅 (𝑡) = e−𝜆𝑡 · 1 {0≤𝑡 ≤𝑡1 } .
+— Lorsque 𝑡 > 𝑡 1 , le taux de défaillance après le changement de régime de chaque scénario 𝑖 est 𝜆𝑖 , avec 𝑖 ∈ {1, 2}. Pour
+que le système fonctionne à 𝑡 > 𝑡 1 , il doit survivre sur [0, 𝑡 1 ] avec le taux de défaillance 𝜆1 et ensuit sur [𝑡 1, 𝑡] avec le
+taux de défaillance 𝜆𝑖 .
+— Utilisant la propriété « sans mémoire » de la loi exponentielle et par intuition, la fiabilité du système associée à
+chaque scénario 𝑖, avec 𝑖 ∈ {1, 2}, est 𝑅𝑖 (𝑡) = 𝑅 (𝑡 1 ) e−𝜆𝑖 (𝑡 −𝑡1 ) = e−𝜆𝑡1 e−𝜆𝑖 (𝑡 −𝑡1 ) = e−𝜆𝑖 𝑡 +(𝜆𝑖 −𝜆)𝑡1 .
+— Par une démonstration rigoureuse, on exprime la fiabilité 𝑅𝑖 (𝑡) de manière 𝑅𝑖 (𝑡) = e
+e− (𝜆𝑡1 +𝜆𝑖 (𝑡 −𝑡1 ) ) = e−𝜆𝑖 𝑡 +(𝜆𝑖 −𝜆)𝑡1 .
+
+4
+
+∫𝑡
+− 0 𝜆 (𝑢 )𝑑𝑢
+
+=e
+
+−
+
+∫
+
+∫𝑡
+𝑡1
+𝜆𝑑𝑢+ 𝑡 𝜆𝑖 𝑑𝑢
+0
+1
+
+
+
+=
+
+Pour tous régime confondu, on utilise la loi des probabilités total pour exprimer la fiabilité 𝑅 (𝑡) comme suit
+𝑅 (𝑡) = 𝑃 (𝑇 > 𝑡) = 𝑃 (𝑇 > 𝑡, scé. 1) + 𝑃 (𝑇 > 𝑡, scé. 2) = 𝑃 (𝑇 > 𝑡 | scé. 1) 𝑃 (scé. 1) + 𝑃 (𝑇 > 𝑡 | scé. 2) 𝑃 (scé. 2)
+= 𝑝𝑅1 (𝑡) + (1 − 𝑝) 𝑅2 (𝑡) = 𝑝e−𝜆𝑡 + (1 − 𝑝) e−2𝜆𝑡 +𝜆𝑡1
+— La durée de vie moyenne du système est calculée par
+∫ ∞
+
+∫ ∞
+
+∫ 𝑡1
+
+MTTF = 𝐸 (𝑇 ) =
+𝑅 (𝑡) 𝑑𝑡 =
+𝑅 (𝑡) 𝑑𝑡 +
+𝑅 (𝑡) 𝑑𝑡
+0
+0
+𝑡1
+∫ 𝑡1
+
+∫ 𝑡1
+∫ ∞
+∫ ∞
+∫ ∞
+−𝜆𝑡
+−𝜆𝑡
+−2𝜆𝑡 +𝜆𝑡 1
+−𝜆𝑡
+−𝜆𝑡
+−2𝜆𝑡 +𝜆𝑡 1
+=
+e 𝑑𝑡 +
+𝑝e + (1 − 𝑝) e
+𝑑𝑡 = 𝑝
+e 𝑑𝑡 + (1 − 𝑝)
+e 𝑑𝑡 +
+e
+𝑑𝑡
+0
+
+0
+
+𝑡1
+
+0
+
+𝑡1
+
+ 
+
+
+
+
+1 − 𝑝 −𝜆𝑡1
+1
+1  −𝜆𝑡1 
+1
+1 e−𝜆𝑡1 1
+1
+−𝜆𝑡 1
+1−e
++
+e
+= − (1 − 𝑝)
+=
+1−
+e
+= 𝑝 + (1 − 𝑝)
+𝜆
+𝜆
+2𝜆
+𝜆
+𝜆 2
+𝜆
+2
+
+2
+
+Approche multi-composant
+
+2.1
+
+Exercice 5 : Système à 2 composants identiques réparables en parallèle
+On considère un système constitué de 2 composants identiques, réparables, disposés en parallèle. Chaque composant
+
+présente un taux de défaillance constant 𝜆 > 0. En cas de défaillance, la réparation démarre instantanément et s’effectue
+à un taux constant 𝜇 > 0.
+1. Exprimer la disponibilité 𝑎 (𝑡 + 𝛿𝑡) des composants à l’instant 𝑡 + 𝛿𝑡 en fonction de leur disponibilité 𝑎(𝑡) à 𝑡. Il faut
+noter que 𝛿𝑡 représente une durée « suffisamment petite » pour que au plus un événement survienne entre 𝑡 et 𝑡 + 𝛿𝑡.
+𝜆 − (𝜆+𝜇 )𝑡
+e
+.
+2. Montrer, après avoir résolu une équation différentielle, que 𝑎(𝑡) = 𝜆+𝜇 + 𝜆+𝜇
+𝜇
+
+3. Exprimer la disponibilité 𝐴(𝑡) du système à 𝑡 en fonction de 𝜆 et 𝜇. Comparer la disponibilité asymptotique du système
+𝐴∞ à celle d’un composant unique 𝑎 ∞ .
+4. Exprimer la maintenabilité 𝑀 (𝑡) du système à 𝑡 en fonction de 𝜇 et calculer MTTR.
+Solution
+1. Comme la durée 𝛿𝑡 est « suffisamment petite » pour que au plus un événement survienne entre 𝑡 et 𝑡 +𝛿𝑡, deux scénarios
+sont possibles à 𝑡 comme présentés dans la figure ci-dessous
+
+marche
+
+panne
+
+marche
+
+réparation
+achevée
+
+La disponibilité des composant à 𝑡 + 𝛿𝑡 s’exprime de manière suivante
+𝑎 (𝑡 + 𝛿𝑡) = 𝑃 (composant en marche à 𝑡 + 𝛿𝑡)
+= 𝑃 (composant en marche à 𝑡 + 𝛿𝑡, composant en marche à 𝑡)
+|
+{z
+}
+𝑃1
+
++ 𝑃 (composant en marche à 𝑡 + 𝛿𝑡, composant en panne à 𝑡),
+|
+{z
+}
+𝑃2
+
+5
+
+où
+𝑃 1 = 𝑃 (composant en marche à 𝑡 + 𝛿𝑡 | composant en marche à 𝑡) 𝑃 (composant en marche à 𝑡)
+loi
+
+=
+
+exponentielle
+
+𝑃 (composant en marche à 𝛿𝑡 | composant en marche à 0) 𝑎 (𝑡) = 𝑅 (𝛿𝑡) 𝑎 (𝑡) = e−𝜆𝛿𝑡 𝑎 (𝑡) ≃ (1 − 𝜆𝛿𝑡) 𝑎 (𝑡) ,
+
+𝑃 2 = 𝑃 (composant en marche à 𝑡 + 𝛿𝑡 | composant en panne à 𝑡) 𝑃 (composant en panne à 𝑡)
+
+
+loi
+=
+𝑃 (composant en marche à 𝛿𝑡 | composant en panne à 0) 𝑎¯ (𝑡) = 𝑀 (𝛿𝑡) 𝑎¯ (𝑡) = 1 − e−𝜇𝛿𝑡 𝑎¯ (𝑡) ≃ 𝜇𝛿𝑡 (1 − 𝑎 (𝑡)) .
+
+exponentielle
+
+On arrive donc à 𝑎 (𝑡 + 𝛿𝑡) = (1 − 𝜆𝛿𝑡) 𝑎 (𝑡) + 𝜇𝛿𝑡 (1 − 𝑎 (𝑡)).
+2. On récrit 𝑎 (𝑡 + 𝛿𝑡) = (1 − 𝜆𝛿𝑡) 𝑎 (𝑡) + 𝜇𝛿𝑡 (1 − 𝑎 (𝑡)) sous la forme
+𝑎 (𝑡 + 𝛿𝑡) − 𝑎 (𝑡)
+= 𝜇 − (𝜆 + 𝜇) 𝑎 (𝑡) ⇔ 𝑎 ′ (𝑡) = − (𝜆 + 𝜇) 𝑎 (𝑡) + 𝜇
+𝛿𝑡
+Solution homogène : 𝑎 (𝑡) = 𝐾e− (𝜆+𝜇 )𝑡 ⇒ solution non-homogène par la variation de constant : 𝑎 (𝑡) = 𝐾 (𝑡) e− (𝜆+𝜇 )𝑡 ⇒
+𝑎 ′ (𝑡) = 𝐾 ′ (𝑡) e− (𝜆+𝜇 )𝑡 − (𝜆 + 𝜇) 𝐾 (𝑡) e− (𝜆+𝜇 )𝑡 . Ainsi,
+((((
+
+((((
+
+(e − (𝜆+𝜇 )𝑡 + 𝜇 ⇔ 𝐾 ′ (𝑡) = 𝜇e (𝜆+𝜇 )𝑡 ⇒ 𝐾 (𝑡) =
+(e − (𝜆+𝜇 )𝑡 = − (𝜆 +(
+(𝜆(
+𝐾((𝑡)
++(
+𝜇)(𝐾((𝑡)
+𝐾 ′ (𝑡) e− (𝜆+𝜇 )𝑡 − (
+(( 𝜇)(
+
+Donc, 𝑎 (𝑡) = 𝐾 (𝑡) e− (𝜆+𝜇 )𝑡 =
+
+
+
+𝜇 (𝜆+𝜇 )𝑡
++𝐶
+𝜆+𝜇 e
+
+
+
+𝜇 (𝜆+𝜇 )𝑡
+e
++ 𝐶.
+𝜆+𝜇
+
+𝜆
+e− (𝜆+𝜇 )𝑡 = 𝐶e− (𝜆+𝜇 )𝑡 + 𝜆+𝜇 . Comme 𝑎 (0) = 1 ⇒ 𝐶 = 1 − 𝜆+𝜇 = 𝜆+𝜇
+. En
+𝜇
+
+𝜇
+
+conséquence,
+𝑎 (𝑡) =
+
+𝜇
+𝜇
+𝜆 − (𝜆+𝜇 )𝑡
++
+e
+⇒ 𝑎∞ =
+.
+𝜆+𝜇 𝜆+𝜇
+𝜆+𝜇
+
+3. La disponibilité du système de 2 composants indépendant en parallèle
+
+𝐴 (𝑡) = 𝑃 (système en marche à 𝑡) = 1−𝑃 (système en panne à 𝑡) = 1−𝑃 ({comp. 1 en panne à 𝑡 } et {comp. 2 en panne à 𝑡 }
+1 − 𝑃 (comp. 1 en panne à 𝑡) 𝑃 (comp. 2 en panne à 𝑡) = 1 − (1 − 𝑎 (𝑡)) 2 = 2𝑎 (𝑡) − 𝑎 2 (𝑡) .
+𝜆 − (𝜆+𝜇 )𝑡
+Comme 𝑎 (𝑡) = 𝜆+𝜇 + 𝜆+𝜇
+e
+𝜇
+
+𝐴 (𝑡) = 1 − (1 − 𝑎 (𝑡)) 2 = 1 −
+
+
+2
+𝜇 (2𝜆 + 𝜇)
+𝜇 (𝜆 + 𝜇)
+𝜇
+𝜆2
+𝜆2
+− (𝜆+𝜇 )𝑡
+1
+−
+e
+⇒
+𝐴
+=
+1
+−
+=
+>
+=
+= 𝑎∞
+∞
+2
+2
+2
+2
+𝜆+𝜇
+(𝜆 + 𝜇)
+(𝜆 + 𝜇)
+(𝜆 + 𝜇)
+(𝜆 + 𝜇)
+
+4. La maintenabilité 𝑀 (𝑡) du système à 𝑡 en fonction de 𝜇
+𝑀 (𝑡) = 1 − 𝑀¯ (𝑡) = 1 − 𝑃 (la maintenance d’un système défaillant à 0 n’est pas achevée sur [0, 𝑡])
+= 1 − 𝑃 (composants 1 et 2 non réparé sur [0, 𝑡]) = 1 − 𝑚¯ 2 (𝑡) = 1 − e−2𝜇𝑡
+et MTTR
+
+∫ ∞
+MTTR =
+
+𝑀¯ (𝑡) 𝑑𝑡 =
+
+0
+
+2.2
+
+∫ ∞
+0
+
+e−2𝜇𝑡 𝑑𝑡 =
+
+1
+.
+2𝜇
+
+Exercice 6 : Amélioration la fiabilité d’un système à 3 composants en série
+On considère un système composé de 3 composants en série, dont la fiabilité est supposée constante sur la période d’intérêt,
+
+avec les valeurs 𝑟 1 = 0.9, 𝑟 2 = 0.8 et 𝑟 3 = 0.5. La fiabilité actuelle du système étant trop faible, on souhaite l’augmenter à une
+6
+
+valeur supérieure ou égale à $0.8$, en ajoutant des composants identiques sur chacun des composants existants du système.
+Pour simplifier, on suppose que tous les composants ajoutés ont un coût identique, indépendamment de leur fiabilité. Quelle
+est la configuration optimale du système permettant d’atteindre l’objectif de fiabilité tout en minimisant le coût total ?
+Solution
+
+r2=0.8
+...
+
+E
+
+r1=0.9
+
+. r =0.8 . r =0.5 S.
+2
+
+3
+
+...
+
+...
+
+r1=0.9
+
+r3=0.5
+
+𝑛1
+
+𝑛2
+
+𝑛3
+
+𝑅1
+
+𝑅2
+
+𝑅3
+
+𝑅
+
+décision
+
+1
+
+1
+
+1
+
+0.9
+
+0.8
+
+0.5
+
+0.36
+
+ajout d’un composant 3
+
+2
+
+0.75
+
+0.53
+
+ajout d’un composant 3
+
+3
+
+0.875
+
+0.63
+
+ajout d’un composant 2
+
+0.756
+
+ajout d’un composant 3
+
+0.81
+
+stop
+
+2
+
+0.96
+4
+
+0.9375
+
+choisir 𝑛 1 = 1, 𝑛 2 = 2 et 𝑛 3 = 0.96 pour avoir 𝑅 = 0.81
+
+7

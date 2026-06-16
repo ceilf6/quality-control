@@ -27,6 +27,8 @@
 - P0 `40_FQ01_P26_SdF_CM_Seance2_360p.mp4` -> `40_FQ01_P26_SdF_CM_Seance2_360p.asr.fr.txt`：CM SdF seance 2 ASR from teacher video.
 - P0 `39_FQ01_P26_SdF_TD1_360p.mp4` -> `39_FQ01_P26_SdF_TD1_360p.asr.fr.txt`：TD SdF TD1 ASR from teacher video.
 - P0 `41_FQ01_P26_SdF_TD2_360p.mp4` -> `41_FQ01_P26_SdF_TD2_360p.asr.fr.txt`：TD SdF TD2 ASR from teacher video.
+- P0 `42_Notes_FQ01_P26_SdF_annoté.pdf` -> `42_Notes_FQ01_P26_SdF_annoté.readable.md`：Handwritten annotated SdF TD notes, manually structured for LLM review.
+- P0 `43_FQ01_TD_Correction.pdf` -> `43_FQ01_TD_Correction.readable.txt`：Official SdF TD correction: mono-composant and multi-composant exercises.
 - P0 `32_SujetExam_tytpe.pdf` -> `32_SujetExam_tytpe.readable.txt`：Sujet type calibration source for exam shape, wording and answer granularity.
 - P1 `23_Lecture table Fisher.pptx` -> `23_Lecture table Fisher.readable.md`：Fisher table reading aid.
 - P2 `04_Les lois de probabilités les plus importantes en contrôle qualité.pdf` -> `04_Les lois de probabilités les plus importantes en contrôle qualité.readable.txt`：Auxiliary probability-law support; not standalone final-exam scope.
