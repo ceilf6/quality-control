@@ -4,13 +4,23 @@
 
 老师最新口径：“Bonjour, si vous comprenez le CM et TD, il n'y aura pas de problèmes pour l'examen final.” 因此复习建设必须把 CM 与 TD 提到最高优先级；`32_SujetExam_tytpe.pdf` 用于校准题型和答题颗粒度，但不替代 CM/TD。
 
+老师关于考试形式的最新补充：考试会有 QCM；会有基于课程公式、类似 TD 的表格格子填值题；多个候选数值会被提供；没有往年题可参考。因此复习不能只按长书面题训练，也不能只按纯 QCM 训练，必须按具体题型输出最贴合考试的答案。
+
 ## 使用纪律
 
 1. 期末复习优先级：CM/TD -> TD correction 与 Excel workbook -> Sujet type -> 统计表/概率表。期中前资料只作为必要前置概念或查表辅助，不作为期末考点。
 2. CM/TD 用于判断复习范围、核心公式、老师强调和解题步骤；Sujet type 用于判断题型、答案颗粒度、步骤顺序和常见陷阱。
 3. 教学解释用中文；考试答案、答题模板、题目最终作答用法语，并保持简洁可背。
-4. 遇到题目时固定输出：题目 -> 解析 -> 答案。即使 correction 先给答案，也要先重构题目，再讲思路，最后给法语考试版答案。
+4. 遇到题目时固定输出：题目 -> 解析 -> 答案。即使 correction 先给答案，也要先重构题目，再讲思路，最后按题型给答案：QCM 给选项，表格题给格子值，TD 型计算给结果和关键步骤，概念题给简洁法语作答。
 5. Excel 和 PDF 的公式/表格识别可能错位；遇到 ANAVAR、Fisher、控制图、CUSUM、图形判断题时，必须回看原文件或 readable workbook 中的公式缓存值。
+
+## 最新考试形式信号
+
+- 会有 QCM，但不能把考试理解为只考纯 QCM。
+- 会有类似 TD 的表格格子填值题，依据是 CM 公式和 TD 步骤。
+- 多个候选数值会被提供，因此训练时要会快速识别正确公式、代入正确字段，并排除常见错误值。
+- 没有往年题；`32_SujetExam_tytpe.readable.txt` 只能作为题型校准来源，不是历年真题。
+- 答案格式服从题面：QCM 写选项，表格题写格子值，TD 型计算写最贴近 correction 的结果，概念判断写关键词或短句。
 
 ## 最高优先级来源：CM/TD
 
@@ -36,7 +46,7 @@
 
 ### 1. DOE 判断题
 
-来自 `32_SujetExam_tytpe.readable.txt` Q1。
+来自 `32_SujetExam_tytpe.readable.txt` Q1。更可能以 QCM/V-F 判断形式出现。
 
 常考判断：
 
@@ -48,9 +58,11 @@
 
 > Un plan d'expériences permet d'étudier simultanément plusieurs facteurs, de quantifier leurs effets et interactions, puis de choisir une configuration optimale avec un nombre d'essais maîtrisé.
 
+QCM 作答重点：选能体现“同时研究 factors/interactions、量化效应、优化配置、减少 essais”的选项；排除“只能由 experts 解释”等绝对化说法。
+
 ### 2. DOE 步骤排序
 
-来自 `32_SujetExam_tytpe.readable.txt` Q2 和 `25_USTEUS_Cours_PlanExp_2026.readable.txt`。
+来自 `32_SujetExam_tytpe.readable.txt` Q2 和 `25_USTEUS_Cours_PlanExp_2026.readable.txt`。可能以排序题、QCM 或缺步骤填空出现。
 
 推荐顺序：
 
@@ -64,9 +76,11 @@
 
 易错点：不要把 ANAVAR 放在试验前；不要先选最优配置再建模。
 
+QCM/排序作答重点：先 formalisation，再 construction/réalisation des essais，再 effets/ANAVAR/modèle，最后 configuration optimale。
+
 ### 3. ANAVAR 判读
 
-来自 `32_SujetExam_tytpe.readable.txt` Q3、TD1/TD2 corrections、Fisher 表说明。
+来自 `32_SujetExam_tytpe.readable.txt` Q3、TD1/TD2 corrections、Fisher 表说明。可能以表格格子填值、多个数值选项、显著性判断或 QCM 出现。
 
 必会：
 
@@ -81,6 +95,8 @@
 
 > Le facteur est significatif si la statistique de Fisher calculée est supérieure à la valeur critique. Ici, comme F > Fseuil, l'effet du facteur est statistiquement significatif au seuil considéré.
 
+表格填值重点：会填 `ddl`、`SCE`、`CME = SCE / ddl`、`F = CME_facteur / CME_residuelle`、`Fseuil` 和 significativité。多个候选数值中优先检查分母、ddl 和 residual error 是否用对。
+
 ### 4. TD1 多水平完整设计
 
 来源：`22_FQ01_USTEUS_TD1_Enoncé_2026.readable.txt` 与 `29_FQ01_UTSEUS_TD1_correction 2.readable.txt`。
@@ -94,6 +110,8 @@
 - 根据目标选择 réglage：最小化 solvant résiduel 或最大化 résistance。
 
 考试策略：先写目标是 minimiser 还是 maximiser；最后配置必须和目标方向一致。
+
+QCM/填表作答重点：按 TD correction 的公式算 factor modality moyenne、effect、interaction、ANAVAR 格子和 configuration optimale；如果给候选值，重点排除 minimiser/maximiser 方向反了的选项。
 
 ### 5. TD2 2^k 与 fractional plan
 
@@ -111,6 +129,8 @@
 
 > Le modèle retenu ne doit conserver que les facteurs et interactions significatifs. Les effets non significatifs sont intégrés dans l'erreur résiduelle ou écartés de l'interprétation.
 
+QCM/填表作答重点：会识别 `2^k` essais 数、主效应/interactions、significant terms、alias/confusion。模型题优先选择只保留显著项的选项。
+
 ### 6. Plan croisé 与 robustesse
 
 来源：`26_Enonce_TD_3.readable.txt` 与 `28_Correction_Plan_Experiences_Robustesse.readable.md`。
@@ -127,6 +147,8 @@
 
 > La configuration finale doit satisfaire à la fois l'objectif de performance moyenne et l'objectif de robustesse. On privilégie donc un réglage qui donne une réponse proche de la cible tout en réduisant la variabilité due au facteur bruit.
 
+QCM/填表作答重点：会填 moyenne、variance、S/B、ANAVAR 相关格子，并区分 performance 最优与 robustesse 最优；最终配置要匹配题目目标。
+
 ### 7. Fisher 表
 
 来源：`23_Lecture table Fisher.readable.md`。
@@ -140,6 +162,8 @@
 法语答题模板：
 
 > La valeur critique de Fisher se lit avec les degrés de liberté du facteur au numérateur, les degrés de liberté de la résiduelle au dénominateur, et le seuil de risque alpha choisi.
+
+QCM/查表作答重点：给出多个 `Fseuil` 时，先确认 numerator ddl、denominator ddl、alpha，再选对应表值。
 
 ### 8. 属性控制图 p/np/c/u
 
@@ -161,6 +185,8 @@
 
 注意：`TODO.md` 曾标出 X/R 控制图公式有问题；期末讲控制图时不要沿用旧笔记中的 X/R 公式，必须优先回看老师表和 correction。
 
+QCM/填表作答重点：先判断该用 p/np/c/u 哪张图，再填 `p_i`、`p_bar`、`u_i`、`u_bar`、UCL/LCL。多个候选值中重点排除把 defectives 和 defects 混淆、把可变样本量当固定样本量的选项。
+
 ### 9. CUSUM
 
 来源：`33_TD CUMSUM.readable.md` 与 `34_FQ01-UTSEUS-Part 5-P26 2.readable.txt`。
@@ -175,6 +201,8 @@
 法语答题模板：
 
 > La carte CUSUM cumule les écarts successifs par rapport à la cible. Elle est plus sensible aux petits décalages qu'une carte de Shewhart classique.
+
+QCM/填表作答重点：会按递推填 `C+`、`C-`、`k`、`H`，并判断是否超过 decision interval。多个候选值中检查是否错误地忘记 `max(0, ...)`。
 
 ### 10. Sûreté de fonctionnement / FMDS
 
@@ -199,6 +227,8 @@
 
 > La sûreté de fonctionnement regroupe la fiabilité, la maintenabilité, la disponibilité et la sécurité. La fiabilité décrit la probabilité de fonctionner sans défaillance pendant une durée donnée, tandis que la disponibilité décrit l'aptitude à être en état de fonctionner à un instant donné.
 
+QCM/填表作答重点：会从公式中识别 `R(t)`、`F_T(t)`、`lambda(t)`、`M(t)`、`A(t)`、MTTF/MTTR，并能按 `43_FQ01_TD_Correction.readable.txt` 的 TD 题型选正确数值或填表格。
+
 ## 期末知识点优先级
 
 1. Plan d'expériences：概念、步骤、V/F。
@@ -218,4 +248,4 @@
 
 解析：中文讲思路、公式、查表方法、单位和易错点。
 
-答案：法语完整考试版，短而可背；必要时附中文翻译。
+答案：按题型给最贴合考试的作答。QCM 给选项；表格题给格子/字段值；TD 型计算给结果和关键步骤；概念题给简洁法语作答；必要时附中文翻译。
