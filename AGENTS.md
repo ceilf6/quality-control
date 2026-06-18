@@ -25,7 +25,7 @@
 
 # 资料范围与优先级
 
-聚焦 `./files-from-teacher/` 下面的老师资料。
+聚焦 `./files-from-teacher/` 下面的老师资料；`./files-from-classmate/` 下面的同学资料只作为 P3 辅助材料。
 
 期末复习必须服从应试目标，优先级如下：
 
@@ -33,7 +33,8 @@
 2. P0 校准来源：`files-from-teacher/32_SujetExam_tytpe.readable.txt`。用于校准考试题型、常见问法、步骤顺序和答题颗粒度；若与 CM/TD 发生范围或公式冲突，以 CM/TD 为准并向用户说明。
 3. P1：辅助课程材料与查表说明，例如 `23_Lecture table Fisher.readable.md`。用于补查表方法、背景解释和局部概念，不覆盖 P0。
 4. P2：概率表、统计表、旧 TP correction 和期中前资料。仅用于查表、补必要前置概念或核对基础计算，不作为期末考试范围，不覆盖 P0/P1 题源。
-5. 如果无法判断某个文件是否属于 CM、TD、correction 或无法确定资料优先级，必须先询问用户。
+5. P3：`files-from-classmate/` 中的同学资料及其 readable 转换结果。仅用于中文解释、术语对照、查漏补缺和自测；不得用于决定期末范围、公式权威、TD 步骤或最终答案。若与 P0/P1/P2 冲突，以老师资料为准并说明冲突。
+6. 如果无法判断某个文件是否属于 CM、TD、correction 或无法确定资料优先级，必须先询问用户。
 
 期末 P0 CM/TD 直接来源包括：
 
@@ -138,7 +139,9 @@ Plan d'expériences -> effets des facteurs/interactions -> ANAVAR/Fisher -> conf
 4. 当前期末资料已使用 `scripts/convert_final_exam_materials.py` 转换，并生成：
    - `files-from-teacher/final-exam.index.md`
    - `files-from-teacher/final-exam.reviewed.md`
-5. 转换完成后告诉用户：
+5. 同学资料使用 `scripts/convert_classmate_materials.py` 转换，并生成：
+   - `files-from-classmate/classmate-materials.index.md`
+6. 转换完成后告诉用户：
    - 转换了哪个文件
    - 输出到哪里
    - 是否存在识别不确定的地方

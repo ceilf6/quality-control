@@ -8,7 +8,7 @@
 
 ## 使用纪律
 
-1. 期末复习优先级：CM/TD -> TD correction 与 Excel workbook -> Sujet type -> 统计表/概率表。期中前资料只作为必要前置概念或查表辅助，不作为期末考点。
+1. 期末复习优先级：CM/TD -> TD correction 与 Excel workbook -> Sujet type -> 统计表/概率表 -> 同学资料。期中前资料只作为必要前置概念或查表辅助，不作为期末考点。
 2. CM/TD 用于判断复习范围、核心公式、老师强调和解题步骤；Sujet type 用于判断题型、答案颗粒度、步骤顺序和常见陷阱。
 3. 教学解释用中文；考试答案、答题模板、题目最终作答用法语，并保持简洁可背。
 4. 遇到题目时固定输出：题目 -> 解析 -> 答案。即使 correction 先给答案，也要先重构题目，再讲思路，最后按题型给答案：QCM 给选项，表格题给格子值，TD 型计算给结果和关键步骤，概念题给简洁法语作答。
@@ -41,6 +41,12 @@
 
 - `32_SujetExam_tytpe.readable.txt`：期末题型校准来源。暴露 DOE 的 V/F、步骤排序、ANAVAR 判读和计算题。若与 CM/TD 的范围或公式冲突，以 CM/TD 为准。
 - `23_Lecture table Fisher.readable.md`：Fisher 查表辅助来源，用于确定 ddl 与 alpha 下的临界值。
+
+## P3 同学资料辅助入口
+
+- `files-from-classmate/classmate-materials.index.md`：同学资料索引。用于中文解释、术语对照、快速查漏和自测。
+- 使用规则：同学资料不能决定期末范围、公式权威、TD 步骤或最终答案；涉及考试作答时必须回看对应老师 P0 CM/TD/correction/workbook/ASR。
+- 冲突规则：若同学资料与老师资料不一致，以老师 CM/TD/correction/workbook/ASR 为准，并在讲解中说明差异。
 
 ## 期末题型信号
 

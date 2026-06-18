@@ -1,0 +1,196 @@
+# TD作业解答说明.pdf
+
+- Source: `TD作业解答说明.pdf`
+- Review priority: P3 classmate auxiliary material.
+- Role: Classmate explanation of control-chart and CUSUM workbook tasks.
+- Teacher-source check: Teacher P0 anchors: 31, 33 and 35.
+- Use rule: use this file for Chinese explanation, terminology alignment and self-check only; do not use it to override teacher CM/TD/corrections/workbooks/ASR.
+- Extraction: `pdftotext -layout`; accents, math formulas and table alignment may still require checking the original PDF or the teacher P0 source.
+
+## Readable Content
+## Page 1
+
+FQ01 · 质量管理 · 第五部分
+
+                             TD 作业解答说明
+                 控制图 (Control Charts) 与 CUSUM 两套 Excel 作业
+
+本说明对应同文件夹下的两套配套 TD（Excel 作业），每套都有空白版与已填/订正版。下面逐套讲清
+：作业要求、用到的公式、Excel 操作步骤、关键答案，以及订正文件的组织方式，方便你"先自己做空
+白版，再对照答案核对"。配套理论见同文件夹《SPC 统计过程控制 复习笔记》。
+
+文件清单
+      作业                     空白版                      答案/订正版                        配套
+                                                                              p_control_chart.s
+① 控制图 (p 图 & u                              TD control charts-correction.xl
+                   TD control charts.xlsx                                     vg, u_control_cha
+图)                                          sx
+                                                                              rt.svg
+
+② CUSUM 累积和图       TD CUMSUM.xlsx           TD CUMSUM_filled.xlsx             （表内含 ARL 表）
+
+ 考点 / 提示：两套作业分别练"属性控制图(变样本量)"和"CUSUM"，正好覆盖课件第二、三、四部分的
+ 计算。空白版给的是"输入数据/带公式的骨架"，答案版给的是"算好的数值/透视表/图"。
+
+                           TD 作业解答说明（控制图 & CUSUM）      ·   第 1 页
+
+## Page 2
+
+作业一 属性控制图：p 图 与 u 图（变样本量）
+数据与任务
+• 空白文件 TD control charts.xlsx 的 Feuil1 工作表给出 1000 件产品的原始记录，分 10 个样本
+    ；
+• 四列：Sample(样本号)、Piece(件号)、Number of defects(该件缺陷数)、Defective(是否不合格
+    0/1)；
+• 各样本件数 n_i 不相等（76–119），属于变样本量情形；
+• 任务：建立 p 图（不合格品比例）和 u 图（单位平均缺陷数），找出失控样本并修订控制限。
+
+第一步：用数据透视表汇总到"每个样本"
+原始数据是逐件的，先用 Excel 数据透视表 (Tableau croisé / PivotTable) 按 Sample 汇总（这正
+是订正文件里"Étiquettes de lignes"那几张表）：
+
+            透视字段                               含义                            记号
+
+Somme de Defective             该样本不合格品件数                               d_i
+
+Somme de Number of defects     该样本缺陷总数                                 c_i
+
+Max. de Piece                  该样本件数（样本量）                              n_i
+
+第二步：p 图公式（比例，变样本量）
+
+中心线         只有一条；UCL/LCL 因 n_i 不同而逐样本变化（n 小→限宽）。
+
+第三步：u 图公式（单位平均缺陷数，变样本量）
+
+各样本计算结果（初始）
+    样本        n_i     d_i       p_i     c_i      u_i              判定
+1        76          15      0.197     36     0.474      受控
+
+2        89          16      0.180     31     0.348      受控
+
+3        112         28      0.250     74     0.661      u 图偏高*
+
+4        104         23      0.221     50     0.481      受控
+
+                                TD 作业解答说明（控制图 & CUSUM）   ·   第 2 页
+
+## Page 3
+
+5          114    30        0.263       62     0.544     受控
+
+6          99     38        0.384       73     0.737     两图均失控
+
+7          103    28        0.272       58     0.563     受控
+
+8          79     15        0.190       46     0.582     受控
+
+9          119    12        0.101       32     0.269     受控(p 偏低)
+
+10         105    16        0.152       31     0.295     受控
+
+合计         1000   221        =0.221     493    ū=0.493   —
+
+第四步：判异与修订 (revision)
+     p 图
+• 初始       =0.221。样本 6：p       =0.384 > UCL   ≈0.346 → 失控，存在可查明原因；
+• 剔除样本 6 后重算：
+
+• 用修订后的           重新逐样本算限，其余 9 个样本都落在限内 → 过程受控。
+
+     u 图
+• 初始 ū=0.493。样本 6：u           =0.737 > UCL    ≈0.705 → 失控，先剔除：
+
+• 重算后样本 3：u            =0.661 略 > UCL   ≈0.660 → 再剔除：
+
+• 再重算，剩余样本全部受控，迭代结束。
+
+    考点 / 提示：关键观察：样本 6 在 p 图和 u 图里都失控——说明同一个可查明原因同时推高了不合
+    格率和缺陷数，是首要排查对象。修订是"剔除失控点→重算中心线与限→再检查"的迭代过程。
+
+订正文件 (correction) 的结构
+• Data 表：原始/整理后的逐件数据；
+• p-chart 表：竖向叠放了若干张数据透视表，对应"初始 → 剔除样本6 → …"的逐次迭代，每张含
+     pi、 (中心线)、LCL、UCL 列；
+• u-chart 表：同理，逐次迭代（依次剔除样本 6、样本 3 …）；
+• p_control_chart.svg / u_control_chart.svg：画好的控制图（折线 + 锯齿状控制限边界）。
+
+    考点 / 提示：本作业三个高频考点：① 变样本量→中心线一条、控制限随 n_i
+    逐点算（边界呈锯齿状）；② LCL 取 max(0, ·)；③ 修订迭代剔除失控点。记住 p 图根号里是
+    (1     )/n_i（二项），u 图根号里是 ū/n_i（泊松）。
+
+                               TD 作业解答说明（控制图 & CUSUM）    ·   第 3 页
+
+## Page 4
+
+作业二 CUSUM 累积和控制图
+文件与任务
+• TD CUMSUM.xlsx 含 5 个工作表：n=1、n=2、n=4、n=8、ARL；
+• n=1 表给出 约 400 个观测值 Value（围绕目标 50 波动）；
+• 参数：目标 μ               =50、标准差 σ=1、要检出的漂移 δ=1；
+• 任务：用计算版 CUSUM 监控均值漂移；比较不同子组样本量 n 的效果；用 ARL 评估性能。
+
+参数：k 与 H
+
+Excel 里 k 写成 =N2/2（即 δ/2），H 写成 =k×5。
+
+n=1 表的各列含义与公式
+     列                       含义                               Excel 公式（第 i 行）
+
+CUMSUM           图解版累积和 C_l
+
+V Lower /
+                 V-mask 下臂 / 上臂                  由最新 CUMSUM       斜臂得到
+Upper arm
+
+C                单侧上累积
+
+C                单侧下累积
+
+N    / N         C /C    连续 >0 的期数计数
+
+初值 C        =C     =0。判异：只要 C            或 C    超过 H=5，就判过程失控（表中标 "Stop"）。
+
+    考点 / 提示：CUSUM 有两套等价表示，本表都给了：CUMSUM + V-arm 是图解(V-mask)版；C                          /C   +
+    H 是计算版。两者结论一致。C                  抓"向上漂移"，C          抓"向下漂移"。
+
+n=2 / n=4 / n=8 表：子组样本量的影响
+• 这三张表把 n=1 的原始数据每 n 个取一次平均（子组均值），公式用 AVERAGE(OFFSET(...)) 自动
+    分组；
+• 然后对子组均值跑同样的 CUSUM（同 k、同 H）；
+• 因为子组均值的标准差是 σ/√n，n 越大、波动越小，对真实漂移越敏感、检出越快。
+
+ARL 表：平均运行长度
+ARL 表用课件 P33–35 的 Shewhart 3σ 公式评估性能（这里的 k 表示"漂移幅度"，单位为 σ）：
+
+Excel 用 NORMSDIST 实现 Φ。对 k=0,0.5,1,1.5,2 与 n=1,2,4,8（ρ=1）计算，结果与课件表一致：
+
+     漂移 k (ρ=1)                    n=1                n=2                n=4          n=8
+0（受控）                      ≈370                ≈370               ≈370         ≈370
+
+                                  TD 作业解答说明（控制图 & CUSUM）      ·   第 4 页
+
+## Page 5
+
+0.5                     ≈155             ≈88                ≈43.4            ≈14.4
+
+1                       ≈43.9            ≈17.3              ≈4.5             ≈1.7
+
+1.5                     ≈15.0            ≈5.3               ≈1.6             ≈1.1
+
+2                       ≈6.3             ≈2.5               ≈1.1             ≈1.0
+
+    考点 / 提示：读法：受控 (k=0) 时 ARL≈370（平均 370 点才误报一次）；漂移越大或 n 越大，ARL
+    越小→检出越快。这量化了"为何加大样本量 n 能更快发现漂移"。注意：ARL 表里的 k
+    是漂移幅度，与 CUSUM 参数 k(=δ/2) 名字相同但含义不同，别混。
+
+怎样用这两份文件复习
+• 先看空白版，弄清输入数据和要算什么；
+• 自己在草稿/Excel 里按上面公式算出几行，再打开已填/订正版对照数值与公式；
+• 重点掌握：p/u 图的变样本量逐点控制限 + 修订迭代；CUSUM 的 C                             /C   递推 + H 判异 + k=δ/2
+    ；ARL 的 1/(1   p)。
+
+本说明针对 TD control charts（p/u 图）与 TD CUMSUM（CUSUM）两套作业及其答案文件整理，配套理
+论见《SPC 统计过程控制 复习笔记》。供学习与期末复习使用。
+
+                               TD 作业解答说明（控制图 & CUSUM）   ·   第 5 页

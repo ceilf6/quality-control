@@ -1,0 +1,551 @@
+# FQ01_系统可靠性_复习笔记.pdf
+
+- Source: `FQ01_系统可靠性_复习笔记.pdf`
+- Review priority: P3 classmate auxiliary material.
+- Role: Surete de fonctionnement review notes: FMDS/RAMS, reliability, maintainability, availability and system reliability.
+- Teacher-source check: Teacher P0 anchors: 36, 38, 39, 40, 41, 42 and 43.
+- Use rule: use this file for Chinese explanation, terminology alignment and self-check only; do not use it to override teacher CM/TD/corrections/workbooks/ASR.
+- Extraction: `pdftotext -layout`; accents, math formulas and table alignment may still require checking the original PDF or the teacher P0 source.
+
+## Readable Content
+## Page 1
+
+FQ01 · 质量管理
+
+            系统运行安全性 / 可靠性导论
+            Introduction à la Sûreté de Fonctionnement (SdF)
+
+             期末复习笔记 · 按课件顺序整理（共 28 页课件）
+               授课：HUYNH Khac Tuan · Printemps 2026
+
+本笔记把 FQ01P2006 这份课件按页顺序整理成可对照复习的中文笔记。每一节标题都用 【课件 P#】
+标出对应的课件页码，法语术语后附中文理解，重要公式单独排出，并在关键处给出 考点提示。全篇主
+线是一句话：可靠性工程研究"系统随时间保持其服务质量的能力"，用 FMDS 四个指标去衡量、用概率
+分布去建模、用可靠性框图把多个部件组合起来分析。
+
+全篇结构总览
+    章                            内容                            对应课件
+
+             SdF 定义、FMDS、基础概念、可靠度/维修度/可用度、失效率
+第一部分 引言                                                  P1–P13
+             、MTTF 等指标
+
+             黑箱研究框架、指数 / Weibull /
+第二部分 单组件法                                                P14–P20
+             对数正态模型、寿命模型练习
+
+第三部分 多组件法    可靠性框图、串联 / 并联 / 复杂结构、桥式结构练习                 P21–P28
+
+                       FQ01 系统可靠性 复习笔记   ·   第 1 页
+
+## Page 2
+
+第一部分 引言 Introduction
+【课件 P1–3】 课程信息与课程大纲
+课件标题：FQ01 - Management de la Qualité — Introduction à la S reté de Fonctionnement（
+质量管理 — 系统运行安全性导论）。P2、P3 是课程大纲 Plan，全课分三大块，后面所有内容都挂在
+这三块下面：
+• 1. Introduction（引言）：一般概念 Concepts généraux、建模框架 Cadre de modélisation、
+    SdF 指标 Indicateurs de SdF。
+• 2. Approche mono-composante（单组件方法）：研究框架、常用模型 Modèles usuels、练习。
+• 3. Approche multi-composante（多组件方法）：研究框架、可靠性框图 Diagrammes de fiabilité、
+    练习。
+
+【课件 P4】 失效科学：SdF 定义与 FMDS 四要素
+     SdF 的定义 (Définition 1)
+S   reté de Fonctionnement (SdF) = 运行安全性 / 可信性。定义：Aptitude d'un système à
+maintenir dans le temps la qualité du service qu'il délivre.即"系统随时间保持其所提供服务质
+量的能力"。关键词是"随时间"——这正是为什么后面要用寿命这个随机变量和概率分布来建模。
+
+     四大指标 FMDS（英文 RAMS）
+在给定条件下，系统应当能够：
+
+    指
+            法语              英文                    含义（中文）                        目标
+    标
+
+                                                                         零失效 zéro
+F       Fiabilité       Reliability      在给定时间区间内完成规定功能的能力
+                                                                         défaillance
+
+        Maintenabilit   Maintainabili
+M                                        失效后能被修复、恢复到可用状态的能力              失效时可维修
+        é               ty
+
+                                                                         最优运行
+                                         在某一给定时刻处于可完成功能状态的能
+D       Disponibilité   Availability                                     exploitation
+                                         力
+                                                                         optimale
+
+                                                                         零事故 zéro
+S       Sécurité        Safety           避免出现严重 / 灾难性事件的能力
+                                                                         accident
+
+     SdF 的作用 (Rôle)
+• 安全的设计 (Conception s            re)：在可用性、安全性、成本方面满足技术规范 cahier des charges。
+• 最优的运行 (Exploitation optimale)：在可用性、安全性、成本方面改善系统性能。
+
+    考点 / 提示：FMDS 四个字母务必能默写并区分 F/M/D/S 的定义。注意 可用度 D
+    是"某一时刻"的概念，而可靠度 F 是"一段时间区间内"的概念——这是最常考的区分点。
+
+【课件 P5】 例子：汽车轮胎 (Roues de voiture)
+用轮胎把 FMDS 具象化（轮胎的功能是让车辆行驶/转向）：
+
+                           轮胎的表现                                        对应指标
+
+抵抗路面缺陷、气候条件等 → 不容易坏                                            Fiabilité 可靠性
+
+                                      FQ01 系统可靠性 复习笔记   ·   第 2 页
+
+## Page 3
+
+爆胎时能方便地拆卸更换                                               Maintenabilité 维修性
+
+行驶过程中不爆胎                                                  Disponibilité 可用性
+
+抓地良好、保证驾驶员想要的方向                                           Sécurité 安全性
+
+   FMDS 之间的关系 (Relations)
+• 失效风险越低（可靠性↑）、修复越容易越便宜（维修性↑）                                  可用性越高。
+• 轮胎的可用性直接影响驾驶员、乘客及周围人的安全。
+
+  考点 / 提示：记住这条因果链：可靠性 + 维修性 → 可用性 → 安全性。可用性是"桥梁"指标。
+
+【课件 P6】 设计阶段 (Phase de Conception)
+目标 (Objectif)：在设计阶段就满足可用性、安全性、成本方面的技术规范，做法是：
+• 避免运行中出现的关键失效 (défaillances critiques)；
+• 最小化运行中不可避免失效的影响。
+对应的解决方案 (Solutions)：
+• 改进设计：选择更好的技术方案与工艺方案 (solutions techniques et technologiques)；
+• 维修建议：预防性维修计划、详细操作规程、需备库存的零件清单、专用工具。
+
+【课件 P7】 运行阶段 (Phase d'Exploitation)
+目标 (Objectif)：在运行阶段改善系统在可用性、安全性、成本方面的性能，做法是：
+• 避免已发生过的关键失效再次出现；
+• 最小化已遇到的不可避免失效的影响；
+• 最小化影响并/或避免潜在关键失效的出现。
+对应的解决方案 (Solutions)：
+• 系统的技术改进：新的技术与工艺方案；
+• 维修演进：增加预防性维修、改善维修物流与组织。
+
+  考点 / 提示：P6 vs P7
+  对比记忆：设计阶段=事前预防（避免会出现的失效），运行阶段=事后改进（避免已发生失效再现 +
+  处理潜在失效）。
+
+【课件 P8】 基础概念：部件 / 系统 / 环境，失效，寿命
+   部件、系统、环境
+     术语              法语                                   含义
+
+                                不可再分解的基本实体（如轮胎里的 pneu 胎、jante 轮辋、frein
+部件             Composant
+                                刹车）
+
+系统             Système          相互作用、共同完成一项任务的部件集合
+
+环境             Environnement    可能与所研究系统相互作用的外部实体
+
+   失效 (Défaillance)
+Inaptitude ou interruption de l'aptitude à accomplir les fonctions requises dans les
+limites des critères d'acceptabilité. 即：在可接受准则范围内，不能或中断完成规定功能的状态。
+
+                               FQ01 系统可靠性 复习笔记     ·   第 3 页
+
+## Page 4
+
+基本量：寿命 (Durée de vie)
+• 寿命 = 从启动到失效之间的时长；
+• 特征：不确定、不可预测 (incertaine, imprévisible)；
+• 首选的形式化方式：把寿命记为随机变量 T，用随机建模（概率分布）来描述。
+
+ 考点 / 提示：本课最核心的建模思想：寿命 T 是随机变量。后面所有 R(t)、λ(t)、MTTF
+ 都是建立在 T 的概率分布之上的。
+
+【课件 P9】 形式化框架：经验表示与概率模型
+  经验表示 (Représentation empirique)
+• 直方图 histogramme：长度为 Δt 的区间内故障所占比例；
+• 累积分布 répartition cumulée：t ≥ 0 之前故障比例随时间的演变。
+
+  表示模型的选择
+用概率论的语言把经验图转成模型：概率密度 fT(t) 与分布函数 FT(t)。
+
+  两条概率公式（后面证明常用）
+• 条件概率：
+
+• 全概率公式（当 (B ) 构成完备事件组时）：
+               i
+
+ 考点 / 提示：全概率公式是 P26/P28"非串并联框图选 pivot 分解"的数学武器，务必掌握。
+
+【课件 P10】 可靠度 R(t)、维修度 M(t)、可用度 A(t)
+  可靠度 Fiabilité — Reliability : R(t)
+在给定条件下、给定时长内完成规定功能的能力 = "系统在 [0,t] 上不失效"的概率：
+
+  维修度 Maintenabilité — Maintainability : M(t)
+在给定维修条件下，被恢复到可用状态的能力。记 S 为"恢复日期/修复时长"：
+
+  可用度 Disponibilité — Availability : A(t)
+在给定条件、给定时刻处于可完成功能状态的能力 = "系统在 t 时刻不失效"的概率：
+
+                        FQ01 系统可靠性 复习笔记     ·   第 4 页
+
+## Page 5
+
+• 不可修系统：A(t) = R(t)，A(t) 单调递减；
+• 可修系统：A(t) ≠ R(t)，A(t) 非单调（失效后会被修好，可用度会回升）。
+
+ 考点 / 提示：三者区别一句话：R(t)=区间内一直好；M(t)=坏了能在 t 前修好；A(t)=t
+ 这一刻是好的。注意 R 用 T>t，M 用 S≤t。
+
+【课件 P11】 失效率 λ(t) 与修复率 μ(t)（浴盆曲线）
+  失效率 Taux de défaillance λ(t)
+定义：当 Δt→0 时，"在 [t, t+Δt] 内发生失效（已知 t 前未失效）的条件概率"除以 Δt 的极限。
+它衡量"幸存到 t 的系统在下一瞬间失效的倾向"。
+
+反解得到本课最重要的公式（由失效率还原可靠度）：
+
+  浴盆曲线 (Courbe en baignoire)
+失效率随时间通常呈浴盆形，分三段：jeunesse 早期故障期（λ递减）→ vie utile 有效寿命期（λ
+近似常数）→ fin de vie 耗损期（λ递增）。
+
+  修复率 Taux de réparation μ(t)
+类似定义：已知 0 时失效、t 时尚未修好，下一瞬间完成修复的倾向。与维修度的关系：
+
+ 考点 / 提示：对称记忆：λ               R 用 R=e^{-∫λ}；μ   M 用
+ M=1-e^{-∫μ}。浴盆曲线三阶段名称（jeunesse/vie utile/fin de vie）常考。
+
+【课件 P12】 平均指标：MTTF / MTTR / MUT / MDT / MTBF / A∞
+P12 用一张时间轴图定义了一组"平均时间"指标（图中：UT 正常运行段、DT 停机段、TTF 首次失效前
+时间、TBF 两次失效间时间、TTR 修复时间含检测/诊断/物流/测试）。
+
+ 指标             全称                         含义                           公式
+
+                                首次失效前的平均正常运行时间（从全新
+MTTF   Mean Time To Failure
+                                状态出发）
+
+MTTR   Mean Time To Repair      平均修复时间
+
+                                首次失效后的平均正常运行时间（从修复
+MUT    Mean Up Time                                           —
+                                后状态出发）
+
+MDT    Mean Down Time           平均停机/不可用时间                    —
+
+       Mean Time Between
+MTBF                            两次相继失效之间的平均时间                 MTBF = MUT + MDT
+       Failure
+
+                                FQ01 系统可靠性 复习笔记   ·   第 5 页
+
+## Page 6
+
+Disponibilité
+A∞                              渐近可用度
+           asymptotique
+
+ 考点 / 提示：两个易混：MTTF 从"全新"出发，MUT 从"修复后"出发；MTBF=MUT+MDT。渐近可用度
+ A∞=MUT/(MUT+MDT)，在指数模型里等于 MTTF/(MTTF+MTTR)。
+
+【课件 P13】 汇总表（必背）：指标互推 + 三大寿命模型
+  SdF 指标之间的相互表达
+已知 FT、fT、R、λ 中任意一个，可推出其余各量：
+
+ 求 \ 已知              F_T(t)          f_T(t)              R(t)          λ(t)
+
+F_T(t) =
+
+f_T(t) =
+
+R(t) =
+
+λ(t) =
+
+MTTF =
+
+  三大寿命/修复模型一览
+     模型                    分布      f_T(t)         R(t)          λ(t)      MTTF
+
+指数
+Exponentiel
+
+威布尔 Weibull
+
+对数正态
+Log-normal
+其中 Γ(·) 为伽马函数，φ(·) 与 Φ(·) 为标准正态 N(0,1) 的密度与分布函数。
+
+ 考点 / 提示：这两张表是本部分的"公式总闸"，建议直接背下来。考试中"已知 λ 求 R /
+ MTTF""指数分布求 MTTF=1/λ"等都是直接套用。
+
+                                FQ01 系统可靠性 复习笔记   ·   第 6 页
+
+## Page 7
+
+第二部分 单组件方法 Approche mono-composante
+【课件 P14】 本部分大纲
+P14 重复给出第 2 章结构：研究框架 Cadre d'étude → 常用模型 Modèles usuels（指数 / Weibull
+/ 对数正态）→ 练习 Exercices。
+
+【课件 P15】 研究框架：黑箱 (Bo               te noire)
+单组件方法把研究对象当成一个"单一实体 / 黑箱"来处理——可以是真正的基本部件，也可以是把多部
+件系统整体看成一个黑箱（只看输入 entrée → 输出 sortie）。
+
+  目标 (Objectifs)
+• 给出寿命 T 与修复时长 S 的常用模型；
+• 研究与之关联的 SdF 指标的性质。
+时间轴：mise en service（投用）→ 运行 → défaillance（失效，时刻 T）→ remise en service（
+重新投用，修复用时 S）。
+
+【课件 P16】 指数模型 (Modèle exponentiel)
+  寿命 T ~ Exp(λ)，λ > 0
+      量                                    表达式
+
+密度 fT(t)
+
+可靠度 R(t)
+
+失效率 λ(t)        λ（常数）→ 适合"有效寿命期 vie utile"
+
+平均寿命 MTTF
+
+无记忆性 (pas de mémoire)——指数模型最重要的性质：
+
+  修复时长 S ~ Exp(μ)，μ > 0
+                μt
+• 密度 f (t)=μe    ；维修度 M(t)=1   e μt；修复率 μ(t)=μ（常数）；MTTR=E[S]=1/μ。
+      S
+
+  可用度 (Disponibilité)：T~Exp(λ)、S~Exp(μ)
+用"dt 足够小、至多发生一个事件"建立递推 A(t+dt)=(1          λdt)A(t)+μdt·   (t)，解微分方程得：
+
+ 考点 / 提示：指数模型三大记忆点：① λ(t)=常数（浴盆底部）；②
+ 无记忆性（用过和全新一样）；③ MTTF=1/λ、MTTR=1/μ、A∞=μ/(λ+μ)。无记忆性几乎必考。
+
+【课件 P17】 威布尔寿命模型 (Weibull, 2 参数)
+  来源与特点
+• 源自 W. Weibull (1887–1979) 对材料疲劳的研究；
+
+                         FQ01 系统可靠性 复习笔记   ·   第 7 页
+
+## Page 8
+
+• 因适应性强，在工业系统可靠性中应用极广。
+
+  寿命 T ~ W(α, β)，α>0（尺度），β>0（形状）
+        量                                       表达式
+
+密度 fT(t)
+
+可靠度 R(t)
+
+失效率 λ(t)
+
+平均寿命 MTTF
+
+  形状参数 β 决定失效率走向（核心考点）
+   β 的取值                  失效率 λ(t)                          物理含义
+
+0 < β < 1        递减                    早期故障 / 软件可靠性 (fiab. logicielle)
+
+β = 1            常数                    退化为指数分布 (loi exponentielle)
+
+1 < β < 2        递增且凹 (concave)        磨损 usure
+
+β ≥ 2            递增且凸 (convexe)        磨损 usure
+有记忆性 (avec mémoire)，与指数相反：
+
+ 考点 / 提示：Weibull 之所以"万能"，就在于 β 可调出浴盆曲线的任一段：β<1 早期、β=1
+ 有效寿命、β>1 耗损。β=1 退化为指数是常考连接点。
+
+【课件 P18】 对数正态修复模型 (Log-normale)
+  来源与特点
+                      X
+• 若 X~N(m,σ²)，则 S=e ~log-N(m,σ²)；反之 X=ln(S)~N(m,σ²)；
+• 用于建模车间修复时长（疲劳导致的失效的修复）。
+
+  修复时长 S ~ log-N(m, σ²)，m>0，σ>0
+        量                                       表达式
+
+密度 fS(t)
+
+维修度 M(t)
+
+修复率 μ(t)
+
+平均修复 MTTR
+             x
+其中 Φ(x)=∫        标准正态密度，φ(x) 为标准正态密度函数。
+            ∞
+
+  修复率呈钟形的两阶段解释
+• 阶段1（递增）：随已耗时间增加，完成修复的机会上升；
+
+                              FQ01 系统可靠性 复习笔记   ·   第 8 页
+
+## Page 9
+
+• 阶段2（递减）：修复时间过长，往往是严重问题（如缺零件 manque de pièces）导致。
+
+  考点 / 提示：对数正态用于修复时长 S（不是寿命）。记住
+  MTTR=e^{m+σ²/2}，以及修复率"钟形"两阶段含义。
+
+【课件 P19】 练习：简单寿命模型
+   Exercice 1：均匀寿命 (loi uniforme)
+失效在 [0, a] 上均匀发生，密度 fT(t)=1/a·1{0≤t≤a}。求 FT(t)、R(t)、MTTF、λ(t)。
+解答要点：
+
+λ(t)=1/(a   t) 随 t 递增并在 t→a 时趋于无穷，符合"必在 a 前失效"的直觉。
+
+   Exercice 2：三角形寿命 (loi triangulaire)
+寿命密度为一个三角形（峰高 h，底在 a）。要求：
+• ① 由"密度积分=1"定出 h 关于 a 的表达式（三角形面积 = ½·a·h = 1                 h = 2/a）；
+• ② 求可靠度 R(t)；③ 求失效率 λ(t)=f (t)/R(t)。
+                                T
+
+  考点 / 提示：这两题的通用套路：密度 f → 积分得 F → R=1           F → MTTF=∫R →
+  λ=f/R。凡是"给密度求四件套"的题都走这条流水线。
+
+【课件 P20】 练习：复杂寿命模型
+   Exercice 3：磨损 + 应力 (usure & stress)
+失效由磨损或应力引起，两者失效时刻分别服从 Exp(λu) 与 Exp(λs)。① 证明"全因失效"密度为混
+合分布，并解释 p 的含义；② 求 λ(t) 并研究其走向。
+
+p 是"失效由磨损引起"的权重/概率（1          p 则为应力）。这是两个指数的混合 (mélange)，其
+λ(t)=f /R 不再是常数。
+      T
+
+   Exercice 4：两种运行阶段 (deux régimes)
+第一阶段 t∈[0,t ] 失效率为常数 λ。到 t 时有两种互斥情形：① 以概率 p 不发生事故，λ 保持
+                 1              1
+不变；② 发生事故，此后失效时刻服从 Exp(2λ)。求 R(t)（分 t≤t 与 t>t ）及平均寿命。
+                                                      1   1
+解答要点：t≤t 时 R(t)=e λt；t>t 时用全概率对两情形加权：
+             1            1
+
+  考点 / 提示：Ex3 考"混合分布"，Ex4 考"分段 +
+  全概率加权"。两题都强调：失效率不再常数时，必须回到 R=e^{-∫λ} 或全概率公式去算。
+
+                        FQ01 系统可靠性 复习笔记   ·   第 9 页
+
+## Page 10
+
+第三部分 多组件方法 Approche multi-composante
+【课件 P21】 本部分大纲
+P21 给出第 3 章结构：研究框架 → 可靠性框图 Diagrammes de fiabilité（定义、串联、并联、复杂）
+→ 练习。
+
+【课件 P22】 研究框架：多组件系统
+• 多个相互作用的部件共同实现主功能（如安全系统、生产系统、运输系统）；
+• 主功能是多重的、可分解为多个次功能（汽车主功能=安全行驶；次功能=启动、制动、转向、信号等）
+ ；
+• 分析工具：可靠性框图、故障树 (arbre de défaillances)、二元决策图 (BDD)、Petri 网、
+ Markov 图等。
+
+  本课聚焦：可靠性框图 (Diagramme de fiabilité)
+• 假设部件是二态的 (binaires)（只有"好/坏"）且相互独立 (indépendants)；
+• 用逻辑图表示：功能性（把全局功能分解为部件子功能）+ 静态性（由部件状态决定系统状态）；
+• 分为串联 série、并联 parallèle、复杂 complexe三类框图。
+
+【课件 P23】 可靠性框图：定义与性质
+• 框图由输入 E、主体、输出 S 构成；
+• 从 E 发出的"流 flux"沿弧线传到 S；
+• 某部件失效       对应块处"流"被切断；
+• 系统失效    不存在任何一条从 E 到 S 的通路。
+例子：天然气管道安全系统（含 salle de contrôle 控制室=4、opérateur 操作员=9 等块）。
+
+  目标
+用各块的 SdF 指标 ri(t)、λi(t)、MTTFi 表达整个系统的 R(t)、λ(t)、MTTF。
+
+ 考点 / 提示：判断系统好坏的黄金法则：看 E 到 S
+ 还有没有通路。串联=只有一条链，断一处就垮；并联=多条路，全断才垮。
+
+【课件 P24】 串联框图 (Diagramme série)
+定义：任一块失效       系统失效。失效时刻取最小值：
+
+  串联系统的 SdF 指标
+• 可靠度（独立       概率相乘）：
+
+• 失效率（直接相加，且随 n 增大而增大）：
+
+                        FQ01 系统可靠性 复习笔记   ·   第 10 页
+
+## Page 11
+
+• MTTF：一般无简单结果；若各 λ 为常数，则：
+                        i
+
+若各块寿命服从同形状 Weibull Ti~W(αi,β)，则系统 T~W(α,β)，其中 α=(Σαi β) 1/β。
+
+ 考点 / 提示：串联核心：可靠度连乘、失效率相加。直觉：串联块越多，系统越不可靠（R↓、λ↑、
+ MTTF↓）。
+
+【课件 P25】 并联框图 (Diagramme parallèle)
+定义：只要有一块在工作，系统就工作（冗余）。失效时刻取最大值：
+
+  并联系统的 SdF 指标
+• 可靠度（"全部失效"的补，故用不可靠度连乘）：
+
+• 失效率与 MTTF：一般无简单结果。
+
+  特例：两个相同指数部件并联，T_i ~ Exp(λ)
+
+ 考点 / 提示：并联核心：用不可靠度(1        r)连乘。冗余使系统可靠度高于单个部件
+ (R≥r)，系统失效率低于单部件 (λ_sys<λ)；两同型指数部件并联 MTTF=（1+½)/λ=3/(2λ)。
+
+【课件 P26】 复杂框图 (Diagrammes complexes)
+  串-并混合 (mixtes série-parallèle)
+• 把系统分解为若干"串联型"或"并联型"子系统；
+• 先用部件可靠度表达每个子系统的可靠度；
+• 再把子系统当作"宏部件 macro-composant"，逐层组合出系统可靠度。
+
+  非串-并联 (non série-parallèle)
+• 选一个枢纽 pivot，按 pivot 的状态（工作/失效）把系统分成两个子系统；
+• 用全概率公式把系统可靠度写成两子系统可靠度的加权和；
+• 重复，直到都化为简单（串/并）子系统。
+
+                       FQ01 系统可靠性 复习笔记   ·   第 11 页
+
+## Page 12
+
+考点 / 提示：两套方法对应两类图：能拆成串并就用"宏部件逐层合并"；拆不开（如桥式）就"选
+  pivot + 全概率"。
+
+【课件 P27】 练习：串-并联系统
+   Exercice 5：两个相同可修部件并联
+两个相同、可修、并联的部件，各自失效率常数 λ，失效后立即以常数率 μ 修复。① 用 a(t) 写出
+a(t+δt) 的递推；② 解微分方程证明 a(t)=μ/(λ+μ)+λ/(λ+μ)·e (λ+μ)t；③ 求系统可用度
+A(t)，比较系统 A∞ 与单部件 a∞；④ 求系统维修度 M(t) 与 MTTR。
+要点：单部件可用度同 P16；并联系统"全部失效才算停"，故 A(t)=1                         (1 a(t))²。
+
+   Exercice 6：3 串联部件的可靠度提升（优化题）
+3 个部件串联，可靠度 r1=0.9、r2=0.8、r3=0.5，当前系统可靠度 R=0.9·0.8·0.5=0.36 太低。通过
+对各部件并联冗余把系统提到 ≥0.8，每个新增部件成本相同，求最优（成本最低）配置。
+                                                          k
+思路：每加一个冗余到第 i 个部件，该位置可靠度变为 1 (1 ri) 。优先给最弱的部件（r                                 =0.5）
+加冗余，逐步加并重算系统可靠度，直到 ≥0.8 且用的部件数最少。
+
+  考点 / 提示：Ex5 把"指数可用度递推"用到并联可修系统；Ex6
+  是典型可靠性分配/冗余优化题：加冗余先补"短板部件"性价比最高。
+
+【课件 P28】 练习：复杂结构（桥式）
+   Exercice 7：桥式结构 (structure en pont)，5 个部件
+给定 5 部件的桥式可靠性框图（典型的非串-并联结构，中间部件 3 是桥）。要求：
+• ① 选一个枢纽块/组 pivot（通常取桥支 3），按其状态把图化简为串-并或并-串子系统，并用
+  a1(t)…a5(t) 写出各子系统可用度；
+• ② 用全概率公式写出系统可用度 A(t)（关于 a …a ）。
+                                         1   5
+要点：以部件 3 为 pivot——
+• 3 工作：1、2 之间和 4、5 之间被桥接，化为 (1∥2) 与 (4∥5) 的串联（并-串）；
+• 3 失效：桥断开，化为 (1-4 串) 与 (2-5 串) 的并联（串-并）；
+• 再按 A=a ·A(3工作)+(1     a )·A(3失效) 合并。
+         3               3
+
+  考点 / 提示：桥式结构是"非串并联 + 选 pivot + 全概率"的压轴标准题。务必记住"以中间桥为
+  pivot"这一招。
+
+授课教师：HUYNH Khac Tuan, PhD, HDR — Maître de Conférences / Associate Professor,
+Université de technologie de Troyes (UTT), LIST3N. 本笔记由课件 FQ01P2006.pdf（28 页）按页
+整理，供学习与期末复习使用。
+
+                             FQ01 系统可靠性 复习笔记     ·   第 12 页

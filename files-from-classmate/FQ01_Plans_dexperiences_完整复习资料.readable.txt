@@ -1,0 +1,548 @@
+# FQ01_Plans_dexperiences_完整复习资料.pdf
+
+- Source: `FQ01_Plans_dexperiences_完整复习资料.pdf`
+- Review priority: P3 classmate auxiliary material.
+- Role: Plans d'experiences review notes: DOE, effects, ANAVAR, Fisher, fractional plans and robustness.
+- Teacher-source check: Teacher P0 anchors: 25, 22, 24, 26, 27, 28, 29 and 30.
+- Use rule: use this file for Chinese explanation, terminology alignment and self-check only; do not use it to override teacher CM/TD/corrections/workbooks/ASR.
+- Extraction: `pdftotext -layout`; accents, math formulas and table alignment may still require checking the original PDF or the teacher P0 source.
+
+## Readable Content
+## Page 1
+
+FQ01 质量管理复习资料
+    Management de la Qualité — Introduction aux Plans d’expériences
+
+                          按课件页码一一对应整理：概念 + 公式 + 计算步骤 + 考试表达
+
+使用方法：复习时先看“页码对应总表”，再按每个模块逐页对照老师课件。本文保留法语关键词，配中文解
+释；公式用接近 Word 公式显示的 LaTeX 形式排版，便于抄写和考试复习。
+
+一、课程总框架
+本课件主题是 Plans d’expériences，即实验设计。它属于质量管理中“用最少实验获得最大信息”的方法。
+核心不是盲目做实验，而是提前设计实验矩阵，使因素效应、交互作用、模型和最优组合都能被有效估计。
+
+    模块                                课件页码          你要掌握的核心
+                                                    实验设计的定义、目的、优势、必
+    1. Introduction générale          p.3-p.10      要条件；称重例子说明“有组织的
+                                                    实验”比单独试验更精确。
+                                                    五步法：形式化、构造计划、做实
+    2. Démarche des plans                           验、统计分析、结论；包括
+                                      p.12-p.40
+    d’expériences                                   ANAVAR、效应、SCE、CME、
+                                                    Fisher、建模与验证。
+                                                    完整二水平因子实验；Yates 表示
+    3. Plans factoriels 2^k           p.43-p.46     法；主效应、交互效应、SCE 和
+                                                    Fisher 检验。
+                                                    当因素太多时减少实验次数；别
+                                                    名/混淆 alias；生成元
+    4. Plans fractionnaires 2^(k-p)   p.48-p.60
+                                                    générateur；对比 contraste；去
+                                                    混淆 désaliasage。
+                                                    控制因素 + 噪声因素；稳健性；
+    5. Plans croisés / robustesse     p.62-p.72     S/B 信噪比；经典最优 vs 稳健最
+                                                    优。
+
+二、Introduction générale / 实验设计引入（p.3-p.10）
+1. 称重例子：为什么要“设计”实验？（p.4-p.5）
+课件用“3 个物体称重”的例子说明：如果每个物体单独称重，实验虽然直观，但信息利用率低，误差传播较
+大；如果让多个物体同时参与称重，并合理安排每次称重的组合，就可以在同样或更少的试验中获得更高精
+度。
+
+     Méthode classique：pesée 1 par 1，逐个称重，实验相互独立，但没有充分利用组合信息。
+
+## Page 2
+
+     Plan de pesée optimal：让所有物体同时参与不同组合的称重，借助矩阵设计提高估计精度。
+     考试理解：实验设计的本质是“组织 essais”，不是随便试；通过实验矩阵让信息量最大化。
+
+                                    总思想：观测结果 = 实验矩阵 × 待估参数 + 误差
+
+2. Qu’est-ce qu’un plan d’expériences ?（p.6）
+法语定义：Un plan d’expériences est une suite d’essais organisée de manière à déterminer avec un
+minimum d’essais et avec un maximum de précision l’influence de plusieurs paramètres sur une ou
+plusieurs réponses.
+
+中文：实验设计是一系列有组织的试验，用最少的试验次数、尽可能高的精度，确定多个因素对一个或多个响
+应的影响。
+
+    法语关键词                               中文                        考试理解
+                                                                  不是随机试，也不是一个因素一个
+    suite d’essais organisée            有组织的一系列试验
+                                                                  因素试。
+    minimum d’essais                    最少试验次数                    节约成本、时间和资源。
+    maximum de précision                最大精度                      降低不确定性，提高结论可靠性。
+                                                                  可能影响响应的变量，例如温度、
+    facteurs                            因素/参数
+                                                                  速度、浓度。
+                                                                  被测量的质量指标，例如合格率、
+    réponses                            响应/结果
+                                                                  噪声、强度、时间。
+
+3. Essai, facteur, niveau/modalité, réponse（p.6-p.7）
+    概念                         法语                    中文解释                 例子
+                                                                          rendement, durée, taux
+    Réponse                    mesure quantifiable   可量化、可测量的输出
+                                                                          de satisfaction, bruit
+                                                                          température, vitesse,
+    Facteur                    variable/paramètre    可能影响响应的输入变量
+                                                                          pression, matériau
+                               configuration         一次实验，对应一组因素
+    Essai                                                                 A=+1, B=-1, C=+1
+                               spécifique            水平
+                                                                          温度 80°C 或 120°C；材
+    Modalité / Niveau          valeur particulière   因素在实验中取的具体值
+                                                                          料A或B
+
+课件 p.7 的“boîte à boutons”图非常重要：按钮 = 可控因素；按钮档位 = 水平；黑箱 = 产品或系统；指针读
+数 = 响应。
+
+4. 什么时候做实验设计？（p.8）
+     Optimiser la conception d’un produit：优化产品设计。
+     Régler un moyen de production / processus：调整生产设备或工艺参数。
+
+## Page 3
+
+       Investiguer pour mieux comprendre un phénomène：探索并理解一个现象。
+
+5. 为什么不用“一个因素一次”？（p.9）
+课件明确反对 Pas de « un facteur à la fois ». 因为单因素法无法有效观察交互作用，试验次数可能更多，且结
+论不够可靠。实验设计的优势包括：
+
+       比同样规模的非计划试验更有效。
+       能量化并排序因素及交互作用的影响。
+       结论更可靠、更可重复。
+       可提前估计实验时间和成本。
+       结果更容易解释。
+
+6. 必要条件（p.10）
+       需要多人员工作组，避免单人主观判断。
+       问题必须可以被形式化，即能定义目标、因素、响应和约束。
+       实验必须现实可行，时间、设备、预算要明确。
+       响应必须可量化，测量精度足够，否则后续统计分析没有意义。
+
+三、La démarche des plans d’expériences / 实验设计流程
+（p.12-p.40）
+1. 五步法总览（p.13, p.23, p.28-p.29, p.36, p.41）
+    步骤                    法语                       中文               核心任务
+                                                                    定义问题、目标、约束、
+    1                     Formalisation            形式化问题            响应、因素、水平和交
+                                                                    互。
+                                                                    选择完整计划、分部计划
+    2                     Construction du plan     构造实验计划
+                                                                    或正交表。
+                                                                    按实验矩阵做实验，记录
+    3                     Réalisation des essais   实施实验
+                                                                    响应。
+                                                                    找显著因素、建模、优
+    4                     Dépouillement            统计分析
+                                                                    化。
+                                                                    给出因素解释、最优组
+    5                     Conclusion               结论               合、验证结果和行动建
+                                                                    议。
+
+2. Formalisation / 形式化（p.14-p.22）
+形式化是实验设计最关键的准备阶段。它决定后续实验是否有意义。
+
+## Page 4
+
+2.1 Définir le problème：用 QQCOQP 定义问题（p.15）
+    问题                              含义                              质量管理中的用途
+    Quoi ?                          问题是什么？                          明确问题对象，避免模糊描述。
+    Qui ?                           谁提出/谁受影响？                       识别客户、操作者、部门。
+    Combien ?                       成本或数量是多少？                       量化问题严重程度。
+    Où ?                            发生在哪里？                          定位工位、生产线、设备。
+    Quand ?                         什么时候发生？                         识别时间、班次、周期性。
+                                                                    连接质量、成本、交付、客户满意
+    Pourquoi ?                      为什么这是问题？
+                                                                    度。
+
+2.2 Déterminer l’objectif：目标必须精确且量化（p.16）
+     错误：améliorer la performance，太笼统。
+     正确：obtenir une performance dépassant de 30% la performance actuelle。
+     正确：réduire le taux de rebuts à moins de 0,5%。
+
+2.3 Recenser les contraintes et limites（p.17）
+     Délai：实验周期，例如 1 个月。
+     Ressources：设备、人员、预算。
+     Domaine expérimental：实验范围，例如温度、压力的上下限。
+
+2.4 Définir la réponse（p.18）
+响应必须是可测量的数值，而且尽量不受随机波动影响。还要定义测量协议：仪器、操作者、测量条件。
+
+例子：电动车窗 lève-vitre 的响应可以是 décibels émis，目标是 minimiser le bruit émis。
+
+2.5 Choisir les facteurs（p.19）
+    因素类型                    法语                        中文                     目的
+                            facteur que l’on                                 主动调节，用来优化响
+    Facteur contrôle                                  控制因素
+                            souhaite calibrer                                应。
+                            facteur dont on
+                                                                             不一定能控制，但希望降
+    Facteur bruit           souhaite réduire          噪声因素
+                                                                             低其影响。
+                            l’influence
+
+可以使用 diagramme cause-effet / Ishikawa 图来枚举可能因素，如 Méthodes, Main d’œuvre, Matières,
+Machines, Milieu。
+
+2.6 Définir les modalités des facteurs（p.20-p.21）
+    类型                              法语例子                            中文解释
+                                    type de produit, type de        离散类别，例如材料类型、供应
+    Facteur qualitatif
+                                    matériau                        商。
+                                                                    连续数值，例如温度、压力、速
+    Facteur quantitatif             température, pression
+                                                                    度。
+
+## Page 5
+
+通常使用 2 个水平，取极端值，以减少实验次数；如果怀疑响应与因素之间存在非线性，可以使用 3 个水平。
+
+水平间距的取舍：
+
+     niveaux éloignés：更容易估计斜率，精度较好，但可能隐藏非线性。
+     niveaux proches：非线性风险较小，但斜率估计精度差。
+
+2.7 Choisir les interactions（p.22）
+交互作用 interaction 表示：一个因素的效应取决于另一个因素的水平。课件用酒精和药物对刹车反应时间的例
+子说明：如果“酒精的影响”在有药和无药条件下不同，则存在交互作用。
+
+4. Construction du plan / 构造实验计划（p.24-p.27）
+
+4.1 Domaine d’expérimentation（p.24）
+实验域由因素及其水平共同定义。例如两个因素 A、B 各有两个水平，则实验域是平面上的四个角点；若有中心
+点，则可以检测非线性。
+
+4.2 完整计划 vs 分部计划（p.25）
+    方法                       法语                   特点                例子
+                             plan complet, plan   测试所有组合，信息完整       7 个二水平因素需要
+    Approche exhaustive
+                             factoriel 2^k        但实验次数多            2^7=128 次
+                                                  只做一部分组合，节约实
+                             plan fractionnaire                     8 次实验可测试最多 7 个
+    Approche fractionnaire                        验，但会出现
+                             orthogonal 2^(k-p)                     二水平因素
+                                                  alias/confusion
+
+4.3 Plan orthogonal 和 Taguchi 表（p.26-p.27）
+正交表记作 L_g(m^f)：g 是实验次数，m 是水平数，f 是因素数。正交性的意义是不同因素列之间彼此平衡，
+便于独立估计效应。
+
+Taguchi 表是“clé en main”的分部正交计划，提供现成实验矩阵，同时还要考虑因素列分配和交互列。
+
+5. Dépouillement / 统计分析：两因素情形（p.30-p.35）
+课件先讲 2 个因素 A、B 的一般情况。A 有 n_A 个水平，B 有 n_B 个水平，每组实验重复 r 次。
+
+## Page 6
+
+5.1 第一步：计算效应（p.31-p.32）
+
+约束关系：同一因素各水平效应之和为 0，交互作用所有单元格效应之和也为 0。
+
+图形理解：如果两条效应线近似平行，交互弱；如果两条线明显不平行甚至交叉，交互强。
+
+5.2 第二步：计算 SCE / Somme des carrés des écarts（p.33）
+
+SCE 表示该因素解释了多少总波动。SCE 越大，该因素或交互对响应的贡献越大。
+
+5.3 第三步：ddl 和 CME（p.34）
+
+二水平因素只有 1 个斜率系数，所以 ddl=1；三水平因素需要 2 个系数描述趋势，所以 ddl=2。
+
+## Page 7
+
+5.4 第四步：Fisher 检验（p.35）
+
+判断规则：若 F_Q > F_seuil，则因素 Q 显著；否则不显著。ANAVAR 表一般包含 Facteur, SCE, ddl, CME, F,
+Fseuil, Décision。
+
+ ANAVAR 列名                中文含义                      答题说明
+ Facteur                  因素/交互/残差                  A, B, AB, R, Total
+ SCE                      平方和                       波动贡献
+ ddl                      自由度                       参数数量
+ CME                      均方                        SCE/ddl
+ F                        Fisher 比值                 CME(Q)/CME(R)
+ Décision                 显著性结论                     Significatif / Non significatif
+
+6. Modélisation et validation / 建模与验证（p.37-p.40）
+建模的目标是估计实验域内任意因素组合的响应，并用于优化。模型可以是线性、 polynomial 或非线性。
+
+如果没有显著交互，只保留主效应；如果交互显著，必须加入交互项，否则模型会系统偏差。
+
+模型误差来源包括：被忽略因素产生的 erreur du modèle，以及重复实验产生的 erreur expérimentale。总残
+差误差可以理解为二者之和。
+
+验证模型时可以做“défaut d’adéquation”检验，也就是用 Fisher 检验模型是否适合数据。如果模型误差显
+著，说明模型结构不够好，可能漏掉交互或非线性项。
+
+四、Plans factoriels 2^k / 完整二水平因子实验（p.43-p.46）
+1. 定义（p.44）
+Plan factoriel 2^k 是 k 个因素、每个因素 2 个水平的完整实验计划。所有因素水平组合都被测试，因此实验次
+数为 2^k。
+
+## Page 8
+
+     Yates 表示：低水平记为 -1，高水平记为 +1。
+     Plan 2^2：2 个因素，4 次实验。
+     Plan 2^3：3 个因素，8 次实验。
+     Plan 2^4：4 个因素，16 次实验。
+
+2. Yates 算法：效应计算（p.45）
+对任意因素或交互 Q，先构造符号列 x_Q。主效应 A 的符号列就是 A；交互 AB 的符号列是 A 列和 B 列逐行相
+乘。
+
+这里 E_Q 是“从 -1 到 +1 时响应平均变化量”；b_Q 是回归模型中的系数。
+
+    Essai          A                  B    AB    说明
+    1              -1                 -1   +1    AB=(-1)(-1)=+1
+    2              +1                 -1   -1    AB=(+1)(-1)=-1
+    3              -1                 +1   -1    AB=(-1)(+1)=-1
+    4              +1                 +1   +1    AB=(+1)(+1)=+1
+
+3. SCE 与 Fisher（p.46）
+二水平完整实验中，每个主效应和每个交互项通常只有 1 个自由度。
+
+如果没有重复实验，残差自由度可能不足，此时常用经验、合并高阶交互或补充实验来估计误差。
+
+4. 你前面 TD 表格的通用做法
+你发的 8 次实验、A/B/C 三个因素、每个因素 -1/+1 的表格，正是一个 2^3 完整因子实验。做题顺序就是：
+
+1. 写明 N=2^3=8，是 plan factoriel complet。
+2. 对 A、B、C、AB、AC、BC、ABC 构造符号列。
+
+## Page 9
+
+3. 用 E_Q=(2/N)Σx_Qy 计算每个效应。
+4. 比较 |E_Q| 判断影响大小。
+5. 建立编码变量模型：ŷ=b0+b_AA+b_BB+b_CC+b_ABAB+...。
+6. 根据目标是 maximiser 还是 minimiser 选择最优组合。
+
+五、Plans fractionnaires 2^(k-p) / 分部因子实验（p.48-
+p.60）
+1. 为什么需要分部实验？（p.49-p.50）
+完整实验的实验次数随因素数指数增长。4 个二水平因素需要 16 次，5 个需要 32 次，7 个需要 128 次。因素多
+时，完整实验往往成本太高。
+
+核心假设：三阶及以上交互通常可以忽略，例如 ABC, ABCD, ABCDE。这样就可以把实验次数减少，同时保留
+对主要效应和低阶交互的估计。
+
+2. 如何选择实验表？（p.51）
+7. 统计因素个数和每个因素的水平数。
+8. 列出希望分析的交互作用。
+9. 计算总自由度 ddl，得到最小实验次数。
+10. 选择满足最小实验次数的正交表。
+11. 把因素分配到列，考虑水平变化频率、实验成本和交互列关系。
+
+3. L8 表、交互列和混淆（p.52-p.53）
+L8 表有 8 次实验，可以提供 7 个正交列。对于 3 个因素 A、B、C，可以同时安排 A、B、C 以及 AB、AC、BC
+等交互，且不混淆。
+
+但如果把第 4 个因素 D 分配到本来代表 ABC 的列，就会出现 D 与 ABC 混淆，即 D 和 ABC 是 aliasés。
+
+考试理解：分部实验的代价是“信息混淆”。你测到的一个效应可能不是单一因素，而是几个别名效应的组
+合。
+
+4. Alias 代数规则与生成元（p.54）
+课件给出列乘法的代数性质。把每一列看成由 +1/-1 组成的符号列，相乘仍是符号列。
+
+## Page 10
+
+性质                         公式                   解释
+    交换律                        AB=BA                列相乘顺序不影响结果。
+    结合律                        A(BC)=(AB)C=ABC      多个列相乘可以任意结合。
+    单位元                        IA=A                 I 是全 +1 列。
+    自反                         AA=I                 同一列自己相乘得到全 +1。
+
+如果 D=ABC，则两边乘 D：
+
+I=ABCD 被称为 générateur d’alias。用它乘任何效应都可以找到 alias。
+
+5. Contraste / 对比的解释（p.55-p.57）
+在分部实验中，某一列计算出来的不是单个纯效应，而是若干 alias 效应的合并，称为 contraste。
+
+         如果 contraste 很小，可以认为其中混淆的因素或交互都弱。
+         如果 contraste 很大，需要判断到底是哪一个 alias 贡献最大。
+         常用解释假设：三阶及以上交互忽略；含显著因素的低阶交互更可能显著；必要时做补充实验去混淆。
+
+6. Désaliasage / 去混淆（p.58-p.59）
+课件例子：如果 h1 = E_AB + E_CD，无法知道 AB 和 CD 谁显著。需要补充实验得到 h1bis = E_AB - E_CD。
+
+做法：从生成元 I=ABCD 改成 I=-ABCD，选择完整 L16(2^4) 中满足 A×B×C×D=-1 的实验。这样可以改变别名
+符号，把原来的加号组合变成减号组合。
+
+7. Résolution des plans fractionnaires（p.60）
+分部计划的 résolution 表示 alias 混淆的严重程度。通常分辨率越高越好。常见理解如下：
+
+    分辨率                        含义                   解释
+                                                    只适合筛选重要主效应，风险较
+    III                        主效应可能与二阶交互混淆
+                                                    大。
+    IV                         主效应不与二阶交互混淆，但二阶      常用于主效应研究。
+
+## Page 11
+
+交互彼此混淆
+    V                           主效应和二阶交互都较好分离      信息质量更高，但实验次数更多。
+
+六、Plans croisés et analyse de robustesse / 交叉计划与稳
+健性（p.62-p.72）
+1. Robustesse 定义（p.63）
+稳健性是系统在使用条件变化或参数/部件存在不确定性时，仍能保持性能的能力。Taguchi 首先系统提出这一
+质量工程思想。
+
+中文直觉：不是只在理想条件下表现好，而是在噪声存在时仍稳定。
+
+2. 控制因素与噪声因素（p.64）
+    类型                     法语             中文            例子
+                                          设计者/工程师可调节的   材料、参数设定、工艺温
+    Facteurs de contrôle   FC
+                                          因素            度
+                                          现实中会波动、难以完全   环境温度、用户使用习
+    Facteurs de bruit      FB
+                                          控制的因素         惯、零件批次
+
+Plan croisé = FC 的主计划 × FB 的噪声计划。它不是普通重复，而是“计划好的假重复”：同一控制组合在不
+同噪声条件下被测试。
+
+3. 为什么不能只看平均值？（p.65-p.66）
+课件 L8 重复实验例子说明：同一控制因素组合下响应可能有 2、17、15、3 等大幅波动。若只保留平均值，会
+丢失 dispersion / variabilité 信息。稳健设计既关心平均值，也关心波动。
+
+       Analyse classique：寻找平均响应最优的组合。
+       Analyse robuste：寻找对噪声因素最不敏感的组合。
+
+4. 控制因素 + 噪声因素实验的目标（p.67）
+12. 识别能降低噪声导致变异的控制因素。
+13. 识别可用于把平均响应调整到目标值的控制因素。
+14. 发现对响应影响弱的控制因素，从而可以放宽公差、降低成本。
+
+5. S/B ratio / 信噪比（p.68-p.70）
+S/B ratio 用来把噪声对响应的影响从平均响应中分离出来。对主计划中的每一个控制组合，都根据噪声计划下
+的多个响应计算一个 S/B 值，然后像普通响应一样分析 S/B。目标永远是最大化 S/B。
+
+## Page 12
+
+Taguchi 常用三种 S/B 公式：
+
+ 情况                          法语                           目标                          公式
+                                                                                      S/B=10\log_{10}(\bar
+ Nominal est le mieux        NLM                          越接近目标值越好
+                                                                                      y^2/s^2)
+                                                                                      S/
+ Plus petit est le mieux     PPLM                         越小越好                        B=-10\log_{10}\left(\fra
+                                                                                      c{1}{n}\sum y_i^2\right)
+                                                                                      S/
+                                                                                      B=-10\log_{10}\left(\fra
+ Plus grand est le mieux     PGLM                         越大越好
+                                                                                      c{1}{n}\sum
+                                                                                      1/y_i^2\right)
+
+注意：S/B 越大表示越稳健。即使某组合平均值不错，如果波动大，S/B 也可能不好。
+
+6. 稳健性分析流程（p.71-p.72）
+15. 计算每个控制组合对应的 S/B。
+16. 对 S/B 做控制因素的平均效应分析，可以用 ANAVAR。
+17. 画 S/B 的效应图，找出使 S/B 最大的控制因素水平。
+18. 选择稳健组合，即对噪声最不敏感的 FC 组合。
+19. 做 confirmation test 验证该组合是否真实有效。
+20. 用 ANAVAR 检查模型误差，写出结论。
+
+七、考试/TD 通用答题模板
+模板 1：定义实验设计
+Un plan d’expériences est une suite d’essais organisée permettant d’étudier, avec un minimum
+d’essais et un maximum de précision, l’influence de plusieurs facteurs sur une ou plusieurs réponses.
+Il permet également d’analyser les interactions entre facteurs et de choisir une combinaison optimale
+des niveaux.
+
+中文：实验设计是一系列有组织的试验，用最少实验次数和最大精度研究多个因素对响应的影响，并分析交互
+作用、选择最优水平组合。
+
+模板 2：分析一个 2^k 完整因子实验
+21. Identifier le plan : il s’agit d’un plan factoriel complet 2^k avec k facteurs à deux niveaux codés -1 et +1.
+22. Construire les colonnes des interactions par produit des colonnes des facteurs.
+23. Calculer les effets E_Q=(2/N)Σx_Qy.
+24. Comparer les valeurs absolues des effets pour hiérarchiser les facteurs.
+
+## Page 13
+
+25. Construire le modèle codé ŷ=b0+Σb_Qx_Q avec b_Q=E_Q/2.
+26. Choisir la combinaison optimale en fonction de l’objectif : maximiser ou minimiser la réponse.
+
+模板 3：ANAVAR 显著性判断
+Pour déterminer si un facteur est significatif, on calcule sa SCE, son ddl puis son CME. Le rapport de
+Fisher est obtenu par F=CME(facteur)/CME(résiduelle). Si F est supérieur à Fseuil, le facteur est considéré
+comme significatif ; sinon il est non significatif.
+
+模板 4：解释 interaction
+Une interaction existe lorsque l’effet d’un facteur sur la réponse dépend du niveau d’un autre
+facteur. Graphiquement, elle se traduit par des droites non parallèles dans le diagramme des effets. Si
+l’interaction est significative, elle doit être intégrée dans le modèle.
+
+模板 5：解释分部实验和 alias
+Un plan fractionnaire 2^(k-p) permet de réduire le nombre d’essais par rapport à un plan complet 2^k.
+Cette réduction repose sur l’hypothèse que les interactions d’ordre élevé sont négligeables. En
+contrepartie, certains effets sont confondus : on parle d’alias. L’interprétation doit donc s’appuyer
+sur les générateurs d’alias, les contrastes et éventuellement des essais complémentaires de
+désaliasage.
+
+模板 6：解释稳健设计
+L’analyse de robustesse cherche une combinaison de facteurs de contrôle qui rend la réponse peu
+sensible aux facteurs de bruit. Dans un plan croisé, les combinaisons des facteurs de contrôle sont
+testées sous différents niveaux des facteurs de bruit. L’indicateur S/B est calculé pour chaque
+combinaison et l’objectif est de maximiser ce ratio.
+
+八、页码对应速查表
+ 课件页码                                                   复习时对应内容
+                                                        课程标题与大纲：实验设计引入、流程、完整 2^k、
+ p.1-p.2
+                                                        分部 2^(k-p)、交叉计划。
+                                                        称重例子：经典单独称重 vs 最优称重计划；实验设
+ p.3-p.5
+                                                        计能提高估计精度。
+                                                        核心定义：plan d’expériences, réponse, facteur,
+ p.6-p.7
+                                                        essai, modalité/niveau。
+ p.8-p.10                                               什么时候做实验设计、为什么做、必要条件。
+ p.12-p.14                                              实验设计五步法；Formalisation 的任务。
+                                                        QQCOQP、目标量化、约束和实验域、响应定义和测
+ p.15-p.18
+                                                        量协议。
+                                                        因素选择、控制因素/噪声因素、水平选择、交互作
+ p.19-p.22
+                                                        用。
+ p.24-p.27                                              实验域、完整计划/分部计划、正交计划、Taguchi
+
+## Page 14
+
+表。
+                两因素 ANAVAR：效应、SCE、ddl、CME、Fisher
+p.30-p.35
+                检验。
+                响应建模与模型验证；线性/多项式/非线性；模型误
+p.37-p.40
+                差与实验误差。
+                完整二水平因子实验 2^k；Yates 表示法；效应和
+p.43-p.46
+                SCE 计算。
+p.48-p.51       分部因子实验动机、假设、实验表选择。
+                L8 表、alias、générateur、contraste、
+p.52-p.60
+                désaliasage、résolution。
+                稳健性、交叉计划、控制因素/噪声因素、S/B
+p.62-p.72
+                ratio、稳健性分析流程。
+
+九、最后必须记住的公式清单
+
+## Page 15
+
+十、一页考前版：怎么拿分
+   看到 2 个水平、所有组合都做：立刻写 plan factoriel complet 2^k。
+   看到实验次数少于 2^k：想到 plan fractionnaire 2^(k-p)，检查 alias/confusion。
+   算效应：高水平平均 - 低水平平均，或用 E=(2/N)Σxy。
+   模型系数：编码变量下 b=effect/2。
+   交互作用：一因素效应取决于另一因素水平；图上表现为线不平行。
+   显著性：SCE → ddl → CME → F → 与 Fseuil 比较。
+   稳健性：不是只看平均最优，而是选最大 S/B、对噪声不敏感的组合。
+   结论必须包含：最重要因素、方向正负、交互是否重要、推荐组合、是否需要验证实验。
