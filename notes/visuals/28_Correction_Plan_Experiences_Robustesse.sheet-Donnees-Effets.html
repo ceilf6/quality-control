@@ -1,0 +1,694 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TD3 Robustesse - Données & Effets</title><style>body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;margin:24px;color:#111}h1{font-size:20px}p{color:#555}table{border-collapse:collapse;font-size:13px}td,th{border:1px solid #bbb;padding:5px 7px;vertical-align:top;white-space:nowrap}tr:nth-child(even){background:#fafafa}.formula{color:#0b61a4}.section td{background:#fff1b8;font-weight:700}.small{font-size:12px;color:#666}</style></head><body>
+<h1>Correction TD3 - Plan croisé & Robustesse</h1>
+<p>Source: files-from-teacher/28_Correction_Plan_Experiences_Robustesse.xlsx / sheet: Données & Effets. Aperçu des zones utiles: essais, moyennes, variances, effets, ANAVAR et robustesse.</p>
+<table>
+<tr class="section">
+<td>CORRECTION DE L&#x27;EXERCICE : PLAN CROISÉ &amp; ROBUSTESSE</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="section">
+<td>1. Tableau complet des essais avec Moyennes et Variances</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Essai</td>
+<td>A (Temp)</td>
+<td>B (Temps)</td>
+<td>C (Pré-trt)</td>
+<td>Y (F1) : Basse %</td>
+<td>Y (F2) : Haute %</td>
+<td>Moyenne (Y_barre)</td>
+<td>Variance (S²)</td>
+<td></td>
+<td>CME</td>
+<td>s/B</td>
+</tr>
+<tr>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>7.2</td>
+<td>8.8</td>
+<td class="formula">=AVERAGE(E5:F5)</td>
+<td class="formula">=_xlfn.VAR.S(E5:F5)</td>
+<td></td>
+<td class="formula">=1/2*(1/E5^2+1/F5^2)</td>
+<td class="formula">=-10*LOG(J5)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>5.5</td>
+<td>5.9</td>
+<td class="formula">=AVERAGE(E6:F6)</td>
+<td class="formula">=_xlfn.VAR.S(E6:F6)</td>
+<td></td>
+<td class="formula">=1/2*(1/E6^2+1/F6^2)</td>
+<td class="formula">=-10*LOG(J6)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-1</td>
+<td>1</td>
+<td>-1</td>
+<td>6.4</td>
+<td>8.2</td>
+<td class="formula">=AVERAGE(E7:F7)</td>
+<td class="formula">=_xlfn.VAR.S(E7:F7)</td>
+<td></td>
+<td class="formula">=1/2*(1/E7^2+1/F7^2)</td>
+<td class="formula">=-10*LOG(J7)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>4.8</td>
+<td>5</td>
+<td class="formula">=AVERAGE(E8:F8)</td>
+<td class="formula">=_xlfn.VAR.S(E8:F8)</td>
+<td></td>
+<td class="formula">=1/2*(1/E8^2+1/F8^2)</td>
+<td class="formula">=-10*LOG(J8)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>6.9</td>
+<td>7.5</td>
+<td class="formula">=AVERAGE(E9:F9)</td>
+<td class="formula">=_xlfn.VAR.S(E9:F9)</td>
+<td></td>
+<td class="formula">=1/2*(1/E9^2+1/F9^2)</td>
+<td class="formula">=-10*LOG(J9)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>-1</td>
+<td>1</td>
+<td>4.2</td>
+<td>4.4</td>
+<td class="formula">=AVERAGE(E10:F10)</td>
+<td class="formula">=_xlfn.VAR.S(E10:F10)</td>
+<td></td>
+<td class="formula">=1/2*(1/E10^2+1/F10^2)</td>
+<td class="formula">=-10*LOG(J10)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>6.1</td>
+<td>7.1</td>
+<td class="formula">=AVERAGE(E11:F11)</td>
+<td class="formula">=_xlfn.VAR.S(E11:F11)</td>
+<td></td>
+<td class="formula">=1/2*(1/E11^2+1/F11^2)</td>
+<td class="formula">=-10*LOG(J11)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>3.9</td>
+<td>4.1</td>
+<td class="formula">=AVERAGE(E12:F12)</td>
+<td class="formula">=_xlfn.VAR.S(E12:F12)</td>
+<td></td>
+<td class="formula">=1/2*(1/E12^2+1/F12^2)</td>
+<td class="formula">=-10*LOG(J12)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>moyenne générale</td>
+<td class="formula">=AVERAGE(G5:G12)</td>
+<td></td>
+<td></td>
+<td>MOYENNE</td>
+<td class="formula">=AVERAGE(K5:K12)</td>
+</tr>
+<tr class="section">
+<td>2. Calcul des Effets Principaux (sur la Performance Moyenne)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>TOTAL</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="formula">=(E5-$G$14)^2</td>
+<td class="formula">=(F5-$G$14)^2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SQ</td>
+<td class="formula">=SUMPRODUCT(B5:B12,$G$5:$G$12)</td>
+<td class="formula">=SUMPRODUCT(C5:C12,$G$5:$G$12)</td>
+<td class="formula">=SUMPRODUCT(D5:D12,$G$5:$G$12)</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="formula">=(E6-$G$14)^2</td>
+<td class="formula">=(F6-$G$14)^2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>EQ(+1)</td>
+<td class="formula">=B18/8</td>
+<td class="formula">=C18/8</td>
+<td class="formula">=D18/8</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="formula">=(E7-$G$14)^2</td>
+<td class="formula">=(F7-$G$14)^2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>EQ(-1)</td>
+<td class="formula">=-B19</td>
+<td class="formula">=-C19</td>
+<td class="formula">=-D19</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="formula">=(E8-$G$14)^2</td>
+<td class="formula">=(F8-$G$14)^2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="formula">=(E9-$G$14)^2</td>
+<td class="formula">=(F9-$G$14)^2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>E²Q(+1)</td>
+<td class="formula">=B19*B19</td>
+<td class="formula">=C19*C19</td>
+<td class="formula">=D19*D19</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="formula">=(E10-$G$14)^2</td>
+<td class="formula">=(F10-$G$14)^2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="formula">=(E11-$G$14)^2</td>
+<td class="formula">=(F11-$G$14)^2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="formula">=(E12-$G$14)^2</td>
+<td class="formula">=(F12-$G$14)^2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>SCE(Total)</td>
+<td class="formula">=SUM(H17:I24)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>F(ddl Q, DDL residuel)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="section">
+<td>Source de Variance</td>
+<td>(SCE)</td>
+<td> (ddl)</td>
+<td> (CME)</td>
+<td>F-calculé</td>
+<td>F-critique (5%)</td>
+<td>Significativité</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Facteur A</td>
+<td class="formula">=16*B22</td>
+<td>1</td>
+<td class="formula">=B32/C32</td>
+<td class="formula">=D32/$D$35</td>
+<td>4.75</td>
+<td class="formula">=IF(E32&gt;F32, &quot;Significatif&quot;, &quot;Non Significatif&quot;)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Facteur B</td>
+<td class="formula">=16*C22</td>
+<td>1</td>
+<td class="formula">=B33/C33</td>
+<td class="formula">=D33/$D$35</td>
+<td>4.75</td>
+<td class="formula">=IF(E33&gt;F33, &quot;Significatif&quot;, &quot;Non Significatif&quot;)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Facteur C</td>
+<td class="formula">=16*D22</td>
+<td>1</td>
+<td class="formula">=B34/C34</td>
+<td class="formula">=D34/$D$35</td>
+<td>4.75</td>
+<td class="formula">=IF(E34&gt;F34, &quot;Significatif&quot;, &quot;Non Significatif&quot;)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Résiduelle (Interactions + Rép.)</td>
+<td class="formula">=B36-(B32+B33+B34)</td>
+<td>12</td>
+<td class="formula">=B35/C35</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total</td>
+<td class="formula">=H27</td>
+<td class="formula">=SUM(C32:C35)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>On règle A(-) et C(-)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="section">
+<td>Robustesse</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>s/B</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td></td>
+<td>17.931289893963445</td>
+<td></td>
+<td>SCE (Total)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Moyenne  rép niv 1 +</td>
+<td class="formula">=AVERAGE(K6,K8,K10,K12)</td>
+<td class="formula">=AVERAGE(K7,K8,K11,K12)</td>
+<td class="formula">=AVERAGE(K9:K12)</td>
+<td></td>
+<td>15.101453389909224</td>
+<td></td>
+<td class="formula">=(F42-$F$50)^2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Moyenne  rép niv 2 -</td>
+<td class="formula">=AVERAGE(K5,K7,K9,K11)</td>
+<td class="formula">=AVERAGE(K5:K6,K9:K10)</td>
+<td class="formula">=AVERAGE(K5:K8)</td>
+<td></td>
+<td>17.067903876286383</td>
+<td></td>
+<td class="formula">=(F43-$F$50)^2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>13.798494803563248</td>
+<td></td>
+<td class="formula">=(F44-$F$50)^2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>17.124023856628543</td>
+<td></td>
+<td class="formula">=(F45-$F$50)^2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>12.66232205365162</td>
+<td></td>
+<td class="formula">=(F46-$F$50)^2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Effet moyen niv 1</td>
+<td class="formula">=B43-$K$14</td>
+<td class="formula">=C43-$K$14</td>
+<td class="formula">=D43-$K$14</td>
+<td></td>
+<td>16.316031142815092</td>
+<td></td>
+<td class="formula">=(F47-$F$50)^2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Effet moyen niv 2</td>
+<td class="formula">=B44-$K$14</td>
+<td class="formula">=C44-$K$14</td>
+<td class="formula">=D44-$K$14</td>
+<td></td>
+<td>12.033055955731697</td>
+<td></td>
+<td class="formula">=(F48-$F$50)^2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>MOYENNE</td>
+<td class="formula">=AVERAGE(F42:F49)</td>
+<td></td>
+<td class="formula">=(F49-$F$50)^2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>SCE(Total)</td>
+<td class="formula">=SUM(H43:H50)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Eq^2</td>
+<td class="formula">=B49^2</td>
+<td class="formula">=C49^2</td>
+<td class="formula">=D49^2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="section">
+<td></td>
+<td>Facteurs</td>
+<td>SCE</td>
+<td>ddl</td>
+<td>CME</td>
+<td>F</td>
+<td>F0,95(ddl Q, ddl R)</td>
+<td></td>
+<td>Décision</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td class="formula">=B52*8</td>
+<td>1</td>
+<td class="formula">=C56/D56</td>
+<td class="formula">=E56/$E$59</td>
+<td>7.71</td>
+<td></td>
+<td>Facteur significatif</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>B</td>
+<td class="formula">=C52*8</td>
+<td>1</td>
+<td class="formula">=C57/D57</td>
+<td class="formula">=E57/$E$59</td>
+<td>7.71</td>
+<td></td>
+<td>facteur non significatif</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>C</td>
+<td class="formula">=D52*8</td>
+<td>1</td>
+<td class="formula">=C58/D58</td>
+<td class="formula">=E58/$E$59</td>
+<td>7.71</td>
+<td></td>
+<td>Facteur significatif</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Résidu</td>
+<td class="formula">=C60-SUM(C56:C58)</td>
+<td class="formula">=D60-SUM(D56:D58)</td>
+<td class="formula">=C59/D59</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Total</td>
+<td>34.316067951584714</td>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pareil on règle A(-), C(-)</td>
+<td></td>
+<td></td>
+<td>comme A (-) et c(-)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>N</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>na</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table><p class="small">Generated preview for study; original workbook is unchanged.</p></body></html>

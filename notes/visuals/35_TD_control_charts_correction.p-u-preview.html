@@ -1,0 +1,956 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TD control charts correction - p/u charts</title><style>body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;margin:24px;color:#111}h1{font-size:20px}h2{margin-top:28px}table{border-collapse:collapse;font-size:13px;margin-bottom:20px}td,th{border:1px solid #bbb;padding:5px 7px;white-space:nowrap}tr:nth-child(even){background:#fafafa}.formula{color:#0b61a4}.note{color:#555}</style></head><body><h1>TD control charts correction - p-chart / u-chart</h1><p class="note">Source: files-from-teacher/35_TD control charts-correction.xlsx. Formula cells are shown as formulas where available.</p>
+<h2>p-chart</h2><table>
+<tr>
+<td>Étiquettes de lignes</td>
+<td>Somme de Defective</td>
+<td>Somme de Number of defects</td>
+<td>Max. de Piece</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>15</td>
+<td>36</td>
+<td>76</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>16</td>
+<td>31</td>
+<td>89</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>28</td>
+<td>74</td>
+<td>112</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>23</td>
+<td>50</td>
+<td>104</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>30</td>
+<td>62</td>
+<td>114</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>38</td>
+<td>73</td>
+<td>99</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>28</td>
+<td>58</td>
+<td>103</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>15</td>
+<td>46</td>
+<td>79</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>12</td>
+<td>32</td>
+<td>119</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>16</td>
+<td>31</td>
+<td>105</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(vide)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total général</td>
+<td>221</td>
+<td>493</td>
+<td>119</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Étiquettes de lignes</td>
+<td>Somme de Defective</td>
+<td>Somme de Number of defects</td>
+<td>Max. de Piece</td>
+<td></td>
+<td>pi</td>
+<td>p</td>
+<td>LCL</td>
+<td>UCL</td>
+</tr>
+<tr>
+<td>1</td>
+<td>15</td>
+<td>36</td>
+<td>76</td>
+<td></td>
+<td class="formula">=B19/D19</td>
+<td class="formula">=B30/D30</td>
+<td class="formula">=G19-3*SQRT(G19*(1-G19))/SQRT(D19)</td>
+<td class="formula">=G19+3*SQRT(G19*(1-G19))/SQRT(D19)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>16</td>
+<td>31</td>
+<td>89</td>
+<td></td>
+<td class="formula">=B20/D20</td>
+<td class="formula">=G19</td>
+<td class="formula">=G20-3*SQRT(G20*(1-G20))/SQRT(D20)</td>
+<td class="formula">=G20+3*SQRT(G20*(1-G20))/SQRT(D20)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>28</td>
+<td>74</td>
+<td>112</td>
+<td></td>
+<td class="formula">=B21/D21</td>
+<td class="formula">=G20</td>
+<td class="formula">=G21-3*SQRT(G21*(1-G21))/SQRT(D21)</td>
+<td class="formula">=G21+3*SQRT(G21*(1-G21))/SQRT(D21)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>23</td>
+<td>50</td>
+<td>104</td>
+<td></td>
+<td class="formula">=B22/D22</td>
+<td class="formula">=G21</td>
+<td class="formula">=G22-3*SQRT(G22*(1-G22))/SQRT(D22)</td>
+<td class="formula">=G22+3*SQRT(G22*(1-G22))/SQRT(D22)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>30</td>
+<td>62</td>
+<td>114</td>
+<td></td>
+<td class="formula">=B23/D23</td>
+<td class="formula">=G22</td>
+<td class="formula">=G23-3*SQRT(G23*(1-G23))/SQRT(D23)</td>
+<td class="formula">=G23+3*SQRT(G23*(1-G23))/SQRT(D23)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>38</td>
+<td>73</td>
+<td>99</td>
+<td></td>
+<td class="formula">=B24/D24</td>
+<td class="formula">=G23</td>
+<td class="formula">=G24-3*SQRT(G24*(1-G24))/SQRT(D24)</td>
+<td class="formula">=G24+3*SQRT(G24*(1-G24))/SQRT(D24)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>28</td>
+<td>58</td>
+<td>103</td>
+<td></td>
+<td class="formula">=B25/D25</td>
+<td class="formula">=G24</td>
+<td class="formula">=G25-3*SQRT(G25*(1-G25))/SQRT(D25)</td>
+<td class="formula">=G25+3*SQRT(G25*(1-G25))/SQRT(D25)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>15</td>
+<td>46</td>
+<td>79</td>
+<td></td>
+<td class="formula">=B26/D26</td>
+<td class="formula">=G25</td>
+<td class="formula">=G26-3*SQRT(G26*(1-G26))/SQRT(D26)</td>
+<td class="formula">=G26+3*SQRT(G26*(1-G26))/SQRT(D26)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>12</td>
+<td>32</td>
+<td>119</td>
+<td></td>
+<td class="formula">=B27/D27</td>
+<td class="formula">=G26</td>
+<td class="formula">=G27-3*SQRT(G27*(1-G27))/SQRT(D27)</td>
+<td class="formula">=G27+3*SQRT(G27*(1-G27))/SQRT(D27)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>16</td>
+<td>31</td>
+<td>105</td>
+<td></td>
+<td class="formula">=B28/D28</td>
+<td class="formula">=G27</td>
+<td class="formula">=G28-3*SQRT(G28*(1-G28))/SQRT(D28)</td>
+<td class="formula">=G28+3*SQRT(G28*(1-G28))/SQRT(D28)</td>
+</tr>
+<tr>
+<td>(vide)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total général</td>
+<td class="formula">=SUM(B19:B28)</td>
+<td class="formula">=SUM(C19:C28)</td>
+<td class="formula">=SUM(D19:D28)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Étiquettes de lignes</td>
+<td>Somme de Defective</td>
+<td>Somme de Number of defects</td>
+<td>Max. de Piece</td>
+<td></td>
+<td>pi</td>
+<td>p</td>
+<td>LCL</td>
+<td>UCL</td>
+</tr>
+<tr>
+<td>1</td>
+<td>15</td>
+<td>36</td>
+<td>76</td>
+<td></td>
+<td class="formula">=B34/D34</td>
+<td class="formula">=B44/D44</td>
+<td class="formula">=G34-3*SQRT(G34*(1-G34))/SQRT(D34)</td>
+<td class="formula">=G34+3*SQRT(G34*(1-G34))/SQRT(D34)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>16</td>
+<td>31</td>
+<td>89</td>
+<td></td>
+<td class="formula">=B35/D35</td>
+<td class="formula">=G34</td>
+<td class="formula">=G35-3*SQRT(G35*(1-G35))/SQRT(D35)</td>
+<td class="formula">=G35+3*SQRT(G35*(1-G35))/SQRT(D35)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>28</td>
+<td>74</td>
+<td>112</td>
+<td></td>
+<td class="formula">=B36/D36</td>
+<td class="formula">=G35</td>
+<td class="formula">=G36-3*SQRT(G36*(1-G36))/SQRT(D36)</td>
+<td class="formula">=G36+3*SQRT(G36*(1-G36))/SQRT(D36)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>23</td>
+<td>50</td>
+<td>104</td>
+<td></td>
+<td class="formula">=B37/D37</td>
+<td class="formula">=G36</td>
+<td class="formula">=G37-3*SQRT(G37*(1-G37))/SQRT(D37)</td>
+<td class="formula">=G37+3*SQRT(G37*(1-G37))/SQRT(D37)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>30</td>
+<td>62</td>
+<td>114</td>
+<td></td>
+<td class="formula">=B38/D38</td>
+<td class="formula">=G37</td>
+<td class="formula">=G38-3*SQRT(G38*(1-G38))/SQRT(D38)</td>
+<td class="formula">=G38+3*SQRT(G38*(1-G38))/SQRT(D38)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>28</td>
+<td>58</td>
+<td>103</td>
+<td></td>
+<td class="formula">=B39/D39</td>
+<td class="formula">=G38</td>
+<td class="formula">=G39-3*SQRT(G39*(1-G39))/SQRT(D39)</td>
+<td class="formula">=G39+3*SQRT(G39*(1-G39))/SQRT(D39)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>15</td>
+<td>46</td>
+<td>79</td>
+<td></td>
+<td class="formula">=B40/D40</td>
+<td class="formula">=G39</td>
+<td class="formula">=G40-3*SQRT(G40*(1-G40))/SQRT(D40)</td>
+<td class="formula">=G40+3*SQRT(G40*(1-G40))/SQRT(D40)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>12</td>
+<td>32</td>
+<td>119</td>
+<td></td>
+<td class="formula">=B41/D41</td>
+<td class="formula">=G40</td>
+<td class="formula">=G41-3*SQRT(G41*(1-G41))/SQRT(D41)</td>
+<td class="formula">=G41+3*SQRT(G41*(1-G41))/SQRT(D41)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>16</td>
+<td>31</td>
+<td>105</td>
+<td></td>
+<td class="formula">=B42/D42</td>
+<td class="formula">=G41</td>
+<td class="formula">=G42-3*SQRT(G42*(1-G42))/SQRT(D42)</td>
+<td class="formula">=G42+3*SQRT(G42*(1-G42))/SQRT(D42)</td>
+</tr>
+<tr>
+<td>(vide)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total général</td>
+<td class="formula">=SUM(B34:B42)</td>
+<td class="formula">=SUM(C34:C42)</td>
+<td class="formula">=SUM(D34:D42)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<h2>u-chart</h2><table>
+<tr>
+<td>Étiquettes de lignes</td>
+<td>Somme de Number of defects</td>
+<td>Max. de Piece</td>
+<td></td>
+<td>ui</td>
+<td>u</td>
+<td>LCL</td>
+<td>UCL</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>36</td>
+<td>76</td>
+<td></td>
+<td class="formula">=B2/C2</td>
+<td class="formula">=B13/C13</td>
+<td class="formula">=F2-3*SQRT(F2/C2)</td>
+<td class="formula">=F2+3*SQRT(F2/C2)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>31</td>
+<td>89</td>
+<td></td>
+<td class="formula">=B3/C3</td>
+<td class="formula">=F2</td>
+<td class="formula">=F3-3*SQRT(F3/C3)</td>
+<td class="formula">=F3+3*SQRT(F3/C3)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>74</td>
+<td>112</td>
+<td></td>
+<td class="formula">=B4/C4</td>
+<td class="formula">=F3</td>
+<td class="formula">=F4-3*SQRT(F4/C4)</td>
+<td class="formula">=F4+3*SQRT(F4/C4)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>50</td>
+<td>104</td>
+<td></td>
+<td class="formula">=B5/C5</td>
+<td class="formula">=F4</td>
+<td class="formula">=F5-3*SQRT(F5/C5)</td>
+<td class="formula">=F5+3*SQRT(F5/C5)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>62</td>
+<td>114</td>
+<td></td>
+<td class="formula">=B6/C6</td>
+<td class="formula">=F5</td>
+<td class="formula">=F6-3*SQRT(F6/C6)</td>
+<td class="formula">=F6+3*SQRT(F6/C6)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>73</td>
+<td>99</td>
+<td></td>
+<td class="formula">=B7/C7</td>
+<td class="formula">=F6</td>
+<td class="formula">=F7-3*SQRT(F7/C7)</td>
+<td class="formula">=F7+3*SQRT(F7/C7)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>58</td>
+<td>103</td>
+<td></td>
+<td class="formula">=B8/C8</td>
+<td class="formula">=F7</td>
+<td class="formula">=F8-3*SQRT(F8/C8)</td>
+<td class="formula">=F8+3*SQRT(F8/C8)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>46</td>
+<td>79</td>
+<td></td>
+<td class="formula">=B9/C9</td>
+<td class="formula">=F8</td>
+<td class="formula">=F9-3*SQRT(F9/C9)</td>
+<td class="formula">=F9+3*SQRT(F9/C9)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>32</td>
+<td>119</td>
+<td></td>
+<td class="formula">=B10/C10</td>
+<td class="formula">=F9</td>
+<td class="formula">=F10-3*SQRT(F10/C10)</td>
+<td class="formula">=F10+3*SQRT(F10/C10)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>31</td>
+<td>105</td>
+<td></td>
+<td class="formula">=B11/C11</td>
+<td class="formula">=F10</td>
+<td class="formula">=F11-3*SQRT(F11/C11)</td>
+<td class="formula">=F11+3*SQRT(F11/C11)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(vide)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total général</td>
+<td class="formula">=SUM(B2:B11)</td>
+<td class="formula">=SUM(C2:C11)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Étiquettes de lignes</td>
+<td>Somme de Number of defects</td>
+<td>Max. de Piece</td>
+<td></td>
+<td>ui</td>
+<td>u</td>
+<td>LCL</td>
+<td>UCL</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>36</td>
+<td>76</td>
+<td></td>
+<td class="formula">=B17/C17</td>
+<td class="formula">=B27/C27</td>
+<td class="formula">=F17-3*SQRT(F17/C17)</td>
+<td class="formula">=F17+3*SQRT(F17/C17)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>31</td>
+<td>89</td>
+<td></td>
+<td class="formula">=B18/C18</td>
+<td class="formula">=F17</td>
+<td class="formula">=F18-3*SQRT(F18/C18)</td>
+<td class="formula">=F18+3*SQRT(F18/C18)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>74</td>
+<td>112</td>
+<td></td>
+<td class="formula">=B19/C19</td>
+<td class="formula">=F18</td>
+<td class="formula">=F19-3*SQRT(F19/C19)</td>
+<td class="formula">=F19+3*SQRT(F19/C19)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>50</td>
+<td>104</td>
+<td></td>
+<td class="formula">=B20/C20</td>
+<td class="formula">=F19</td>
+<td class="formula">=F20-3*SQRT(F20/C20)</td>
+<td class="formula">=F20+3*SQRT(F20/C20)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>62</td>
+<td>114</td>
+<td></td>
+<td class="formula">=B21/C21</td>
+<td class="formula">=F20</td>
+<td class="formula">=F21-3*SQRT(F21/C21)</td>
+<td class="formula">=F21+3*SQRT(F21/C21)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>58</td>
+<td>103</td>
+<td></td>
+<td class="formula">=B22/C22</td>
+<td class="formula">=F21</td>
+<td class="formula">=F22-3*SQRT(F22/C22)</td>
+<td class="formula">=F22+3*SQRT(F22/C22)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>46</td>
+<td>79</td>
+<td></td>
+<td class="formula">=B23/C23</td>
+<td class="formula">=F22</td>
+<td class="formula">=F23-3*SQRT(F23/C23)</td>
+<td class="formula">=F23+3*SQRT(F23/C23)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>32</td>
+<td>119</td>
+<td></td>
+<td class="formula">=B24/C24</td>
+<td class="formula">=F23</td>
+<td class="formula">=F24-3*SQRT(F24/C24)</td>
+<td class="formula">=F24+3*SQRT(F24/C24)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>31</td>
+<td>105</td>
+<td></td>
+<td class="formula">=B25/C25</td>
+<td class="formula">=F24</td>
+<td class="formula">=F25-3*SQRT(F25/C25)</td>
+<td class="formula">=F25+3*SQRT(F25/C25)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(vide)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total général</td>
+<td class="formula">=SUM(B17:B25)</td>
+<td class="formula">=SUM(C17:C25)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Étiquettes de lignes</td>
+<td>Somme de Number of defects</td>
+<td>Max. de Piece</td>
+<td></td>
+<td>ui</td>
+<td>u</td>
+<td>LCL</td>
+<td>UCL</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>36</td>
+<td>76</td>
+<td></td>
+<td class="formula">=B32/C32</td>
+<td class="formula">=B41/C41</td>
+<td class="formula">=F32-3*SQRT(F32/C32)</td>
+<td class="formula">=F32+3*SQRT(F32/C32)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>31</td>
+<td>89</td>
+<td></td>
+<td class="formula">=B33/C33</td>
+<td class="formula">=F32</td>
+<td class="formula">=F33-3*SQRT(F33/C33)</td>
+<td class="formula">=F33+3*SQRT(F33/C33)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>50</td>
+<td>104</td>
+<td></td>
+<td class="formula">=B34/C34</td>
+<td class="formula">=F33</td>
+<td class="formula">=F34-3*SQRT(F34/C34)</td>
+<td class="formula">=F34+3*SQRT(F34/C34)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>62</td>
+<td>114</td>
+<td></td>
+<td class="formula">=B35/C35</td>
+<td class="formula">=F34</td>
+<td class="formula">=F35-3*SQRT(F35/C35)</td>
+<td class="formula">=F35+3*SQRT(F35/C35)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>58</td>
+<td>103</td>
+<td></td>
+<td class="formula">=B36/C36</td>
+<td class="formula">=F35</td>
+<td class="formula">=F36-3*SQRT(F36/C36)</td>
+<td class="formula">=F36+3*SQRT(F36/C36)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>46</td>
+<td>79</td>
+<td></td>
+<td class="formula">=B37/C37</td>
+<td class="formula">=F36</td>
+<td class="formula">=F37-3*SQRT(F37/C37)</td>
+<td class="formula">=F37+3*SQRT(F37/C37)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>32</td>
+<td>119</td>
+<td></td>
+<td class="formula">=B38/C38</td>
+<td class="formula">=F37</td>
+<td class="formula">=F38-3*SQRT(F38/C38)</td>
+<td class="formula">=F38+3*SQRT(F38/C38)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>31</td>
+<td>105</td>
+<td></td>
+<td class="formula">=B39/C39</td>
+<td class="formula">=F38</td>
+<td class="formula">=F39-3*SQRT(F39/C39)</td>
+<td class="formula">=F39+3*SQRT(F39/C39)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(vide)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total général</td>
+<td class="formula">=SUM(B32:B39)</td>
+<td class="formula">=SUM(C32:C39)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Étiquettes de lignes</td>
+<td>Somme de Number of defects</td>
+<td>Max. de Piece</td>
+<td></td>
+<td>ui</td>
+<td>u</td>
+<td>LCL</td>
+<td>UCL</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>36</td>
+<td>76</td>
+<td></td>
+<td class="formula">=B45/C45</td>
+<td class="formula">=B55/C55</td>
+<td class="formula">=F45-3*SQRT(F45/C45)</td>
+<td class="formula">=F45+3*SQRT(F45/C45)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</body></html>
