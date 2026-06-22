@@ -45,6 +45,9 @@
 ## P3 同学资料辅助入口
 
 - `files-from-classmate/classmate-materials.index.md`：同学资料索引。用于中文解释、术语对照、快速查漏和自测。
+- `TD CUMSUM.xlsx` 与老师 `33_TD CUMSUM.xlsx` 完全相同，复习时只引用老师目录的 P0 原题。
+- CUSUM 暂无老师官方 correction；`Copie de TD CUMSUM.xlsx` 可暂用作 P3 参考答案，但必须按老师 `33_TD CUMSUM.xlsx` 和 CM `34` 核对公式、步骤与结论。
+- 控制图 TD 已有老师 `35_TD control charts-correction.xlsx`，对应同学完成版已移除。
 - 使用规则：同学资料不能决定期末范围、公式权威、TD 步骤或最终答案；涉及考试作答时必须回看对应老师 P0 CM/TD/correction/workbook/ASR。
 - 冲突规则：若同学资料与老师资料不一致，以老师 CM/TD/correction/workbook/ASR 为准，并在讲解中说明差异。
 
